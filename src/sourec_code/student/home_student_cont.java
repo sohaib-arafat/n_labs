@@ -50,6 +50,6 @@ public class home_student_cont implements Initializable {
     }
     @FXML
     public void text1(ActionEvent e){
-        ER.setText(" 7");
+        ER.setText(" 1");
     }
 }
