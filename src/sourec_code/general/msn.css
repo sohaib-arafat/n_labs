@@ -1,0 +1,87 @@
+.dash{
+
+ -fx-background-radius:10px;
+  -fx-border-radius:10px;
+
+      -fx-background-color: linear-gradient(to bottom , #38EAF1, #63A4FF);
+-fx-transition: transform 1s; /* Animation */
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.dash36{
+
+ -fx-background-radius:10px;
+  -fx-border-radius:10px;
+
+      -fx-background-color: linear-gradient(to bottom , #20bf55, #01baef);
+-fx-transition: transform 1s; /* Animation */
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.dash1{
+
+ -fx-background-radius:10px;
+  -fx-border-radius:10px;
+
+      -fx-background-color: linear-gradient(to bottom , #20bf55, #01baef);
+-fx-transition: transform .2s; /* Animation */
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+
+.dash2{
+
+ -fx-background-radius:10px;
+  -fx-border-radius:10px;
+
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}
+.dash1:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-scale-z: 1.1;
+}
+
+.tesdt{-fx-background-radius:10px;
+         -fx-border-radius:10px;}
+          /*#81dba4
+           #b8f2f5*/
+          .text-area {
+              -fx-background-color: rgba(53,89,119,0.4);
+          }
+
+          .text-area .scroll-pane {
+              -fx-background-color: transparent;
+          }
+
+          .text-area .scroll-pane .viewport{
+              -fx-background-color: transparent;
+          }
+
+
+          .text-area .scroll-pane .content{
+              -fx-background-color: transparent;
+          }
+.bar-chart {
+    -fx-alternative-row-visible: false;
+    -fx-alternative-column-visible: false;
+    -fx-horizontal-grid-lines-visible: false;
+    -fx-vertical-grid-lines-visible:false;
+    -fx-horizontal-zero-line-visible: false;
+    -fx-vertical-zero-line-visible: false;
+    -fx-legend-visible: false;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.axis {
+    -fx-border-color: transparent;
+    -fx-tick-mark-visible: false;
+    -fx-minor-tick-visible: false;
+    -fx-tick-labels-visible: false;
+}
