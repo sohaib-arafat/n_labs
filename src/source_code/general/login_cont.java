@@ -1,4 +1,4 @@
-package sourec_code.general;
+package source_code.general;
 
 import javafx.event.ActionEvent;
 

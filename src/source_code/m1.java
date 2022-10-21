@@ -1,4 +1,4 @@
-package sourec_code;
+package source_code;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class m1  extends Application {
       @Override
@@ -18,6 +19,7 @@ public class m1  extends Application {
           stage.getIcons().add(g);
           stage.setScene(scene);
           stage.setResizable(false);
+          stage.initStyle(StageStyle.TRANSPARENT);
           stage.show();
 
     }

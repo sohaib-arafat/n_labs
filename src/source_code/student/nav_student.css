@@ -9,7 +9,20 @@
     /* #9cecfb → #65c7f7 → #0052d4*/
 }
  .slide{
-     -fx-background-color: linear-gradient(to bottom , #99ccff, #b3d9ff, #6fb1fc);
+    /*-fx-background-color: linear-gradient(to bottom , #2980B9,#6DD5FA,#FFFFFF);*/
+   /*-fx-background-color:linear-gradient(from 25% 25%  to 100% 100% ,#2980B9,#6DD5FA,#FFFFFF);*/
+   -fx-background-color:linear-gradient(from 25% 25%  to 100% 100% ,#1c92d2,#f2fcfe);
+
+
+
+}
+.slide1{
+    /*-fx-background-color: linear-gradient(to bottom , #2980B9,#6DD5FA,#FFFFFF);*/
+   /*-fx-background-color:linear-gradient(from 25% 25%  to 100% 100% ,#2980B9,#6DD5FA,#FFFFFF);*/
+   -fx-background-color:linear-gradient(from 25% 25%  to 100% 100% ,#f2fcfe,#1c92d2);
+
+
+
 }
 .bar{
      -fx-background-color: linear-gradient(to right , #99ccff , #6fb1fc);
@@ -30,8 +43,17 @@
 }
  .nav:hover {
      -fx-background-color: #4592E8;
+
 }
  .nav:pressed {
+     -fx-background-color : #4364f7 ;
+}
+ .nav1:hover {
+     -fx-background-color: #ffffff;
+          -fx-border-color: BLACK;
+
+}
+ .nav1:pressed {
      -fx-background-color : #4364f7 ;
 }
  .pane{
@@ -57,5 +79,14 @@
      -fx-border-color: WHITE;
 }
  .txt:pressed{
+     -fx-border-color: WHITE;
+}
+ .txt1{
+     -fx-text-weight: BOLD;
+}
+ .txt1 :hover{
+     -fx-border-color: WHITE;
+}
+ .txt1:pressed{
      -fx-border-color: WHITE;
 }

@@ -1,4 +1,4 @@
-package sourec_code.student;
+package source_code.student;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,6 +50,10 @@ public class home_student_cont implements Initializable {
     }
     @FXML
     public void text1(ActionEvent e){
+<<<<<<< HEAD:src/sourec_code/student/home_student_cont.java
         ER.setText(" 6");
+=======
+        ER.setText(" 8");
+>>>>>>> b06e387bc7ea82fa458e09d97eb7ffd44581f1ce:src/source_code/student/home_student_cont.java
     }
 }
