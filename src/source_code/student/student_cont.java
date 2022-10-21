@@ -1,4 +1,4 @@
-package sourec_code.student;
+package source_code.student;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
@@ -117,7 +117,7 @@ public class student_cont implements Initializable {
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
-            loader(" ");
+            loader("test1");
 
         }
         if (e.getSource() == profile) {

@@ -1,4 +1,4 @@
-package sourec_code.student;
+package source_code.student;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
