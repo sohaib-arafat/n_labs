@@ -10,7 +10,9 @@
 }
  .slide{
     /*-fx-background-color: linear-gradient(to bottom , #2980B9,#6DD5FA,#FFFFFF);*/
-   -fx-background-color:linear-gradient(from 25% 25%  to 100% 100% ,#2980B9,#6DD5FA,#FFFFFF);
+   /*-fx-background-color:linear-gradient(from 25% 25%  to 100% 100% ,#2980B9,#6DD5FA,#FFFFFF);*/
+   -fx-background-color:linear-gradient(from 25% 25%  to 100% 100% ,#1c92d2,#f2fcfe);
+
 
 
 }
