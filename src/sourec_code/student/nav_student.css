@@ -9,7 +9,10 @@
     /* #9cecfb → #65c7f7 → #0052d4*/
 }
  .slide{
-     -fx-background-color: linear-gradient(to bottom , #99ccff, #b3d9ff, #6fb1fc);
+    /*-fx-background-color: linear-gradient(to bottom , #2980B9,#6DD5FA,#FFFFFF);*/
+   -fx-background-color:linear-gradient(from 25% 25%  to 100% 100% ,#2980B9,#6DD5FA,#FFFFFF);
+
+
 }
 .bar{
      -fx-background-color: linear-gradient(to right , #99ccff , #6fb1fc);
