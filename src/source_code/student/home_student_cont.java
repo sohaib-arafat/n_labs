@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class home_student_cont implements Initializable {
     @FXML
-    private Button b1;
+    private Button b1,b2;
 
     @FXML
     private LineChart<?, ?> lineChart;
@@ -30,6 +30,9 @@ public class home_student_cont implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         inLine();
         inPie();
+        b2.setOnMouseClicked(event -> {
+            System.exit(0);
+        });
     }
     public void inLine(){
         XYChart.Series series=new XYChart.Series();
@@ -50,10 +53,6 @@ public class home_student_cont implements Initializable {
     }
     @FXML
     public void text1(ActionEvent e){
-<<<<<<< HEAD:src/sourec_code/student/home_student_cont.java
-        ER.setText(" 6");
-=======
-        ER.setText(" 8");
->>>>>>> b06e387bc7ea82fa458e09d97eb7ffd44581f1ce:src/source_code/student/home_student_cont.java
-    }
+          ER.setText(" 8");
+     }
 }

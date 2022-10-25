@@ -45,6 +45,14 @@
      -fx-background-color: #4592E8;
 
 }
+.exit  {
+
+
+}
+.exit:hover {
+     -fx-background-color: #28A8EA;
+
+}
  .nav:pressed {
      -fx-background-color : #4364f7 ;
 }

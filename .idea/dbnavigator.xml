@@ -31,14 +31,27 @@
     <connection id="95ac8991-fefa-4057-a04e-d62e4b7e3b53">
       <console name="Connection" type="STANDARD" schema="N_LABS" session="Main" />
     </connection>
+    <connection id="746e87d2-f938-4cc5-a6ff-cb65d42166b7">
+      <console name="N_LABS" type="STANDARD" schema="N_LABS" session="Main" />
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="746e87d2-f938-4cc5-a6ff-cb65d42166b7" object-ref="schemas/N_LABS/tables/STUDENT" />
+      <object connection-id="746e87d2-f938-4cc5-a6ff-cb65d42166b7" object-ref="schemas/N_LABS/tables/SECTION" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="95ac8991-fefa-4057-a04e-d62e4b7e3b53" />
+    <connection id="746e87d2-f938-4cc5-a6ff-cb65d42166b7" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="746e87d2-f938-4cc5-a6ff-cb65d42166b7" dataset="N_LABS.STUDENT" active-filter-id="121be9bc-c8f8-4c02-a309-23b7e7146f6a">
+      <filter id="121be9bc-c8f8-4c02-a309-23b7e7146f6a" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    </filter-actions>
+    <filter-actions connection-id="746e87d2-f938-4cc5-a6ff-cb65d42166b7" dataset="N_LABS.SECTION" active-filter-id="f11c32d7-9286-49ee-9a10-32527ff4a461">
+      <filter id="f11c32d7-9286-49ee-9a10-32527ff4a461" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    </filter-actions>
     <filter-actions connection-id="95ac8991-fefa-4057-a04e-d62e4b7e3b53" dataset="N_LABS.STUDENT" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="95ac8991-fefa-4057-a04e-d62e4b7e3b53" dataset="N_LABS.REG" active-filter-id="">
       <filter id="3c55f382-26f6-49c2-b4b6-a39cad60a649" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
@@ -83,6 +96,90 @@
       <connection id="95ac8991-fefa-4057-a04e-d62e4b7e3b53" active="true" signed="true">
         <database>
           <name value="Connection" />
+          <description value="" />
+          <database-type value="ORACLE" />
+          <config-type value="BASIC" />
+          <database-version value="21.0" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="SID" />
+          <host value="localhost" />
+          <port value="1521" />
+          <database value="XE" />
+          <type value="USER_PASSWORD" />
+          <user value="N_LABS" />
+          <deprecated-pwd value="MTIwMTIw" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="false" />
+          <environment-type value="default" />
+          <connectivity-timeout value="10" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter>
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="746e87d2-f938-4cc5-a6ff-cb65d42166b7" active="true" signed="true">
+        <database>
+          <name value="N_LABS" />
           <description value="" />
           <database-type value="ORACLE" />
           <config-type value="BASIC" />
