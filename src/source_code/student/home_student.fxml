@@ -215,7 +215,7 @@
             </AnchorPane>
          </content>
       </ScrollPane>
-      <Button fx:id="b2" contentDisplay="CENTER" layoutX="1168.0" layoutY="9.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="62.0" styleClass="exit" stylesheets="@nav_student.css" text=" ">
+      <Button fx:id="b2" contentDisplay="CENTER" layoutX="1168.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="62.0" styleClass="exit" stylesheets="@nav_student.css" text=" ">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>
