@@ -1,0 +1,43 @@
+.button {
+     -fx-background-color : transparent;
+     -fx-background-radius:10px;
+     -fx-border-radius:10px;
+}
+ .button:hover {
+     -fx-background-color : #4592E8;
+     -fx-background-radius:10px;
+     -fx-border-radius:10px;
+}
+ .button:pressed {
+     -fx-background-color : #4364f7 ;
+     -fx-background-radius:10px;
+     -fx-border-radius:10px;
+}
+ .z{
+     -fx-text-fill : #F3F3F3 ;
+}
+ .textfield-design{
+     -fx-background-color:transparent;
+     -fx-background-radius:10px;
+     -fx-border-color:#93e1ff;
+     -fx-border-radius:10px;
+     -fx-text-inner-color:#93e1ff;
+     -fx-prompt-text-fill: #93e1ff;
+}
+ .textfield-design:hover{
+     -fx-background-color:transparent;
+     -fx-background-radius:10px;
+     -fx-border-color:#ffffff;
+     -fx-border-radius:10px;
+     -fx-text-inner-color:#ffffff;
+     -fx-prompt-text-fill: #ffffff;
+}
+ .back {
+    /* -fx-background-color:linear-gradient(to bottom right, #019EDB,#4364f7,#01297F);
+     */
+    /*-fx-background-color:linear-gradient(to bottom right, #01297F, #4364f7, #019EDB);
+    /*-fx-background-color:linear-gradient(to right, #0052d4, #4364f7, #6fb1fc);
+    */
+     -fx-background-color: linear-gradient(to right, #0052d4, #4364f7, #6fb1fc);
+
+}

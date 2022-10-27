@@ -1,0 +1,52 @@
+.back{
+-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#3eadcf,#abe9cd);
+}
+.shadow{
+-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 10, 10, 0.0);}
+.cont{
+-fx-background-color :rgba(255,255,255,0.2);
+-fx-background-radius: 10px;
+}
+.chart-plot-background{}
+.axis{
+-fx-stroke:#fff;
+-fx-fill:#fff;
+-fx-font-size:24;
+-fx-tick-label-fill:#fff;
+
+}
+.default-color0.chart-pie{
+-fx-pie-color:transparent;
+}
+.default-color1.chart-pie{
+-fx-pie-color:transparent;
+}
+.default-color2.chart-pie{
+ -fx-pie-color:transparent;
+ }
+ .chart-pie-label{
+ -fx-fill:#fff;
+ -fx-stroke:#fff;
+ -fx-font-size:15;
+
+
+ }
+ .chart-pie-line{
+  -fx-fill:#3eadcf;
+  -fx-stroke:#3eadcf;
+
+
+  }
+ .dash1{
+
+   -fx-background-radius:10px;
+   -fx-border-radius:10px;
+   -fx-background-color: linear-gradient(to bottom , #20bf55, #01baef);
+   -fx-transition: transform .2s; /* Animation */
+
+  }
+ .dash1:hover {
+     -fx-scale-x: 1.1;
+     -fx-scale-y: 1.1;
+     -fx-scale-z: 1.1;
+ }
