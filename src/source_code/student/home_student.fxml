@@ -219,7 +219,7 @@
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>
-                  <Image url="@../../resources/exit3.png" />
+                  <Image url="@../../resources/exit.png" />
                </image>
             </ImageView>
          </graphic>
