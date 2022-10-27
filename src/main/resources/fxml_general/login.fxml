@@ -12,13 +12,13 @@
    <children>
       <ImageView fitHeight="285.0" fitWidth="283.0" layoutX="191.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/21.png" />
+            <Image url="@../images/21.png" />
          </image>
       </ImageView>
       <TextField fx:id="u1" alignment="BOTTOM_LEFT" layoutX="265.0" layoutY="208.0" promptText="Username" styleClass="textfield-design" stylesheets="@login.css" />
       <ImageView fitHeight="44.0" fitWidth="59.0" layoutX="221.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/10.png" />
+            <Image url="@../images/10.png" />
          </image>
       </ImageView>
       <PasswordField fx:id="p1" alignment="BOTTOM_LEFT" layoutX="265.0" layoutY="257.0" promptText="Password" styleClass="textfield-design" stylesheets="@login.css" />
@@ -29,14 +29,14 @@
          <graphic>
             <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/15.png" />
+                  <Image url="@../images/15.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
       <ImageView fitHeight="44.0" fitWidth="59.0" layoutX="221.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/Password_white_1.png" />
+            <Image url="@../images/Password_white_1.png" />
          </image>
       </ImageView>
    </children>

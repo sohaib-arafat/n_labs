@@ -35,7 +35,7 @@ public class student_cont implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            loader("home_student");
+            loader("/fxml_student/home_student");
            // home.setStyle("-fx-background-color : #4364f7 ;" + "-fx-border-color:BLACK;" + "-fx-border-width: 0px 0px 0px 6px;");
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -101,7 +101,7 @@ public class student_cont implements Initializable {
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover" + "{-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;};");
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            loader("home_student");
+            loader("/fxml_student/home_student");
 
         }
         if (e.getSource() == labs) {
