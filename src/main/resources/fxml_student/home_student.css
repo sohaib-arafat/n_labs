@@ -1,6 +1,6 @@
 .back{
--fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#3eadcf,#abe9cd);
-/*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#2193b0,#6dd5ed);*/
+/*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#3eadcf,#abe9cd);*/
+ -fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#1c92d2,#6dd5ed);
 /*-fx-background-color:linear-gradient(from 50% 50% to 100% 100%,#2980B9,#6DD5FA,#FFFFFF);*/
 /*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#00B4DB,#0083B0 );*/
 /*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#2BC0E4,#EAECC6 );*/
@@ -11,7 +11,8 @@
 -fx-background-color :rgba(255,255,255,0.2);
 -fx-background-radius: 10px;
 }
-.chart-plot-background{}
+
+
 .axis{
 -fx-stroke:#fff;
 -fx-fill:#fff;
@@ -22,11 +23,20 @@
 .default-color0.chart-pie{
 -fx-pie-color:transparent;
 }
+ .chart-series-line {
+     -fx-stroke-width: 2px;
+     -fx-effect: null;
+ }
+.default-color0.chart-series-line { -fx-stroke: #000000; }
+
 .default-color1.chart-pie{
 -fx-pie-color:transparent;
 }
 .default-color2.chart-pie{
  -fx-pie-color:transparent;
+ }
+ .series-series *.chart-series-line{
+     -fx-fill: #ffffff;
  }
  .chart-pie-label{
  -fx-fill:#fff;

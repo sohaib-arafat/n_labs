@@ -85,7 +85,7 @@
                      <children>
                         <AnchorPane prefHeight="253.0" prefWidth="494.0">
                            <children>
-                              <LineChart fx:id="lineChart" layoutX="-7.0" layoutY="40.0" legendVisible="false" prefHeight="273.0" prefWidth="694.0" stylesheets="@shadows.css">
+                              <LineChart fx:id="lineChart" alternativeRowFillVisible="false" createSymbols="false" layoutX="-7.0" layoutY="40.0" legendVisible="false" prefHeight="273.0" prefWidth="694.0" styleClass="chart-series-line" stylesheets="@home_student.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                                  <xAxis>
                                     <CategoryAxis side="BOTTOM" />
                                  </xAxis>

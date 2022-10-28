@@ -42,7 +42,7 @@ public class home_student_cont implements Initializable {
         series.getData().add(new XYChart.Data("4th Week",7.2));
         lineChart.getData().addAll(series);
         lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
-        series.getNode().setStyle("-fx-stroke:#3eadcf");
+        series.getNode().setStyle("-fx-stroke:#ffffff");
 
     }
     public void inPie(){
