@@ -121,16 +121,16 @@
                         </AnchorPane>
                     </children>
                 </VBox>
-                <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="7.0" layoutY="788.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="12.0" layoutY="789.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../images/30.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-2.0" maxWidth="91.0" minWidth="78.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="85.0" styleClass="nav" text=" ">
+                <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-9.0" layoutY="2.0" maxWidth="94.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="94.0" styleClass="nav" text=" ">
                     <graphic>
-                        <ImageView fitHeight="67.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true" styleClass="nav">
+                        <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" styleClass="nav" x="3.0">
                             <image>
-                                <Image url="@../images/Burger_bar_1.png" />
+                                <Image url="@../images/Logo_no_background_1_no_writing.png" />
                             </image>
                         </ImageView>
                     </graphic>
