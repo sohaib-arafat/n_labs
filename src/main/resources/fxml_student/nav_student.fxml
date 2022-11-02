@@ -58,16 +58,19 @@
                                 <Font name="Ebrima Bold" size="20.0" />
                             </font>
                         </Button>
+                  <AnchorPane prefHeight="27.0" prefWidth="237.0" />
                         <Button fx:id="labs" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="368.0" styleClass="txt" stylesheets="@nav_student.css" text="Labs" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
                         </Button>
+                  <AnchorPane prefHeight="27.0" prefWidth="237.0" />
                         <Button fx:id="grades" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@nav_student.css" text="Grades" textFill="WHITE">
                             <font>
                                 <Font name="Ebrima Bold" size="20.0" />
                             </font>
                         </Button>
+                  <AnchorPane prefHeight="27.0" prefWidth="237.0" />
                         <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@nav_student.css" text="Profile" textFill="WHITE">
                             <font>
                                 <Font name="Ebrima Bold" size="20.0" />

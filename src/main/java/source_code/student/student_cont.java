@@ -34,6 +34,8 @@ public class student_cont implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        home.setStyle(  "-fx-border-color: WHITE;" + "-fx-border-width: 0px 0px 0px 6px;");
+
         try {
             loader("/fxml_student/home_student");
            // home.setStyle("-fx-background-color : #4364f7 ;" + "-fx-border-color:BLACK;" + "-fx-border-width: 0px 0px 0px 6px;");

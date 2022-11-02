@@ -42,7 +42,7 @@
      ;
 }
  .nav:hover {
-     -fx-background-color: #4592E8;
+     -fx-background-color: #add8e6;
 
 }
 .exit  {
@@ -85,6 +85,8 @@
 }
  .txt :hover{
      -fx-border-color: WHITE;
+     -fx-background-color:#D4F1F4
+                          ;
 }
  .txt:pressed{
      -fx-border-color: WHITE;

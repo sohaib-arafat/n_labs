@@ -56,7 +56,7 @@
    -fx-background-radius:10px;
    -fx-border-radius:10px;
    -fx-background-color: linear-gradient(to bottom , #20bf55, #01baef);
-   -fx-transition: transform .2s; /* Animation */
+   -fx-transition: transform 20s; /* Animation */
 
   }
  .dash1:hover {
