@@ -40,9 +40,7 @@ public class home_student_cont implements Initializable {
         latest();
         inLine();
         inPie();
-        b2.setOnMouseClicked(event -> {
-            System.exit(0);
-        });
+
         for (int i = 0; i < exps.size(); i++) {
             FXMLLoader fx = new FXMLLoader();
             fx.setLocation(getClass().getResource("/fxml_general/button.fxml"));

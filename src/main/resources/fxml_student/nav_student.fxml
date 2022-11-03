@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1307.0" style="-fx-background-color: #ffffff;" stylesheets="@nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.student_cont">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1320.0" style="-fx-background-color: #ffffff;" stylesheets="@nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.student_cont">
     <children>
-        <BorderPane fx:id="pb" layoutX="63.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1257.0" style="-fx-background-color: #ffffff;" />
+      <BorderPane fx:id="pb" layoutX="84.0" layoutY="37.0" prefHeight="897.0" prefWidth="1239.0" />
         <AnchorPane fx:id="navbar" prefHeight="752.0" prefWidth="61.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
             <children>
                 <VBox layoutX="4.0" layoutY="43.0" prefHeight="230.0" prefWidth="61.0">
@@ -129,7 +129,7 @@
                         <Image url="@../images/30.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-9.0" layoutY="2.0" maxWidth="94.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="94.0" styleClass="nav" text=" ">
+                <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-9.0" layoutY="2.0" maxWidth="102.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="98.0" styleClass="nav" text=" ">
                     <graphic>
                         <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" styleClass="nav" x="3.0">
                             <image>
@@ -140,10 +140,29 @@
                 </Button>
             </children>
         </AnchorPane>
-        <Label layoutX="7.0" layoutY="1.0" prefHeight="27.0" prefWidth="52.0" text="Home">
+        <Label layoutX="678.0" layoutY="7.0" prefHeight="27.0" prefWidth="52.0" text="Home">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
+      <Button contentDisplay="CENTER" layoutX="1262.0" layoutY="1.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
+               <image>
+                  <Image url="@../images/exit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="14.0" layoutY="7.0" prefHeight="27.0" prefWidth="124.0" text="Sohaib Arafat">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="42.0" layoutX="121.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
+         <image>
+            <Image url="@../images/30.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

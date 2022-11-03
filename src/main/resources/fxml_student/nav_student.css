@@ -24,6 +24,7 @@
 
 
 }
+.top{}
 .bar{
      -fx-background-color: linear-gradient(to right , #99ccff , #6fb1fc);
 }
