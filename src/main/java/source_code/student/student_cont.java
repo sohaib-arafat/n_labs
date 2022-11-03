@@ -11,16 +11,21 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.util.Duration;
+import source_code.general.exp_cont;
+import source_code.general.expiremnt;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class student_cont implements Initializable {
 
     @FXML
-    private AnchorPane navbar, slider,tmp,card;
+    private AnchorPane navbar, slider, tmp, card;
     @FXML
     BorderPane pb;
     @FXML
@@ -31,14 +36,21 @@ public class student_cont implements Initializable {
     @FXML
     private ImageView exit;
     boolean h = false;
+    @FXML
+    private HBox cardlay;
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        home.setStyle(  "-fx-border-color: WHITE;" + "-fx-border-width: 0px 0px 0px 6px;");
+
+
+
+        home.setStyle("-fx-border-color: WHITE;" + "-fx-border-width: 0px 0px 0px 6px;");
 
         try {
             loader("/fxml_student/home_student");
-           // home.setStyle("-fx-background-color : #4364f7 ;" + "-fx-border-color:BLACK;" + "-fx-border-width: 0px 0px 0px 6px;");
+            // home.setStyle("-fx-background-color : #4364f7 ;" + "-fx-border-color:BLACK;" + "-fx-border-width: 0px 0px 0px 6px;");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -96,6 +108,8 @@ public class student_cont implements Initializable {
         });
 
     }
+
+
     @FXML
     private void activate(ActionEvent e) throws IOException {
         if (e.getSource() == home) {

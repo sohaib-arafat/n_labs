@@ -51,6 +51,10 @@
 
 
   }
+  .scroll{
+  -fx-background: transparent; -fx-background-color: transparent;-fx-background-radius: 10px;
+
+  }
  .dash1{
 
    -fx-background-radius:10px;
@@ -63,4 +67,6 @@
      -fx-scale-x: 1.1;
      -fx-scale-y: 1.1;
      -fx-scale-z: 1.1;
+      -fx-background-radius:10px;
+        -fx-border-radius:10px;
  }
