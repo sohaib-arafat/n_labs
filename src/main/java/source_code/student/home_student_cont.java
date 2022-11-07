@@ -60,10 +60,7 @@ public class home_student_cont implements Initializable {
     }
 
     void   latest( ) {
-        exps.add(new expiremnt("4", "DCD1L"));
-        exps.add(new expiremnt("8", "mpl"));
-        exps.add(new expiremnt("22","ECL1"));
-        exps.add(new expiremnt("10","ECL1"));
+
 
 
 

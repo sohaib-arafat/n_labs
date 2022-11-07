@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1320.0" style="-fx-background-color: #ffffff;" stylesheets="@nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.student_cont">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1320.0" style="-fx-background-color: #ffffff;" styleClass="slide" stylesheets="@nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.student_cont">
     <children>
-      <BorderPane fx:id="pb" layoutX="84.0" layoutY="37.0" prefHeight="897.0" prefWidth="1239.0" />
+      <BorderPane fx:id="pb" layoutX="80.0" layoutY="37.0" prefHeight="897.0" prefWidth="1242.0" />
         <AnchorPane fx:id="navbar" prefHeight="752.0" prefWidth="61.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
             <children>
                 <VBox layoutX="4.0" layoutY="43.0" prefHeight="230.0" prefWidth="61.0">
@@ -49,9 +49,9 @@
                 </ImageView>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="slider" layoutX="85.0" layoutY="38.0" prefHeight="891.0" prefWidth="293.0" styleClass="slide" stylesheets="@nav_student.css">
+        <AnchorPane fx:id="slider" layoutX="80.0" layoutY="38.0" prefHeight="891.0" prefWidth="293.0" styleClass="slide" stylesheets="@nav_student.css">
             <children>
-                <VBox layoutX="7.0" layoutY="115.0" maxWidth="287.0" minWidth="279.0" prefHeight="230.0" prefWidth="279.0">
+                <VBox layoutX="14.0" layoutY="115.0" maxWidth="287.0" minWidth="279.0" prefHeight="230.0" prefWidth="279.0">
                     <children>
                         <Button fx:id="home" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="56.0" prefWidth="293.0" styleClass="txt" stylesheets="@nav_student.css" text="Home" textFill="WHITE">
                             <font>
@@ -78,9 +78,9 @@
                         </Button>
                     </children>
                 </VBox>
-                <VBox layoutX="7.0" layoutY="791.0" maxWidth="287.0" minWidth="279.0" prefHeight="50.0" prefWidth="279.0">
+                <VBox layoutX="12.0" layoutY="791.0" maxWidth="287.0" minWidth="279.0" prefHeight="50.0" prefWidth="279.0">
                     <children>
-                        <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="316.0" styleClass="nav1" stylesheets="@nav_student.css" text="Logout" textFill="#13a5da">
+                        <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="316.0" styleClass="nav1" stylesheets="@nav_student.css" text="Logout" textFill="#2269da">
                             <font>
                                 <Font name="Ebrima Bold" size="20.0" />
                             </font>
@@ -129,9 +129,9 @@
                         <Image url="@../images/30.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-9.0" layoutY="2.0" maxWidth="102.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="98.0" styleClass="nav" text=" ">
+                <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-7.0" layoutY="2.0" maxWidth="162.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="94.0" styleClass="nav" text=" ">
                     <graphic>
-                        <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" styleClass="nav" x="3.0">
+                        <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" styleClass="nav" x="5.0">
                             <image>
                                 <Image url="@../images/Logo_no_background_1_no_writing.png" />
                             </image>
@@ -145,7 +145,7 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-      <Button contentDisplay="CENTER" layoutX="1262.0" layoutY="1.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text=" ">
+      <Button contentDisplay="CENTER" layoutX="1262.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text=" ">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>
@@ -159,14 +159,10 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button contentDisplay="CENTER" layoutX="109.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="58.0" text=" ">
-         <graphic>
-            <ImageView fitHeight="35.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
-               <image>
-                  <Image url="@../images/30.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <ImageView fitHeight="35.0" fitWidth="42.0" layoutX="121.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
+         <image>
+            <Image url="@../images/30.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
