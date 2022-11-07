@@ -78,6 +78,11 @@
                         </Button>
                     </children>
                 </VBox>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="57.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/Logo_white.png" />
+                    </image>
+                </ImageView>
                 <VBox layoutX="12.0" layoutY="791.0" maxWidth="287.0" minWidth="279.0" prefHeight="50.0" prefWidth="279.0">
                     <children>
                         <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="316.0" styleClass="nav1" stylesheets="@nav_student.css" text="Logout" textFill="#2269da">
@@ -87,11 +92,7 @@
                         </Button>
                     </children>
                 </VBox>
-                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="57.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../images/Logo_white.png" />
-                    </image>
-                </ImageView>
+            <AnchorPane layoutX="47.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0" />
             </children>
         </AnchorPane>
         <AnchorPane layoutX="6.0" layoutY="102.0" maxHeight="907.0" maxWidth="85.0" minHeight="785.0" minWidth="69.0" prefHeight="897.0" prefWidth="85.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0">
@@ -140,12 +141,12 @@
                 </Button>
             </children>
         </AnchorPane>
-        <Label layoutX="678.0" layoutY="7.0" prefHeight="27.0" prefWidth="52.0" text="Home">
+        <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="7.0" prefHeight="27.0" prefWidth="110.0" text="Home" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-      <Button contentDisplay="CENTER" layoutX="1262.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text=" ">
+      <Button fx:id="cp1" contentDisplay="CENTER" layoutX="1262.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text=" ">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>
