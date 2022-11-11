@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1320.0" style="-fx-background-color: #ffffff;" styleClass="slide" stylesheets="@../fxml_student/nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.student_cont">
+   <children>
+      <BorderPane fx:id="pb" layoutX="80.0" layoutY="37.0" prefHeight="897.0" prefWidth="1242.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center></BorderPane>
+      <AnchorPane fx:id="navbar" prefHeight="752.0" prefWidth="61.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <VBox layoutX="4.0" layoutY="43.0" prefHeight="230.0" prefWidth="61.0">
+               <children>
+                  <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/22.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/37.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/36.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane prefHeight="23.0" prefWidth="61.0">
+                     <children>
+                        <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/38.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="4.0" layoutY="577.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/30.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="slider" layoutX="80.0" layoutY="38.0" prefHeight="891.0" prefWidth="293.0" styleClass="slide" stylesheets="@../fxml_student/nav_student.css">
+         <children>
+            <VBox layoutX="12.0" layoutY="132.0" maxWidth="287.0" minWidth="279.0" prefHeight="230.0" prefWidth="279.0">
+               <children>
+                  <AnchorPane prefHeight="29.0" prefWidth="279.0" />
+                  <AnchorPane prefHeight="39.0" prefWidth="279.0" />
+                  <Button fx:id="home" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="56.0" prefWidth="293.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Home" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane prefHeight="39.0" prefWidth="279.0" />
+                  <Button fx:id="labs" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="368.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Labs" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane prefHeight="39.0" prefWidth="279.0" />
+                  <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane prefHeight="39.0" prefWidth="279.0" />
+                  <Button fx:id="grades1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Submessions and Grading" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane prefHeight="39.0" prefWidth="279.0" />
+                  <Button fx:id="grades111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Search a student" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane prefHeight="29.0" prefWidth="279.0" />
+               </children>
+            </VBox>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/11.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="12.0" layoutY="791.0" maxWidth="287.0" minWidth="279.0" prefHeight="50.0" prefWidth="279.0">
+               <children>
+                  <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="316.0" styleClass="nav1" stylesheets="@../fxml_student/nav_student.css" text="Logout" textFill="#9ec5ff">
+                     <font>
+                        <Font name="Ebrima Bold" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="6.0" layoutY="102.0" maxHeight="907.0" maxWidth="85.0" minHeight="785.0" minWidth="69.0" prefHeight="897.0" prefWidth="85.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="12.0" layoutY="789.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/30.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-7.0" layoutY="2.0" maxWidth="162.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="94.0" styleClass="nav" text=" ">
+               <graphic>
+                  <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" styleClass="nav" x="5.0">
+                     <image>
+                        <Image url="@../images/Logo_no_background_1_no_writing.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/22.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/41.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/38.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="46.0" layoutX="17.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/submit.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="17.0" layoutY="265.0" prefHeight="16.0" prefWidth="53.0" />
+            <ImageView fitHeight="35.0" fitWidth="59.0" layoutX="14.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/search.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="7.0" prefHeight="27.0" prefWidth="110.0" text="Home" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="cp1" contentDisplay="CENTER" layoutX="1262.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
+               <image>
+                  <Image url="@../images/exit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="14.0" layoutY="7.0" prefHeight="27.0" prefWidth="124.0" text="Sohaib Arafat">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="42.0" layoutX="121.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
+         <image>
+            <Image url="@../images/30.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
