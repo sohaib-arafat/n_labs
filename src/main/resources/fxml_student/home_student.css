@@ -20,21 +20,42 @@
 -fx-tick-label-fill:#fff;
 
 }
-.default-color0.chart-pie{
--fx-pie-color:transparent;
-}
+
  .chart-series-line {
      -fx-stroke-width: 2px;
      -fx-effect: null;
  }
 .default-color0.chart-series-line { -fx-stroke: #000000; }
 
+.default-color0.chart-pie{
+-fx-pie-color:transparent;
+}
+
 .default-color1.chart-pie{
 -fx-pie-color:transparent;
 }
+
 .default-color2.chart-pie{
- -fx-pie-color:transparent;
- }
+-fx-pie-color:transparent;
+}
+
+.default-color3.chart-pie{
+-fx-pie-color:transparent;
+}
+
+.default-color4.chart-pie{
+-fx-pie-color:transparent;
+}
+.default-color5.chart-pie{
+-fx-pie-color:transparent;
+}
+.default-color6.chart-pie{
+-fx-pie-color:transparent;
+}
+.default-color6.chart-pie{
+-fx-pie-color:transparent;
+}
+
  .series-series *.chart-series-line{
      -fx-fill: #ffffff;
  }

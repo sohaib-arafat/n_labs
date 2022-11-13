@@ -83,7 +83,11 @@ public class home_student_cont implements Initializable {
                 new PieChart.Data("MP Lab",12),new PieChart.Data("DCD1 Lab",8),new PieChart.Data("EC Lab",6)
         );
         pieChart.setData(pieChartData);
-    }
+        pieChartData.add(new PieChart.Data("DCD1 Lab",9));
+        pieChart.setData(pieChartData);
+        pieChartData.add(new PieChart.Data("DCD1 Lab",202));
+        pieChart.setData(pieChartData);
+     }
     @FXML
     public void text1(ActionEvent e){
           ER.setText(" 8");
