@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="c7354225-fce9-4cbb-b0f2-2af0c84cc859" name="N_Labs" url="jdbc:oracle:thin:@//localhost/N_Labs" driverClass="oracle.jdbc.OracleDriver" />
+    </data-sources>
+  </component>
+</project>
