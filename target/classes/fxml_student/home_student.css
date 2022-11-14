@@ -1,6 +1,8 @@
 .back{
 /*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#3eadcf,#abe9cd);*/
- -fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#1c92d2,#6dd5ed);
+/* -fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#1c92d2,#6dd5ed);*/
+  -fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#20BF55,#6dd5ed);
+
 /*-fx-background-color:linear-gradient(from 50% 50% to 100% 100%,#2980B9,#6DD5FA,#FFFFFF);*/
 /*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#00B4DB,#0083B0 );*/
 /*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#2BC0E4,#EAECC6 );*/
