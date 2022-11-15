@@ -160,10 +160,14 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="35.0" fitWidth="42.0" layoutX="121.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
-         <image>
-            <Image url="@../images/30.png" />
-         </image>
-      </ImageView>
+      <Button contentDisplay="CENTER" layoutX="123.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="30.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
+               <image>
+                  <Image url="@../images/30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>
