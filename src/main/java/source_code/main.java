@@ -12,7 +12,7 @@ public class main extends Application {
       @Override
     public void start(Stage stage) throws Exception {
           stage.setTitle("N-LABS");
-          Parent  root = FXMLLoader.load(getClass().getResource("/fxml_instructor/inst_nav.fxml"));
+          Parent  root = FXMLLoader.load(getClass().getResource("/fxml_student/nav_student.fxml"));
           Scene scene= new Scene(root);
 
           Image g =new Image("/images/Logo_balck_no_writing.png");
