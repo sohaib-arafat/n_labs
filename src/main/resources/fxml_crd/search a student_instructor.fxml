@@ -23,11 +23,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="489.0" layoutY="152.0" stylesheets="@shadows.css" text="General search" textFill="#47ceff">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Label>
             <TextField layoutX="265.0" layoutY="358.0" promptText="Reg number" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField layoutX="789.0" layoutY="358.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField layoutX="443.0" layoutY="358.0" promptText="First name" styleClass="textfield-design" stylesheets="@search.css" />
@@ -47,6 +42,11 @@
             <TextField layoutX="538.0" layoutY="408.0" promptText="Mail" styleClass="textfield-design" stylesheets="@search.css" />
             <VBox layoutX="625.0" layoutY="-220.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <Label layoutX="506.0" layoutY="304.0" stylesheets="@shadows.css" text="Advanced Search" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="266.0" layoutY="185.0" stylesheets="@shadows.css" text="Search" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

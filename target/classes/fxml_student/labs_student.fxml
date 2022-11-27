@@ -52,9 +52,9 @@
             <ComboBox layoutX="751.0" layoutY="642.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@../fxml_instructor/search.css" />
             <TextField layoutX="668.0" layoutY="639.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
             <VBox layoutX="614.0" layoutY="9.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Label layoutX="462.0" layoutY="521.0" stylesheets="@../fxml_instructor/shadows.css" text="Advanced search" textFill="#47ceff">
+            <Label layoutX="495.0" layoutY="533.0" stylesheets="@../fxml_instructor/shadows.css" text="Advanced Search" textFill="#47ceff">
                <font>
-                  <Font name="System Bold" size="36.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Label>
          </children>

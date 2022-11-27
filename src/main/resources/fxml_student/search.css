@@ -1,12 +1,12 @@
 .textfield-design{
-        -fx-background-color:transparent;
-        -fx-background-radius:10px;
+         -fx-background-radius:10px;
         -fx-border-color:#93e1ff;
         -fx-border-radius:10px;
         -fx-text-inner-color:#000000;
-        -fx-prompt-text-fill: #93e1ff;
-        }
-  .button-design{
+        -fx-prompt-text-fill: #04506e;
+                  -fx-background-color:#dceef5;
+
+        }  .button-design{
           -fx-background-color:transparent;
           -fx-background-radius:10px;
           -fx-border-color:#93e1ff;
