@@ -30,12 +30,12 @@
                   <TableColumn prefWidth="75.0" text="C2" />
                </columns>
             </TableView>
-            <TextField layoutX="290.0" layoutY="162.0" prefHeight="25.0" prefWidth="673.0" promptText="Submession number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="290.0" layoutY="162.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@search.css" />
             <ComboBox layoutX="639.0" layoutY="322.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
             <TextField layoutX="830.0" layoutY="266.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" text="Lab number" />
             <TextField layoutX="662.0" layoutY="266.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" text="Student id" />
             <TextField layoutX="309.0" layoutY="266.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" text="Submession id" />
-            <Button layoutX="587.0" layoutY="396.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+            <Button layoutX="581.0" layoutY="391.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
                <font>
                   <Font size="14.0" />
                </font>
@@ -48,6 +48,11 @@
             </Label>
             <TextField layoutX="488.0" layoutY="266.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" text="Section number" />
             <TextField layoutX="557.0" layoutY="319.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" text="Grade" />
+            <Label layoutX="290.0" layoutY="121.0" stylesheets="@../fxml_crd/shadows.css" text="Search" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </content>
