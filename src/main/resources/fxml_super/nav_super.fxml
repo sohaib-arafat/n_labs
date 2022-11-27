@@ -58,19 +58,11 @@
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
-                  <AnchorPane prefHeight="27.0" prefWidth="237.0" />
-                  <Button fx:id="labs" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="368.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Equibmnmets managamnet" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Button>
-                  <AnchorPane prefHeight="27.0" prefWidth="237.0" />
                   <Button fx:id="grades" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Damage reports" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
-                  <AnchorPane prefHeight="27.0" prefWidth="237.0" />
                   <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
@@ -116,19 +108,14 @@
                </image>
             </ImageView>
             <AnchorPane layoutX="13.0" layoutY="101.0" prefHeight="23.0" prefWidth="61.0" />
-            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="13.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="18.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/38.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="61.0" layoutX="22.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="61.0" layoutX="23.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/tollb.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="22.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/toolsbb.png" />
                </image>
             </ImageView>
          </children>
