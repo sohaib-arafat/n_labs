@@ -7,6 +7,15 @@
                   -fx-background-color:#dceef5;
 
         }
+        .textarea-design{
+                 -fx-background-radius:10px;
+                -fx-border-color:#93e1ff;
+                -fx-border-radius:10px;
+ .bv{
+           -fx-background-color:white;
+
+ }
+                }
   .button-design{
           -fx-background-color:transparent;
           -fx-background-radius:10px;
