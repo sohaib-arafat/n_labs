@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane prefHeight="896.0" prefWidth="1227.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="-2.0" layoutY="-4.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="1229.0" styleClass="back" stylesheets="@../fxml_student/home_student.css">
+               <children>
+                  <Label layoutX="31.0" layoutY="23.0" styleClass="shade" stylesheets="@../fxml_student/shadows.css" text="Grades and submessions" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <TableView layoutX="117.0" layoutY="486.0" prefHeight="593.0" prefWidth="1032.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="C1" />
+                  <TableColumn prefWidth="75.0" text="C2" />
+               </columns>
+            </TableView>
+            <TextField layoutX="290.0" layoutY="162.0" prefHeight="25.0" prefWidth="673.0" promptText="Submession number" styleClass="textfield-design" stylesheets="@search.css" />
+            <ComboBox layoutX="639.0" layoutY="322.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
+            <TextField layoutX="830.0" layoutY="266.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" text="Lab number" />
+            <TextField layoutX="662.0" layoutY="266.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" text="Student id" />
+            <TextField layoutX="309.0" layoutY="266.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" text="Submession id" />
+            <Button layoutX="587.0" layoutY="396.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <VBox layoutX="598.0" layoutY="-293.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <Label layoutX="536.0" layoutY="221.0" stylesheets="@shadows.css" text="Advanced Search" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="488.0" layoutY="266.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" text="Section number" />
+            <TextField layoutX="557.0" layoutY="319.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" text="Grade" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
