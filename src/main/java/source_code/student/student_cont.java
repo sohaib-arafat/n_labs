@@ -151,7 +151,7 @@ Stage s=(Stage) cp1.getScene().getWindow();
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
-            loader("/fxml_student/test1");
+            loader("/fxml_student/grades_student");
             nav_lable.setText("Grades");
 
 

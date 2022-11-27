@@ -92,7 +92,6 @@
                         </Button>
                     </children>
                 </VBox>
-            <AnchorPane layoutX="47.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0" />
             </children>
         </AnchorPane>
         <AnchorPane layoutX="6.0" layoutY="102.0" maxHeight="907.0" maxWidth="85.0" minHeight="785.0" minWidth="69.0" prefHeight="897.0" prefWidth="85.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0">

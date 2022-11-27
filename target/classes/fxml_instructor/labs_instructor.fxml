@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <AnchorPane minHeight="-Infinity" prefHeight="1000.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ComboBox layoutX="427.0" layoutY="642.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_student.css">
+               <children>
+                  <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Regsistred Labs" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="77.0" layoutY="69.0" prefHeight="274.0" prefWidth="1075.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="478.0" layoutY="381.0" stylesheets="@shadows.css" text="Search a Lab" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <TextField layoutX="254.0" layoutY="587.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="778.0" layoutY="587.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="432.0" layoutY="587.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="255.0" layoutY="449.0" prefHeight="25.0" prefWidth="673.0" promptText="General seach" styleClass="textfield-design" stylesheets="@search.css" />
+            <Button layoutX="545.0" layoutY="680.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <TableView layoutX="146.0" layoutY="752.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@search.css">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <TextField layoutX="605.0" layoutY="587.0" promptText="Room" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="344.0" layoutY="639.0" promptText="Instructor" styleClass="textfield-design" stylesheets="@search.css" />
+            <ComboBox layoutX="751.0" layoutY="642.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
+            <TextField layoutX="668.0" layoutY="639.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
+            <VBox layoutX="614.0" layoutY="9.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <Label layoutX="462.0" layoutY="521.0" stylesheets="@shadows.css" text="Advanced search" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
