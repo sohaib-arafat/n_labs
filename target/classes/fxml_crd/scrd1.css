@@ -7,28 +7,15 @@
                   -fx-background-color:#dceef5;
 
         }
-
-        .text-area{
+        .textarea-design{
                  -fx-background-radius:10px;
                 -fx-border-color:#93e1ff;
-                -fx-border-radius:10px;}
+                -fx-border-radius:10px;
  .bv{
            -fx-background-color:white;
 
  }
-
-               .text-area .scroll-pane {
-                   -fx-background-color: transparent;
-               }
-
-               .text-area .scroll-pane .viewport{
-                   -fx-background-color: transparent;
-               }
-
-
-               .text-area .scroll-pane .content{
-                   -fx-background-color: transparent;
-               }
+                }
   .button-design{
           -fx-background-color:transparent;
           -fx-background-radius:10px;
