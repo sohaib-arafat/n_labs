@@ -16,6 +16,11 @@
            -fx-background-color:white;
 
  }
+ .table-view .column-header,
+ .table-view .column-header .filler,
+ .table-view .column-header-background .filler {
+     -fx-background-color: White;
+ }
 
                .text-area .scroll-pane {
                    -fx-background-color: transparent;

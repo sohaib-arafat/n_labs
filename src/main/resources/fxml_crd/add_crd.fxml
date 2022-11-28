@@ -12,7 +12,7 @@
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.home_student_cont">
    <content>
-      <AnchorPane prefHeight="920.0" prefWidth="1227.0" style="-fx-background-color: white;">
+      <AnchorPane prefHeight="1015.0" prefWidth="1227.0" style="-fx-background-color: white;">
          <children>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="1219.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
@@ -63,10 +63,10 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TableView layoutX="521.0" layoutY="786.0" prefHeight="200.0" prefWidth="177.0">
+            <TableView layoutX="521.0" layoutY="786.0" prefHeight="200.0" prefWidth="203.0" stylesheets="@scrd1.css">
               <columns>
-                <TableColumn prefWidth="73.0" text="C1" />
-                <TableColumn prefWidth="77.0" text="C2" />
+                <TableColumn prefWidth="73.0" text="File name" />
+                <TableColumn prefWidth="77.0" text="Discreption" />
               </columns>
             </TableView>
             <Label layoutX="553.0" layoutY="751.0" text="Resources" textFill="#47ceff">
