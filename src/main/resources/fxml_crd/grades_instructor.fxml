@@ -15,7 +15,7 @@
    <content>
       <AnchorPane prefHeight="896.0" prefWidth="1227.0" style="-fx-background-color: white;">
          <children>
-            <AnchorPane layoutX="-2.0" layoutY="-4.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="1229.0" styleClass="back" stylesheets="@../fxml_student/home_student.css">
+            <AnchorPane layoutX="-2.0" layoutY="-4.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="1229.0" styleClass="back" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
                   <Label layoutX="31.0" layoutY="23.0" styleClass="shade" stylesheets="@../fxml_student/shadows.css" text="Grades and submessions" textFill="WHITE">
                      <font>
@@ -24,17 +24,17 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView layoutX="117.0" layoutY="486.0" prefHeight="593.0" prefWidth="1032.0">
+            <TableView layoutX="117.0" layoutY="486.0" prefHeight="593.0" prefWidth="1032.0" stylesheets="@scrd1.css">
                <columns>
                   <TableColumn prefWidth="75.0" text="C1" />
                   <TableColumn prefWidth="75.0" text="C2" />
                </columns>
             </TableView>
-            <TextField layoutX="290.0" layoutY="162.0" prefHeight="25.0" prefWidth="673.0" promptText="Submession number" styleClass="textfield-design" stylesheets="@scrd1.css" text="General search" />
+            <TextField layoutX="290.0" layoutY="162.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@scrd1.css" />
             <ComboBox layoutX="639.0" layoutY="322.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@../fxml_student/search.css" />
-            <TextField layoutX="830.0" layoutY="266.0" promptText="Number" styleClass="textfield-design" stylesheets="@scrd1.css" text="Lab number" />
-            <TextField layoutX="662.0" layoutY="266.0" promptText="Level" styleClass="textfield-design" stylesheets="@scrd1.css" text="Student id" />
-            <TextField layoutX="309.0" layoutY="266.0" promptText="Name" styleClass="textfield-design" stylesheets="@scrd1.css" text="Submession id" />
+            <TextField layoutX="830.0" layoutY="266.0" promptText="Lab number" styleClass="textfield-design" stylesheets="@scrd1.css" />
+            <TextField layoutX="662.0" layoutY="266.0" promptText="Student id" styleClass="textfield-design" stylesheets="@scrd1.css" />
+            <TextField layoutX="309.0" layoutY="266.0" promptText="Submession id" styleClass="textfield-design" stylesheets="@scrd1.css" />
             <Button layoutX="587.0" layoutY="396.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@../fxml_student/search.css" text="Search">
                <font>
                   <Font size="14.0" />
@@ -46,8 +46,8 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="488.0" layoutY="266.0" promptText="Name" styleClass="textfield-design" stylesheets="@scrd1.css" text="Section number" />
-            <TextField layoutX="557.0" layoutY="319.0" promptText="Name" styleClass="textfield-design" stylesheets="@scrd1.css" text="Grade" />
+            <TextField layoutX="488.0" layoutY="266.0" promptText="Section number" styleClass="textfield-design" stylesheets="@scrd1.css" />
+            <TextField layoutX="557.0" layoutY="319.0" promptText="Grade" styleClass="textfield-design" stylesheets="@scrd1.css" />
             <Label layoutX="294.0" layoutY="127.0" text="Search" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
