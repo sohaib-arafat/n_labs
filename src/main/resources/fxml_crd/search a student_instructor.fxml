@@ -14,7 +14,7 @@
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1100.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_student.css">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="1229.0" styleClass="back" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
                   <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Search a student" textFill="WHITE">
                      <font>
