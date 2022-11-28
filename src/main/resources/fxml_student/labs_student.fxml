@@ -36,7 +36,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <TableView layoutX="146.0" layoutY="752.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_instructor/search.css">
+            <TableView layoutX="146.0" layoutY="752.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
                   <TableColumn prefWidth="75.0" text="C1" />
                   <TableColumn prefWidth="75.0" text="C2" />

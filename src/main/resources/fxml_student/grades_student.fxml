@@ -21,7 +21,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView layoutX="110.0" layoutY="218.0" prefHeight="593.0" prefWidth="1032.0">
+            <TableView layoutX="110.0" layoutY="218.0" prefHeight="593.0" prefWidth="1032.0" stylesheets="@../fxml_crd/scrd1.css">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />

@@ -14,7 +14,7 @@
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1100.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_student.css">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
                   <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Search a student" textFill="WHITE">
                      <font>
@@ -37,7 +37,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <TableView layoutX="156.0" layoutY="519.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@search.css">
+            <TableView layoutX="156.0" layoutY="519.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
                   <TableColumn prefWidth="75.0" text="C1" />
                   <TableColumn prefWidth="75.0" text="C2" />

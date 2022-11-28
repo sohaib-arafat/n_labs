@@ -7,15 +7,33 @@
                   -fx-background-color:#dceef5;
 
         }
-        .textarea-design{
+
+        .text-area{
                  -fx-background-radius:10px;
                 -fx-border-color:#93e1ff;
-                -fx-border-radius:10px;
+                -fx-border-radius:10px;}
  .bv{
            -fx-background-color:white;
 
  }
-                }
+ .table-view .column-header,
+ .table-view .column-header .filler,
+ .table-view .column-header-background .filler {
+     -fx-background-color: White;
+ }
+
+               .text-area .scroll-pane {
+                   -fx-background-color: transparent;
+               }
+
+               .text-area .scroll-pane .viewport{
+                   -fx-background-color: transparent;
+               }
+
+
+               .text-area .scroll-pane .content{
+                   -fx-background-color: transparent;
+               }
   .button-design{
           -fx-background-color:transparent;
           -fx-background-radius:10px;

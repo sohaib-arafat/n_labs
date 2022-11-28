@@ -17,14 +17,14 @@
       <AnchorPane minHeight="-Infinity" prefHeight="1000.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
             <ComboBox layoutX="427.0" layoutY="642.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@scrd1.css" />
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_student.css">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="1229.0" styleClass="back" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
-                  <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Regsistred Labs" textFill="WHITE">
+                  <Label layoutX="32.0" layoutY="16.0" text="Your Labs" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
-                  <HBox layoutX="77.0" layoutY="69.0" prefHeight="274.0" prefWidth="1075.0" />
+                  <HBox layoutX="77.0" layoutY="69.0" prefHeight="274.0" prefWidth="1075.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
             <TextField layoutX="254.0" layoutY="587.0" promptText="Number" styleClass="textfield-design" stylesheets="@scrd1.css" />
@@ -46,7 +46,7 @@
             <ComboBox layoutX="751.0" layoutY="642.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@scrd1.css" />
             <TextField layoutX="668.0" layoutY="639.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@scrd1.css" />
             <VBox layoutX="614.0" layoutY="9.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Label layoutX="496.0" layoutY="524.0" stylesheets="@shadows.css" text="Advanced Search" textFill="#47ceff">
+            <Label layoutX="496.0" layoutY="524.0" text="Advanced Search" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
