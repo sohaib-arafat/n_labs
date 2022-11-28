@@ -17,9 +17,9 @@
       <AnchorPane minHeight="-Infinity" prefHeight="1000.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
             <ComboBox layoutX="427.0" layoutY="642.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_student.css">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
-                  <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Regsistred Labs" textFill="WHITE">
+                  <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Your Labs" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -35,7 +35,7 @@
                <font>
                   <Font size="14.0" />
                </font></Button>
-            <TableView layoutX="146.0" layoutY="752.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@search.css">
+            <TableView layoutX="146.0" layoutY="752.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
                 <TableColumn prefWidth="75.0" text="C2" />
