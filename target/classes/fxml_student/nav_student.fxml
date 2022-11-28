@@ -80,7 +80,7 @@
                 </VBox>
                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="57.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../images/11.png" />
+                        <Image url="@../images/Logo_white.png" />
                     </image>
                 </ImageView>
                 <VBox layoutX="12.0" layoutY="791.0" maxWidth="287.0" minWidth="279.0" prefHeight="50.0" prefWidth="279.0">
