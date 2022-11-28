@@ -14,9 +14,9 @@
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1050.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1229.0" styleClass="back" stylesheets="@../fxml_instructor/home_student.css">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="1229.0" styleClass="back" stylesheets="@../fxml_crd/home_instructor.css">
                <children>
-                  <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Home" textFill="WHITE">
+                  <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Inventory managmnet" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -32,7 +32,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <TableView layoutX="146.0" layoutY="418.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_instructor/search.css">
+            <TableView layoutX="146.0" layoutY="418.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
                   <TableColumn prefWidth="75.0" text="C1" />
                   <TableColumn prefWidth="75.0" text="C2" />

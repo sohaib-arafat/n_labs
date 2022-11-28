@@ -53,7 +53,7 @@
          <children>
             <VBox layoutX="14.0" layoutY="115.0" maxWidth="287.0" minWidth="279.0" prefHeight="230.0" prefWidth="279.0">
                <children>
-                  <Button fx:id="home" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="56.0" prefWidth="293.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Home" textFill="WHITE">
+                  <Button fx:id="home" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="56.0" prefWidth="293.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Inventory managmnet" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
@@ -63,7 +63,12 @@
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
+                  <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Expiremnts" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="grades1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
@@ -102,25 +107,30 @@
                   </ImageView>
                </graphic>
             </Button>
-            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="17.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="58.0" fitWidth="50.0" layoutX="24.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/22.png" />
+                  <Image url="@../images/toolsbb.png" />
                </image>
             </ImageView>
             <AnchorPane layoutX="13.0" layoutY="101.0" prefHeight="23.0" prefWidth="61.0" />
-            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="18.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="19.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/38.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="61.0" layoutX="23.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="50.0" fitWidth="61.0" layoutX="24.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/tollb.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="17.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/41.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="7.0" prefHeight="27.0" prefWidth="110.0" text="Home" textAlignment="CENTER">
+      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="7.0" prefHeight="27.0" prefWidth="110.0" text="Inventory" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
