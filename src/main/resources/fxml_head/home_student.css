@@ -1,0 +1,95 @@
+.back{
+/*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#3eadcf,#abe9cd);*/
+/* -fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#1c92d2,#6dd5ed);*/
+  -fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#3BB78F,#1c92d2);
+
+/*-fx-background-color:linear-gradient(from 50% 50% to 100% 100%,#2980B9,#6DD5FA,#FFFFFF);*/
+/*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#00B4DB,#0083B0 );*/
+/*-fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#2BC0E4,#EAECC6 );*/
+
+}
+
+.cont{
+-fx-background-color :rgba(255,255,255,0.2);
+-fx-background-radius: 10px;
+}
+
+
+.axis{
+-fx-stroke:#fff;
+-fx-fill:#fff;
+-fx-font-size:24;
+-fx-tick-label-fill:#fff;
+
+}
+
+ .chart-series-line {
+     -fx-stroke-width: 2px;
+     -fx-effect: null;
+ }
+.default-color0.chart-series-line { -fx-stroke: #000000; }
+
+.default-color0.chart-pie{
+-fx-pie-color:transparent;
+}
+
+.default-color1.chart-pie{
+-fx-pie-color:transparent;
+}
+
+.default-color2.chart-pie{
+-fx-pie-color:transparent;
+}
+
+.default-color3.chart-pie{
+-fx-pie-color:transparent;
+}
+
+.default-color4.chart-pie{
+-fx-pie-color:transparent;
+}
+.default-color5.chart-pie{
+-fx-pie-color:transparent;
+}
+.default-color6.chart-pie{
+-fx-pie-color:transparent;
+}
+.default-color7.chart-pie{
+-fx-pie-color:transparent;
+}
+
+ .series-series *.chart-series-line{
+     -fx-fill: #ffffff;
+ }
+ .chart-pie-label{
+ -fx-fill:#fff;
+ -fx-stroke:#fff;
+ -fx-font-size:15;
+
+
+ }
+ .chart-pie-line{
+  -fx-fill:#3eadcf;
+  -fx-stroke:#3eadcf;
+
+
+  }
+  .scroll{
+  -fx-background: transparent; -fx-background-color: transparent;-fx-background-radius: 10px;
+
+  }
+ .dash1{
+
+   -fx-background-radius:10px;
+   -fx-border-radius:10px;
+   -fx-background-color: linear-gradient(to bottom , #20bf55, #01baef);
+   -fx-transition: transform 20s; /* Animation */
+
+  }
+ .dash1:hover {
+     -fx-scale-x: 1.1;
+     -fx-scale-y: 1.1;
+     -fx-scale-z: 1.1;
+      -fx-background-radius:10px;
+        -fx-border-radius:10px;
+ }
