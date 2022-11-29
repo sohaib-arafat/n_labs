@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.test">
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1100.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -27,16 +27,16 @@
                   <HBox layoutX="77.0" layoutY="69.0" prefHeight="274.0" prefWidth="1075.0" />
                </children>
             </AnchorPane>
-            <TextField layoutX="254.0" layoutY="587.0" promptText="Number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField fx:id="testo" layoutX="254.0" layoutY="587.0" promptText="Number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
             <TextField layoutX="778.0" layoutY="587.0" promptText="Level" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
             <TextField layoutX="432.0" layoutY="587.0" promptText="Name" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
             <TextField layoutX="255.0" layoutY="449.0" prefHeight="25.0" prefWidth="673.0" promptText="General seach" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <Button layoutX="545.0" layoutY="680.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Search">
+            <Button fx:id="pop" layoutX="545.0" layoutY="680.0" mnemonicParsing="false" onAction="#handle" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Search">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TableView layoutX="146.0" layoutY="752.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="tableView" layoutX="146.0" layoutY="752.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
                   <TableColumn prefWidth="75.0" text="C1" />
                   <TableColumn prefWidth="75.0" text="C2" />

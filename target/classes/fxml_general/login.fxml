@@ -22,7 +22,7 @@
          </image>
       </ImageView>
       <PasswordField fx:id="p1" alignment="BOTTOM_LEFT" layoutX="265.0" layoutY="257.0" promptText="Password" styleClass="textfield-design" stylesheets="@login.css" />
-      <Button fx:id="b1" contentDisplay="RIGHT" layoutX="285.0" layoutY="304.0" mnemonicParsing="false" onAction="#login" stylesheets="@login.css" text="Login" textFill="#93e1ff">
+      <Button fx:id="b1" contentDisplay="RIGHT" layoutX="285.0" layoutY="304.0" mnemonicParsing="false" onAction="#get" stylesheets="@login.css" text="Login" textFill="#93e1ff">
          <font>
             <Font size="15.0" />
          </font>
