@@ -1,0 +1,8 @@
+.color{
+
+  -fx-background-color:linear-gradient(from 25% 25% to 100% 100%,#67B26F,#4ca2cd);
+   
+ -fx-background-radius:10px;
+   -fx-border-radius:10px;
+
+}
