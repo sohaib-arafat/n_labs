@@ -99,7 +99,7 @@
             </VBox>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/11.png" />
+                  <Image url="@../images/Logo_white.png" />
                </image>
             </ImageView>
             <VBox layoutX="12.0" layoutY="791.0" maxWidth="287.0" minWidth="279.0" prefHeight="50.0" prefWidth="279.0">
@@ -146,19 +146,19 @@
                   <Image url="@../images/38.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="15.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="10.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/add1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="11.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/add2.png" />
+                  <Image url="@../images/%5Bremoval.ai%5D_272f7728-d50e-464a-b304-7a8a487b9aef.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="35.0" fitWidth="59.0" layoutX="17.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/search.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="10.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/%5Bremoval.ai%5D_19542f08-3eca-4bf0-a4fe-c0bf9fd9d03c.png" />
                </image>
             </ImageView>
          </children>
