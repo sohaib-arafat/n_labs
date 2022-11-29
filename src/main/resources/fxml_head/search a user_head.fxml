@@ -25,7 +25,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="489.0" layoutY="152.0" stylesheets="@shadows.css" text="General search" textFill="#47ceff">
+            <Label layoutX="266.0" layoutY="167.0" stylesheets="@shadows.css" text="Search" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
