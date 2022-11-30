@@ -56,6 +56,11 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
+            <Button layoutX="956.0" layoutY="447.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="86.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </content>
