@@ -15,6 +15,7 @@
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1100.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
+            <ComboBox layoutX="815.0" layoutY="223.0" prefWidth="150.0" stylesheets="@search.css" />
             <ComboBox layoutX="528.0" layoutY="467.0" prefWidth="150.0" stylesheets="@search.css" />
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
