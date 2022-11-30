@@ -13,7 +13,7 @@
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1000.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
-            <ComboBox layoutX="554.0" layoutY="496.0" prefWidth="150.0" stylesheets="@search.css" />
+            <ComboBox layoutX="564.0" layoutY="496.0" prefWidth="150.0" stylesheets="@search.css" />
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
                   <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Regestration-Users" textFill="WHITE">
@@ -34,39 +34,39 @@
             <TextField layoutX="737.0" layoutY="212.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField layoutX="923.0" layoutY="212.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
             <VBox layoutX="614.0" layoutY="-176.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Label layoutX="118.0" layoutY="346.0" styleClass="shade" text="Add a faculty member" textFill="#47ceff">
+            <Label layoutX="126.0" layoutY="376.0" styleClass="shade" text="Add a faculty member" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Button layoutX="569.0" layoutY="556.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <Button layoutX="579.0" layoutY="556.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
             <VBox layoutX="612.0" layoutY="103.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Label layoutX="113.0" layoutY="119.0" styleClass="shade" text="Add a student" textFill="#47ceff">
+            <Label layoutX="126.0" layoutY="148.0" styleClass="shade" text="Add a student" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="243.0" layoutY="439.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="424.0" layoutY="439.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="618.0" layoutY="439.0" promptText="Email" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="823.0" layoutY="439.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="532.0" layoutY="493.0" promptText="Office number" styleClass="textfield-design" stylesheets="@search.css" />
-            <Label layoutX="118.0" layoutY="612.0" styleClass="shade" text="Add multiple students" textFill="#47ceff">
+            <TextField layoutX="253.0" layoutY="439.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="434.0" layoutY="439.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="628.0" layoutY="439.0" promptText="Email" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="833.0" layoutY="439.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField layoutX="542.0" layoutY="493.0" promptText="Office number" styleClass="textfield-design" stylesheets="@search.css" />
+            <Label layoutX="126.0" layoutY="649.0" styleClass="shade" text="Add multiple students" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField editable="false" layoutX="317.0" layoutY="688.0" prefHeight="27.0" prefWidth="474.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <Button layoutX="813.0" layoutY="682.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add file">
+            <TextField editable="false" layoutX="334.0" layoutY="713.0" prefHeight="27.0" prefWidth="474.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <Button layoutX="830.0" layoutY="707.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add file">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="562.0" layoutY="762.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="108.0" styleClass="button-design" stylesheets="@search.css" text="Add students">
+            <Button layoutX="564.0" layoutY="776.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="108.0" styleClass="button-design" stylesheets="@search.css" text="Add students">
                <font>
                   <Font size="14.0" />
                </font>
