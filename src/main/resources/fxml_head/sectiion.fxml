@@ -24,22 +24,22 @@
                </children>
             </AnchorPane>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css" />
-            <TextField editable="false" layoutX="469.0" layoutY="196.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField editable="false" layoutX="670.0" layoutY="196.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField editable="false" layoutX="257.0" layoutY="196.0" promptText="Cpacaity" styleClass="textfield-design" stylesheets="@search.css" />
-            <Label layoutX="455.0" layoutY="157.0" styleClass="shade" text="Section number" textFill="#47ceff">
+            <TextField editable="false" layoutX="469.0" layoutY="196.0" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField editable="false" layoutX="670.0" layoutY="196.0" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField editable="false" layoutX="257.0" layoutY="196.0" styleClass="textfield-design" stylesheets="@search.css" />
+            <Label layoutX="470.0" layoutY="161.0" styleClass="shade" text="Section number" textFill="#47ceff">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="291.0" layoutY="157.0" styleClass="shade" text="Cpacity" textFill="#47ceff">
+            <Label layoutX="270.0" layoutY="161.0" styleClass="shade" text="Cpacity" textFill="#47ceff">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="690.0" layoutY="157.0" styleClass="shade" text="Instructor" textFill="#47ceff">
+            <Label layoutX="675.0" layoutY="161.0" styleClass="shade" text="Instructor" textFill="#47ceff">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Button layoutX="872.0" layoutY="194.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="82.0" styleClass="button-design" stylesheets="@search.css" text="Update">
