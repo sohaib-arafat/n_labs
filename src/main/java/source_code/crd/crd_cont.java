@@ -177,14 +177,6 @@ public class crd_cont implements Initializable {
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
             add.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-
-
-
-
-
-
-
-
             loader("/fxml_crd/grades_crd");
             nav_lable.setText("Grading");
 
