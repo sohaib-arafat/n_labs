@@ -14,14 +14,22 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.util.Duration;
 import source_code.general.exp_cont;
 import source_code.general.expiremnt;
 
+import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -44,7 +52,8 @@ public class student_cont implements Initializable {
     boolean h = false;
     @FXML
     private HBox cardlay;
-
+    @FXML
+     public Label name;
     @FXML
     private Button cp1;
 
@@ -126,7 +135,7 @@ Stage s=(Stage) cp1.getScene().getWindow();
 
 
     @FXML
-    private void activate(ActionEvent e) throws IOException {
+    private void activate(ActionEvent e) throws IOException, SQLException {
         if (e.getSource() == home) {
             home.setStyle(  "-fx-border-color: WHITE;" + "-fx-border-width: 0px 0px 0px 6px;");
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover" + "{-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;};");
@@ -143,13 +152,43 @@ Stage s=(Stage) cp1.getScene().getWindow();
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             loader("/fxml_student/labs_student");
             nav_lable.setText("Labs");
-
+            /*FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Open Resource File");
+            File f=fileChooser.showOpenDialog((Stage)labs.getScene().getWindow());
+            System.out.println(f.getName());
+            Desktop desktop = Desktop.getDesktop();
+            desktop.mail();
+            desktop.open(f);*/
         }
         if (e.getSource() == grades) {
             grades.setStyle( "-fx-border-color: WHITE;" + "-fx-border-width: 0px 0px 0px 6px;");
             home.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
+            /*DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver ());
+            String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+            Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+             String f="C:\\Users\\sohai\\Desktop\\Screenshots\\SECD.png";
+            InputStream in = new FileInputStream(f);
+            String query = "INSERT INTO SUBMESSION(SUB_ID,FILE_NAME,FILEB) VALUES (?,?,?)";
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, "1202");
+            pstmt.setString(2, "120");
+            Blob blob;
+
+
+
+            pstmt.setBinaryStream(3, in);
+            pstmt.execute();*/
+
+
+
+
+
+
+
+
+
 
             loader("/fxml_student/grades_student");
             nav_lable.setText("Grades");

@@ -56,15 +56,14 @@
                </font>
             </Label>
             <TextField layoutX="146.0" layoutY="834.0" promptText="Serial number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <Button layoutX="1030.0" layoutY="832.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="69.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Add">
+            <Button layoutX="875.0" layoutY="833.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="69.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TextField layoutX="495.0" layoutY="834.0" promptText="Lab number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
             <TextField layoutX="323.0" layoutY="834.0" promptText="Name" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <TextField layoutX="669.0" layoutY="834.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <TextField layoutX="843.0" layoutY="834.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" text="Discreption" />
+            <TextField layoutX="508.0" layoutY="834.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField layoutX="689.0" layoutY="835.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" text="Discreption" />
          </children>
       </AnchorPane>
    </content>

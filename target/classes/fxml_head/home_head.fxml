@@ -6,12 +6,13 @@
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="961.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="959.0" prefWidth="1213.0" styleClass="back" stylesheets="@../fxml_instructor/home_instructor.css">
          <children>
@@ -31,13 +32,13 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="21.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sessions Attended" textAlignment="CENTER" textFill="#d4f8f8">
+                        <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
+                        <VBox prefHeight="200.0" prefWidth="41.0" />
+                        <Label layoutX="98.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Labs" textAlignment="CENTER" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
-                        <VBox prefHeight="200.0" prefWidth="41.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="259.0">
@@ -47,13 +48,13 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="21.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sessions Attended" textAlignment="CENTER" textFill="#d4f8f8">
+                        <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
+                        <VBox prefHeight="200.0" prefWidth="41.0" />
+                        <Label layoutX="72.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Students" textAlignment="CENTER" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
-                        <VBox prefHeight="200.0" prefWidth="41.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="259.0">
@@ -63,7 +64,7 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="24.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sessions Attended" textFill="#d4f8f8">
+                        <Label layoutX="65.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Instructors" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -79,7 +80,7 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="16.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sessions Attended" textFill="#d4f8f8">
+                        <Label layoutX="51.0" layoutY="115.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Supervisors" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -133,6 +134,7 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
+                  <TextArea layoutX="10.0" layoutY="40.0" prefHeight="223.0" prefWidth="453.0" />
                </children>
             </AnchorPane>
             <HBox layoutX="520.0" layoutY="635.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="428.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
@@ -144,6 +146,7 @@
                               <Font size="28.0" />
                            </font>
                         </Label>
+                        <TextArea layoutX="21.0" layoutY="40.0" prefHeight="226.0" prefWidth="393.0" />
                      </children>
                   </AnchorPane>
                </children>
@@ -157,6 +160,7 @@
                               <Font size="28.0" />
                            </font>
                         </Label>
+                        <TextArea layoutX="19.0" layoutY="40.0" prefHeight="226.0" prefWidth="175.0" />
                      </children>
                   </AnchorPane>
                </children>

@@ -31,7 +31,7 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="21.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Sessions Attended" textAlignment="CENTER" textFill="#d4f8f8">
+                        <Label layoutX="74.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Sections" textAlignment="CENTER" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -47,7 +47,7 @@
                                         <Font size="76.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="21.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Sessions Attended" textAlignment="CENTER" textFill="#d4f8f8">
+                                <Label layoutX="48.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Submessions" textAlignment="CENTER" textFill="#d4f8f8">
                                     <font>
                                         <Font size="25.0" />
                                     </font>
@@ -63,7 +63,7 @@
                                         <Font size="76.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="24.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Sessions Attended" textFill="#d4f8f8">
+                                <Label layoutX="98.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Labs" textFill="#d4f8f8">
                                     <font>
                                         <Font size="25.0" />
                                     </font>
@@ -79,7 +79,7 @@
                                         <Font size="76.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="16.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Sessions Attended" textFill="#d4f8f8">
+                                <Label layoutX="66.0" layoutY="115.0" styleClass="shade" stylesheets="@shadows.css" text="Students" textFill="#d4f8f8">
                                     <font>
                                         <Font size="25.0" />
                                     </font>

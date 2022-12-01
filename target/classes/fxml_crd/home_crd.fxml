@@ -31,7 +31,7 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="21.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sessions Attended" textAlignment="CENTER" textFill="#d4f8f8">
+                        <Label layoutX="72.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Students" textAlignment="CENTER" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -47,7 +47,7 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="21.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sessions Attended" textAlignment="CENTER" textFill="#d4f8f8">
+                        <Label layoutX="74.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sections" textAlignment="CENTER" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -63,7 +63,7 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="24.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sessions Attended" textFill="#d4f8f8">
+                        <Label layoutX="98.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Labs" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -79,7 +79,7 @@
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="16.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sessions Attended" textFill="#d4f8f8">
+                        <Label layoutX="33.0" layoutY="107.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Submessions" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -89,6 +89,22 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="202.0" prefWidth="253.0">
+                     <children>
+                        <Label fx:id="ER11" alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="20" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="76.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="72.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Students" textAlignment="CENTER" textFill="#d4f8f8">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="40.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
+                        <VBox prefHeight="200.0" prefWidth="41.0" />
+                     </children>
+                  </AnchorPane>
                </children>
             </HBox>
             <HBox layoutX="32.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="705.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">

@@ -15,14 +15,14 @@
             <Image url="@../images/21.png" />
          </image>
       </ImageView>
-      <TextField fx:id="u1" alignment="BOTTOM_LEFT" layoutX="265.0" layoutY="208.0" promptText="Username" styleClass="textfield-design" stylesheets="@login.css" />
+      <TextField fx:id="user" alignment="BOTTOM_LEFT" layoutX="265.0" layoutY="208.0" promptText="Username" styleClass="textfield-design" stylesheets="@login.css" />
       <ImageView fitHeight="44.0" fitWidth="59.0" layoutX="221.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/10.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="p1" alignment="BOTTOM_LEFT" layoutX="265.0" layoutY="257.0" promptText="Password" styleClass="textfield-design" stylesheets="@login.css" />
-      <Button fx:id="b1" contentDisplay="RIGHT" layoutX="285.0" layoutY="304.0" mnemonicParsing="false" onAction="#get" stylesheets="@login.css" text="Login" textFill="#93e1ff">
+      <PasswordField fx:id="pass" alignment="BOTTOM_LEFT" layoutX="265.0" layoutY="257.0" promptText="Password" styleClass="textfield-design" stylesheets="@login.css" />
+      <Button fx:id="login" contentDisplay="RIGHT" layoutX="285.0" layoutY="304.0" mnemonicParsing="false" onAction="#login" stylesheets="@login.css" text="Login" textFill="#93e1ff">
          <font>
             <Font size="15.0" />
          </font>
