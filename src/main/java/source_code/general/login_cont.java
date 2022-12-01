@@ -65,6 +65,7 @@ if (rs.next()){
         sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
         tmp.close();
         dialog.show();
+        con.close();
         return;
     }
     if (rs.getString(3).equals("inst")) {
@@ -79,6 +80,7 @@ if (rs.next()){
         ic.name.setText(rs1.getString(1) + " " + rs1.getString(2));
         tmp.close();
         dialog.show();
+        con.close();
         return;
     }
     if (rs.getString(3).equals("crd")) {
@@ -93,6 +95,7 @@ if (rs.next()){
         cc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
         tmp.close();
         dialog.show();
+        con.close();
         return;
     }
     if (rs.getString(3).equals("sup")) {
@@ -107,6 +110,7 @@ if (rs.next()){
         sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
         tmp.close();
         dialog.show();
+        con.close();
         return;
     }
     if (rs.getString(3).equals("hed")) {
@@ -121,6 +125,7 @@ if (rs.next()){
         sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
         tmp.close();
         dialog.show();
+        con.close();
         return;
     }
 }
@@ -129,6 +134,8 @@ else {
     a.setTitle("Wrong login info");
     a.setContentText("No such username or password are found");
     a.show();
+    user.clear();
+    pass.clear();
     return;
 }
 
