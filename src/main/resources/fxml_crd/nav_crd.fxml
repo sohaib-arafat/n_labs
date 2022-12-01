@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1320.0" style="-fx-background-color: white;" stylesheets="@../fxml_student/nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.crd_cont">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1320.0" style="-fx-background-color: white;" stylesheets="@../fxml_student/nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.crd.crd_cont">
    <children>
       <BorderPane fx:id="pb" layoutX="80.0" layoutY="37.0" prefHeight="897.0" prefWidth="1242.0">
          <center>
@@ -79,20 +79,20 @@
                   </Button>
                   <AnchorPane minHeight="-Infinity" prefHeight="5.0" prefWidth="279.0" />
                   <AnchorPane minHeight="-Infinity" prefHeight="2.0" prefWidth="279.0" />
-                  <Button fx:id="grades1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Submessions and Grading" textFill="WHITE">
+                  <Button fx:id="grades" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Submessions and Grading" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
                   <AnchorPane prefHeight="39.0" prefWidth="279.0" />
                   <AnchorPane minHeight="-Infinity" prefHeight="9.0" prefWidth="279.0" />
-                  <Button fx:id="grades111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Search a student" textFill="WHITE">
+                  <Button fx:id="search" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Search a student" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
                   <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="5.0" prefWidth="279.0" />
-                  <Button fx:id="grades1111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Add new expiremnts" textFill="WHITE">
+                  <Button fx:id="add" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Add new expiremnts" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
@@ -164,7 +164,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="7.0" prefHeight="27.0" prefWidth="110.0" text="Home" textAlignment="CENTER">
+      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="535.0" layoutY="7.0" prefHeight="27.0" prefWidth="333.0" text="Home" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
