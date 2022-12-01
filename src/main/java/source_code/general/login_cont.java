@@ -45,27 +45,32 @@ public class login_cont {
         ResultSet rs=selectStmt.executeQuery("Select * from LOGIN");
         while (rs.next()){
             if(rs.getString(1).equals(user.getText())&& rs.getString(2).equals(pass.getText())){
-                        final Stage dialog = new Stage();
-                        dialog.initStyle(StageStyle.TRANSPARENT);
-        dialog.initModality(Modality.APPLICATION_MODAL);
-       FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_student/nav_student.fxml"));
-        Parent root=l.load();
-         Scene dialogScene = new Scene(root);
-         dialog.setScene(dialogScene);
-         Stage tmp =(Stage) user.getScene().getWindow();
-         student_cont sc=l.getController();
-sc.name.setText(rs.getString(1));
-         tmp.close();
-          dialog.show();
+                        break;
             }
             else {
                 Alert a = new Alert(Alert.AlertType.ERROR);
                 a.setTitle("Wrong login info");
                 a.setContentText("No such username or password are found");
                 a.show();
+                return;
 
             }
         }
+        final Stage dialog = new Stage();
+        dialog.initStyle(StageStyle.TRANSPARENT);
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_student/nav_student.fxml"));
+        Parent root=l.load();
+        Scene dialogScene = new Scene(root);
+        dialog.setScene(dialogScene);
+        Stage tmp =(Stage) user.getScene().getWindow();
+        student_cont sc=l.getController();
+        ResultSet rs1=selectStmt.executeQuery("Select FIRST_NAME,LAST_NAME from STUDENT WHERE UNI_EMAIL="+"'"+rs.getString(1)+"'");
+        rs1.next();
+        sc.name.setText(rs1.getString(1)+" "+rs1.getString(2));
+
+        tmp.close();
+        dialog.show();
 
 
 
