@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import source_code.instructor.crd_cont;
+import source_code.instructor.inst_cont;
 import source_code.student.student_cont;
 
 import java.io.IOException;
@@ -41,48 +43,65 @@ public class login_cont {
             return;
 
         }
-        Statement selectStmt = con.createStatement();
-        ResultSet rs = selectStmt.executeQuery("Select * from LOGIN");
-        while (rs.next()) {
-            if (rs.getString(1).equals(user.getText()) && rs.getString(2).equals(pass.getText())) {
-                break;
-            } else {
-                Alert a = new Alert(Alert.AlertType.ERROR);
-                a.setTitle("Wrong login info");
-                a.setContentText("No such username or password are found");
-                a.show();
-                return;
+        String sql =  "Select * from LOGIN WHERE USERN='"+user.getText()+"' AND PASSWORD= '"+pass.getText()+"'";
+        Statement stnt=con.createStatement();
+        ResultSet rs=stnt.executeQuery(sql);
+if (rs.next()){
+    final Stage dialog = new Stage();
+    dialog.initStyle(StageStyle.TRANSPARENT);
+    dialog.initModality(Modality.APPLICATION_MODAL);
 
-            }
-        }
-        final Stage dialog = new Stage();
-        dialog.initStyle(StageStyle.TRANSPARENT);
-        dialog.initModality(Modality.APPLICATION_MODAL);
-        if (rs.getString(3).equals("stu")) {
-            FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_student/nav_student.fxml"));
-            Parent root = l.load();
-            Scene dialogScene = new Scene(root);
-            dialog.setScene(dialogScene);
-            Stage tmp = (Stage) user.getScene().getWindow();
-            student_cont sc = l.getController();
-            ResultSet rs1 = selectStmt.executeQuery("Select FIRST_NAME,LAST_NAME from STUDENT WHERE UNI_EMAIL=" + "'" + rs.getString(1) + "'");
-            rs1.next();
-            sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
-            tmp.close();
-            dialog.show();
-        }
-        if (rs.getString(3).equals("inst")) {
-            Parent root = l.load();
-            Scene dialogScene = new Scene(root);
-            dialog.setScene(dialogScene);
-            Stage tmp = (Stage) user.getScene().getWindow();
-            student_cont sc = l.getController();
-            ResultSet rs1 = selectStmt.executeQuery("Select FIRST_NAME,LAST_NAME from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
-            rs1.next();
-            sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
-            tmp.close();
-            dialog.show();
-        }
+    if (rs.getString(3).equals("stu")) {
+        FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_student/nav_student.fxml"));
+        Parent root = l.load();
+        Scene dialogScene = new Scene(root);
+        dialog.setScene(dialogScene);
+        Stage tmp = (Stage) user.getScene().getWindow();
+        student_cont sc = l.getController();
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from STUDENT WHERE UNI_EMAIL=" + "'" + rs.getString(1) + "'");
+        rs1.next();
+        sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+        tmp.close();
+        dialog.show();
+        return;
+    }
+    if (rs.getString(3).equals("inst")) {
+        Stage tmp = (Stage) user.getScene().getWindow();
+        FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_instructor/inst_nav.fxml"));
+        Parent root = l.load();
+        Scene dialogScene = new Scene(root);
+        dialog.setScene(dialogScene);
+        inst_cont ic = l.getController();
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+        rs1.next();
+        ic.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+        tmp.close();
+        dialog.show();
+        return;
+    }
+    if (rs.getString(3).equals("crd")) {
+        Stage tmp = (Stage) user.getScene().getWindow();
+        FXMLLoader l1 = new FXMLLoader(getClass().getResource("/fxml_crd/nav_crd.fxml"));
+        Parent root = l1.load();
+        Scene dialogScene = new Scene(root);
+        dialog.setScene(dialogScene);
+        crd_cont cc = l1.getController();
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+        rs1.next();
+        cc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+        tmp.close();
+        dialog.show();
+        return;
+    }
+}
+else {
+    Alert a = new Alert(Alert.AlertType.ERROR);
+    a.setTitle("Wrong login info");
+    a.setContentText("No such username or password are found");
+    a.show();
+    return;
+}
+
 
     }
 
@@ -91,6 +110,6 @@ public class login_cont {
 }
 
 
-    }
 
-}
+
+

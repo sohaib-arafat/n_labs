@@ -44,7 +44,8 @@ public class inst_cont implements Initializable {
     boolean h = false;
     @FXML
     private HBox cardlay;
-
+@FXML
+public Label name;
     @FXML
     private Button cp1;
 
