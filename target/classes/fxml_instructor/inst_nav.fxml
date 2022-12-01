@@ -70,19 +70,19 @@
                      </font>
                   </Button>
                   <AnchorPane prefHeight="39.0" prefWidth="279.0" />
-                  <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
+                  <Button fx:id="search" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Search a student" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
                   <AnchorPane prefHeight="39.0" prefWidth="279.0" />
-                  <Button fx:id="grades1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Submessions and Grading" textFill="WHITE">
+                  <Button fx:id="grades" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Submessions and Grading" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
                   <AnchorPane prefHeight="39.0" prefWidth="279.0" />
-                  <Button fx:id="grades111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Search a student" textFill="WHITE">
+                  <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
@@ -122,19 +122,19 @@
                   </ImageView>
                </graphic>
             </Button>
-            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="11.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/22.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="68.0" fitWidth="65.0" layoutX="10.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/41.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="39.0" fitWidth="53.0" layoutX="16.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/38.png" />
+                  <Image url="@../images/search.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="35.0" fitWidth="46.0" layoutX="17.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
@@ -143,14 +143,14 @@
                </image>
             </ImageView>
             <AnchorPane layoutX="17.0" layoutY="265.0" prefHeight="16.0" prefWidth="53.0" />
-            <ImageView fitHeight="35.0" fitWidth="59.0" layoutX="14.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/search.png" />
+                  <Image url="@../images/38.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="7.0" prefHeight="27.0" prefWidth="110.0" text="Home" textAlignment="CENTER">
+      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="494.0" layoutY="4.0" prefHeight="27.0" prefWidth="415.0" text="Home" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
