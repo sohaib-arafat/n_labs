@@ -65,32 +65,27 @@
                      </font>
                   </Button>
                   <AnchorPane prefHeight="39.0" prefWidth="279.0" />
-                  <Button fx:id="labs" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="368.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Labs" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Button>
-                  <AnchorPane prefHeight="39.0" prefWidth="279.0" />
-                  <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Regestration-Labs" textFill="WHITE">
+                  <AnchorPane prefHeight="0.0" prefWidth="279.0" />
+                  <Button fx:id="regL" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Regestration-Labs" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
                   <AnchorPane prefHeight="39.0" prefWidth="279.0" />
-                  <Button fx:id="grades1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Regestration-users" textFill="WHITE">
+                  <Button fx:id="regU" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Regestration-users" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
                   <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="7.0" prefWidth="279.0" />
-                  <Button fx:id="grades111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="57.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Search a user" textFill="WHITE">
+                  <Button fx:id="search" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="57.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Search a user" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
                   </Button>
                   <AnchorPane prefHeight="29.0" prefWidth="279.0" />
                   <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="7.0" prefWidth="279.0" />
-                  <Button fx:id="grades1111" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
+                  <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
                      <font>
                         <Font name="Ebrima Bold" size="20.0" />
                      </font>
@@ -120,7 +115,7 @@
                   <Image url="@../images/30.png" />
                </image>
             </ImageView>
-            <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-7.0" layoutY="2.0" maxWidth="162.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="94.0" styleClass="nav" text=" ">
+            <Button fx:id="slide" contentDisplay="CENTER" layoutX="-7.0" layoutY="2.0" maxWidth="162.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="94.0" styleClass="nav" text=" ">
                <graphic>
                   <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" styleClass="nav" x="5.0">
                      <image>
@@ -129,48 +124,41 @@
                   </ImageView>
                </graphic>
             </Button>
-            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="14.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/22.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/41.png" />
-               </image>
-            </ImageView>
-            <AnchorPane layoutX="17.0" layoutY="265.0" prefHeight="16.0" prefWidth="53.0" />
-            <AnchorPane layoutX="15.0" layoutY="317.0" prefHeight="16.0" prefWidth="53.0" />
-            <ImageView fitHeight="76.0" fitWidth="72.0" layoutX="7.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="76.0" fitWidth="72.0" layoutX="8.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/38.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="10.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="16.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/%5Bremoval.ai%5D_272f7728-d50e-464a-b304-7a8a487b9aef.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="59.0" layoutX="17.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/search.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="10.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="72.0" fitWidth="65.0" layoutX="14.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/%5Bremoval.ai%5D_19542f08-3eca-4bf0-a4fe-c0bf9fd9d03c.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="53.0" layoutX="20.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/search.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="7.0" prefHeight="27.0" prefWidth="110.0" text="Home" textAlignment="CENTER">
+      <Label fx:id="nav_label" alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="7.0" prefHeight="27.0" prefWidth="110.0" text="Home" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Button fx:id="cp1" contentDisplay="CENTER" layoutX="1262.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text=" ">
          <graphic>
-            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
+            <ImageView fx:id="exit" fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>
                   <Image url="@../images/exit.png" />
                </image>
@@ -184,7 +172,7 @@
       </Label>
       <Button contentDisplay="CENTER" layoutX="123.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="30.0" text=" ">
          <graphic>
-            <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
+            <ImageView fx:id="logout2" fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>
                   <Image url="@../images/30.png" />
                </image>
