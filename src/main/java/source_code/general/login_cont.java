@@ -96,12 +96,12 @@ if (rs.next()){
     }
     if (rs.getString(3).equals("sup")) {
         Stage tmp = (Stage) user.getScene().getWindow();
-        FXMLLoader l2 = new FXMLLoader(getClass().getResource("/fxml_crd/nav_crd.fxml"));
+        FXMLLoader l2 = new FXMLLoader(getClass().getResource("/fxml_super/nav_super.fxml"));
         Parent root = l2.load();
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
         super_cont sc = l2.getController();
-        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from SUPERVISOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
         rs1.next();
         sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
         tmp.close();
