@@ -30,10 +30,10 @@ public class login_cont {
 
     @FXML
     void login(ActionEvent event) throws SQLException, IOException {
-        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver ());
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
-        if(user.getText().isEmpty() || pass.getText().isEmpty()){
+        if (user.getText().isEmpty() || pass.getText().isEmpty()) {
             Alert a = new Alert(Alert.AlertType.ERROR);
             a.setTitle("No login info was entered");
             a.setContentText("No username or password were entered");
@@ -41,13 +41,12 @@ public class login_cont {
             return;
 
         }
-        Statement selectStmt=con.createStatement();
-        ResultSet rs=selectStmt.executeQuery("Select * from LOGIN");
-        while (rs.next()){
-            if(rs.getString(1).equals(user.getText())&& rs.getString(2).equals(pass.getText())){
-                        break;
-            }
-            else {
+        Statement selectStmt = con.createStatement();
+        ResultSet rs = selectStmt.executeQuery("Select * from LOGIN");
+        while (rs.next()) {
+            if (rs.getString(1).equals(user.getText()) && rs.getString(2).equals(pass.getText())) {
+                break;
+            } else {
                 Alert a = new Alert(Alert.AlertType.ERROR);
                 a.setTitle("Wrong login info");
                 a.setContentText("No such username or password are found");
@@ -59,19 +58,37 @@ public class login_cont {
         final Stage dialog = new Stage();
         dialog.initStyle(StageStyle.TRANSPARENT);
         dialog.initModality(Modality.APPLICATION_MODAL);
-        FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_student/nav_student.fxml"));
-        Parent root=l.load();
-        Scene dialogScene = new Scene(root);
-        dialog.setScene(dialogScene);
-        Stage tmp =(Stage) user.getScene().getWindow();
-        student_cont sc=l.getController();
-        ResultSet rs1=selectStmt.executeQuery("Select FIRST_NAME,LAST_NAME from STUDENT WHERE UNI_EMAIL="+"'"+rs.getString(1)+"'");
-        rs1.next();
-        sc.name.setText(rs1.getString(1)+" "+rs1.getString(2));
+        if (rs.getString(3).equals("stu")) {
+            FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_student/nav_student.fxml"));
+            Parent root = l.load();
+            Scene dialogScene = new Scene(root);
+            dialog.setScene(dialogScene);
+            Stage tmp = (Stage) user.getScene().getWindow();
+            student_cont sc = l.getController();
+            ResultSet rs1 = selectStmt.executeQuery("Select FIRST_NAME,LAST_NAME from STUDENT WHERE UNI_EMAIL=" + "'" + rs.getString(1) + "'");
+            rs1.next();
+            sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+            tmp.close();
+            dialog.show();
+        }
+        if (rs.getString(3).equals("inst")) {
+            Parent root = l.load();
+            Scene dialogScene = new Scene(root);
+            dialog.setScene(dialogScene);
+            Stage tmp = (Stage) user.getScene().getWindow();
+            student_cont sc = l.getController();
+            ResultSet rs1 = selectStmt.executeQuery("Select FIRST_NAME,LAST_NAME from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+            rs1.next();
+            sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+            tmp.close();
+            dialog.show();
+        }
 
-        tmp.close();
-        dialog.show();
+    }
 
+
+
+}
 
 
     }
