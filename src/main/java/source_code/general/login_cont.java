@@ -108,6 +108,20 @@ if (rs.next()){
         dialog.show();
         return;
     }
+    if (rs.getString(3).equals("hed")) {
+        Stage tmp = (Stage) user.getScene().getWindow();
+        FXMLLoader l2 = new FXMLLoader(getClass().getResource("/fxml_head/nav_head.fxml"));
+        Parent root = l2.load();
+        Scene dialogScene = new Scene(root);
+        dialog.setScene(dialogScene);
+        super_cont sc = l2.getController();
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from SUPERVISOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+        rs1.next();
+        sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+        tmp.close();
+        dialog.show();
+        return;
+    }
 }
 else {
     Alert a = new Alert(Alert.AlertType.ERROR);
