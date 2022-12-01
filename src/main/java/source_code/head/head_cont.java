@@ -31,7 +31,7 @@ public class head_cont {
     private Button logout;
 
     @FXML
-    private Label name;
+    public Label name;
 
     @FXML
     private Label nav_lable;

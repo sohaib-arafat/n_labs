@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import source_code.head.head_cont;
 import source_code.instructor.crd_cont;
 import source_code.instructor.inst_cont;
 import source_code.student.student_cont;
@@ -110,12 +111,12 @@ if (rs.next()){
     }
     if (rs.getString(3).equals("hed")) {
         Stage tmp = (Stage) user.getScene().getWindow();
-        FXMLLoader l2 = new FXMLLoader(getClass().getResource("/fxml_head/nav_head.fxml"));
-        Parent root = l2.load();
+        FXMLLoader l4 = new FXMLLoader(getClass().getResource("/fxml_head/nav_head.fxml"));
+        Parent root = l4.load();
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
-        super_cont sc = l2.getController();
-        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from SUPERVISOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+        head_cont sc = l4.getController();
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
         rs1.next();
         sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
         tmp.close();
