@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.head.reg_lab_cont">
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1990.0" prefWidth="1229.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -70,16 +70,16 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <TextField layoutX="181.0" layoutY="197.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="874.0" layoutY="197.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="355.0" layoutY="197.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
-            <Button layoutX="562.0" layoutY="274.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <TextField fx:id="reg_num" layoutX="181.0" layoutY="197.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="reg_level" layoutX="874.0" layoutY="197.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="reg_name" layoutX="355.0" layoutY="197.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
+            <Button fx:id="add_reg" layoutX="562.0" layoutY="274.0" mnemonicParsing="false" onAction="#reg_lab" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TextField layoutX="701.0" layoutY="197.0" promptText="Room" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="532.0" layoutY="197.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="reg_room" layoutX="701.0" layoutY="197.0" promptText="Room" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="reg_super" layoutX="532.0" layoutY="197.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
             <Label layoutX="524.0" layoutY="120.0" styleClass="shade" text="Add A New Lab" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
