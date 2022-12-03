@@ -72,13 +72,6 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
-               <children>
-                  <Button fx:id="gen_c" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Button>
-               </children>
             </GridPane>
             <TextField fx:id="reg_num" layoutX="181.0" layoutY="197.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="reg_level" layoutX="874.0" layoutY="197.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
@@ -98,6 +91,11 @@
             <VBox layoutX="614.0" layoutY="495.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" style="-fx-background-color: #93e1ff;" />
             <VBox layoutX="612.0" layoutY="707.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <Button fx:id="gen_c" layoutX="569.0" layoutY="1138.0" mnemonicParsing="false" onAction="#gen_c" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </content>

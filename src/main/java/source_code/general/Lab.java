@@ -6,10 +6,10 @@ public class Lab {
     String name;
     int number;
     String room;
-    String superv;
+    int superv;
     int lvl;
 
-    public Lab(int number,String name,int lvl, String room, String superv) {
+    public Lab(int number,String name,int lvl, String room, int superv) {
         this.name = name;
         this.number = number;
         this.room = room;
@@ -29,7 +29,7 @@ public class Lab {
         return room;
     }
 
-    public String getSuperv() {
+    public int getSuperv() {
         return superv;
     }
 
@@ -49,7 +49,7 @@ public class Lab {
         this.room = room;
     }
 
-    public void setSuperv(String superv) {
+    public void setSuperv(int superv) {
         this.superv = superv;
     }
 

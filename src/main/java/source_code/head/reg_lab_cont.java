@@ -169,22 +169,24 @@ public class reg_lab_cont implements Initializable {
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
-        String sql="SELECT LAB_NUM,NAME,AC_LEVEL,ROOM,FIRST_NAME,LAST_NAME from LAB,SUPERVISOR where SUPERVISOR.F_ID=LAB.SUPERVISOR";
+        String sql="SELECT distinct LAB_NUM, NAME, ROOM, AC_LEVEL, SUPERVISOR FROM LAB,SUPERVISOR WHERE LAB.LAB_NUM LIKE '%"+general.getText().trim()+"%' OR LAB.NAME LIKE '%"+general.getText().trim()+"%' OR LAB.ROOM LIKE '%"+general.getText().trim()+"'OR AC_LEVEL LIKE '%"+general.getText().trim()+"' OR SUPERVISOR LIKE '"+general.getText().trim()+"%' OR LAST_NAME LIKE '%"+general.getText().trim()+"%' OR FIRST_NAME LIKE '%"+general.getText().trim()+"%' ORDER BY LAB_NUM DESC";
         Statement st= con.createStatement();
         ResultSet rs=st.executeQuery(sql);
         ArrayList<Lab> res=new ArrayList<>();
         while (rs.next()){
-            res.add(new Lab(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5)+" "+rs.getString(6)));
+            res.add(new Lab(rs.getInt(1),rs.getString(2),rs.getInt(4),rs.getString(3),rs.getInt(5)));
         }
+        if(res.isEmpty())
+            return;
         ObservableList<Lab> lst=FXCollections.observableArrayList(res);
         table.setItems(lst);
      }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lab_num.setCellValueFactory(new PropertyValueFactory<Lab,Integer>("Lab_number"));
-        lab_level.setCellValueFactory(new PropertyValueFactory<Lab,Integer>("Level"));
-        lab_super.setCellValueFactory(new PropertyValueFactory<Lab,String>("Supervisor"));
-        lab_room.setCellValueFactory(new PropertyValueFactory<Lab,String>("Room"));
-        lab_name.setCellValueFactory(new PropertyValueFactory<Lab,String>("Name"));
+        lab_num.setCellValueFactory(new PropertyValueFactory<Lab,Integer>("number"));
+        lab_level.setCellValueFactory(new PropertyValueFactory<Lab,Integer>("lvl"));
+        lab_super.setCellValueFactory(new PropertyValueFactory<Lab,String>("superv"));
+        lab_room.setCellValueFactory(new PropertyValueFactory<Lab,String>("room"));
+        lab_name.setCellValueFactory(new PropertyValueFactory<Lab,String>("name"));
     }
 }
