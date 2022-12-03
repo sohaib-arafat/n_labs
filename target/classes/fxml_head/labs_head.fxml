@@ -18,7 +18,7 @@
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1990.0" prefWidth="1229.0" style="-fx-background-color: #ffffff;">
          <children>
-            <ComboBox layoutX="446.0" layoutY="1339.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
+            <ComboBox fx:id="instatr" layoutX="446.0" layoutY="1339.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
                   <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Labs" textFill="WHITE">
@@ -28,24 +28,27 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TextField layoutX="273.0" layoutY="1284.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="797.0" layoutY="1284.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="451.0" layoutY="1284.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="288.0" layoutY="1084.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="nums" layoutX="273.0" layoutY="1284.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="lvls" layoutX="797.0" layoutY="1284.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="names" layoutX="451.0" layoutY="1284.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="general" layoutX="288.0" layoutY="1084.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@search.css" />
             <Button layoutX="564.0" layoutY="1377.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
                <font>
                   <Font size="14.0" />
                </font></Button>
-            <TableView layoutX="165.0" layoutY="1449.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="table" layoutX="400.0" layoutY="1466.0" prefHeight="335.0" prefWidth="420.0" stylesheets="@../fxml_crd/scrd1.css">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="lab_num" editable="false" prefWidth="89.0" text="Lab_number" />
+                <TableColumn fx:id="lab_name" editable="false" text="Name" />
+                  <TableColumn fx:id="lab_super" editable="false" prefWidth="73.0" text="Supervisor" />
+                  <TableColumn fx:id="lab_room" editable="false" prefWidth="86.0" text="Room" />
+                  <TableColumn fx:id="lab_level" editable="false" prefWidth="47.0" text="Level" />
               </columns>
             </TableView>
-            <TextField layoutX="624.0" layoutY="1284.0" promptText="Room" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="363.0" layoutY="1336.0" promptText="Instructor" styleClass="textfield-design" stylesheets="@search.css" />
-            <ComboBox layoutX="770.0" layoutY="1339.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
-            <TextField layoutX="687.0" layoutY="1336.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="rooms" layoutX="624.0" layoutY="1284.0" promptText="Room" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="insts" layoutX="363.0" layoutY="1336.0" promptText="Instructor" styleClass="textfield-design" stylesheets="@search.css" />
+            <ComboBox fx:id="supatr" layoutX="770.0" layoutY="1339.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
+            <TextField fx:id="supes" layoutX="687.0" layoutY="1336.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
             <VBox layoutX="611.0" layoutY="-158.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <Label layoutX="266.0" layoutY="1228.0" stylesheets="@shadows.css" text="Advanced Search" textFill="#47ceff">
                <font>
@@ -57,7 +60,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <GridPane layoutX="226.0" layoutY="388.0" prefHeight="512.0" prefWidth="773.0">
+            <GridPane fx:id="grid" layoutX="226.0" layoutY="388.0" prefHeight="512.0" prefWidth="773.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -69,6 +72,13 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <children>
+                  <Button fx:id="gen_c" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
             </GridPane>
             <TextField fx:id="reg_num" layoutX="181.0" layoutY="197.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="reg_level" layoutX="874.0" layoutY="197.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
@@ -88,11 +98,6 @@
             <VBox layoutX="614.0" layoutY="495.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" style="-fx-background-color: #93e1ff;" />
             <VBox layoutX="612.0" layoutY="707.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Button layoutX="567.0" layoutY="1134.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
    </content>

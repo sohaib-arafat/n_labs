@@ -9,7 +9,7 @@ public class Lab {
     String superv;
     int lvl;
 
-    public Lab(String name, int number, String room, String superv, int lvl) {
+    public Lab(int number,String name,int lvl, String room, String superv) {
         this.name = name;
         this.number = number;
         this.room = room;

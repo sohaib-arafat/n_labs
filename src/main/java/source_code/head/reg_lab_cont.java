@@ -1,9 +1,13 @@
 package source_code.head;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
 import source_code.general.Lab;
 
 import java.net.URL;
@@ -17,6 +21,7 @@ public class reg_lab_cont implements Initializable {
 
     @FXML
     private Button gen_c;
+    ObservableList<Lab>lis;
 
     @FXML
     private TextField general;
@@ -76,7 +81,7 @@ public class reg_lab_cont implements Initializable {
     private Button spec_c;
 
     @FXML
-    private ComboBox<?> supatr;
+    private ComboBox<String> supatr;
 
     @FXML
     private TextField supes;
@@ -158,9 +163,28 @@ public class reg_lab_cont implements Initializable {
 
         con.close();
     }
-
+    @FXML
+    void gen_c(ActionEvent e) throws SQLException {
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+        String sql="SELECT LAB_NUM,NAME,AC_LEVEL,ROOM,FIRST_NAME,LAST_NAME from LAB,SUPERVISOR where SUPERVISOR.F_ID=LAB.SUPERVISOR";
+        Statement st= con.createStatement();
+        ResultSet rs=st.executeQuery(sql);
+        ArrayList<Lab> res=new ArrayList<>();
+        while (rs.next()){
+            res.add(new Lab(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getString(5)+" "+rs.getString(6)));
+        }
+        ObservableList<Lab> lst=FXCollections.observableArrayList(res);
+        table.setItems(lst);
+     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        lab_num.setCellValueFactory(new PropertyValueFactory<Lab,Integer>("Lab_number"));
+        lab_level.setCellValueFactory(new PropertyValueFactory<Lab,Integer>("Level"));
+        lab_super.setCellValueFactory(new PropertyValueFactory<Lab,String>("Supervisor"));
+        lab_room.setCellValueFactory(new PropertyValueFactory<Lab,String>("Room"));
+        lab_name.setCellValueFactory(new PropertyValueFactory<Lab,String>("Name"));
     }
 }
