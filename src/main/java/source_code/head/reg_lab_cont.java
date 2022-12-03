@@ -2,17 +2,42 @@ package source_code.head;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import source_code.general.Lab;
 
-import javax.swing.*;
+import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class reg_lab_cont {
+public class reg_lab_cont implements Initializable {
     @FXML
     private Button add_reg;
+
+    @FXML
+    private Button gen_c;
+
+    @FXML
+    private TextField general;
+
+    @FXML
+    private GridPane grid;
+
+    @FXML
+    private ComboBox<?> instatr;
+
+    @FXML
+    private TextField insts;
+
+    @FXML
+    private TextField lvls;
+
+    @FXML
+    private TextField names;
+
+    @FXML
+    private TextField nums;
 
     @FXML
     private TextField reg_level;
@@ -22,12 +47,42 @@ public class reg_lab_cont {
 
     @FXML
     private TextField reg_num;
+    @FXML
+    private TableColumn<Lab, Integer> lab_level;
+
+    @FXML
+    private TableColumn<Lab, String> lab_name;
+
+    @FXML
+    private TableColumn<Lab, Integer> lab_num;
+
+    @FXML
+    private TableColumn<Lab, String> lab_room;
+
+    @FXML
+    private TableColumn<Lab, String> lab_super;
+
 
     @FXML
     private TextField reg_room;
 
     @FXML
     private TextField reg_super;
+
+    @FXML
+    private TextField rooms;
+
+    @FXML
+    private Button spec_c;
+
+    @FXML
+    private ComboBox<?> supatr;
+
+    @FXML
+    private TextField supes;
+
+    @FXML
+    private TableView<Lab> table;
     @FXML
     void reg_lab (ActionEvent e) throws SQLException {
 
@@ -102,5 +157,10 @@ public class reg_lab_cont {
         con.commit();
 
         con.close();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }
