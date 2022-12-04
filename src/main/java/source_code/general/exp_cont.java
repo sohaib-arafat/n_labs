@@ -3,12 +3,20 @@ package source_code.general;
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class exp_cont {
 
@@ -49,8 +57,14 @@ public class exp_cont {
         st.playFromStart();
     }
  @FXML
-    public void printe(ActionEvent e){
-        System.out.println(lab_name.getText());
+    public void printe(ActionEvent e) throws IOException {
+     final Stage dialog = new Stage();
+     dialog.initModality(Modality.APPLICATION_MODAL);
+     FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_general/login.fxml"));
+     Parent root=l.load( );
+      Scene dialogScene = new Scene(root);
+     dialog.setScene(dialogScene);
+      dialog.show();
     }
 
 }

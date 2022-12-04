@@ -36,18 +36,6 @@ public class test implements Initializable {
     String s;
     @FXML
     public void handle(ActionEvent event) throws IOException {
-        /*final Stage dialog = new Stage();
-        dialog.initModality(Modality.APPLICATION_MODAL);
-         VBox dialogVbox = new VBox(20);
-        dialogVbox.getChildren().add(new Text(testo.getText()));
-      FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_general/login.fxml"));
-        Parent root=l.load( );
-        login_cont k= l.getController();
-        Scene dialogScene = new Scene(root);
-         dialog.setScene(dialogScene);
-s="hehe";
-k.u1.setText(s);
-        dialog.show();*/
 
 
 
