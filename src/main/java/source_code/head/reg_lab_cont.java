@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import source_code.general.Lab;
 
@@ -117,14 +118,14 @@ public class reg_lab_cont implements Initializable {
         ArrayList<String> atr=new ArrayList<>();
         ArrayList<String> val=new ArrayList<>();
         sql="INSERT INTO LAB (LAB_NUM,NAME,AC_LEVEL";
-        String sql2="( '"+reg_num.getText().trim()+"' , '"+reg_name.getText().trim()+"' , '"+reg_level.getText().trim()+"'";
+        String sql2="( '"+reg_num.getText().trim()+"' , '"+reg_name.getText().trim().toLowerCase()+"' , '"+reg_level.getText().trim().toLowerCase()+"'";
          if(!reg_super.getText().isEmpty()){
                 atr.add("SUPERVISOR") ;
-                val.add(reg_super.getText().trim());
+                val.add(reg_super.getText().trim().toLowerCase());
          }
         if(!reg_room.getText().isEmpty()){
             atr.add("ROOM") ;
-            val.add(reg_room.getText().trim());
+            val.add(reg_room.getText().trim().toLowerCase());
         }
         if(!atr.isEmpty()){
     for(String r:atr){
@@ -169,12 +170,12 @@ public class reg_lab_cont implements Initializable {
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
-        String sql="SELECT distinct LAB_NUM, NAME, ROOM, AC_LEVEL, SUPERVISOR FROM LAB,SUPERVISOR WHERE LAB.LAB_NUM LIKE '%"+general.getText().trim()+"%' OR LAB.NAME LIKE '%"+general.getText().trim()+"%' OR LAB.ROOM LIKE '%"+general.getText().trim()+"'OR AC_LEVEL LIKE '%"+general.getText().trim()+"' OR SUPERVISOR LIKE '"+general.getText().trim()+"%' OR LAST_NAME LIKE '%"+general.getText().trim()+"%' OR FIRST_NAME LIKE '%"+general.getText().trim()+"%' ORDER BY LAB_NUM DESC";
+        String sql="SELECT distinct LAB_NUM, NAME, ROOM, AC_LEVEL, SUPERVISOR.FIRST_NAME,SUPERVISOR.LAST_NAME FROM LAB,SUPERVISOR WHERE (LAB.LAB_NUM LIKE '%"+general.getText().trim().toLowerCase()+"%' OR LAB.NAME LIKE '%"+general.getText().trim().toLowerCase()+"%' OR LAB.ROOM LIKE '%"+general.getText().trim().toLowerCase()+"'OR AC_LEVEL LIKE '%"+general.getText().trim().toLowerCase()+"' OR LAB.SUPERVISOR LIKE '"+general.getText().toLowerCase().trim()+"%' OR SUPERVISOR.LAST_NAME LIKE '%"+general.getText().trim().toLowerCase()+"%' OR SUPERVISOR.FIRST_NAME LIKE '%"+general.getText().trim().toLowerCase()+"%') AND LAB.SUPERVISOR=SUPERVISOR.F_ID ORDER BY LAB_NUM DESC";
         Statement st= con.createStatement();
         ResultSet rs=st.executeQuery(sql);
         ArrayList<Lab> res=new ArrayList<>();
         while (rs.next()){
-            res.add(new Lab(rs.getInt(1),rs.getString(2),rs.getInt(4),rs.getString(3),rs.getInt(5)));
+            res.add(new Lab(rs.getInt(1),rs.getString(2),rs.getInt(4),rs.getString(3),rs.getString(5)+" "+rs.getString(6)));
         }
         if(res.isEmpty())
             return;
@@ -188,5 +189,7 @@ public class reg_lab_cont implements Initializable {
         lab_super.setCellValueFactory(new PropertyValueFactory<Lab,String>("superv"));
         lab_room.setCellValueFactory(new PropertyValueFactory<Lab,String>("room"));
         lab_name.setCellValueFactory(new PropertyValueFactory<Lab,String>("name"));
-    }
+
+        }
+
 }
