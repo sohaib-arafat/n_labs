@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -58,25 +59,25 @@
                 </ImageView>
                 <VBox layoutX="14.0" layoutY="115.0" maxWidth="287.0" minWidth="279.0" prefHeight="230.0" prefWidth="279.0">
                     <children>
-                        <Button fx:id="home" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="56.0" prefWidth="293.0" styleClass="txt" stylesheets="@nav_student.css" text="Home" textFill="WHITE">
+                        <Button fx:id="home" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="56.0" prefWidth="293.0" styleClass="button1" stylesheets="@nav_student.css" text="Home" textFill="WHITE">
                             <font>
                                 <Font name="Ebrima Bold" size="20.0" />
                             </font>
                         </Button>
                   <AnchorPane prefHeight="27.0" prefWidth="237.0" />
-                        <Button fx:id="labs" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="368.0" styleClass="txt" stylesheets="@nav_student.css" text="Labs" textFill="WHITE">
+                        <Button fx:id="labs" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="368.0" styleClass="button1" stylesheets="@nav_student.css" text="Labs" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
                         </Button>
                   <AnchorPane prefHeight="27.0" prefWidth="237.0" />
-                        <Button fx:id="grades" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="txt" stylesheets="@nav_student.css" text="Grades" textFill="WHITE">
+                        <Button fx:id="grades" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="389.0" styleClass="button1" stylesheets="@nav_student.css" text="Grades" textFill="WHITE">
                             <font>
                                 <Font name="Ebrima Bold" size="20.0" />
                             </font>
                         </Button>
                   <AnchorPane prefHeight="27.0" prefWidth="237.0" />
-                        <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="txt" stylesheets="@nav_student.css" text="Profile" textFill="WHITE">
+                        <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="58.0" prefWidth="314.0" styleClass="button1" stylesheets="@nav_student.css" text="Profile" textFill="WHITE">
                             <font>
                                 <Font name="Ebrima Bold" size="20.0" />
                             </font>
@@ -85,10 +86,14 @@
                 </VBox>
                 <VBox layoutX="12.0" layoutY="791.0" maxWidth="287.0" minWidth="279.0" prefHeight="50.0" prefWidth="279.0">
                     <children>
-                        <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="316.0" styleClass="nav1" stylesheets="@nav_student.css" text="Logout" textFill="#9ec5ff">
+                        <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="316.0" stylesheets="@nav_student.css" text="Logout" textFill="#9ec5ff">
                             <font>
                                 <Font name="Ebrima Bold" size="20.0" />
                             </font>
+                     <styleClass>
+                        <String fx:value="nav1" />
+                        <String fx:value="button1" />
+                     </styleClass>
                         </Button>
                     </children>
                 </VBox>
@@ -129,9 +134,9 @@
                         <Image url="@../images/30.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-7.0" layoutY="2.0" maxWidth="162.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="94.0" styleClass="nav" text=" ">
+                <Button fx:id="unfold" contentDisplay="CENTER" layoutX="-7.0" layoutY="2.0" maxWidth="162.0" minWidth="78.0" mnemonicParsing="false" prefHeight="99.0" prefWidth="94.0" styleClass="button1" text=" ">
                     <graphic>
-                        <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" styleClass="nav" x="5.0">
+                        <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true" styleClass="button1" x="5.0">
                             <image>
                                 <Image url="@../images/Logo_no_background_1_no_writing.png" />
                             </image>
@@ -145,7 +150,7 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
-      <Button fx:id="cp1" contentDisplay="CENTER" layoutX="1262.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" text=" ">
+      <Button fx:id="cp1" contentDisplay="CENTER" layoutX="1262.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" styleClass="button1" text=" ">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>
@@ -159,7 +164,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button contentDisplay="CENTER" layoutX="123.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="30.0" text=" ">
+      <Button contentDisplay="CENTER" layoutX="123.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="30.0" styleClass="button1" text=" ">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>

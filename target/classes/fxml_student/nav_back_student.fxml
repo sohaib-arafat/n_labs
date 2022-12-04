@@ -11,22 +11,22 @@
    <children>
       <VBox layoutX="3.0" layoutY="126.0" prefHeight="230.0" prefWidth="268.0">
          <children>
-            <Button fx:id="home" alignment="BASELINE_LEFT" mnemonicParsing="false"   prefHeight="56.0" prefWidth="273.0" styleClass="txt" stylesheets="@nav_student.css" text="Home" textFill="WHITE">
+            <Button fx:id="home" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="56.0" prefWidth="273.0" styleClass="button1" stylesheets="@nav_student.css" text="Home" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="labs" alignment="BASELINE_LEFT" mnemonicParsing="false"   prefHeight="58.0" prefWidth="270.0" styleClass="txt" stylesheets="@nav_student.css" text="Labs" textFill="WHITE">
+            <Button fx:id="labs" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="58.0" prefWidth="270.0" styleClass="button1" stylesheets="@nav_student.css" text="Labs" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="grades" alignment="BASELINE_LEFT" mnemonicParsing="false"   prefHeight="59.0" prefWidth="269.0" styleClass="txt" stylesheets="@nav_student.css" text="Grades" textFill="WHITE">
+            <Button fx:id="grades" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="269.0" styleClass="button1" stylesheets="@nav_student.css" text="Grades" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="20.0" />
                </font>
             </Button>
-            <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false"   prefHeight="58.0" prefWidth="268.0" styleClass="txt" stylesheets="@nav_student.css" text="Profile" textFill="WHITE">
+            <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="58.0" prefWidth="268.0" styleClass="button1" stylesheets="@nav_student.css" text="Profile" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="20.0" />
                </font>
@@ -35,7 +35,7 @@
       </VBox>
       <VBox layoutX="3.0" layoutY="664.0" prefHeight="50.0" prefWidth="268.0">
          <children>
-            <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="275.0" styleClass="txt" stylesheets="@nav_student.css" text="Logout" textFill="WHITE">
+            <Button fx:id="logout" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="275.0" styleClass="button1" stylesheets="@nav_student.css" text="Logout" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="20.0" />
                </font>

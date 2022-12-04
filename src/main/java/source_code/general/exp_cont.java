@@ -1,40 +1,56 @@
 package source_code.general;
 
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import source_code.general.expiremnt;
+import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-
-public class exp_cont implements Initializable {
+public class exp_cont {
 
     @FXML
-    private HBox exp;
+    private Button test;
+    @FXML
+    public AnchorPane cardly;
+    @FXML
+    public Label lab_name;
 
     @FXML
-    private Label exp_num;
+    public Label lab_num;
 
     @FXML
-    private Label lab_name;
+    public Button main_b;
 
     @FXML
-    private Button main_b;
+    public Label super_name;
 
-    public void set_data(expiremnt ex) {
-        exp_num.setText(ex.getExp_num());
-        lab_name.setText(ex.getExp_lab());
+    public void mouseEnter(){
+        cardly.setScaleX(1);
+        cardly.setScaleY(1);
+        ScaleTransition st = new ScaleTransition(Duration.millis(50),cardly);
+        st.setByX(0.06f);
+        st.setByY(0.06f);
+         st.setCycleCount((int) 1f);
+        st.setAutoReverse(true);
+        st.playFromStart();
+    }
+    public void mouseExit(){
+        cardly.setScaleX(1.06);
+        cardly.setScaleY(1.06);
+        ScaleTransition st = new ScaleTransition(Duration.millis(50),cardly);
+        st.setByX(-0.06f);
+        st.setByY(-0.06f);
+        st.setCycleCount((int) 1f);
+        st.setAutoReverse(true);
+        st.playFromStart();
+    }
+ @FXML
+    public void printe(ActionEvent e){
+        System.out.println(lab_name.getText());
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-    }
 }

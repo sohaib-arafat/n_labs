@@ -31,16 +31,16 @@
 .bar{
      -fx-background-color: linear-gradient(to right , #99ccff , #6fb1fc);
 }
- .button {
+ .button1 {
      -fx-background-color :transparent;
 }
- .button:hover {
+ .button1:hover {
      -fx-background-color: #4592E8;
      -fx-border-color: WHITE;
      ;
      -fx-border-width: 0px 0px 0px 3px;
 }
- .button:pressed {
+ .button1:pressed {
      -fx-background-color : #4364f7 ;
      -fx-border-color: WHITE;
      ;
@@ -73,8 +73,7 @@
      -fx-border-radius:50px;
      -fx-background-color: linear-gradient(to bottom , #0052d4, #4364f7, #6fb1fc);
 }
- -fx-background-color: linear-gradient(to bottom , #0052d4, #4364f7, #6fb1fc);
- .pan{
+  .pan{
      -fx-background-radius:10px;
      -fx-border-radius:10px;
      -fx-background-color: #ffffff;

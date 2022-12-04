@@ -4,13 +4,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import source_code.general.Lab;
+import source_code.general.exp_cont;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
@@ -90,7 +96,7 @@ public class reg_lab_cont implements Initializable {
     @FXML
     private TableView<Lab> table;
     @FXML
-    void reg_lab (ActionEvent e) throws SQLException {
+    void reg_lab (ActionEvent e) throws SQLException, IOException {
 
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
@@ -118,14 +124,14 @@ public class reg_lab_cont implements Initializable {
         ArrayList<String> atr=new ArrayList<>();
         ArrayList<String> val=new ArrayList<>();
         sql="INSERT INTO LAB (LAB_NUM,NAME,AC_LEVEL";
-        String sql2="( '"+reg_num.getText().trim()+"' , '"+reg_name.getText().trim().toLowerCase()+"' , '"+reg_level.getText().trim().toLowerCase()+"'";
+        String sql2="( '"+reg_num.getText().trim()+"' , '"+reg_name.getText().trim() +"' , '"+reg_level.getText().trim() +"'";
          if(!reg_super.getText().isEmpty()){
                 atr.add("SUPERVISOR") ;
-                val.add(reg_super.getText().trim().toLowerCase());
+                val.add(reg_super.getText().trim() );
          }
         if(!reg_room.getText().isEmpty()){
             atr.add("ROOM") ;
-            val.add(reg_room.getText().trim().toLowerCase());
+            val.add(reg_room.getText().trim() );
         }
         if(!atr.isEmpty()){
     for(String r:atr){
@@ -162,7 +168,10 @@ public class reg_lab_cont implements Initializable {
         }
         con.commit();
 
+
+
         con.close();
+        cards();
     }
     @FXML
     void gen_c(ActionEvent e) throws SQLException {
@@ -170,7 +179,7 @@ public class reg_lab_cont implements Initializable {
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
-        String sql="SELECT distinct LAB_NUM, NAME, ROOM, AC_LEVEL, SUPERVISOR.FIRST_NAME,SUPERVISOR.LAST_NAME FROM LAB,SUPERVISOR WHERE (LAB.LAB_NUM LIKE '%"+general.getText().trim().toLowerCase()+"%' OR LAB.NAME LIKE '%"+general.getText().trim().toLowerCase()+"%' OR LAB.ROOM LIKE '%"+general.getText().trim().toLowerCase()+"'OR AC_LEVEL LIKE '%"+general.getText().trim().toLowerCase()+"' OR LAB.SUPERVISOR LIKE '"+general.getText().toLowerCase().trim()+"%' OR SUPERVISOR.LAST_NAME LIKE '%"+general.getText().trim().toLowerCase()+"%' OR SUPERVISOR.FIRST_NAME LIKE '%"+general.getText().trim().toLowerCase()+"%') AND LAB.SUPERVISOR=SUPERVISOR.F_ID ORDER BY LAB_NUM DESC";
+        String sql="SELECT distinct LAB_NUM, NAME, ROOM, AC_LEVEL, SUPERVISOR.FIRST_NAME,SUPERVISOR.LAST_NAME FROM LAB,SUPERVISOR WHERE (LAB.LAB_NUM LIKE '%"+general.getText().trim() +"%' OR LAB.NAME LIKE '%"+general.getText().trim() +"%' OR LAB.ROOM LIKE '%"+general.getText().trim() +"'OR AC_LEVEL LIKE '%"+general.getText().trim() +"' OR LAB.SUPERVISOR LIKE '"+general.getText() .trim()+"%' OR SUPERVISOR.LAST_NAME LIKE '%"+general.getText().trim() +"%' OR SUPERVISOR.FIRST_NAME LIKE '%"+general.getText().trim() +"%') AND LAB.SUPERVISOR=SUPERVISOR.F_ID ORDER BY LAB_NUM DESC";
         Statement st= con.createStatement();
         ResultSet rs=st.executeQuery(sql);
         ArrayList<Lab> res=new ArrayList<>();
@@ -184,6 +193,42 @@ public class reg_lab_cont implements Initializable {
         ObservableList<Lab> lst=FXCollections.observableArrayList(res);
         table.setItems(lst);
      }
+
+     @FXML
+     void cards() throws SQLException, IOException {
+         grid.getChildren().clear();
+
+         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+         con.setAutoCommit(false);
+         String sql="SELECT LAB_NUM, NAME , SUPERVISOR.FIRST_NAME,SUPERVISOR.LAST_NAME FROM LAB,SUPERVISOR WHERE  LAB.SUPERVISOR=SUPERVISOR.F_ID ORDER BY LAB_NUM DESC";
+         Statement st= con.createStatement();
+         ResultSet rs=st.executeQuery(sql);
+         int x=0;
+         int y=0;
+         while (rs.next()){
+             x++;
+              FXMLLoader fx = new FXMLLoader();
+             fx.setLocation(getClass().getResource("/fxml_general/button.fxml"));
+              AnchorPane cardBox = fx.load();
+              exp_cont ex=fx.getController();
+             ex.super_name.setText(rs.getString(3)+" "+rs.getString(4));
+             ex.lab_name.setText(rs.getString(2));
+             ex.lab_num.setText(rs.getString(1));
+             grid.add(cardBox,x,y);
+             GridPane.setMargin(cardBox, new Insets(10));
+             if(x==4){
+                 y++;
+                 x=0;
+             }
+
+         }
+         con.close();
+
+
+
+     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lab_num.setCellValueFactory(new PropertyValueFactory<Lab,Integer>("number"));
@@ -191,7 +236,13 @@ public class reg_lab_cont implements Initializable {
         lab_super.setCellValueFactory(new PropertyValueFactory<Lab,String>("superv"));
         lab_room.setCellValueFactory(new PropertyValueFactory<Lab,String>("room"));
         lab_name.setCellValueFactory(new PropertyValueFactory<Lab,String>("name"));
-
+        try {
+            cards();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+    }
 
 }

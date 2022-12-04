@@ -47,8 +47,7 @@ public class home_student_cont implements Initializable {
             try {
                 HBox cardBox = fx.load();
                 exp_cont exc = fx.getController();
-                exc.set_data(exps.get(i));
-                cardlay.getChildren().add(cardBox);
+                 cardlay.getChildren().add(cardBox);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
