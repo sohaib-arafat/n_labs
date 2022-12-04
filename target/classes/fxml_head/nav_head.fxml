@@ -78,11 +78,6 @@
                      </font>
                   </Button>
                   <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="7.0" prefWidth="279.0" />
-                  <Button fx:id="search" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="57.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Search a user" textFill="WHITE">
-                     <font>
-                        <Font name="Ebrima Bold" size="20.0" />
-                     </font>
-                  </Button>
                   <AnchorPane prefHeight="29.0" prefWidth="279.0" />
                   <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="7.0" prefWidth="279.0" />
                   <Button fx:id="profile" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#activate" prefHeight="59.0" prefWidth="279.0" styleClass="txt" stylesheets="@../fxml_student/nav_student.css" text="Profile" textFill="WHITE">
@@ -124,7 +119,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="14.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="14.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/22.png" />
                </image>
@@ -134,19 +129,14 @@
                   <Image url="@../images/38.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="16.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="14.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/%5Bremoval.ai%5D_272f7728-d50e-464a-b304-7a8a487b9aef.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="72.0" fitWidth="65.0" layoutX="14.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="72.0" fitWidth="65.0" layoutX="12.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/%5Bremoval.ai%5D_19542f08-3eca-4bf0-a4fe-c0bf9fd9d03c.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="53.0" layoutX="20.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/search.png" />
                </image>
             </ImageView>
          </children>

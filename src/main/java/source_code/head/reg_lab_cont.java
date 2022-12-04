@@ -177,8 +177,10 @@ public class reg_lab_cont implements Initializable {
         while (rs.next()){
             res.add(new Lab(rs.getInt(1),rs.getString(2),rs.getInt(4),rs.getString(3),rs.getString(5)+" "+rs.getString(6)));
         }
-        if(res.isEmpty())
+        if(res.isEmpty()){
+            table.setItems(null);
             return;
+        }
         ObservableList<Lab> lst=FXCollections.observableArrayList(res);
         table.setItems(lst);
      }

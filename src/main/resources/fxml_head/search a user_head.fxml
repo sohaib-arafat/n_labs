@@ -54,6 +54,11 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
+            <Button layoutX="1059.0" layoutY="104.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="133.0" styleClass="button-design" stylesheets="@search.css" text="Add a new user">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </content>

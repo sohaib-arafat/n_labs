@@ -5,13 +5,12 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1097.0" prefWidth="1138.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1097.0" prefWidth="1138.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <AnchorPane prefHeight="741.0" prefWidth="1064.0">
          <children>
@@ -74,8 +73,7 @@
             <TextField layoutX="306.0" layoutY="791.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField layoutX="702.0" layoutY="791.0" promptText="Capacity" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField layoutX="513.0" layoutY="791.0" promptText="Instructor" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextArea layoutX="405.0" layoutY="850.0" prefHeight="145.0" prefWidth="349.0" promptText="Add times here ,each line is a time with attributes eoerated by ," style="-fx-background-color: transparent;" styleClass="textfield-design" stylesheets="@../fxml_crd/scrd1.css" />
-            <Button layoutX="524.0" layoutY="1010.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <Button layoutX="523.0" layoutY="1041.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>
@@ -97,6 +95,12 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <TableView layoutX="397.0" layoutY="850.0" prefHeight="166.0" prefWidth="376.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="C1" />
+                  <TableColumn prefWidth="75.0" text="C2" />
+               </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </content>
