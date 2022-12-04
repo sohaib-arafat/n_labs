@@ -1,4 +1,4 @@
-package source_code.general;
+package source_code.head;
 
 import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
@@ -9,16 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class exp_cont {
+public class lab_button_cont {
 
     @FXML
     private Button test;
@@ -32,6 +29,9 @@ public class exp_cont {
 
     @FXML
     public Button main_b;
+    int lvl;
+    String room;
+    int super_num;
 
     @FXML
     public Label super_name;
@@ -60,9 +60,16 @@ public class exp_cont {
     public void printe(ActionEvent e) throws IOException {
      final Stage dialog = new Stage();
      dialog.initModality(Modality.APPLICATION_MODAL);
-     FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_general/login.fxml"));
-     Parent root=l.load( );
-      Scene dialogScene = new Scene(root);
+     FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_head/lab_click.fxml"));
+     Parent root=l.load();
+     sections_cont sc=l.getController();
+     sc.header.setText(lab_name.getText());
+     sc.name.setText(lab_name.getText());
+     sc.lvl.setText(String.valueOf(lvl));
+     sc.lab_num.setText(lab_num.getText());
+     sc.room.setText(room);
+     sc.superv.setText(String.valueOf(super_num));
+     Scene dialogScene = new Scene(root);
      dialog.setScene(dialogScene);
       dialog.show();
     }

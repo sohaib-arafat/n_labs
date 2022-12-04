@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1097.0" prefWidth="1138.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1138.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.head.sections_cont">
    <content>
       <AnchorPane prefHeight="741.0" prefWidth="1064.0">
          <children>
@@ -25,12 +25,19 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css" />
-            <TextField editable="false" layoutX="195.0" layoutY="155.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField editable="false" layoutX="406.0" layoutY="155.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField editable="false" layoutX="195.0" layoutY="238.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField editable="false" layoutX="406.0" layoutY="238.0" promptText="Room" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField editable="false" layoutX="616.0" layoutY="190.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
+               <children>
+                  <Label fx:id="header" layoutX="26.0" layoutY="18.0" prefHeight="53.0" prefWidth="836.0" styleClass="shade" text="Lab number" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <TextField fx:id="lab_num" editable="false" layoutX="195.0" layoutY="155.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="lvl" editable="false" layoutX="406.0" layoutY="155.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="name" editable="false" layoutX="195.0" layoutY="238.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="room" editable="false" layoutX="406.0" layoutY="238.0" promptText="Room" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="superv" editable="false" layoutX="616.0" layoutY="190.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
             <Label layoutX="195.0" layoutY="120.0" styleClass="shade" text="Lab number" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
@@ -56,12 +63,12 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Button layoutX="825.0" layoutY="184.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Update">
+            <Button fx:id="upd" layoutX="825.0" layoutY="184.0" mnemonicParsing="false" onAction="#update" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Update">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="539.0" layoutY="302.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Save">
+            <Button fx:id="save" layoutX="539.0" layoutY="302.0" mnemonicParsing="false" onAction="#save" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Save">
                <font>
                   <Font size="14.0" />
                </font>
@@ -72,10 +79,10 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="306.0" layoutY="791.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="702.0" layoutY="791.0" promptText="Capacity" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="513.0" layoutY="791.0" promptText="Instructor" styleClass="textfield-design" stylesheets="@search.css" />
-            <Button layoutX="523.0" layoutY="1041.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <TextField fx:id="new_num" layoutX="306.0" layoutY="791.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="new_cap" layoutX="702.0" layoutY="791.0" promptText="Capacity" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="new_inst" layoutX="513.0" layoutY="791.0" promptText="Instructor" styleClass="textfield-design" stylesheets="@search.css" />
+            <Button fx:id="add_sec" layoutX="523.0" layoutY="1041.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>
@@ -86,12 +93,12 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Button layoutX="1018.0" layoutY="101.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Delete">
+            <Button fx:id="del" layoutX="1018.0" layoutY="101.0" mnemonicParsing="false" onAction="#delete" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Delete">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TableView layoutX="397.0" layoutY="850.0" prefHeight="166.0" prefWidth="376.0">
+            <TableView fx:id="times" layoutX="397.0" layoutY="850.0" prefHeight="166.0" prefWidth="376.0" stylesheets="@search.css">
                <columns>
                   <TableColumn prefWidth="75.0" text="C1" />
                   <TableColumn prefWidth="75.0" text="C2" />

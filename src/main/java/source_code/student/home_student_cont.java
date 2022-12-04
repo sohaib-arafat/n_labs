@@ -12,7 +12,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import source_code.general.exp_cont;
+import source_code.head.lab_button_cont;
 import source_code.general.expiremnt;
 
 import java.io.IOException;
@@ -43,10 +43,10 @@ public class home_student_cont implements Initializable {
 
         for (int i = 0; i < exps.size(); i++) {
             FXMLLoader fx = new FXMLLoader();
-            fx.setLocation(getClass().getResource("/fxml_general/button.fxml"));
+            fx.setLocation(getClass().getResource("/fxml_head/button_labs_head.fxml"));
             try {
                 HBox cardBox = fx.load();
-                exp_cont exc = fx.getController();
+                lab_button_cont exc = fx.getController();
                  cardlay.getChildren().add(cardBox);
             } catch (IOException e) {
                 throw new RuntimeException(e);

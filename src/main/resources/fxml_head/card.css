@@ -1,7 +1,7 @@
 .color{
 
-    -fx-background-radius:10px;
-    -fx-border-radius:10px;
+    -fx-background-radius:30px;
+    -fx-border-radius:30px;
     -fx-background-color: linear-gradient(to bottom , #20bf55, #01baef);
 
 }

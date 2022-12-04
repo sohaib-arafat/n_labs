@@ -7,6 +7,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -73,7 +75,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <VBox layoutX="614.0" layoutY="495.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <VBox layoutX="614.0" layoutY="420.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" style="-fx-background-color: #93e1ff;" />
             <VBox layoutX="612.0" layoutY="707.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <Button layoutX="569.0" layoutY="1138.0" mnemonicParsing="false" onAction="#gen_c" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
@@ -81,22 +83,31 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <ScrollPane layoutX="102.0" layoutY="370.0" prefHeight="586.0" prefWidth="1025.0" style="-fx-background-color: transparent;" stylesheets="@search.css">
+            <ScrollPane layoutX="37.0" layoutY="367.0" prefHeight="586.0" prefWidth="1101.0" style="-fx-background-color: transparent;" stylesheets="@search.css">
                <content>
                   <AnchorPane prefHeight="584.0" prefWidth="1023.0" style="-fx-background-color: trasnparent;">
                      <children>
-                        <GridPane fx:id="grid" alignment="CENTER" hgap="15.0" layoutX="58.0" layoutY="47.0" prefHeight="249.0" prefWidth="180.0" vgap="45.0">
+                        <GridPane fx:id="grid" alignment="CENTER" hgap="15.0" layoutX="25.0" layoutY="49.0" prefHeight="182.0" prefWidth="195.0" vgap="45.0">
                            <columnConstraints>
-                              <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="163.0" />
+                              <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="230.0" />
                            </columnConstraints>
                            <rowConstraints>
-                              <RowConstraints fillHeight="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="230.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints fillHeight="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="163.0" valignment="CENTER" vgrow="SOMETIMES" />
                            </rowConstraints>
                         </GridPane>
                      </children>
                   </AnchorPane>
                </content>
             </ScrollPane>
+            <Button fx:id="refresh" contentDisplay="CENTER" layoutX="1138.0" layoutY="94.0" mnemonicParsing="false" onAction="#ref" styleClass="button-design" stylesheets="@search.css" text=" ">
+               <graphic>
+                  <ImageView fitHeight="81.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/rff.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </content>

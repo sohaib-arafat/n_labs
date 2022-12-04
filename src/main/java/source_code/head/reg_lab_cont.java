@@ -9,12 +9,9 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import source_code.general.Lab;
-import source_code.general.exp_cont;
 
 import java.io.IOException;
 import java.net.URL;
@@ -202,7 +199,7 @@ public class reg_lab_cont implements Initializable {
          String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
          Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
          con.setAutoCommit(false);
-         String sql="SELECT LAB_NUM, NAME , SUPERVISOR.FIRST_NAME,SUPERVISOR.LAST_NAME FROM LAB,SUPERVISOR WHERE  LAB.SUPERVISOR=SUPERVISOR.F_ID ORDER BY LAB_NUM DESC";
+         String sql="SELECT LAB_NUM, NAME , SUPERVISOR.FIRST_NAME,SUPERVISOR.LAST_NAME,AC_LEVEL,LAB.SUPERVISOR,ROOM FROM LAB,SUPERVISOR WHERE  LAB.SUPERVISOR=SUPERVISOR.F_ID ORDER BY LAB_NUM DESC";
          Statement st= con.createStatement();
          ResultSet rs=st.executeQuery(sql);
          int x=0;
@@ -210,12 +207,15 @@ public class reg_lab_cont implements Initializable {
          while (rs.next()){
              x++;
               FXMLLoader fx = new FXMLLoader();
-             fx.setLocation(getClass().getResource("/fxml_general/button.fxml"));
+             fx.setLocation(getClass().getResource("/fxml_head/button_labs_head.fxml"));
               AnchorPane cardBox = fx.load();
-              exp_cont ex=fx.getController();
+              lab_button_cont ex=fx.getController();
              ex.super_name.setText(rs.getString(3)+" "+rs.getString(4));
              ex.lab_name.setText(rs.getString(2));
              ex.lab_num.setText(rs.getString(1));
+             ex.lvl=rs.getInt(5);
+             ex.room=rs.getString(7);
+             ex.super_num=rs.getInt(6);
              grid.add(cardBox,x,y);
              GridPane.setMargin(cardBox, new Insets(10));
              if(x==4){
@@ -228,6 +228,9 @@ public class reg_lab_cont implements Initializable {
 
 
 
+     }@FXML
+     void ref(ActionEvent e) throws SQLException, IOException {
+        cards();
      }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
