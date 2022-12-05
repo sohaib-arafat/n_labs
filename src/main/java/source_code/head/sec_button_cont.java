@@ -61,7 +61,6 @@ public class sec_button_cont {
         dialog.initModality(Modality.APPLICATION_MODAL);
         FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_head/section.fxml"));
         Parent root=l.load();
-
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
         dialog.show();
