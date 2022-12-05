@@ -299,7 +299,7 @@ public class reg_lab_cont implements Initializable {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                sections_cont sc=l.getController();
+                lab_cont sc=l.getController();
                 sc.header.setText(table.getSelectionModel().getSelectedItem().getName());
                 sc.name.setText(table.getSelectionModel().getSelectedItem().getName());
                 sc.lvl.setText(String.valueOf(table.getSelectionModel().getSelectedItem().getLvl()));

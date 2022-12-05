@@ -2,17 +2,21 @@ package source_code.head;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class sections_cont implements Initializable {
+public class lab_cont implements Initializable {
 
     @FXML
      public Button add_sec;
@@ -156,7 +160,28 @@ public class sections_cont implements Initializable {
         con.close();
 
     }
-
+ @FXML
+public void cards(MouseEvent event ) throws SQLException, IOException {
+       cardly.getChildren().clear();
+    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+    String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+    Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+    con.setAutoCommit(false);
+     String sql="SELECT SEC_NUM,INSTRUCTOR.FIRST_NAME,INSTRUCTOR.LAST_NAME,LAB.NAME FROM SECTION,INSTRUCTOR,LAB WHERE INSTRUCTOR.F_ID=SECTION.INS_NUM AND  SECTION.LAB_NUM='"+lab_num.getText()+"' AND LAB.LAB_NUM=SECTION.LAB_NUM";
+    Statement st= con.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+    while (rs.next()){
+        FXMLLoader fx = new FXMLLoader();
+        fx.setLocation(getClass().getResource("/fxml_head/button_sections_head.fxml"));
+        AnchorPane cardBox = fx.load();
+        sec_button_cont sc=fx.getController();
+        sc.section_num.setText(rs.getString(1));
+        sc.ins_name.setText(rs.getString(2)+" "+rs.getString(3));
+        sc.lab_name.setText(rs.getString(4));
+        cardly.getChildren().add(cardBox);
+    }
+   con.close();
+}
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         superv.setStyle("-fx-background-color: WHITE ");
@@ -164,6 +189,7 @@ public class sections_cont implements Initializable {
         name.setStyle("-fx-background-color: WHITE ");
         room.setStyle("-fx-background-color: WHITE ");
         lab_num.setStyle("-fx-background-color: WHITE ");
+
 
     }
 }
