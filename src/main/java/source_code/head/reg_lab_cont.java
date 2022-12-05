@@ -122,7 +122,17 @@ public class reg_lab_cont implements Initializable {
         Statement stnt=con.createStatement();
         ResultSet rs=stnt.executeQuery(sql);
         if(rs.next()){
-
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("Lab exists ");
+            a.setContentText("The lab already exists");
+            a.show();
+            reg_level.clear();
+            reg_num.clear();
+            reg_super.clear();
+            reg_level.clear();
+            reg_room.clear();
+            reg_name.clear();
+            return;
         }
         ArrayList<String> atr=new ArrayList<>();
         ArrayList<String> val=new ArrayList<>();
