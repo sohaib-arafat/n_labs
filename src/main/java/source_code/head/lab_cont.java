@@ -1,29 +1,40 @@
 package source_code.head;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import source_code.general.time;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class lab_cont implements Initializable {
+    ArrayList<time> res=new ArrayList<>();
 
     @FXML
      public Button add_sec;
 
     @FXML
     public HBox cardly;
-
+    @FXML
+    private TableColumn<time, String> start;
+    @FXML
+    private TableColumn<time, String> end;
+    @FXML
+    private TableColumn<time, String> day;
     @FXML
     public Button del;
 
@@ -58,7 +69,13 @@ public class lab_cont implements Initializable {
     public TextField superv;
 
     @FXML
-    public TableView<?> times;
+    public TableView<time> times;
+    @FXML
+    private ComboBox<String> startt;
+    @FXML
+    private ComboBox<String> endd;
+    @FXML
+    private ComboBox<String> dayy;
 
     @FXML
     public Button upd;
@@ -182,6 +199,26 @@ public void cards(MouseEvent event ) throws SQLException, IOException {
     }
    con.close();
 }
+@FXML
+void adddate(ActionEvent e) throws SQLException {
+        if(dayy.getValue().isEmpty()||startt.getValue().isEmpty()||endd.getValue().isEmpty()){
+            Alert b = new Alert(Alert.AlertType.ERROR);
+            b.setTitle("Empty filed");
+            b.setContentText("Please make sure all values are set");
+            b.show();
+            return;
+        }
+    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+    String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+    Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+    con.setAutoCommit(false);
+    String sql="SELECT SEC_NUM,INSTRUCTOR.FIRST_NAME,INSTRUCTOR.LAST_NAME,LAB.NAME FROM SECTION,INSTRUCTOR,LAB WHERE INSTRUCTOR.F_ID=SECTION.INS_NUM AND  SECTION.LAB_NUM='"+lab_num.getText()+"' AND LAB.LAB_NUM=SECTION.LAB_NUM";
+    Statement st= con.createStatement();
+    ResultSet rs=st.executeQuery(sql);
+   res.add(new time(dayy.getValue(),startt.getValue(),endd.getValue()));
+    ObservableList<time> lst=FXCollections.observableArrayList(res);
+    times.setItems(lst);
+}
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         superv.setStyle("-fx-background-color: WHITE ");
@@ -189,7 +226,12 @@ public void cards(MouseEvent event ) throws SQLException, IOException {
         name.setStyle("-fx-background-color: WHITE ");
         room.setStyle("-fx-background-color: WHITE ");
         lab_num.setStyle("-fx-background-color: WHITE ");
-
+        day.setCellValueFactory(new PropertyValueFactory<time,String>("day"));
+        start.setCellValueFactory(new PropertyValueFactory<time,String>("starting"));
+        end.setCellValueFactory(new PropertyValueFactory<time,String>("ending"));
+        dayy.setItems(FXCollections.observableArrayList("Sun","Mon","Tue","Wed","Thu","Fri","Sat"));
+        startt.setItems(FXCollections.observableArrayList("8","9","10","11","12","1","2","3","4"));
+        endd.setItems(FXCollections.observableArrayList("9","10","11","12","1","2","3","4","5"));
 
     }
 }

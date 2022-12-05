@@ -298,49 +298,49 @@
     </user>
     <table id="86" parent="21" name="COORDINATOR">
       <CreatedTimestamp>2022-11-14.21:13:37</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-11-14.21:15:27</ModifiedTimestamp>
       <ObjectId>79779</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="87" parent="21" name="EQUIPMENT">
       <CreatedTimestamp>2022-11-14.00:51:13</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-11-14.01:01:27</ModifiedTimestamp>
       <ObjectId>79757</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="88" parent="21" name="EXPIREMNT">
       <CreatedTimestamp>2022-11-14.00:56:44</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-11-30.23:14:25</ModifiedTimestamp>
       <ObjectId>79761</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="89" parent="21" name="INSTRUCTOR">
       <CreatedTimestamp>2022-11-14.00:45:56</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-01.20:29:11</ModifiedTimestamp>
       <ObjectId>79751</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="90" parent="21" name="LAB">
       <CreatedTimestamp>2022-11-11.18:30:54</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-03.23:53:21</ModifiedTimestamp>
       <ObjectId>79699</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="91" parent="21" name="LOGIN">
       <CreatedTimestamp>2022-11-30.23:26:00</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-11-30.23:26:00</ModifiedTimestamp>
       <ObjectId>80094</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="92" parent="21" name="REGST">
       <CreatedTimestamp>2022-11-14.01:10:32</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-11-14.01:12:59</ModifiedTimestamp>
       <ObjectId>79766</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
@@ -354,42 +354,42 @@
     </table>
     <table id="94" parent="21" name="SEC_TIME">
       <CreatedTimestamp>2022-11-14.00:58:48</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-11-14.00:59:25</ModifiedTimestamp>
       <ObjectId>79763</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="95" parent="21" name="SIGN_IN">
       <CreatedTimestamp>2022-11-14.01:18:14</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-11-14.01:18:14</ModifiedTimestamp>
       <ObjectId>79770</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="96" parent="21" name="STUDENT">
       <CreatedTimestamp>2022-11-11.18:37:15</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-01.00:15:35</ModifiedTimestamp>
       <ObjectId>79703</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="97" parent="21" name="SUBMESSION">
       <CreatedTimestamp>2022-11-14.00:55:38</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-01.15:46:22</ModifiedTimestamp>
       <ObjectId>79759</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="98" parent="21" name="SUB_STU">
       <CreatedTimestamp>2022-11-14.01:16:02</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-11-18.23:37:47</ModifiedTimestamp>
       <ObjectId>79768</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="99" parent="21" name="SUPERVISOR">
       <CreatedTimestamp>2022-11-14.00:49:07</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-03.23:53:42</ModifiedTimestamp>
       <ObjectId>79754</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
@@ -59722,19 +59722,19 @@
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="7517" parent="86" name="COORDINATOR_FK1">
-      <ColNames>INST_NUM</ColNames>
-      <ModifiedTimestamp>2022-11-14.21:14:03</ModifiedTimestamp>
-      <OnDelete>cascade</OnDelete>
-      <RefKeyName>INSTRUCTOR_PK</RefKeyName>
-      <RefTableName>INSTRUCTOR</RefTableName>
-    </foreign-key>
-    <foreign-key id="7518" parent="86" name="COORDINATOR_FK2">
+    <foreign-key id="7517" parent="86" name="COORDINATOR_FK2">
       <ColNames>LAB_NUM</ColNames>
       <ModifiedTimestamp>2022-11-14.21:14:18</ModifiedTimestamp>
       <OnDelete>cascade</OnDelete>
       <RefKeyName>LAB_PK</RefKeyName>
       <RefTableName>LAB</RefTableName>
+    </foreign-key>
+    <foreign-key id="7518" parent="86" name="COORDINATOR_FK1">
+      <ColNames>INST_NUM</ColNames>
+      <ModifiedTimestamp>2022-11-14.21:14:03</ModifiedTimestamp>
+      <OnDelete>cascade</OnDelete>
+      <RefKeyName>INSTRUCTOR_PK</RefKeyName>
+      <RefTableName>INSTRUCTOR</RefTableName>
     </foreign-key>
     <index id="7519" parent="86" name="COORDINATOR_UK2">
       <ColNames>INST_NUM</ColNames>
@@ -59767,15 +59767,15 @@ INST_NUM</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>COORDINATOR_PK</UnderlyingIndexName>
     </key>
-    <key id="7523" parent="86" name="COORDINATOR_UK2">
-      <InitiallyDeferred>1</InitiallyDeferred>
-      <ModifiedTimestamp>2022-11-14.21:15:27</ModifiedTimestamp>
-      <UnderlyingIndexName>COORDINATOR_UK2</UnderlyingIndexName>
-    </key>
-    <key id="7524" parent="86" name="COORDINATOR_UK1">
+    <key id="7523" parent="86" name="COORDINATOR_UK1">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2022-11-14.21:14:57</ModifiedTimestamp>
       <UnderlyingIndexName>COORDINATOR_UK1</UnderlyingIndexName>
+    </key>
+    <key id="7524" parent="86" name="COORDINATOR_UK2">
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <ModifiedTimestamp>2022-11-14.21:15:27</ModifiedTimestamp>
+      <UnderlyingIndexName>COORDINATOR_UK2</UnderlyingIndexName>
     </key>
     <column id="7525" parent="87" name="SERIAL_NUM">
       <DataType>NUMBER(*)|0s</DataType>
@@ -60038,26 +60038,26 @@ LAB</ColNames>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="7574" parent="92" name="REGST_FK2">
-      <ColNames>STU_NUM</ColNames>
-      <ModifiedTimestamp>2022-11-14.01:11:07</ModifiedTimestamp>
-      <OnDelete>cascade</OnDelete>
-      <RefKeyName>STUDENT_PK</RefKeyName>
-      <RefTableName>STUDENT</RefTableName>
-    </foreign-key>
-    <foreign-key id="7575" parent="92" name="REGST_FK1">
+    <foreign-key id="7574" parent="92" name="REGST_FK1">
       <ColNames>LAB_NUM</ColNames>
       <ModifiedTimestamp>2022-11-14.01:10:52</ModifiedTimestamp>
       <OnDelete>cascade</OnDelete>
       <RefKeyName>LAB_PK</RefKeyName>
       <RefTableName>LAB</RefTableName>
     </foreign-key>
-    <foreign-key id="7576" parent="92" name="REGST_FK3">
+    <foreign-key id="7575" parent="92" name="REGST_FK3">
       <ColNames>SEC_NUM</ColNames>
       <ModifiedTimestamp>2022-11-14.01:12:59</ModifiedTimestamp>
       <OnDelete>cascade</OnDelete>
       <RefKeyName>SECTION_PK</RefKeyName>
       <RefTableName>SECTION</RefTableName>
+    </foreign-key>
+    <foreign-key id="7576" parent="92" name="REGST_FK2">
+      <ColNames>STU_NUM</ColNames>
+      <ModifiedTimestamp>2022-11-14.01:11:07</ModifiedTimestamp>
+      <OnDelete>cascade</OnDelete>
+      <RefKeyName>STUDENT_PK</RefKeyName>
+      <RefTableName>STUDENT</RefTableName>
     </foreign-key>
     <index id="7577" parent="92" name="REGST_PK">
       <ColNames>STU_NUM
@@ -60303,19 +60303,19 @@ DAY</ColNames>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="7620" parent="98" name="SUB_STU_FK1">
-      <ColNames>SUB_ID</ColNames>
-      <ModifiedTimestamp>2022-11-18.23:37:47</ModifiedTimestamp>
-      <OnDelete>cascade</OnDelete>
-      <RefKeyName>SUBMESSION_PK</RefKeyName>
-      <RefTableName>SUBMESSION</RefTableName>
-    </foreign-key>
-    <foreign-key id="7621" parent="98" name="SUB_STU_FK2">
+    <foreign-key id="7620" parent="98" name="SUB_STU_FK2">
       <ColNames>SUB_ID</ColNames>
       <ModifiedTimestamp>2022-11-18.23:37:47</ModifiedTimestamp>
       <OnDelete>restrict</OnDelete>
       <RefKeyName>STUDENT_PK</RefKeyName>
       <RefTableName>STUDENT</RefTableName>
+    </foreign-key>
+    <foreign-key id="7621" parent="98" name="SUB_STU_FK1">
+      <ColNames>SUB_ID</ColNames>
+      <ModifiedTimestamp>2022-11-18.23:37:47</ModifiedTimestamp>
+      <OnDelete>cascade</OnDelete>
+      <RefKeyName>SUBMESSION_PK</RefKeyName>
+      <RefTableName>SUBMESSION</RefTableName>
     </foreign-key>
     <index id="7622" parent="98" name="SUB_STU_PK">
       <ColNames>SUB_ID
