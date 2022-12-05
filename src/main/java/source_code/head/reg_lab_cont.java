@@ -50,6 +50,8 @@ public class reg_lab_cont implements Initializable {
 
     @FXML
     private TextField names;
+    @FXML
+    private Button spec;
 
     @FXML
     private TextField nums;
@@ -206,7 +208,43 @@ public class reg_lab_cont implements Initializable {
         ObservableList<Lab> lst=FXCollections.observableArrayList(res);
         table.setItems(lst);
      }
+     @FXML
+        public void spec_c(ActionEvent e) throws SQLException {
+         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+         con.setAutoCommit(false);
+       String sql="SELECT distinct LAB_NUM, NAME ,ROOM,AC_LEVEL, SUPERVISOR.FIRST_NAME,SUPERVISOR.LAST_NAME,LAB.SUPERVISOR FROM LAB,SUPERVISOR WHERE ";
+        if(! nums.getText().isEmpty()){
+            sql+="LAB_NUM ='"+nums.getText().trim()+"'";
+        }
+         if(! names.getText().isEmpty()){
+             sql+=" AND NAME ='"+names.getText().trim()+"'";
+         }
+         if(! supes.getText().isEmpty()){
+             sql+="AND LAB.SUPERVISOR ='"+supes.getText().trim()+"'";
+         }
+         if(! rooms.getText().isEmpty()){
+             sql+="AND ROOM ='"+rooms.getText().trim()+"'";
+         }
+         if(! lvls.getText().isEmpty()){
+             sql+="AND AC_LEVEL ='"+lvls.getText().trim()+"'";
+         }
+         sql+=" AND LAB.SUPERVISOR=SUPERVISOR.F_ID ORDER BY LAB_NUM DESC";
+         Statement st= con.createStatement();
+         ResultSet rs=st.executeQuery(sql);
+         ArrayList<Lab> res=new ArrayList<>();
+         while (rs.next()){
+             res.add(new Lab(rs.getInt(1),rs.getString(2),rs.getInt(4),rs.getString(3),rs.getString(5)+" "+rs.getString(6),rs.getInt(7)));
+         }
+         if(res.isEmpty()){
+             table.setItems(null);
+             return;
+         }
+         ObservableList<Lab> lst=FXCollections.observableArrayList(res);
+         table.setItems(lst);
 
+    }
      @FXML
      void cards() throws SQLException, IOException {
          grid.getChildren().clear();

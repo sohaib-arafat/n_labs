@@ -21,6 +21,7 @@ int sup_num;
         this.superv = superv;
         this.lvl = lvl;
         this.sup_num=sup;
+
     }
 
     public String getName() {
