@@ -8,13 +8,19 @@ public class Lab {
     String room;
     String superv;
     int lvl;
+int sup_num;
 
-    public Lab(int number,String name,int lvl, String room, String superv) {
+    public int getSup_num() {
+        return sup_num;
+    }
+
+    public Lab(int number, String name, int lvl, String room, String superv, int sup) {
         this.name = name;
         this.number = number;
         this.room = room;
         this.superv = superv;
         this.lvl = lvl;
+        this.sup_num=sup;
     }
 
     public String getName() {
