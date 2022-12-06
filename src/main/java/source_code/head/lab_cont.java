@@ -268,16 +268,24 @@ if(new_cap.getText().isEmpty()||new_num.getText().isEmpty()||new_inst.getText().
     return;
 }
     con.commit();
-     if(res.isEmpty())
-        return;
+     if(res.isEmpty()){
+         times.setItems(null);
+         new_num.clear();
+         new_cap.clear();
+         new_inst.clear();
+
+         cards();
+         return;
+     }
+
     else {
         for(time t : res){
-            sql="INSERT INTO SEC_TIME(DAY,SEC_NUM, STARTING, ENDING) values ('"+t.getDay()+"' , '"+new_num.getText().trim()+"' ,'"+t.getStarting()+"' ,'"+t.getEnding()+"')";
+            sql="INSERT INTO SEC_TIME(DAY,SEC_NUM,LAB, STARTING, ENDING) values ('"+t.getDay()+"' , '"+new_num.getText().trim()+"' "+" , '"+lab_num.getText().trim()+"' ,'"+t.getStarting()+"' ,'"+t.getEnding()+"')";
 
-            try {
-                st.executeUpdate(sql);
+try{
+    st.executeUpdate(sql);
 
-            }
+}
 catch (Exception ee){
     Alert b = new Alert(Alert.AlertType.ERROR);
     b.setTitle("Invalid info");
@@ -286,12 +294,13 @@ catch (Exception ee){
 }
         }
     }
-con.commit();
-times.setItems(null);
-new_num.clear();
-new_cap.clear();
-new_inst.clear();
-cards();
+    con.commit();
+    times.setItems(null);
+    new_num.clear();
+    new_cap.clear();
+    new_inst.clear();
+    cards();
+
 }
 
     @Override
