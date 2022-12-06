@@ -27,6 +27,8 @@ import java.util.concurrent.atomic.AtomicReference;
 public class section_cont implements Initializable {
 
     @FXML
+    ArrayList<student> stus=new ArrayList<>();
+    @FXML
     private Button add;
 
     @FXML
@@ -61,8 +63,7 @@ public class section_cont implements Initializable {
     @FXML
     private TableView<student> students;
 
-    @FXML
-    private Label stus;
+
 
     @FXML
     private TableView<time> times;
@@ -82,19 +83,21 @@ public class section_cont implements Initializable {
     @FXML
     private TableColumn<student, String> phone;
 
-@FXML
-Label stus_num;
-    ArrayList<time> res=new ArrayList<>();
     @FXML
-    void update (ActionEvent e)   {
+    Label stus_num;
+    ArrayList<time> res = new ArrayList<>();
+
+    @FXML
+    void update(ActionEvent e) {
         cap.setEditable(true);
         cap.setStyle("-fx-background-color:#dceef5");
         inst.setEditable(true);
         inst.setStyle("-fx-background-color:#dceef5");
 
     }
+
     @FXML
-    void save (ActionEvent e) throws SQLException, IOException {
+    void save(ActionEvent e) throws SQLException, IOException {
         inst.setStyle("-fx-background-color: WHITE ");
         num.setStyle("-fx-background-color: WHITE ");
         cap.setStyle("-fx-background-color: WHITE ");
@@ -119,37 +122,38 @@ Label stus_num;
                 Alert b = new Alert(Alert.AlertType.ERROR);
                 b.setTitle("Invalid info");
                 b.setContentText("Either section exits or you have entered invalid info");
-                b.show();            }
+                b.show();
+            }
 
 
         }
         con.commit();
-     }
+    }
+
     @FXML
     void adddate(ActionEvent e) throws SQLException {
-        if(dayy.getValue() ==null||startt.getValue()==null||endd.getValue()==null){
+        if (dayy.getValue() == null || startt.getValue() == null || endd.getValue() == null) {
             Alert b = new Alert(Alert.AlertType.ERROR);
             b.setTitle("Empty filed");
             b.setContentText("Please make sure all values are set");
             b.show();
             return;
         }
-        if(startt.getValue().equals(endd.getValue())){
+        if (startt.getValue().equals(endd.getValue())) {
             Alert b = new Alert(Alert.AlertType.ERROR);
             b.setTitle("Invalid info");
             b.setContentText("Either section exits or you have entered invalid info");
             b.show();
             return;
         }
-        for (time t:res){
-            if(dayy.getValue().equals(t.getDay())){
+        for (time t : res) {
+            if (dayy.getValue().equals(t.getDay())) {
                 Alert b = new Alert(Alert.AlertType.ERROR);
                 b.setTitle("Invalid info");
                 b.setContentText("Either day exits or you have entered invalid info");
                 b.show();
                 return;
             }
-
 
 
         }
@@ -162,37 +166,39 @@ Label stus_num;
             b.show();
             return;
         }
-        res.add(new time(dayy.getValue(),startt.getValue(),endd.getValue()));
+        res.add(new time(dayy.getValue(), startt.getValue(), endd.getValue()));
 
-        ObservableList<time> lst=FXCollections.observableArrayList(res);
+        ObservableList<time> lst = FXCollections.observableArrayList(res);
         times.setItems(lst);
 
     }
+
     @FXML
     void del_time(ActionEvent actionEvent) throws SQLException {
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
-        String sql = "DELETE FROM SEC_TIME WHERE SEC_NUM='"+num.getText().trim()+"' AND DAY= '"+times.getSelectionModel().getSelectedItem().getDay()+"'";
+        String sql = "DELETE FROM SEC_TIME WHERE SEC_NUM='" + num.getText().trim() + "' AND DAY= '" + times.getSelectionModel().getSelectedItem().getDay() + "'";
         Statement st = con.createStatement();
         st.executeUpdate(sql);
         con.commit();
-                 res.remove(times.getSelectionModel().getSelectedItem());
+        res.remove(times.getSelectionModel().getSelectedItem());
 
 
-        ObservableList<time> lst=FXCollections.observableArrayList(res);
+        ObservableList<time> lst = FXCollections.observableArrayList(res);
         times.setItems(lst);
     }
+
     @FXML
-    void delete (ActionEvent e) throws SQLException {
-        AtomicReference<Boolean> bi1= new AtomicReference<>(true);
-         ButtonType Delete = new ButtonType("Delete");
+    void delete(ActionEvent e) throws SQLException {
+        AtomicReference<Boolean> bi1 = new AtomicReference<>(true);
+        ButtonType Delete = new ButtonType("Delete");
         ButtonType Cancel = new ButtonType("Cancel");
-        Alert a = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to delete this section?",Delete,Cancel);
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Do you want to delete this section?", Delete, Cancel);
         a.setTitle("This section is about to be deleted");
-        a.showAndWait().ifPresent(response->{
-            if(response==Delete){
+        a.showAndWait().ifPresent(response -> {
+            if (response == Delete) {
                 try {
                     DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
                 } catch (SQLException ex) {
@@ -210,9 +216,9 @@ Label stus_num;
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
-                String sql="DELETE From SECTION WHERE SEC_NUM='"+num.getText().trim()+"'";
+                String sql = "DELETE From SECTION WHERE SEC_NUM='" + num.getText().trim() + "'";
 
-                Statement st= null;
+                Statement st = null;
                 try {
                     st = con.createStatement();
                 } catch (SQLException ex) {
@@ -236,13 +242,12 @@ Label stus_num;
                 a.close();
                 bi1.set(false);
 
-            }
-            else {
+            } else {
                 a.close();
             }
         });
-        if(bi1.get().equals(false)){
-            Stage close=(Stage) num.getScene().getWindow();
+        if (bi1.get().equals(false)) {
+            Stage close = (Stage) num.getScene().getWindow();
 
             Alert b = new Alert(Alert.AlertType.INFORMATION);
             b.setTitle("Section Deleted");
@@ -252,24 +257,42 @@ Label stus_num;
         }
 
     }
+
     @FXML
     void showTime(ActionEvent e) throws SQLException {
-res.clear();
+        res.clear();
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
-        String sql="SELECT DAY,STARTING,ENDING FROM SEC_TIME WHERE SEC_NUM ='"+num.getText().trim()+"'";
-        Statement sr=con.createStatement();
-        ResultSet rs=sr.executeQuery(sql);
-        while (rs.next()){
-            res.add(new time(rs.getString(1),rs.getString(2),rs.getString(3)));
+        String sql = "SELECT DAY,STARTING,ENDING FROM SEC_TIME WHERE SEC_NUM ='" + num.getText().trim() + "'";
+        Statement sr = con.createStatement();
+        ResultSet rs = sr.executeQuery(sql);
+        while (rs.next()) {
+            res.add(new time(rs.getString(1), rs.getString(2), rs.getString(3)));
         }
         times.setItems(null);
-        ObservableList<time> lst=FXCollections.observableArrayList(res);
+        ObservableList<time> lst = FXCollections.observableArrayList(res);
         times.setItems(lst);
 
+        String sql1 = "SELECT STU_NUM FROM REGST WHERE SEC_NUM ='" + num.getText().trim() + "'";
+        Statement st=con.createStatement();
+        ResultSet rs1 = st.executeQuery(sql1);
+
+        while (rs1.next()) {
+            ResultSet rs2 = sr.executeQuery("SELECT * FROM STUDENT WHERE STU_REG_NUM='" + rs1.getString(1) + "'");
+            rs2.next();
+            stus.add(new student(rs2.getString(6), rs2.getString(5), rs2.getString(2) + " " + rs2.getString(3), rs2.getString(1), rs2.getString(7), rs2.getString(4)));
+        }
+        if(stus.isEmpty())
+            return;
+        ObservableList<student> lst1 = FXCollections.observableArrayList(stus);
+        students.setItems(lst1);
+        stus_num.setText(String.valueOf(stus.size()));
+
     }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cap.setStyle("-fx-background-color: WHITE ");
