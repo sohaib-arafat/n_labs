@@ -166,6 +166,13 @@ public class lab_cont implements Initializable {
         name.setStyle("-fx-background-color: WHITE ");
         room.setStyle("-fx-background-color: WHITE ");
         lab_num.setStyle("-fx-background-color: WHITE ");
+        superv.setEditable(false);
+        name.setEditable(false);
+        room.setEditable(false);
+        lvl.setEditable(false);
+        lab_num.setEditable(false);
+
+
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
@@ -202,7 +209,7 @@ public void cards( ) throws SQLException, IOException {
 }
 @FXML
 void adddate(ActionEvent e) throws SQLException {
-        if(dayy.getValue().equals(null)||startt.getValue().equals(null)||endd.getValue().equals(null)){
+        if(dayy.getValue() ==null||startt.getValue() ==null||endd.getValue() ==null){
             Alert b = new Alert(Alert.AlertType.ERROR);
             b.setTitle("Empty filed");
             b.setContentText("Please make sure all values are set");
@@ -259,7 +266,21 @@ if(new_cap.getText().isEmpty()|| new_inst.getText().isEmpty()){
 String sql2="SELECT COUNT(*) FROM SECTION WHERE LAB_NUM ='"+lab_num.getText().trim()+"'";
 ResultSet rs1=st.executeQuery(sql2);
 rs1.next();
-String SEC_NUM=lab_num.getText().trim()+"-"+(rs1.getInt(1)+1);
+int index=rs1.getInt(1)+1;
+String SEC_NUM=lab_num.getText().trim()+"-"+(index);
+     String test=null;
+while (true){
+    test="SELECT * FROM SECTION WHERE SEC_NUM ='"+SEC_NUM+"'";
+        rs1=st.executeQuery(test);
+        if (rs1.next()){
+            index++;
+        }
+        else
+            break;
+        SEC_NUM=lab_num.getText().trim()+"-"+(index);
+
+}
+
     String sql="INSERT INTO SECTION (STU_COUNT,SEC_NUM,INS_NUM,LAB_NUM,CAPACITY) VALUES  ('0', '"+SEC_NUM+"' ,'"+new_inst.getText().trim()+"' , '"+lab_num.getText().trim()+"' ,'"+new_cap.getText().trim()+"' )";
     try {
         st.executeUpdate(sql);

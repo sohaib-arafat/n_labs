@@ -7,11 +7,13 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1138.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.head.section_cont">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1138.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.head.section_cont">
    <content>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1264.0" prefWidth="1144.0">
          <children>
@@ -42,7 +44,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="update" layoutX="872.0" layoutY="194.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="82.0" styleClass="button-design" stylesheets="@search.css" text="Update">
+            <Button fx:id="update" layoutX="872.0" layoutY="194.0" mnemonicParsing="false" onAction="#update" prefHeight="29.0" prefWidth="82.0" styleClass="button-design" stylesheets="@search.css" text="Update">
                <font>
                   <Font size="14.0" />
                </font>
@@ -58,8 +60,8 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <VBox layoutX="570.0" layoutY="64.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Button fx:id="del" layoutX="1018.0" layoutY="101.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Delete">
+            <VBox layoutX="570.0" layoutY="90.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <Button fx:id="del" layoutX="1018.0" layoutY="101.0" mnemonicParsing="false" onAction="#delete" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Delete">
                <font>
                   <Font size="14.0" />
                </font>
@@ -69,28 +71,28 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TableView fx:id="students" layoutX="321.0" layoutY="640.0" prefHeight="271.0" prefWidth="526.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="students" layoutX="321.0" layoutY="647.0" prefHeight="271.0" prefWidth="526.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
-                  <TableColumn prefWidth="89.0" text="REG_Number" />
-                  <TableColumn prefWidth="97.0" text="Name" />
-                  <TableColumn prefWidth="103.0" text="UNI_Email" />
-                  <TableColumn prefWidth="11.0" text="C2" />
-                  <TableColumn prefWidth="121.0" text="STU_Email" />
-                  <TableColumn prefWidth="102.0" text="Phone" />
+                  <TableColumn fx:id="reg_num" prefWidth="89.0" text="REG_Number" />
+                  <TableColumn fx:id="name" prefWidth="97.0" text="Name" />
+                  <TableColumn fx:id="uni_email" prefWidth="103.0" text="UNI_Email" />
+                  <TableColumn fx:id="stu_email" prefWidth="94.0" text="STU_Email" />
+                  <TableColumn fx:id="phone" prefWidth="91.0" text="Phone" />
+                  <TableColumn fx:id="level" prefWidth="49.0" text="Level" />
                </columns>
             </TableView>
-            <Label layoutX="534.0" layoutY="587.0" styleClass="shade" text="Students" textFill="#47ceff">
+            <Label layoutX="534.0" layoutY="597.0" styleClass="shade" text="Students" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <VBox layoutX="572.0" layoutY="620.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="750.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Label layoutX="452.0" layoutY="918.0" styleClass="shade" text="#Regsistred students" textFill="#47ceff">
+            <VBox layoutX="572.0" layoutY="625.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="750.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <Label layoutX="466.0" layoutY="930.0" styleClass="shade" text="#Regsistred students" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="stus_num" layoutX="552.0" layoutY="953.0" prefHeight="35.0" prefWidth="97.0" textAlignment="CENTER">
+            <Label fx:id="stus_num" layoutX="557.0" layoutY="965.0" prefHeight="35.0" prefWidth="97.0" textAlignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
@@ -105,7 +107,7 @@
             <ComboBox fx:id="dayy" layoutX="427.0" layoutY="500.0" prefHeight="31.0" prefWidth="84.0" promptText="Day" stylesheets="@search.css" />
             <ComboBox fx:id="endd" layoutX="628.0" layoutY="500.0" prefHeight="31.0" prefWidth="84.0" promptText="ending" stylesheets="@search.css" />
             <ComboBox fx:id="startt" layoutX="528.0" layoutY="500.0" prefHeight="31.0" prefWidth="84.0" promptText="Strating" stylesheets="@search.css" visibleRowCount="12" />
-            <Button fx:id="addt" layoutX="729.0" layoutY="500.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <Button fx:id="addt" layoutX="729.0" layoutY="500.0" mnemonicParsing="false" onAction="#adddate" prefHeight="25.0" prefWidth="53.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>
@@ -115,7 +117,21 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="del_time" layoutX="732.0" layoutY="380.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" styleClass="button-design" stylesheets="@search.css" text="Delete Selected" />
+            <Button fx:id="del_time" layoutX="732.0" layoutY="380.0" mnemonicParsing="false" onAction="#del_time" prefHeight="31.0" prefWidth="101.0" styleClass="button-design" stylesheets="@search.css" text="Delete Selected" />
+            <Button fx:id="save" layoutX="533.0" layoutY="548.0" mnemonicParsing="false" onAction="#save" prefHeight="31.0" prefWidth="81.0" styleClass="button-design" stylesheets="@search.css" text="Save">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="refresh" contentDisplay="CENTER" layoutX="14.0" layoutY="101.0" mnemonicParsing="false" onAction="#showTime" styleClass="button-design" stylesheets="@search.css" text=" ">
+               <graphic>
+                  <ImageView fitHeight="81.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/rff.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </content>

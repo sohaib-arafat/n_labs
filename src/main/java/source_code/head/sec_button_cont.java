@@ -77,8 +77,6 @@ public class sec_button_cont {
         sc.stus_num.setText(rs.getString(2));
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
-        Stage close=(Stage) section_num.getScene().getWindow();
-        close.close();
         dialog.show();
     }
 
