@@ -245,6 +245,10 @@ public class reg_lab_cont implements Initializable {
          table.setItems(lst);
 
     }
+    @FXML
+    void fresh(MouseEvent E) throws SQLException, IOException {
+        cards();
+    }
      @FXML
      void cards() throws SQLException, IOException {
          grid.getChildren().clear();

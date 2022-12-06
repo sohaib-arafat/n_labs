@@ -160,7 +160,7 @@ public class lab_cont implements Initializable {
 
     }
     @FXML
-    void save (ActionEvent e) throws SQLException {
+    void save (ActionEvent e) throws SQLException, IOException {
         superv.setStyle("-fx-background-color: WHITE ");
         lvl.setStyle("-fx-background-color: WHITE ");
         name.setStyle("-fx-background-color: WHITE ");
@@ -175,6 +175,7 @@ public class lab_cont implements Initializable {
         st.executeUpdate(sql);
         con.commit();
         con.close();
+        cards();
 
     }
  @FXML
@@ -184,7 +185,7 @@ public void cards( ) throws SQLException, IOException {
     String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
     Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
     con.setAutoCommit(false);
-     String sql="SELECT SEC_NUM,INSTRUCTOR.FIRST_NAME,INSTRUCTOR.LAST_NAME,LAB.NAME FROM SECTION,INSTRUCTOR,LAB WHERE INSTRUCTOR.F_ID=SECTION.INS_NUM AND  SECTION.LAB_NUM='"+lab_num.getText()+"' AND LAB.LAB_NUM=SECTION.LAB_NUM";
+     String sql="SELECT SEC_NUM,INSTRUCTOR.FIRST_NAME,INSTRUCTOR.LAST_NAME,LAB.NAME FROM SECTION,INSTRUCTOR,LAB WHERE INSTRUCTOR.F_ID=SECTION.INS_NUM AND  SECTION.LAB_NUM='"+lab_num.getText()+"' AND LAB.LAB_NUM=SECTION.LAB_NUM order by SEC_NUM asc ";
     Statement st= con.createStatement();
     ResultSet rs=st.executeQuery(sql);
     while (rs.next()){
@@ -243,7 +244,7 @@ void adddate(ActionEvent e) throws SQLException {
 }
 @FXML
 void addsec(ActionEvent e) throws SQLException, IOException {
-if(new_cap.getText().isEmpty()||new_num.getText().isEmpty()||new_inst.getText().isEmpty()){
+if(new_cap.getText().isEmpty()|| new_inst.getText().isEmpty()){
     Alert b = new Alert(Alert.AlertType.ERROR);
     b.setTitle("Empty filed");
     b.setContentText("Please make sure all values are set");
@@ -255,8 +256,11 @@ if(new_cap.getText().isEmpty()||new_num.getText().isEmpty()||new_inst.getText().
     Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
     con.setAutoCommit(false);
     Statement st= con.createStatement();
-    String sql="INSERT INTO SECTION (STU_COUNT,SEC_NUM,INS_NUM,LAB_NUM,CAPACITY) VALUES  ('0', '"+new_num.getText().trim()+"' ,'"+new_inst.getText().trim()+"' , '"+lab_num.getText().trim()+"' ,'"+new_cap.getText().trim()+"' )";
-
+String sql2="SELECT COUNT(*) FROM SECTION WHERE LAB_NUM ='"+lab_num.getText().trim()+"'";
+ResultSet rs1=st.executeQuery(sql2);
+rs1.next();
+String SEC_NUM=lab_num.getText().trim()+"-"+(rs1.getInt(1)+1);
+    String sql="INSERT INTO SECTION (STU_COUNT,SEC_NUM,INS_NUM,LAB_NUM,CAPACITY) VALUES  ('0', '"+SEC_NUM+"' ,'"+new_inst.getText().trim()+"' , '"+lab_num.getText().trim()+"' ,'"+new_cap.getText().trim()+"' )";
     try {
         st.executeUpdate(sql);
 
@@ -270,8 +274,7 @@ if(new_cap.getText().isEmpty()||new_num.getText().isEmpty()||new_inst.getText().
     con.commit();
      if(res.isEmpty()){
          times.setItems(null);
-         new_num.clear();
-         new_cap.clear();
+          new_cap.clear();
          new_inst.clear();
 
          cards();
@@ -280,7 +283,7 @@ if(new_cap.getText().isEmpty()||new_num.getText().isEmpty()||new_inst.getText().
 
     else {
         for(time t : res){
-            sql="INSERT INTO SEC_TIME(DAY,SEC_NUM,LAB, STARTING, ENDING) values ('"+t.getDay()+"' , '"+new_num.getText().trim()+"' "+" , '"+lab_num.getText().trim()+"' ,'"+t.getStarting()+"' ,'"+t.getEnding()+"')";
+            sql="INSERT INTO SEC_TIME(DAY,SEC_NUM, STARTING, ENDING) values ('"+t.getDay()+"' , '"+SEC_NUM+"' "+" ,'"+t.getStarting()+"' ,'"+t.getEnding()+"')";
 
 try{
     st.executeUpdate(sql);

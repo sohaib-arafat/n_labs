@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class section_cont {
+public class section_cont  {
 
     @FXML
     private Button add;

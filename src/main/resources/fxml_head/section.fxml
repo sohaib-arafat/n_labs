@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -23,20 +24,20 @@
                      </font>
                   </Label>
                </children></AnchorPane>
-            <TextField fx:id="num" editable="false" layoutX="474.0" layoutY="196.0" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField fx:id="inst" editable="false" layoutX="670.0" layoutY="196.0" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField fx:id="cap" editable="false" layoutX="277.0" layoutY="197.0" styleClass="textfield-design" stylesheets="@search.css" />
-            <Label layoutX="483.0" layoutY="161.0" styleClass="shade" text="Section number" textFill="#47ceff">
+            <TextField fx:id="num" editable="false" layoutX="318.0" layoutY="196.0" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="inst" editable="false" layoutX="680.0" layoutY="196.0" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="cap" editable="false" layoutX="498.0" layoutY="196.0" styleClass="textfield-design" stylesheets="@search.css" />
+            <Label layoutX="327.0" layoutY="161.0" styleClass="shade" text="Section number" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="321.0" layoutY="161.0" styleClass="shade" text="Cpacity" textFill="#47ceff">
+            <Label layoutX="542.0" layoutY="161.0" styleClass="shade" text="Cpacity" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="704.0" layoutY="161.0" styleClass="shade" text="Instructor" textFill="#47ceff">
+            <Label layoutX="714.0" layoutY="161.0" styleClass="shade" text="Instructor" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -46,18 +47,13 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="save" layoutX="532.0" layoutY="491.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="76.0" styleClass="button-design" stylesheets="@search.css" text="Save">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <Label layoutX="469.0" layoutY="1018.0" styleClass="shade" text="Register a student" textFill="#47ceff">
+            <Label layoutX="481.0" layoutY="1020.0" styleClass="shade" text="Register a student" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="student_num" layoutX="498.0" layoutY="1086.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <Button fx:id="add" layoutX="527.0" layoutY="1148.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <TextField fx:id="student_num" layoutX="509.0" layoutY="1086.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <Button fx:id="add_stu" layoutX="548.0" layoutY="1140.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="73.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>
@@ -68,39 +64,58 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <TableView fx:id="times" layoutX="365.0" layoutY="307.0" prefHeight="151.0" prefWidth="412.0" stylesheets="@../fxml_crd/scrd1.css">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-               </columns>
-            </TableView>
-            <Label layoutX="540.0" layoutY="265.0" styleClass="shade" text="Times" textFill="#47ceff">
+            <Label layoutX="540.0" layoutY="253.0" styleClass="shade" text="Times" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TableView fx:id="students" layoutX="318.0" layoutY="641.0" prefHeight="271.0" prefWidth="510.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="students" layoutX="321.0" layoutY="640.0" prefHeight="271.0" prefWidth="526.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
+                  <TableColumn prefWidth="89.0" text="REG_Number" />
+                  <TableColumn prefWidth="97.0" text="Name" />
+                  <TableColumn prefWidth="103.0" text="UNI_Email" />
+                  <TableColumn prefWidth="11.0" text="C2" />
+                  <TableColumn prefWidth="121.0" text="STU_Email" />
+                  <TableColumn prefWidth="102.0" text="Phone" />
                </columns>
             </TableView>
-            <Label layoutX="520.0" layoutY="593.0" styleClass="shade" text="Students" textFill="#47ceff">
+            <Label layoutX="534.0" layoutY="587.0" styleClass="shade" text="Students" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <VBox layoutX="572.0" layoutY="491.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <VBox layoutX="572.0" layoutY="620.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="750.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <Label layoutX="452.0" layoutY="918.0" styleClass="shade" text="#Regsistred students" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="stus" layoutX="538.0" layoutY="953.0" prefHeight="35.0" prefWidth="69.0">
+            <Label fx:id="stus_num" layoutX="552.0" layoutY="953.0" prefHeight="35.0" prefWidth="97.0" textAlignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
+            <TableView fx:id="times" layoutX="454.0" layoutY="297.0" prefHeight="166.0" prefWidth="239.0" stylesheets="@../fxml_crd/scrd1.css">
+               <columns>
+                  <TableColumn fx:id="day" prefWidth="75.0" text="Day" />
+                  <TableColumn fx:id="start" prefWidth="79.0" text="Starting" />
+                  <TableColumn fx:id="end" prefWidth="71.0" text="ending" />
+               </columns>
+            </TableView>
+            <ComboBox fx:id="dayy" layoutX="427.0" layoutY="500.0" prefHeight="31.0" prefWidth="84.0" promptText="Day" stylesheets="@search.css" />
+            <ComboBox fx:id="endd" layoutX="628.0" layoutY="500.0" prefHeight="31.0" prefWidth="84.0" promptText="ending" stylesheets="@search.css" />
+            <ComboBox fx:id="startt" layoutX="528.0" layoutY="500.0" prefHeight="31.0" prefWidth="84.0" promptText="Strating" stylesheets="@search.css" visibleRowCount="12" />
+            <Button fx:id="addt" layoutX="729.0" layoutY="500.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="del_stu" layoutX="902.0" layoutY="756.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" styleClass="button-design" stylesheets="@search.css" text="Delete Selected">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="del_time" layoutX="732.0" layoutY="380.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="101.0" styleClass="button-design" stylesheets="@search.css" text="Delete Selected" />
          </children>
       </AnchorPane>
    </content>
