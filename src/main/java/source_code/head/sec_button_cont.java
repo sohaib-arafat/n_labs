@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.sql.*;
 
 public class sec_button_cont {
 
@@ -56,13 +57,28 @@ public class sec_button_cont {
 
 
     @FXML
-    void printe(ActionEvent event) throws IOException {
+    void printe(ActionEvent event) throws IOException, SQLException {
         final Stage dialog = new Stage();
         dialog.initModality(Modality.APPLICATION_MODAL);
         FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_head/section.fxml"));
         Parent root=l.load();
+        section_cont sc=l.getController();
+        sc.num.setText(section_num.getText());
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+        Statement st= con.createStatement();
+        String sql="SELECT INS_NUM,STU_COUNT,CAPACITY FROM SECTION WHERE SEC_NUM='"+section_num.getText().trim()+"'";
+        ResultSet rs=st.executeQuery(sql);
+        rs.next();
+        sc.inst.setText(rs.getString(1));
+        sc.cap.setText(rs.getString(3));
+        sc.stus_num.setText(rs.getString(2));
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
+        Stage close=(Stage) section_num.getScene().getWindow();
+        close.close();
         dialog.show();
     }
 

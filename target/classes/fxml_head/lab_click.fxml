@@ -80,9 +80,8 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="new_num" layoutX="351.0" layoutY="791.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField fx:id="new_cap" layoutX="727.0" layoutY="791.0" promptText="Capacity" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField fx:id="new_inst" layoutX="539.0" layoutY="791.0" promptText="Instructor" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="new_cap" layoutX="610.0" layoutY="797.0" promptText="Capacity" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="new_inst" layoutX="422.0" layoutY="797.0" promptText="Instructor" styleClass="textfield-design" stylesheets="@search.css" />
             <Button layoutX="539.0" layoutY="1101.0" mnemonicParsing="false" onAction="#addsec" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
@@ -106,11 +105,6 @@
                   <TableColumn fx:id="end" prefWidth="75.0" text="ending" />
                </columns>
             </TableView>
-            <HBox fx:id="cardly" layoutX="116.0" layoutY="438.0" prefHeight="230.0" prefWidth="948.0" spacing="20.0">
-               <opaqueInsets>
-                  <Insets left="20.0" right="20.0" />
-               </opaqueInsets>
-            </HBox>
             <ComboBox fx:id="dayy" layoutX="455.0" layoutY="1032.0" prefHeight="31.0" prefWidth="84.0" promptText="Day" stylesheets="@search.css" />
             <ComboBox fx:id="endd" layoutX="643.0" layoutY="1032.0" prefHeight="31.0" prefWidth="84.0" promptText="ending" stylesheets="@search.css" />
             <ComboBox fx:id="startt" layoutX="548.0" layoutY="1032.0" prefHeight="31.0" prefWidth="84.0" promptText="Strating" stylesheets="@search.css" visibleRowCount="12" />
@@ -119,6 +113,19 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <ScrollPane layoutX="95.0" layoutY="421.0" minViewportHeight="230.0" minViewportWidth="948.0" prefHeight="272.0" prefWidth="963.0" style="-fx-background-color: trasnparent;" stylesheets="@search.css">
+               <content>
+                  <AnchorPane prefHeight="269.0" prefWidth="960.0">
+                     <children>
+                        <HBox fx:id="cardly" layoutX="6.0" layoutY="20.0" prefHeight="230.0" prefWidth="948.0" spacing="20.0">
+                           <opaqueInsets>
+                              <Insets left="20.0" right="20.0" />
+                           </opaqueInsets>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
          </children>
       </AnchorPane>
    </content>

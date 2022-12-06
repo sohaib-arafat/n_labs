@@ -299,8 +299,7 @@ catch (Exception ee){
     }
     con.commit();
     times.setItems(null);
-    new_num.clear();
-    new_cap.clear();
+     new_cap.clear();
     new_inst.clear();
     cards();
 
