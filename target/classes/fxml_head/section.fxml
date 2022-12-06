@@ -20,7 +20,7 @@
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css" />
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1125.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
-                  <Label fx:id="sec_num" layoutX="28.0" layoutY="18.0" text="Label" textFill="WHITE">
+                  <Label fx:id="sec_num" layoutX="28.0" layoutY="18.0" prefHeight="53.0" prefWidth="1094.0" text="Label" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -55,7 +55,7 @@
                </font>
             </Label>
             <TextField fx:id="student_num" layoutX="510.0" layoutY="1086.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-            <Button fx:id="add_stu" layoutX="548.0" layoutY="1140.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="73.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <Button fx:id="add_stu" layoutX="548.0" layoutY="1140.0" mnemonicParsing="false" onAction="#reg" prefHeight="29.0" prefWidth="73.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>

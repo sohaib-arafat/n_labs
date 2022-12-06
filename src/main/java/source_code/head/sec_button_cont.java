@@ -27,6 +27,7 @@ public class sec_button_cont {
 
     @FXML
     public Label lab_name;
+    String lab;
     public void mouseEnter(MouseEvent event){
         cardly.setScaleX(1);
         cardly.setScaleY(1);
@@ -75,6 +76,8 @@ public class sec_button_cont {
         sc.inst.setText(rs.getString(1));
         sc.cap.setText(rs.getString(3));
         sc.stus_num.setText(rs.getString(2));
+        sc.lab=lab;
+        sc.sec_num.setText(section_num.getText());
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
         dialog.show();

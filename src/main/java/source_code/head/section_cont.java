@@ -7,21 +7,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import source_code.general.student;
 import source_code.general.time;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class section_cont implements Initializable {
@@ -33,7 +27,7 @@ public class section_cont implements Initializable {
 
     @FXML
     public TextField cap;
-
+String lab;
     @FXML
     private Button del;
     @FXML
@@ -85,6 +79,8 @@ public class section_cont implements Initializable {
 
     @FXML
     Label stus_num;
+    @FXML
+    Label sec_num;
     ArrayList<time> res = new ArrayList<>();
 
     @FXML
@@ -110,6 +106,9 @@ public class section_cont implements Initializable {
         con.setAutoCommit(false);
         String sql = "UPDATE SECTION SET CAPACITY='" + cap.getText().trim() + "' ,INS_NUM='" + inst.getText().trim() + "' WHERE SEC_NUM='" + num.getText().trim() + "'";
         Statement st = con.createStatement();
+        st.executeUpdate(sql);
+        con.commit();
+        sql="DELETE FROM SEC_TIME WHERE SEC_NUM='"+num.getText().trim()+"'";
         st.executeUpdate(sql);
         con.commit();
         for (time t : res) {
@@ -259,7 +258,7 @@ public class section_cont implements Initializable {
     }
 
     @FXML
-    void showTime(ActionEvent e) throws SQLException {
+    void showTime() throws SQLException {
         res.clear();
         stus.clear();
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
@@ -292,8 +291,34 @@ public class section_cont implements Initializable {
         stus_num.setText(String.valueOf(stus.size()));
 
     }
+@FXML
+void reg() throws SQLException {
+    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+    String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+    Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+    con.setAutoCommit(false);
+    String sql = "INSERT INTO REGST (STU_NUM, LAB_NUM, SEC_NUM) VALUES ('"+student_num.getText().trim()+"','"+lab+"','"+num.getText().trim()+"')";
+    Statement sr = con.createStatement();
+try{
 
+        sr.executeUpdate(sql);
 
+   }catch (Exception E){
+        Alert b = new Alert(Alert.AlertType.ERROR);
+        b.setTitle("Invalid info");
+        b.setContentText("Either student is registered to this lab or the section is full");
+        b.show();
+    student_num.clear();
+
+    return;
+    }
+    con.commit();
+student_num.clear();
+    String sql2="UPDATE SECTION SET STU_COUNT=STU_COUNT+1";
+            sr.executeUpdate(sql2);
+            con.commit();
+            showTime();
+}
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cap.setStyle("-fx-background-color: WHITE ");

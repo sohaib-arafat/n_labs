@@ -179,7 +179,16 @@ public class lab_cont implements Initializable {
         con.setAutoCommit(false);
         String sql="UPDATE LAB SET NAME='"+name.getText().trim()+"' ,AC_LEVEL='"+lvl.getText().trim()+"', Room='"+room.getText().trim()+"',SUPERVISOR='"+superv.getText().trim()+"' WHERE LAB_NUM='"+lab_num.getText()+"'";
         Statement st= con.createStatement();
-        st.executeUpdate(sql);
+        try {
+            st.executeUpdate(sql);
+        }
+        catch (Exception ee) {
+            Alert b = new Alert(Alert.AlertType.ERROR);
+            b.setTitle("Invalid info");
+            b.setContentText("Either section exits or you have entered invalid info");
+            b.show();
+            return;
+        }
         con.commit();
         con.close();
         cards();
@@ -203,6 +212,7 @@ public void cards( ) throws SQLException, IOException {
         sc.section_num.setText(rs.getString(1));
         sc.ins_name.setText(rs.getString(2)+" "+rs.getString(3));
         sc.lab_name.setText(rs.getString(4));
+        sc.lab=lab_num.getText().trim();
         cardly.getChildren().add(cardBox);
     }
    con.close();
