@@ -178,7 +178,7 @@ public class lab_cont implements Initializable {
 
     }
  @FXML
-public void cards(MouseEvent event ) throws SQLException, IOException {
+public void cards( ) throws SQLException, IOException {
        cardly.getChildren().clear();
     DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
     String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
@@ -201,24 +201,99 @@ public void cards(MouseEvent event ) throws SQLException, IOException {
 }
 @FXML
 void adddate(ActionEvent e) throws SQLException {
-        if(dayy.getValue().isEmpty()||startt.getValue().isEmpty()||endd.getValue().isEmpty()){
+        if(dayy.getValue().equals(null)||startt.getValue().equals(null)||endd.getValue().equals(null)){
             Alert b = new Alert(Alert.AlertType.ERROR);
             b.setTitle("Empty filed");
             b.setContentText("Please make sure all values are set");
             b.show();
             return;
         }
-    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-    String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
-    Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
-    con.setAutoCommit(false);
-    String sql="SELECT SEC_NUM,INSTRUCTOR.FIRST_NAME,INSTRUCTOR.LAST_NAME,LAB.NAME FROM SECTION,INSTRUCTOR,LAB WHERE INSTRUCTOR.F_ID=SECTION.INS_NUM AND  SECTION.LAB_NUM='"+lab_num.getText()+"' AND LAB.LAB_NUM=SECTION.LAB_NUM";
-    Statement st= con.createStatement();
-    ResultSet rs=st.executeQuery(sql);
+        if(startt.getValue().equals(endd.getValue())){
+            Alert b = new Alert(Alert.AlertType.ERROR);
+            b.setTitle("Invalid info");
+            b.setContentText("Either section exits or you have entered invalid info");
+            b.show();
+            return;
+        }
+        for (time t:res){
+            if(dayy.getValue().equals(t.getDay())){
+                Alert b = new Alert(Alert.AlertType.ERROR);
+                b.setTitle("Invalid info");
+                b.setContentText("Either day exits or you have entered invalid info");
+                b.show();
+                return;
+            }
+
+
+
+        }
+
+
+                if (Integer.parseInt(startt.getValue()) > Integer.parseInt(endd.getValue())) {
+                    Alert b = new Alert(Alert.AlertType.ERROR);
+                    b.setTitle("Invalid info");
+                    b.setContentText("Back in future huh?");
+                    b.show();
+                    return;
+                }
+
    res.add(new time(dayy.getValue(),startt.getValue(),endd.getValue()));
     ObservableList<time> lst=FXCollections.observableArrayList(res);
     times.setItems(lst);
 }
+@FXML
+void addsec(ActionEvent e) throws SQLException, IOException {
+if(new_cap.getText().isEmpty()||new_num.getText().isEmpty()||new_inst.getText().isEmpty()){
+    Alert b = new Alert(Alert.AlertType.ERROR);
+    b.setTitle("Empty filed");
+    b.setContentText("Please make sure all values are set");
+    b.show();
+    return;
+}
+    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+    String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+    Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+    con.setAutoCommit(false);
+    Statement st= con.createStatement();
+    String sql="INSERT INTO SECTION (STU_COUNT,SEC_NUM,INS_NUM,LAB_NUM,CAPACITY) VALUES  ('0', '"+new_num.getText().trim()+"' ,'"+new_inst.getText().trim()+"' , '"+lab_num.getText().trim()+"' ,'"+new_cap.getText().trim()+"' )";
+
+    try {
+        st.executeUpdate(sql);
+
+    }catch (Exception exception){
+    Alert b = new Alert(Alert.AlertType.ERROR);
+    b.setTitle("Invalid info");
+    b.setContentText("Either section exits or you have entered invalid info");
+    b.show();
+    return;
+}
+    con.commit();
+     if(res.isEmpty())
+        return;
+    else {
+        for(time t : res){
+            sql="INSERT INTO SEC_TIME(DAY,SEC_NUM, STARTING, ENDING) values ('"+t.getDay()+"' , '"+new_num.getText().trim()+"' ,'"+t.getStarting()+"' ,'"+t.getEnding()+"')";
+
+            try {
+                st.executeUpdate(sql);
+
+            }
+catch (Exception ee){
+    Alert b = new Alert(Alert.AlertType.ERROR);
+    b.setTitle("Invalid info");
+    b.setContentText("Either section exits or you have entered invalid info");
+    b.show();
+}
+        }
+    }
+con.commit();
+times.setItems(null);
+new_num.clear();
+new_cap.clear();
+new_inst.clear();
+cards();
+}
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         superv.setStyle("-fx-background-color: WHITE ");
@@ -230,8 +305,8 @@ void adddate(ActionEvent e) throws SQLException {
         start.setCellValueFactory(new PropertyValueFactory<time,String>("starting"));
         end.setCellValueFactory(new PropertyValueFactory<time,String>("ending"));
         dayy.setItems(FXCollections.observableArrayList("Sun","Mon","Tue","Wed","Thu","Fri","Sat"));
-        startt.setItems(FXCollections.observableArrayList("8","9","10","11","12","1","2","3","4"));
-        endd.setItems(FXCollections.observableArrayList("9","10","11","12","1","2","3","4","5"));
+        startt.setItems(FXCollections.observableArrayList("8","9","10","11","12","13","14","15","16"));
+        endd.setItems(FXCollections.observableArrayList("9","10","11","12","13","14","15","16","17"));
 
     }
 }
