@@ -261,6 +261,7 @@ public class section_cont implements Initializable {
     @FXML
     void showTime(ActionEvent e) throws SQLException {
         res.clear();
+        stus.clear();
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");

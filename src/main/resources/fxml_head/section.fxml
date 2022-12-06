@@ -49,12 +49,12 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label layoutX="481.0" layoutY="1020.0" styleClass="shade" text="Register a student" textFill="#47ceff">
+            <Label layoutX="482.0" layoutY="1019.0" styleClass="shade" text="Register a student" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="student_num" layoutX="509.0" layoutY="1086.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="student_num" layoutX="510.0" layoutY="1086.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
             <Button fx:id="add_stu" layoutX="548.0" layoutY="1140.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="73.0" styleClass="button-design" stylesheets="@search.css" text="Add">
                <font>
                   <Font size="14.0" />
@@ -92,7 +92,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="stus_num" layoutX="557.0" layoutY="965.0" prefHeight="35.0" prefWidth="97.0" textAlignment="CENTER">
+            <Label fx:id="stus_num" alignment="CENTER" contentDisplay="CENTER" layoutX="536.0" layoutY="965.0" prefHeight="35.0" prefWidth="97.0">
                <font>
                   <Font size="24.0" />
                </font>
