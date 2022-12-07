@@ -11,55 +11,109 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
-   <content>
-      <AnchorPane minHeight="-Infinity" prefHeight="1100.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
-         <children>
-            <ComboBox layoutX="815.0" layoutY="223.0" prefWidth="150.0" stylesheets="@search.css" />
-            <ComboBox layoutX="528.0" layoutY="467.0" prefWidth="150.0" stylesheets="@search.css" />
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
-               <children>
-                  <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Search a user" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="36.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <Label layoutX="266.0" layoutY="167.0" stylesheets="@shadows.css" text="Search" textFill="#47ceff">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Label>
-            <TextField layoutX="265.0" layoutY="358.0" promptText="Reg number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="789.0" layoutY="358.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="443.0" layoutY="358.0" promptText="First name" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="266.0" layoutY="220.0" prefHeight="25.0" prefWidth="673.0" promptText="General seach" styleClass="textfield-design" stylesheets="@search.css" />
-            <Button layoutX="557.0" layoutY="460.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-            <TableView layoutX="156.0" layoutY="519.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
-               <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
-               </columns>
-            </TableView>
-            <TextField layoutX="616.0" layoutY="358.0" promptText="Last name" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="538.0" layoutY="408.0" promptText="Mail" styleClass="textfield-design" stylesheets="@search.css" />
-            <VBox layoutX="625.0" layoutY="-220.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Label layoutX="506.0" layoutY="304.0" stylesheets="@shadows.css" text="Advanced Search" textFill="#47ceff">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2000.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<content>
+   <AnchorPane minHeight="-Infinity" prefHeight="1762.0" prefWidth="1229.0" style="-fx-background-color: #ffffff;">
+      <children>
+         <ComboBox layoutX="562.0" layoutY="496.0" prefWidth="150.0" stylesheets="@trans_combo.css" />
+         <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
+            <children>
+               <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Regestration-Users" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="36.0" />
+                  </font>
+               </Label>
+            </children>
+         </AnchorPane>
+         <TextField layoutX="157.0" layoutY="212.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField layoutX="537.0" layoutY="212.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField layoutX="338.0" layoutY="212.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
+         <Button layoutX="569.0" layoutY="276.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <TextField layoutX="737.0" layoutY="212.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField layoutX="923.0" layoutY="212.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
+         <VBox layoutX="612.0" layoutY="-176.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+         <Label layoutX="118.0" layoutY="346.0" styleClass="shade" text="Add a faculty member" textFill="#47ceff">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <Button layoutX="569.0" layoutY="556.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <VBox layoutX="612.0" layoutY="103.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+         <Label layoutX="113.0" layoutY="119.0" styleClass="shade" text="Add a student" textFill="#47ceff">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <TextField layoutX="243.0" layoutY="439.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField layoutX="424.0" layoutY="439.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField layoutX="618.0" layoutY="439.0" promptText="Email" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField layoutX="823.0" layoutY="439.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField layoutX="543.0" layoutY="494.0" promptText="Office number" styleClass="textfield-design" stylesheets="@search.css" />
+         <Label layoutX="118.0" layoutY="620.0" styleClass="shade" text="Add multiple students" textFill="#47ceff">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <TextField editable="false" layoutX="355.0" layoutY="688.0" prefHeight="27.0" prefWidth="474.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+         <Button layoutX="861.0" layoutY="682.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add file">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <Button layoutX="565.0" layoutY="761.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="108.0" styleClass="button-design" stylesheets="@search.css" text="Add students">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+            <Label layoutX="583.0" layoutY="824.0" stylesheets="@shadows.css" text="Search" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Button layoutX="1059.0" layoutY="104.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="133.0" styleClass="button-design" stylesheets="@search.css" text="Add a new user">
+            <VBox layoutX="612.0" layoutY="307.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <Button layoutX="575.0" layoutY="916.0" mnemonicParsing="false" onAction="#gen_c" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-         </children>
-      </AnchorPane>
-   </content>
+            <ComboBox layoutX="850.0" layoutY="871.0" prefWidth="150.0" stylesheets="@trans_combo.css" />
+            <TextField fx:id="general" layoutX="308.0" layoutY="868.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="addition" layoutX="720.0" layoutY="1123.0" promptText="University Email" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="email" layoutX="546.0" layoutY="1123.0" promptText="Email" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="l_name" layoutX="720.0" layoutY="1080.0" promptText="Last Name" styleClass="textfield-design" stylesheets="@search.css" />
+            <Button fx:id="spec" layoutX="584.0" layoutY="1190.0" mnemonicParsing="false" onAction="#spec_c" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="f_name" layoutX="546.0" layoutY="1080.0" promptText="First Name" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="id" layoutX="372.0" layoutY="1080.0" promptText="F_ID" styleClass="textfield-design" stylesheets="@search.css" />
+            <Label layoutX="532.0" layoutY="1016.0" stylesheets="@shadows.css" text="Advanced Search" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <VBox layoutX="637.0" layoutY="638.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="700.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <ComboBox fx:id="type" layoutX="848.0" layoutY="1021.0" prefWidth="150.0" promptText="Search type" stylesheets="@search.css" />
+            <TableView fx:id="table" layoutX="380.0" layoutY="1353.0" prefHeight="335.0" prefWidth="499.0" stylesheets="@../fxml_crd/scrd1.css">
+               <columns>
+                  <TableColumn fx:id="lab_num" editable="false" prefWidth="91.0" text="Lab_number" />
+                  <TableColumn fx:id="lab_name" editable="false" prefWidth="116.0" text="Name" />
+                  <TableColumn fx:id="lab_level" editable="false" prefWidth="47.0" text="Level" />
+                  <TableColumn fx:id="lab_room" editable="false" prefWidth="82.0" text="Room" />
+                  <TableColumn fx:id="lab_super" editable="false" prefWidth="161.0" text="Supervisor" />
+               </columns>
+            </TableView>
+            <TextField fx:id="pgone" layoutX="372.0" layoutY="1123.0" promptText="Phone" styleClass="textfield-design" stylesheets="@search.css" />
+      </children>
+   </AnchorPane>
+</content>
 </ScrollPane>

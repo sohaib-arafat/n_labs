@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.head.home_head">
    <content>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="959.0" prefWidth="1213.0" styleClass="back" stylesheets="@../fxml_instructor/home_instructor.css">
          <children>
@@ -92,7 +92,7 @@
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
-            <HBox layoutX="32.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="705.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
+            <HBox fx:id="cardly1" layoutX="32.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#mouseEnter1" onMouseExited="#mouseExit1" prefHeight="330.0" prefWidth="705.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
                   <AnchorPane layoutX="-4.0" layoutY="277.0" prefHeight="253.0" prefWidth="494.0">
                      <children>
@@ -113,7 +113,7 @@
                   </AnchorPane>
                </children>
             </HBox>
-            <HBox layoutX="754.0" layoutY="277.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="328.0" prefWidth="428.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
+            <HBox fx:id="cardly" layoutX="754.0" layoutY="277.0" maxWidth="-Infinity" minWidth="-Infinity" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="328.0" prefWidth="428.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
                   <AnchorPane layoutX="-4.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="427.0" stylesheets="@../fxml_instructor/home_instructor.css">
                      <children>
