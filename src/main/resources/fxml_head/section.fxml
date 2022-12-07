@@ -112,7 +112,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="del_stu" layoutX="902.0" layoutY="756.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" styleClass="button-design" stylesheets="@search.css" text="Delete Selected">
+            <Button fx:id="del_stu" layoutX="902.0" layoutY="756.0" mnemonicParsing="false" onAction="#del_stu" prefHeight="39.0" prefWidth="118.0" styleClass="button-design" stylesheets="@search.css" text="Delete Selected">
                <font>
                   <Font size="14.0" />
                </font>

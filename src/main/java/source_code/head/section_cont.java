@@ -82,6 +82,8 @@ String lab;
     @FXML
     Label sec_num;
     ArrayList<time> res = new ArrayList<>();
+    @FXML
+    Button del_stu;
 
     @FXML
     void update(ActionEvent e) {
@@ -91,7 +93,24 @@ String lab;
         inst.setStyle("-fx-background-color:#dceef5");
 
     }
-
+    @FXML
+void del_stu() throws SQLException {
+    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+    String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+    Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+    con.setAutoCommit(false);
+    String sql = "DELETE FROM REGST WHERE SEC_NUM='"+num.getText().trim()+"' AND STU_NUM='"+students.getSelectionModel().getSelectedItem().getReg()+"'";
+    Statement st = con.createStatement();
+    st.executeUpdate(sql);
+    con.commit();
+    sql="UPDATE SECTION SET STU_COUNT=STU_COUNT-1 WHERE SEC_NUM='"+num.getText().trim()+"'";
+    st.executeUpdate(sql);
+    con.commit();
+    con.close();
+        stus.remove(        students.getSelectionModel().getSelectedItem()
+        );
+showTime();
+    }
     @FXML
     void save(ActionEvent e) throws SQLException, IOException {
         inst.setStyle("-fx-background-color: WHITE ");
@@ -284,11 +303,19 @@ String lab;
             rs2.next();
             stus.add(new student(rs2.getString(6), rs2.getString(5), rs2.getString(2) + " " + rs2.getString(3), rs2.getString(1), rs2.getString(7), rs2.getString(4)));
         }
-        if(stus.isEmpty())
+        if(stus.isEmpty()){
+            students.setItems(null);
+            stus_num.setText(String.valueOf(0));
+
             return;
+        }
+
         ObservableList<student> lst1 = FXCollections.observableArrayList(stus);
         students.setItems(lst1);
-        stus_num.setText(String.valueOf(stus.size()));
+        sql="SELECT STU_COUNT FROM SECTION WHERE SEC_NUM='"+num.getText().trim()+"'";
+        ResultSet s=sr.executeQuery(sql);
+        s.next();
+        stus_num.setText(s.getString(1));
 
     }
 @FXML
@@ -314,7 +341,7 @@ try{
     }
     con.commit();
 student_num.clear();
-    String sql2="UPDATE SECTION SET STU_COUNT=STU_COUNT+1";
+    String sql2="UPDATE SECTION SET STU_COUNT=STU_COUNT+1 where SEC_NUM='"+num.getText().trim()+"'";
             sr.executeUpdate(sql2);
             con.commit();
             showTime();

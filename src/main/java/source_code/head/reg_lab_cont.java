@@ -39,8 +39,6 @@ public class reg_lab_cont implements Initializable {
     @FXML
     private GridPane grid;
 
-    @FXML
-    private ComboBox<?> instatr;
 
     @FXML
     private TextField insts;

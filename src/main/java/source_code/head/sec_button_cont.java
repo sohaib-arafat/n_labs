@@ -78,6 +78,7 @@ public class sec_button_cont {
         sc.stus_num.setText(rs.getString(2));
         sc.lab=lab;
         sc.sec_num.setText(section_num.getText());
+        sc.showTime();
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
         dialog.show();
