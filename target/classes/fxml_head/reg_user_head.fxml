@@ -15,7 +15,7 @@
 <content>
    <AnchorPane minHeight="-Infinity" prefHeight="1762.0" prefWidth="1229.0" style="-fx-background-color: #ffffff;">
       <children>
-         <ComboBox layoutX="562.0" layoutY="496.0" prefWidth="150.0" stylesheets="@trans_combo.css" />
+         <ComboBox fx:id="reg_sel" layoutX="562.0" layoutY="496.0" prefWidth="150.0" stylesheets="@trans_combo.css" />
          <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
             <children>
                <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Regestration-Users" textFill="WHITE">
@@ -25,23 +25,23 @@
                </Label>
             </children>
          </AnchorPane>
-         <TextField layoutX="157.0" layoutY="212.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-         <TextField layoutX="537.0" layoutY="212.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
-         <TextField layoutX="338.0" layoutY="212.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
-         <Button layoutX="569.0" layoutY="276.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+         <TextField fx:id="studentreg" layoutX="204.0" layoutY="212.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField fx:id="studentlevel" layoutX="543.0" layoutY="212.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField fx:id="studentname" layoutX="372.0" layoutY="212.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
+         <Button fx:id="add_stu" layoutX="569.0" layoutY="276.0" mnemonicParsing="false" onAction="#reg_stu" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
             <font>
                <Font size="14.0" />
             </font>
          </Button>
-         <TextField layoutX="737.0" layoutY="212.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
-         <TextField layoutX="923.0" layoutY="212.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField fx:id="studentmail" layoutX="712.0" layoutY="212.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
+         <TextField fx:id="studentnumber" layoutX="878.0" layoutY="212.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
          <VBox layoutX="612.0" layoutY="-176.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
          <Label layoutX="118.0" layoutY="346.0" styleClass="shade" text="Add a faculty member" textFill="#47ceff">
             <font>
                <Font name="System Bold" size="24.0" />
             </font>
          </Label>
-         <Button layoutX="569.0" layoutY="556.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
+         <Button layoutX="569.0" layoutY="556.0" mnemonicParsing="false" onAction="#reg_fac" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Add">
             <font>
                <Font size="14.0" />
             </font>
@@ -116,9 +116,9 @@
             </TableView>
             <TableView fx:id="student" layoutX="320.0" layoutY="1316.0" prefHeight="335.0" prefWidth="589.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
-                  <TableColumn fx:id="stu_reg" editable="false" prefWidth="91.0" text="REG_NUM" />
+                  <TableColumn fx:id="stu_regc" editable="false" prefWidth="91.0" text="REG_NUM" />
                   <TableColumn fx:id="stu_name" editable="false" prefWidth="116.0" text="Name" />
-                  <TableColumn fx:id="stu_level" editable="false" prefWidth="47.0" text="Level" />
+                  <TableColumn fx:id="level_col" editable="false" prefWidth="47.0" text="Level" />
                   <TableColumn fx:id="stu_mail" editable="false" prefWidth="96.0" text="Email" />
                   <TableColumn fx:id="stu_uni" editable="false" prefWidth="97.0" text="UNI_Email" />
                   <TableColumn fx:id="stu_phone" editable="false" prefWidth="141.0" text="Phone" />
