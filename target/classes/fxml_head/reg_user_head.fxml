@@ -77,12 +77,12 @@
                </font>
             </Label>
             <VBox layoutX="612.0" layoutY="307.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <Button layoutX="575.0" layoutY="916.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+            <Button layoutX="575.0" layoutY="916.0" mnemonicParsing="false" onAction="#gen_c" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <ComboBox fx:id="gen_type" layoutX="850.0" layoutY="871.0" prefWidth="150.0" stylesheets="@trans_combo.css" />
+            <ComboBox fx:id="gen_type" layoutX="850.0" layoutY="871.0" onAction="#setsearch" prefWidth="150.0" stylesheets="@trans_combo.css" />
             <TextField fx:id="general" layoutX="308.0" layoutY="868.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="addition" layoutX="720.0" layoutY="1123.0" promptText="University Email" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="email" layoutX="546.0" layoutY="1123.0" promptText="Email" styleClass="textfield-design" stylesheets="@search.css" />

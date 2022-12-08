@@ -1,6 +1,7 @@
 package source_code.head;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,10 +22,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
@@ -392,7 +391,31 @@ Alert alert = new Alert(Alert.AlertType.ERROR);
     return;
     }
 }
-
+@FXML
+void gen_c() throws SQLException {
+        if(gen_type.getValue().equals("Student")){
+            student.setVisible(true);
+            instructor.setVisible(false);
+            superv.setVisible(false);
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+            Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+            con.setAutoCommit(false);
+            String sql = "select * from student where STU_REG_NUM LIKE '%"+general.getText().trim()+"%' OR FIRST_NAME LIKE '%"+general.getText().trim()+"%' OR LAST_NAME LIKE '%"+general.getText().trim()+"%' OR STUDENT.UNI_EMAIL LIKE '%"+general.getText().trim()+"%' OR STUDENT.PHONE LIKE '%"+general.getText().trim()+"%' OR AC_LEVEL LIKE '%"+general.getText().trim()+"%' OR STU_EMAIL LIKE '%"+general.getText().trim()+"%' ORDER BY STU_REG_NUM ASC ";
+             Statement st= con.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+            ArrayList<student> res=new ArrayList<>();
+            while (rs.next()){
+                res.add(new student(rs.getString(6),rs.getString(5),rs.getString(2)+" "+rs.getString(3),rs.getString(1),rs.getString(4),rs.getString(7)));
+            }
+            if(res.isEmpty()){
+                student.setItems(null);
+                return;
+            }
+            ObservableList<student> lst=FXCollections.observableArrayList(res);
+            student.setItems(lst);
+        }
+}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
