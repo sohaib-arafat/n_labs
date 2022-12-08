@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 
 public class main extends Application {
       @Override
@@ -22,7 +24,10 @@ public class main extends Application {
           stage.initStyle(StageStyle.TRANSPARENT);
           stage.show();
 
+
+
     }
+
     public static void main (String [] args){
          launch(args);
     }

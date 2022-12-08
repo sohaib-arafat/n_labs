@@ -127,6 +127,7 @@ if (rs.next()){
         dialog.show();
         con.close();
         return;
+
     }
 }
 else {

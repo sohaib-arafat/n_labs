@@ -1,13 +1,20 @@
 package source_code.head;
 
-import javafx.collections.FXCollections;
+ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import org.passay.CharacterData;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
@@ -20,6 +27,7 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
@@ -185,11 +193,7 @@ TextField path;
                 alert.setTitle("Success");
                 alert.setHeaderText("Supervisor added successfully");
                 alert.showAndWait();
-                fac_id.clear();
-                fac_mail.clear();
-                fac_name.clear();
-                fac_phone.clear();
-                fac_spe.clear();
+
             } catch (SQLException e) {
                 con.rollback();
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -202,13 +206,35 @@ TextField path;
                 fac_phone.clear();
                 fac_spe.clear();
             }
-             stmt.close();
-            return;
+
+            String mail=fac_mail.getText().trim();
+            fac_id.clear();
+            fac_mail.clear();
+            fac_name.clear();
+            fac_phone.clear();
+            fac_spe.clear();
+            String pass=generatePassayPassword();
+            String sql1="INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('"+mail+"', '"+pass+"', 'sup')";
+            stmt.executeUpdate(sql1);
+            con.commit();
+            stmt.close();
+            con.close();
+            Thread t1 = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    mail(mail,pass);
+                }
+            }) ;
+
+            t1.start();
+
         }
+
+
         if(type.getValue().equals("Instructor")){
             Statement stmt = con.createStatement();
             String []names = fac_name.getText().split(" ");
-            String query = "insert into instructor values('"+fac_id.getText()+"','"+names[0]+"','"+names[1]+"','"+fac_mail.getText()+"','"+fac_phone.getText()+"','"+fac_spe.getText()+"',0)";
+            String query = "insert into instructor values('"+fac_id.getText()+"','"+names[0]+"','"+names[1]+"','"+fac_mail.getText()+"','"+fac_phone.getText()+"','"+fac_spe.getText()+"')";
             try {
                 stmt.executeUpdate(query);
                 con.commit();
@@ -216,11 +242,7 @@ TextField path;
                 alert.setTitle("Success");
                 alert.setHeaderText("Instructor added successfully");
                 alert.showAndWait();
-                fac_id.clear();
-                fac_mail.clear();
-                fac_name.clear();
-                fac_phone.clear();
-                fac_spe.clear();
+
 
             } catch (SQLException e) {
                 con.rollback();
@@ -233,10 +255,33 @@ TextField path;
                 fac_name.clear();
                 fac_phone.clear();
                 fac_spe.clear();
+                return;
             }
+            String pass=generatePassayPassword();
+            String sql1="INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('"+fac_mail.getText().trim()+"', '"+pass+"', 'inst')";
+            stmt.executeUpdate(sql1);
+            con.commit();
             stmt.close();
+            con.close();
+            String mail=fac_mail.getText().trim();
+            fac_id.clear();
+            fac_mail.clear();
+            fac_name.clear();
+            fac_phone.clear();
+            fac_spe.clear();
+            Thread t1 = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    mail(mail,pass);
+                }
+            }) ;
+
+            t1.start();
+
         }
-    }
+
+         }
+
 
 @FXML
 void setsearch(){
@@ -335,7 +380,7 @@ t1.start();
 
 
     void mail(String reciever,String pass){
-        String to = "s12027621@stu.najah.edu";
+        String to = reciever;
         String from = "n.labs.2022@gmail.com";
         String host = "smtp.gmail.com";
 
@@ -482,6 +527,72 @@ void gen_c() throws SQLException {
         super_phone.setCellValueFactory(new PropertyValueFactory<supervisor,String>("phone"));
          lab_levelsuper_mail.setCellValueFactory(new PropertyValueFactory<supervisor,String>("super_email"));
          super_special.setCellValueFactory(new PropertyValueFactory<supervisor,String>("special"));
+        student.setOnMouseClicked((MouseEvent event) -> {
+            if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
+                  Stage dialog = new Stage();
+                dialog.initModality(Modality.APPLICATION_MODAL);
+                FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_head/users_clk.fxml"));
+                Parent root= null;
+                try {
+                    root = l.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                student_cont sc=l.getController();
+                String []names=student.getSelectionModel().getSelectedItem().getName().split(" ");
+                sc.First.setText(names[0]);
+                sc.last.setText(names[1]);
+                sc.user.setText(student.getSelectionModel().getSelectedItem().getName());
+                sc.Level.setText(student.getSelectionModel().getSelectedItem().getLvl());
+                sc.uni.setText(student.getSelectionModel().getSelectedItem().getUni_email());
+                sc.number.setText(student.getSelectionModel().getSelectedItem().getReg());
+                sc.phone.setText(student.getSelectionModel().getSelectedItem().getPhone());
+                sc.personal.setText(student.getSelectionModel().getSelectedItem().getStu_email());
+                try {
+                    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+                Connection con = null;
+                try {
+                    con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    con.setAutoCommit(false);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                String sql = "select PASSWORD from LOGIN where LOGIN.USERN='"+student.getSelectionModel().getSelectedItem().getUni_email()+"'";
+                Statement st= null;
+                try {
+                    st = con.createStatement();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+
+                try {
+                    ResultSet rs=st.executeQuery(sql);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    ResultSet rs=st.executeQuery(sql);
+                    rs.next();
+                    sc.password.setText(rs.getString(1));
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                Scene scene = new Scene(root);
+                dialog.setScene(scene);
+                dialog.show();
+
+
+
+            }
+        });
 
 
 
