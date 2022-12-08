@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -13,6 +15,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class student_cont implements Initializable {
 
@@ -41,8 +44,74 @@ public class student_cont implements Initializable {
     @FXML
     public Label user;
 
-    @FXML
-    void del(ActionEvent event) {
+   @FXML
+    void del (ActionEvent e)    {
+        AtomicReference<Boolean> bi1= new AtomicReference<>(true);
+        ButtonType Delete = new ButtonType("Delete");
+        ButtonType Cancel = new ButtonType("Cancel");
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION,"Do you want to delete this student?",Delete,Cancel);
+        a.setTitle("This student is about to be deleted");
+        a.showAndWait().ifPresent(response->{
+            if(response==Delete){
+                try {
+                    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+                Connection con = null;
+                try {
+                    con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    con.setAutoCommit(false);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                String sql="DELETE From STUDENT WHERE STU_REG_NUM='"+number.getText()+"'";
+                String sql2="DELETE From LOGIN WHERE USERN='"+uni.getText()+"'";
+
+                Statement st= null;
+                try {
+                    st = con.createStatement();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    st.executeUpdate(sql);
+                    st.executeUpdate(sql2);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    con.commit();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                a.close();
+                bi1.set(false);
+
+            }
+            else {
+                a.close();
+            }
+        });
+        if(bi1.get().equals(false)){
+            Stage close=(Stage) number.getScene().getWindow();
+
+            Alert b = new Alert(Alert.AlertType.INFORMATION);
+            b.setTitle("Student Deleted");
+            b.setContentText("This student was deleted successfully");
+            b.show();
+            close.close();
+        }
 
     }
 
@@ -64,7 +133,8 @@ public class student_cont implements Initializable {
         password.setEditable(false);
         phone.setEditable(false);
         uni.setEditable(false);
-        String sql="UPDATE STUDENT SET FIRST_NAME='"+First.getText().trim()+"',LAST_NAME='"+last.getText().trim()+"',PHONE ='"+phone.getText().trim()+"',STU_EMAIL='"+password.getText().trim()+"',AC_LEVEL='"+Level.getText().trim()+"' WHERE STU_REG_NUM='"+number.getText().trim()+"'";
+        String sql="UPDATE STUDENT SET FIRST_NAME='"+First.getText().trim()+"',LAST_NAME='"+last.getText().trim()+"',PHONE ='"+phone.getText().trim()+"',STU_EMAIL='"+personal.getText().trim()+"',AC_LEVEL='"+Level.getText().trim()+"' WHERE STU_REG_NUM='"+number.getText().trim()+"'";
+        String sql1="UPDATE LOGIN SET PASSWORD='"+password.getText().trim()+"' WHERE USERN='"+uni.getText().trim()+"'";
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
@@ -73,6 +143,7 @@ public class student_cont implements Initializable {
             Statement stnt=con.createStatement();
             try {
                 stnt.executeUpdate(sql);
+                stnt.executeUpdate(sql1);
 
 
             }catch (Exception e){
