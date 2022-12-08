@@ -3,9 +3,12 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-19/lib" />
       <root url="jar://$PROJECT_DIR$/../../../../Program Files/Java/jdbc/ojdbc11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Program Files/Java/ojdbc11.jar!/" />
+      <root url="file://$PROJECT_DIR$/../Program Files/Java/javafx-sdk-19/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
     <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-19/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../Program Files/Java/javafx-sdk-19/lib" recursive="false" />
   </library>
 </component>

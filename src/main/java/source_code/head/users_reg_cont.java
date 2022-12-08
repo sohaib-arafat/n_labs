@@ -392,6 +392,8 @@ Alert alert = new Alert(Alert.AlertType.ERROR);
 }
 @FXML
 void gen_c() throws SQLException {
+        if(gen_type.getValue()==null)
+            return;
         if(gen_type.getValue().equals("Student")){
             student.setVisible(true);
             instructor.setVisible(false);
@@ -405,7 +407,7 @@ void gen_c() throws SQLException {
             ResultSet rs=st.executeQuery(sql);
             ArrayList<student> res=new ArrayList<>();
             while (rs.next()){
-                res.add(new student(rs.getString(6),rs.getString(5),rs.getString(2)+" "+rs.getString(3),rs.getString(1),rs.getString(4),rs.getString(7)));
+                res.add(new student(rs.getString(6),rs.getString(5),rs.getString(2)+" "+rs.getString(3),rs.getString(1),rs.getString(7),rs.getString(4)));
             }
             if(res.isEmpty()){
                 student.setItems(null);
@@ -413,6 +415,50 @@ void gen_c() throws SQLException {
             }
             ObservableList<student> lst=FXCollections.observableArrayList(res);
             student.setItems(lst);
+        }
+        if (gen_type.getValue().equals("Instructor")){
+            instructor.setVisible(true);
+            student.setVisible(false);
+            superv.setVisible(false);
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+            Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+            con.setAutoCommit(false);
+            String sql = "select * from instructor where F_ID LIKE '%"+general.getText().trim()+"%' OR FIRST_NAME LIKE '%"+general.getText().trim()+"%' OR LAST_NAME LIKE '%"+general.getText().trim()+"%' OR OFFICE_NUMBER LIKE '%"+general.getText().trim()+"%' OR INSTRUCTOR.PHONE_NUMBER LIKE '%"+general.getText().trim()+"%' or EMAIL LIKE '%"+general.getText().trim()+"%' ORDER BY f_ID ASC ";
+            Statement st= con.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+            ArrayList<instructor> res=new ArrayList<>();
+            while (rs.next()){
+                res.add(new instructor(rs.getString(2)+" "+rs.getString(3),rs.getString(4),rs.getString(6), rs.getString(5),rs.getString(1)));
+            }
+            if(res.isEmpty()){
+                student.setItems(null);
+                return;
+            }
+            ObservableList<instructor> lst=FXCollections.observableArrayList(res);
+            instructor.setItems(lst);
+        }
+        if(gen_type.getValue().equals("Supervisor")){
+            superv.setVisible(true);
+            student.setVisible(false);
+            instructor.setVisible(false);
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+            Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+            con.setAutoCommit(false);
+            String sql = "select * from supervisor where F_ID LIKE '%"+general.getText().trim()+"%' OR FIRST_NAME LIKE '%"+general.getText().trim()+"%' OR LAST_NAME LIKE '%"+general.getText().trim()+"%' OR SPECIALTY LIKE '%"+general.getText().trim()+"%' OR SUPERVISOR.PHONE_NUMBER LIKE '%"+general.getText().trim()+"%' or EMAIL LIKE '%"+general.getText().trim()+"%' ORDER BY f_ID ASC ";
+            Statement st= con.createStatement();
+            ResultSet rs=st.executeQuery(sql);
+            ArrayList<supervisor> res=new ArrayList<>();
+            while (rs.next()){
+                res.add(new supervisor(rs.getString(2)+" "+rs.getString(3),rs.getString(4),rs.getString(6), rs.getString(5),rs.getString(1)));
+            }
+            if(res.isEmpty()){
+                student.setItems(null);
+                return;
+            }
+            ObservableList<supervisor> lst=FXCollections.observableArrayList(res);
+            superv.setItems(lst);
         }
 }
 
