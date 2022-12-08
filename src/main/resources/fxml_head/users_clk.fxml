@@ -6,28 +6,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="520.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_head.User">
    <children>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="948.0" styleClass="back" stylesheets="@home_instructor.css">
          <children>
-            <Label layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Regestration-Users" textFill="WHITE">
+            <Label fx:id="user" layoutX="32.0" layoutY="16.0" styleClass="shade" stylesheets="@shadows.css" text="Regestration-Users" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <TextField layoutX="106.0" layoutY="195.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
-      <TextField layoutX="474.0" layoutY="195.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
+      <TextField fx:id="number" layoutX="106.0" layoutY="195.0" promptText="Number" styleClass="textfield-design" stylesheets="@search.css" />
+      <TextField fx:id="last" layoutX="474.0" layoutY="195.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
       <Button layoutX="364.0" layoutY="322.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Update">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField layoutX="664.0" layoutY="195.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
-      <TextField layoutX="288.0" layoutY="195.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
-      <TextField layoutX="399.0" layoutY="247.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
+      <TextField fx:id="level" layoutX="664.0" layoutY="195.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
+      <TextField fx:id="First" layoutX="288.0" layoutY="195.0" promptText="Phone number" styleClass="textfield-design" stylesheets="@search.css" />
+      <TextField fx:id="uni" layoutX="206.0" layoutY="247.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
       <Button layoutX="487.0" layoutY="322.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Save">
          <font>
             <Font size="14.0" />
@@ -38,5 +37,7 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <TextField fx:id="email" layoutX="390.0" layoutY="247.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
+      <TextField fx:id="phone" layoutX="589.0" layoutY="247.0" promptText="Personal email" styleClass="textfield-design" stylesheets="@search.css" />
    </children>
 </AnchorPane>
