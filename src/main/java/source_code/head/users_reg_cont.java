@@ -161,16 +161,23 @@ try {
             return;
         }
         con.commit();
-        con.close();
         studentreg.clear();
         studentname.clear();
         studentmail.clear();
         studentlevel.clear();
         studentnumber.clear();
+        String pass=generatePassayPassword();
+        String sql1="INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('"+uni+"', '"+pass+"', 'STU')";
+        Statement sr1 = con.createStatement();
+        sr1.executeUpdate(sql1);
+        con.commit();
+        con.close();
+
+
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                mail(uni,generatePassayPassword());
+                mail(uni,pass);
             }
         }) ;
 
