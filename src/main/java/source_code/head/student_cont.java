@@ -1,20 +1,22 @@
 package source_code.head;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import source_code.general.Lab;
+import source_code.general.grade;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -45,6 +47,19 @@ public class student_cont implements Initializable {
 
     @FXML
     public Label user;
+    @FXML
+    private TableColumn<grade, String> grade;
+
+    @FXML
+    private TableView<source_code.general.grade> grades;
+    @FXML
+    private TableColumn<grade, String> section;
+
+    @FXML
+    private TableColumn<grade, String> submession;
+
+    @FXML
+    private TableColumn<grade, String> lab;
 
    @FXML
     void del (ActionEvent e)    {
@@ -188,10 +203,21 @@ public class student_cont implements Initializable {
             e.printStackTrace();
         }
    }
+   @FXML
+   void refreash(){
+        try {
+            cards();
+            grades();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @FXML
     void update(ActionEvent event) throws SQLException, IOException {
-       cards();
+
         personal.setStyle("-fx-background-color: #dceef5 ");
         phone.setStyle("-fx-background-color: #dceef5 ");
         password.setStyle("-fx-background-color: #dceef5 ");
@@ -204,6 +230,32 @@ public class student_cont implements Initializable {
         Level.setEditable(true);
         last.setEditable(true);
         First.setEditable(true);
+    }
+    @FXML
+    void grades() throws SQLException {
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+        String sql="SELECT GRADE,SUB_ID FROM SUB_STU WHERE SUB_STU.STU_ID='"+number.getText().trim()+"'";
+         Statement st= con.createStatement();
+        ResultSet rs=st.executeQuery(sql);
+        ArrayList<grade>res=new ArrayList<>();
+        while (rs.next()){
+            String sql1="SELECT SECTION,LAB FROM SUBMESSION WHERE SUBMESSION.SUB_ID='"+rs.getString(2)+"'";
+            Statement stt=con.createStatement();
+            ResultSet rs2=stt.executeQuery(sql1);
+            rs2.next();
+             String sql2="SELECT NAME FROM LAB WHERE LAB.LAB_NUM='"+rs2.getString(2)+"'";
+            Statement sttt=con.createStatement();
+            ResultSet rs3=sttt.executeQuery(sql2);
+            rs3.next();
+            res.add(new grade(rs3.getString(1),rs.getString(1),rs2.getString(1),rs.getString(2)));
+
+        }
+        if (res.isEmpty())
+            return;
+        grades.setItems(FXCollections.observableArrayList(res));
     }
 
     @Override
@@ -224,5 +276,9 @@ public class student_cont implements Initializable {
         password.setEditable(false);
         phone.setEditable(false);
         uni.setEditable(false);
+        submession.setCellValueFactory(new PropertyValueFactory<grade,String>("submession"));
+        grade.setCellValueFactory(new PropertyValueFactory<grade,String>("grade"));
+        lab.setCellValueFactory(new PropertyValueFactory<grade,String>("lab"));
+        section.setCellValueFactory(new PropertyValueFactory<grade,String>("section"));
     }
 }
