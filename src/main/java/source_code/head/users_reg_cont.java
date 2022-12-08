@@ -1,25 +1,36 @@
 package source_code.head;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import org.passay.CharacterData;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
+import source_code.general.Lab;
+import source_code.general.instructor;
+import source_code.general.student;
+import source_code.general.supervisor;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.File;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 import static org.passay.DigestDictionaryRule.ERROR_CODE;
 
-public class users_reg_cont {
+public class users_reg_cont implements Initializable {
 
     @FXML
     private Button add_stu;
@@ -42,37 +53,39 @@ public class users_reg_cont {
     private TextField id;
 
     @FXML
-    private TableColumn<?, ?> ins_email;
+    private TableColumn<source_code.general.instructor, String> ins_email;
 
     @FXML
-    private TableColumn<?, ?> ins_id;
+    private TableColumn<source_code.general.instructor, String> ins_id;
 
     @FXML
-    private TableColumn<?, ?> ins_name;
+    private TableColumn<source_code.general.instructor, String> ins_name;
 
     @FXML
-    private TableColumn<?, ?> ins_office;
+    private TableColumn<source_code.general.instructor, String> ins_office;
 
     @FXML
-    private TableColumn<?, ?> ins_phone;
+    private TableColumn<source_code.general.instructor, String> ins_phone;
 
     @FXML
-    private TableView<?> instructor;
+    private TableView<instructor> instructor;
 
     @FXML
     private TextField l_name;
 
     @FXML
-    private TableColumn<?, ?> lab_levelsuper_mail;
+    private TableColumn<supervisor, String> lab_levelsuper_mail;
 
     @FXML
     private TextField level;
 
     @FXML
-    private TableColumn<?, ?> level_col;
+    private TableColumn<source_code.general.student, String> level_col;
 
     @FXML
     private TextField pgone;
+@FXML
+ComboBox<String> gen_type;
 
     @FXML
     private ComboBox<?> reg_sel;
@@ -81,22 +94,23 @@ public class users_reg_cont {
     private Button spec;
 
     @FXML
-    private TableColumn<?, ?> stu_mail;
+    private TableColumn<student, String> stu_mail;
 
     @FXML
-    private TableColumn<?, ?> stu_name;
+    private TableColumn<student, String> stu_name;
 
     @FXML
-    private TableColumn<?, ?> stu_phone;
+    private TableColumn<student, String> stu_phone;
+@FXML
+TextField path;
+    @FXML
+    private TableColumn<student, String> stu_regc;
 
     @FXML
-    private TableColumn<?, ?> stu_regc;
+    private TableColumn<student, String>stu_uni;
 
     @FXML
-    private TableColumn<?, ?> stu_uni;
-
-    @FXML
-    private TableView<?> student;
+    private TableView<student> student;
 
     @FXML
     private TextField studentlevel;
@@ -114,27 +128,131 @@ public class users_reg_cont {
     private TextField studentreg;
 
     @FXML
-    private TableColumn<?, ?> super_id;
+    private TableColumn<supervisor, String> super_id;
+    @FXML
+    private TextField fac_id;
 
     @FXML
-    private TableColumn<?, ?> super_name;
+    private TextField fac_mail;
 
     @FXML
-    private TableColumn<?, ?> super_phone;
+    private TextField fac_name;
 
     @FXML
-    private TableColumn<?, ?> super_special;
+    private TextField fac_phone;
 
     @FXML
-    private TableView<?> superv;
+    private TextField fac_spe;
+    @FXML
+    private TableColumn<supervisor, String> super_name;
 
     @FXML
-    private ComboBox<?> type;
+    private TableColumn<supervisor, String> super_phone;
+
+    @FXML
+    private TableColumn<supervisor, String> super_special;
+
+    @FXML
+    private TableView<supervisor> superv;
+
+    @FXML
+    private ComboBox<String> type;
 
     @FXML
     void reg_fac(ActionEvent event) {
 
+        if (type.getValue().equals("Supervisor")) {
+            fac_spe.setPromptText("Speciality");
+
+        }
+        if (type.getValue().equals("Instructor")) {
+            fac_spe.setPromptText("Office number");
+
+        }
     }
+@FXML
+    void reg_fac_final() throws SQLException {
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+        if(type.getValue().equals("Supervisor")){
+            Statement stmt = con.createStatement();
+            String []names = fac_name.getText().split(" ");
+            String query = "insert into supervisor values('"+fac_id.getText()+"','"+names[0]+"','"+names[1]+"','"+fac_mail.getText()+"','"+fac_phone.getText()+"','"+fac_spe.getText()+"')";
+            try {
+                stmt.executeUpdate(query);
+                con.commit();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText("Supervisor added successfully");
+                alert.showAndWait();
+                fac_id.clear();
+                fac_mail.clear();
+                fac_name.clear();
+                fac_phone.clear();
+                fac_spe.clear();
+            } catch (SQLException e) {
+                con.rollback();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Supervisor not added");
+                alert.showAndWait();
+                fac_id.clear();
+                fac_mail.clear();
+                fac_name.clear();
+                fac_phone.clear();
+                fac_spe.clear();
+            }
+             stmt.close();
+            return;
+        }
+        if(type.getValue().equals("Instructor")){
+            Statement stmt = con.createStatement();
+            String []names = fac_name.getText().split(" ");
+            String query = "insert into instructor values('"+fac_id.getText()+"','"+names[0]+"','"+names[1]+"','"+fac_mail.getText()+"','"+fac_phone.getText()+"','"+fac_spe.getText()+"',0)";
+            try {
+                stmt.executeUpdate(query);
+                con.commit();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText("Instructor added successfully");
+                alert.showAndWait();
+                fac_id.clear();
+                fac_mail.clear();
+                fac_name.clear();
+                fac_phone.clear();
+                fac_spe.clear();
+
+            } catch (SQLException e) {
+                con.rollback();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Instructor not added");
+                alert.showAndWait();
+                fac_id.clear();
+                fac_mail.clear();
+                fac_name.clear();
+                fac_phone.clear();
+                fac_spe.clear();
+            }
+            stmt.close();
+        }
+    }
+
+@FXML
+void setsearch(){
+        if(gen_type.getValue().equals("Student")){
+            general.setPromptText("Student");
+        }
+        if (gen_type.getValue().equals("Supervisor")){
+            general.setPromptText("Supervisor");
+        }
+        if (gen_type.getValue().equals("Instructor")){
+            general.setPromptText("Instructor");
+        }
+
+}
 
     @FXML
     void reg_stu(ActionEvent event) throws SQLException {
@@ -167,7 +285,7 @@ try {
         studentlevel.clear();
         studentnumber.clear();
         String pass=generatePassayPassword();
-        String sql1="INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('"+uni+"', '"+pass+"', 'STU')";
+        String sql1="INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('"+uni+"', '"+pass+"', 'stu')";
         Statement sr1 = con.createStatement();
         sr1.executeUpdate(sql1);
         con.commit();
@@ -245,11 +363,11 @@ t1.start();
                     "\n" +
                     "<p>&nbsp;</p>\n" +
                     "\n" +
-                    "<h3><span style=\"font-size:18px\"><strong>Username:("+reciever+")"+"</strong></span></h3>\n" +
+                    "<h3><span style=\"font-size:18px\"><strong>Username: "+reciever+"</strong></span></h3>\n" +
                     "\n" +
                     "<h3>&nbsp;</h3>\n" +
                     "\n" +
-                    "<h3><span style=\"font-size:18px\"><strong>Password:("+pass+")"+"</strong></span></h3>\n", "text/html");
+                    "<h3><span style=\"font-size:18px\"><strong>Password: "+pass+"</strong></span></h3>\n", "text/html");
 
             Transport.send(message);
         } catch (MessagingException mex) {
@@ -257,6 +375,48 @@ t1.start();
         }
 
     }
+    @FXML
+    void addfiles(){}
+@FXML
+void openfiles(){
+   FileChooser fileChooser = new FileChooser();
+   File selectedFile = fileChooser.showOpenDialog(null);
+    if (selectedFile != null) {
+        path.setText(selectedFile.getAbsolutePath());
+    } else {
+Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle("Error");
+    alert.setHeaderText("File not selected");
+    alert.setContentText("Please select a file");
+    alert.showAndWait();
+    return;
+    }
+}
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        type.setItems(FXCollections.observableArrayList("Instructor","Supervisor"));
+        gen_type.setItems(FXCollections.observableArrayList("Student","Supervisor","Instructor"));
+        stu_uni.setCellValueFactory(new PropertyValueFactory<student,String>("uni_email"));
+        stu_name.setCellValueFactory(new PropertyValueFactory<student,String>("name"));
+        stu_regc.setCellValueFactory(new PropertyValueFactory<student,String>("reg"));
+        stu_phone.setCellValueFactory(new PropertyValueFactory<student,String>("phone"));
+        stu_mail.setCellValueFactory(new PropertyValueFactory<student,String>("stu_email"));
+        level_col.setCellValueFactory(new PropertyValueFactory<student,String>("lvl"));
+        ins_email.setCellValueFactory(new PropertyValueFactory<instructor,String>("ins_email"));
+        ins_name.setCellValueFactory(new PropertyValueFactory<instructor,String>("name"));
+        ins_phone.setCellValueFactory(new PropertyValueFactory<instructor,String>("phone"));
+        ins_office.setCellValueFactory(new PropertyValueFactory<instructor,String>("office"));
+        ins_id.setCellValueFactory(new PropertyValueFactory<instructor,String>("id"));
+        super_id.setCellValueFactory(new PropertyValueFactory<supervisor,String>("id"));
+        super_name.setCellValueFactory(new PropertyValueFactory<supervisor,String>("name"));
+        super_phone.setCellValueFactory(new PropertyValueFactory<supervisor,String>("phone"));
+         lab_levelsuper_mail.setCellValueFactory(new PropertyValueFactory<supervisor,String>("super_email"));
+         super_special.setCellValueFactory(new PropertyValueFactory<supervisor,String>("special"));
+
+
+
+
+    }
 }
