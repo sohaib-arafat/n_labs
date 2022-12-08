@@ -2,23 +2,25 @@ package source_code.head;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class student_cont implements Initializable {
-
+@FXML
+    HBox cardly;
     @FXML
      public TextField First;
 
@@ -114,7 +116,33 @@ public class student_cont implements Initializable {
         }
 
     }
+    public void cards( ) throws SQLException, IOException {
+        cardly.getChildren().clear();
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+        String sql="SELECT SEC_NUM,LAB_NUM FROM REGST WHERE REGST.STU_NUM ='"+number.getText()+"'";
+        Statement st= con.createStatement();
+        ResultSet rs=st.executeQuery(sql);
+        while(rs.next()){
+            sql="SELECT SEC_NUM,INSTRUCTOR.FIRST_NAME,INSTRUCTOR.LAST_NAME,LAB.NAME FROM SECTION,INSTRUCTOR,LAB WHERE INSTRUCTOR.F_ID=SECTION.INS_NUM AND  SECTION.LAB_NUM='"+rs.getString(2)+"' AND LAB.LAB_NUM=SECTION.LAB_NUM AND SEC_NUM='"+rs.getString(1)+"'order by SEC_NUM asc ";
+            Statement stt=con.createStatement();
+            ResultSet rs2=stt.executeQuery(sql);
+            rs2.next();
+            FXMLLoader fx = new FXMLLoader();
+            fx.setLocation(getClass().getResource("/fxml_head/button_sections_head.fxml"));
+            AnchorPane cardBox = fx.load();
+            sec_button_cont sc=fx.getController();
+            sc.section_num.setText(rs2.getString(1));
+            sc.ins_name.setText(rs2.getString(2)+" "+rs2.getString(3));
+            sc.lab_name.setText(rs2.getString(4));
+            sc.lab=rs.getString(2);
+            cardly.getChildren().add(cardBox);
+        }
 
+        con.close();
+    }
    @FXML
     void save(ActionEvent event) {
         personal.setStyle("-fx-background-color: WHITE ");
@@ -162,7 +190,8 @@ public class student_cont implements Initializable {
    }
 
     @FXML
-    void update(ActionEvent event) {
+    void update(ActionEvent event) throws SQLException, IOException {
+       cards();
         personal.setStyle("-fx-background-color: #dceef5 ");
         phone.setStyle("-fx-background-color: #dceef5 ");
         password.setStyle("-fx-background-color: #dceef5 ");
