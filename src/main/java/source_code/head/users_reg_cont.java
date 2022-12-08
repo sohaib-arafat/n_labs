@@ -12,7 +12,6 @@ import org.passay.CharacterData;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
-import source_code.general.Lab;
 import source_code.general.instructor;
 import source_code.general.student;
 import source_code.general.supervisor;
