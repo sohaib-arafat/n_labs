@@ -217,16 +217,39 @@ public class reg_lab_cont implements Initializable {
             sql+="LAB_NUM ='"+nums.getText().trim()+"'";
         }
          if(! names.getText().isEmpty()){
-             sql+=" AND NAME ='"+names.getText().trim()+"'";
+             if(nums.getText().isEmpty()){
+                 sql+="  NAME ='"+names.getText().trim()+"'";
+
+
+             }
+             else{
+                 sql+=" AND NAME ='"+names.getText().trim()+"'";
+             }
+
          }
          if(! supes.getText().isEmpty()){
-             sql+="AND LAB.SUPERVISOR ='"+supes.getText().trim()+"'";
+             if(nums.getText().isEmpty()&&names.getText().isEmpty()) {
+                 sql += "  SUPERVISOR ='" + supes.getText().trim() + "'";
+             }
+                 else{
+                     sql+=" AND SUPERVISOR ='"+supes.getText().trim()+"'";
+                 }
          }
          if(! rooms.getText().isEmpty()){
-             sql+="AND ROOM ='"+rooms.getText().trim()+"'";
+                if(nums.getText().isEmpty()&&names.getText().isEmpty()&&supes.getText().isEmpty()) {
+                    sql += "  ROOM ='" + rooms.getText().trim() + "'";
+                }
+                else{
+                    sql+=" AND ROOM ='"+rooms.getText().trim()+"'";
+                }
          }
          if(! lvls.getText().isEmpty()){
-             sql+="AND AC_LEVEL ='"+lvls.getText().trim()+"'";
+                if(nums.getText().isEmpty()&&names.getText().isEmpty()&&supes.getText().isEmpty()&&rooms.getText().isEmpty()) {
+                    sql += "  AC_LEVEL ='" + lvls.getText().trim() + "'";
+                }
+                else{
+                    sql+=" AND AC_LEVEL ='"+lvls.getText().trim()+"'";
+                }
          }
          sql+=" AND LAB.SUPERVISOR=SUPERVISOR.F_ID ORDER BY LAB_NUM DESC";
          Statement st= con.createStatement();

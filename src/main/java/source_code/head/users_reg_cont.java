@@ -1,5 +1,6 @@
 package source_code.head;
 
+ import com.sun.javafx.charts.Legend;
  import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,7 +20,8 @@ import org.passay.CharacterData;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
-import source_code.general.instructor;
+ import source_code.general.Lab;
+ import source_code.general.instructor;
 import source_code.general.student;
 import source_code.general.supervisor;
 
@@ -53,6 +55,8 @@ public class users_reg_cont implements Initializable {
     @FXML
     private ProgressBar pb;
     @FXML
+    private TextField phone;
+    @FXML
     private TextField general;
 
     @FXML
@@ -78,6 +82,8 @@ public class users_reg_cont implements Initializable {
 
     @FXML
     private TextField l_name;
+    @FXML
+    ComboBox<String>types;
 
     @FXML
     private TableColumn<supervisor, String> lab_levelsuper_mail;
@@ -510,9 +516,255 @@ public class users_reg_cont implements Initializable {
             superv.setItems(lst);
         }
     }
+    @FXML
+    void settable() {
+        if (types.getValue().equals("Student")) {
+            student.setVisible(true);
+            instructor.setVisible(false);
+            superv.setVisible(false);
+            addition.setPromptText("University Email");
+            level.setDisable(false);
+        }
+        if (types.getValue().equals("Instructor")) {
+            instructor.setVisible(true);
+            student.setVisible(false);
+            superv.setVisible(false);
+            addition.setPromptText("Office Number");
+            level.setDisable(true);
+        }
+        if (types.getValue().equals("Supervisor")) {
+            superv.setVisible(true);
+            student.setVisible(false);
+            instructor.setVisible(false);
+            addition.setPromptText("Specialty");
+            level.setDisable(true);
+        }
+    }
 
+    @FXML
+    public void spec_c(ActionEvent e) throws SQLException {
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+
+        if(types.getValue().equals("Student")){
+            student.setVisible(true);
+            instructor.setVisible(false);
+            superv.setVisible(false);
+
+
+            String sql = "select * from student where";
+            if(!id.getText().isEmpty()){
+                sql += " STU_REG_NUM = '" + id.getText().trim() + "'";
+            }
+            if (!f_name.getText().isEmpty()) {
+                if (id.getText().isEmpty()) {
+                    sql += " FIRST_NAME = '" + f_name.getText().trim() + "'";
+
+                } else {
+                    sql += " AND FIRST_NAME = '" + f_name.getText().trim() + "'";
+
+                }
+            }
+            if (!l_name.getText().isEmpty()) {
+                if (id.getText().isEmpty() && !f_name.getText().isEmpty()) {
+                    sql += " LAST_NAME = '" + l_name.getText().trim() + "'";
+
+                } else {
+                    sql += " AND LAST_NAME = '" + l_name.getText().trim() + "'";
+
+                }
+            }
+            if (!email.getText().isEmpty()) {
+                if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty()) {
+                    sql += " STU_EMAIL = '" + email.getText().trim() + "'";
+
+                } else {
+                    sql += " AND STU_EMAIL = '" + email.getText().trim() + "'";
+
+                }
+            }
+             if (!phone.getText().isEmpty()) {
+                if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty()) {
+                    sql += " PHONE = '" + phone.getText().trim() + "'";
+
+                } else {
+                    sql += " AND PHONE = '" + phone.getText().trim() + "'";
+
+                }
+            }
+             if(! addition.getText().isEmpty()){
+                if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty() && phone.getText().isEmpty()) {
+                    sql += " UNIVERSITY_EMAIL = '" + addition.getText().trim() + "'";
+
+                } else {
+                    sql += " AND UNIVERSITY_EMAIL = '" + addition.getText().trim() + "'";
+
+                }
+             }
+             if(!level.getText().isEmpty()){
+                if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty() && phone.getText().isEmpty() && addition.getText().isEmpty()) {
+                    sql += " AC_LEVEL = '" + level.getText().trim() + "'";
+
+                } else {
+                    sql += " AND AC_LEVEL = '" + level.getText().trim() + "'";
+
+                }
+             }
+             sql+="ORDER BY STU_REG_NUM ASC";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            ArrayList<student> res = new ArrayList<>();
+            while (rs.next()) {
+                res.add(new student(rs.getString(6), rs.getString(5), rs.getString(2) + " " + rs.getString(3), rs.getString(1), rs.getString(7), rs.getString(4)));
+            }
+            if (res.isEmpty()) {
+                student.setItems(null);
+                return;
+            }
+            ObservableList<student> lst = FXCollections.observableArrayList(res);
+            student.setItems(lst);
+        }
+        if(types.getValue().equals("Instructor")){
+            student.setVisible(false);
+            instructor.setVisible(true);
+            superv.setVisible(false);
+            level.setDisable(true);
+            addition.setPromptText("Office Number");
+            String sql = "select * from instructor where";
+            if(!id.getText().isEmpty()){
+                sql += " F_ID = '" + id.getText().trim() + "'";
+            }
+            if (!f_name.getText().isEmpty()) {
+                if (id.getText().isEmpty()) {
+                    sql += " FIRST_NAME = '" + f_name.getText().trim() + "'";
+
+                } else {
+                    sql += " AND FIRST_NAME = '" + f_name.getText().trim() + "'";
+
+                }
+            }
+            if (!l_name.getText().isEmpty()) {
+                if (id.getText().isEmpty() && f_name.getText().isEmpty()) {
+                    sql += " LAST_NAME = '" + l_name.getText().trim() + "'";
+
+                } else {
+                    sql += " AND LAST_NAME = '" + l_name.getText().trim() + "'";
+
+                }
+            }
+            if (!email.getText().isEmpty()) {
+                if(id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty()){
+                    sql += " EMAIL = '" + email.getText().trim() + "'";
+
+                }else{
+                    sql += " AND EMAIL = '" + email.getText().trim() + "'";
+
+                }
+            }
+             if (!phone.getText().isEmpty()) {
+                if (id.getText().isEmpty() &&f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty()) {
+                    sql += " PHONE = '" + phone.getText().trim() + "'";
+
+                } else {
+                    sql += " AND PHONE = '" + phone.getText().trim() + "'";
+
+                }
+            }
+             if(! addition.getText().isEmpty()){
+                if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty() && phone.getText().isEmpty()) {
+                    sql += " OFFICE_NUMBER = '" + addition.getText().trim() + "'";
+
+                } else {
+                    sql += " AND OFFICE_NUMBER = '" + addition.getText().trim() + "'";
+
+                }
+             }
+             sql+="ORDER BY F_ID ASC";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            ArrayList<instructor> res = new ArrayList<>();
+            while (rs.next()) {
+                res.add(new instructor(rs.getString(2) + " " + rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(5), rs.getString(1)));
+            }
+            if (res.isEmpty()) {
+                instructor.setItems(null);
+                return;
+            }
+            ObservableList<instructor> lst = FXCollections.observableArrayList(res);
+            instructor.setItems(lst);
+        }
+        if(types.getValue().equals("Supervisor")){
+            String sql = "select * from supervisor where";
+            if(!id.getText().isEmpty()){
+                sql += " F_ID = '" + id.getText().trim() + "'";
+            }
+            if (!f_name.getText().isEmpty()) {
+                if (id.getText().isEmpty()) {
+                    sql += " FIRST_NAME = '" + f_name.getText().trim() + "'";
+
+                } else {
+                    sql += " AND FIRST_NAME = '" + f_name.getText().trim() + "'";
+
+                }
+            }
+            if (!l_name.getText().isEmpty()) {
+                if (id.getText().isEmpty() && f_name.getText().isEmpty()) {
+                    sql += " LAST_NAME = '" + l_name.getText().trim() + "'";
+
+                } else {
+                    sql += " AND LAST_NAME = '" + l_name.getText().trim() + "'";
+
+                }
+            }
+            if (!email.getText().isEmpty()) {
+                if(id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty()){
+                    sql += " EMAIL = '" + email.getText().trim() + "'";
+
+                }else{
+                    sql += " AND EMAIL = '" + email.getText().trim() + "'";
+
+                }
+            }
+            if (!phone.getText().isEmpty()) {
+                if (id.getText().isEmpty() &&f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty()) {
+                    sql += " PHONE = '" + phone.getText().trim() + "'";
+
+                } else {
+                    sql += " AND PHONE = '" + phone.getText().trim() + "'";
+
+                }
+            }
+            if(! addition.getText().isEmpty()){
+                if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty() && phone.getText().isEmpty()) {
+                    sql += " SPECIALTY = '" + addition.getText().trim() + "'";
+
+                } else {
+                    sql += " AND SPECIALTY = '" + addition.getText().trim() + "'";
+
+                }
+            }
+            sql+="ORDER BY F_ID ASC";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            ArrayList<supervisor> res = new ArrayList<>();
+            while (rs.next()) {
+                res.add(new supervisor(rs.getString(2) + " " + rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(5), rs.getString(1)));
+             }
+            if (res.isEmpty()) {
+                superv.setItems(null);
+                return;
+            }
+            ObservableList<supervisor> lst = FXCollections.observableArrayList(res);
+            superv.setItems(lst);
+        }
+
+
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        types.setItems(FXCollections.observableArrayList("Student", "Instructor", "Supervisor"));
         type.setItems(FXCollections.observableArrayList("Instructor", "Supervisor"));
         gen_type.setItems(FXCollections.observableArrayList("Student", "Supervisor", "Instructor"));
         stu_uni.setCellValueFactory(new PropertyValueFactory<student, String>("uni_email"));

@@ -87,7 +87,7 @@
             <TextField fx:id="addition" layoutX="720.0" layoutY="1123.0" promptText="University Email" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="email" layoutX="546.0" layoutY="1123.0" promptText="Email" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="l_name" layoutX="720.0" layoutY="1080.0" promptText="Last Name" styleClass="textfield-design" stylesheets="@search.css" />
-            <Button fx:id="spec" layoutX="575.0" layoutY="1215.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+            <Button fx:id="spec" layoutX="575.0" layoutY="1215.0" mnemonicParsing="false" onAction="#spec_c" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
                <font>
                   <Font size="14.0" />
                </font>
@@ -100,8 +100,8 @@
                </font>
             </Label>
             <VBox layoutX="637.0" layoutY="638.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="700.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <ComboBox fx:id="type" layoutX="848.0" layoutY="1021.0" prefWidth="150.0" promptText="Search type" stylesheets="@search.css" />
-            <TextField fx:id="pgone" layoutX="372.0" layoutY="1123.0" promptText="Phone" styleClass="textfield-design" stylesheets="@search.css" />
+            <ComboBox fx:id="types" layoutX="848.0" layoutY="1021.0" onAction="#settable" prefWidth="150.0" promptText="Search type" stylesheets="@search.css" />
+            <TextField fx:id="phone" layoutX="372.0" layoutY="1123.0" promptText="Phone" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="level" layoutX="546.0" layoutY="1169.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
             <TableView fx:id="superv" layoutX="320.0" layoutY="1316.0" prefHeight="335.0" prefWidth="589.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
