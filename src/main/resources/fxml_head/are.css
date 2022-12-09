@@ -1,0 +1,23 @@
+.text-area {
+    -fx-background-color :rgba(255,255,255,0.0);
+    -fx-background-radius: 20px;
+    -fx-text-fill: #ffffff;
+    -fx-highlight-text-fill: #000000;
+    -fx-padding: 0.3em 0.6em 0.3em 0.6em; /* 2 4 2 4 */
+    -fx-shape: "M7.071,1L8.5,1.002L4.5,4l-4-2.998L1.93,1L4.5,2.976L7.071,1z";
+    -fx-effect: dropshadow(two-pass-box , -fx-shadow-highlight-color, 1, 0.0 , 0, 1.4);
+-fx-font-size: 20;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color :rgba(255,255,255,0.0);
+    -fx-background-radius: 20px;}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color :rgba(255,255,255,0.0);
+    -fx-background-radius: 20px;}
+
+
+.text-area .scroll-pane .content{
+    -fx-background-color :rgba(255,255,255,0.0);
+    -fx-background-radius: 20px;}

@@ -129,24 +129,24 @@
             </HBox>
             <AnchorPane layoutX="32.0" layoutY="635.0" prefHeight="303.0" prefWidth="472.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
-                  <Label layoutX="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Faculty Announcments" textFill="WHITE">
+                  <Label layoutX="21.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Faculty Announcments" textFill="WHITE">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="10.0" layoutY="40.0" prefHeight="223.0" prefWidth="453.0" />
+                  <TextArea layoutX="15.0" layoutY="50.0" prefHeight="223.0" prefWidth="442.0" stylesheets="@are.css" />
                </children>
             </AnchorPane>
             <HBox layoutX="520.0" layoutY="635.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="428.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="450.0">
                      <children>
-                        <Label layoutX="21.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Announcments" textFill="WHITE">
+                        <Label layoutX="21.0" layoutY="10.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Announcments" textFill="WHITE">
                            <font>
                               <Font size="28.0" />
                            </font>
                         </Label>
-                        <TextArea layoutX="21.0" layoutY="40.0" prefHeight="226.0" prefWidth="393.0" />
+                        <TextArea layoutX="15.0" layoutY="50.0" prefHeight="226.0" prefWidth="398.0" stylesheets="@are.css" />
                      </children>
                   </AnchorPane>
                </children>
@@ -155,12 +155,12 @@
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="213.0" stylesheets="@../fxml_instructor/home_instructor.css">
                      <children>
-                        <Label layoutX="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Reminders" textFill="#fff8f8">
+                        <Label layoutX="14.0" layoutY="10.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Reminders" textFill="#fff8f8">
                            <font>
                               <Font size="28.0" />
                            </font>
                         </Label>
-                        <TextArea layoutX="19.0" layoutY="40.0" prefHeight="226.0" prefWidth="175.0" />
+                        <TextArea layoutX="19.0" layoutY="50.0" prefHeight="226.0" prefWidth="175.0" stylesheets="@are.css" />
                      </children>
                   </AnchorPane>
                </children>
