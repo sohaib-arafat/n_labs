@@ -16,7 +16,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.passay.CharacterData;
+ import org.apache.poi.ss.usermodel.Sheet;
+ import org.apache.poi.ss.usermodel.Workbook;
+ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+ import org.passay.CharacterData;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
@@ -29,7 +32,9 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
-import java.io.IOException;
+ import java.io.FileInputStream;
+ import java.io.FileNotFoundException;
+ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
@@ -429,21 +434,6 @@ public class users_reg_cont implements Initializable {
     void addfiles() {
     }
 
-    @FXML
-    void openfiles() {
-        FileChooser fileChooser = new FileChooser();
-        File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
-            path.setText(selectedFile.getAbsolutePath());
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("File not selected");
-            alert.setContentText("Please select a file");
-            alert.showAndWait();
-            return;
-        }
-    }
 
     @FXML
     void gen_c() throws SQLException {
@@ -760,6 +750,21 @@ public class users_reg_cont implements Initializable {
             superv.setItems(lst);
         }
 
+
+    }
+    @FXML
+    void openfiles() throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        File fil=fileChooser.showOpenDialog((Stage)add_stu.getScene().getWindow());
+        path.setText(fil.getAbsolutePath());
+        FileInputStream file = new FileInputStream(fil);
+         Workbook workbook = new XSSFWorkbook(file);
+        Sheet sheet = workbook.getSheetAt(0);
+
+        for(int i=0;i<=sheet.getLastRowNum();i++){
+            System.out.println(sheet.getRow(i).getCell(0).getStringCellValue());
+        }
 
     }
     @Override
