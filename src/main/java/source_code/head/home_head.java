@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
@@ -16,11 +17,13 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class home_head implements Initializable {
     @FXML
     private Label inus;
+
     @FXML
     private Label secs;
 
@@ -41,6 +44,7 @@ public class home_head implements Initializable {
     private TextArea text3;
     @FXML
     private HBox cardly;
+    private LineChart<?, ?> chart;
     @FXML
     private HBox cardly1;
     @FXML
@@ -194,8 +198,19 @@ void remann1( ) throws SQLException {
         st.playFromStart();
     }
 
+    @FXML
+    private CategoryAxis xs=new CategoryAxis();
+
+    @FXML
+    private NumberAxis ys=new NumberAxis();
+
+
+    @FXML
+    private LineChart<?, ?> lineChart;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         try {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         } catch (SQLException e) {
@@ -228,11 +243,7 @@ void remann1( ) throws SQLException {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        try {
-            con.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
         try {
             remann11();
         } catch (SQLException e) {
@@ -244,5 +255,45 @@ void remann1( ) throws SQLException {
             throw new RuntimeException(e);
         }
 counts();
-    }
+
+ArrayList <Integer> x=new ArrayList<>();
+ArrayList<Integer>y=new ArrayList<>();
+        Statement statement= null;
+        try {
+            statement = con.createStatement();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        for(int i=0;i<=10;i++){
+    sql="SELECT COUNT(*) FROM SUB_STU WHERE GRADE ="+i;
+            ResultSet resultSet= null;
+            try {
+                resultSet = statement.executeQuery(sql);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                resultSet.next();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            x.add(i);
+            try {
+                y.add(resultSet.getInt(1));
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+
+      XYChart.Series series=new XYChart.Series();
+for(int i=0;i<10;i++){
+    series.getData().add(new XYChart.Data(String.valueOf(x.get(i)),y.get(i)));
+}
+    lineChart.getData().addAll(series);
+    lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
+    series.getNode().setStyle("-fx-stroke:#ffffff");
+
+
+}
 }

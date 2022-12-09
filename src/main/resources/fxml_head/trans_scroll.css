@@ -1,0 +1,3 @@
+.scroll-pane > .viewport {  //not .scrollpane but .scroll-pane
+-fx-background-color: transparent;
+}
