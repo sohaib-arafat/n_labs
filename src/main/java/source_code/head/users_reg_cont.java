@@ -1,6 +1,5 @@
 package source_code.head;
 
- import com.sun.javafx.charts.Legend;
  import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,7 +22,6 @@ import javafx.stage.Stage;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;
- import source_code.general.Lab;
  import source_code.general.instructor;
 import source_code.general.student;
 import source_code.general.supervisor;
@@ -33,7 +31,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
  import java.io.FileInputStream;
- import java.io.FileNotFoundException;
  import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
@@ -752,21 +749,54 @@ public class users_reg_cont implements Initializable {
 
 
     }
+    File fil=new File("C:\\Users\\moham\\Desktop\\test.txt");
     @FXML
-    void openfiles() throws IOException {
+    void openfiles() throws IOException, SQLException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
-        File fil=fileChooser.showOpenDialog((Stage)add_stu.getScene().getWindow());
+          fil=fileChooser.showOpenDialog((Stage)add_stu.getScene().getWindow());
         path.setText(fil.getAbsolutePath());
-        FileInputStream file = new FileInputStream(fil);
+
+     }
+
+     @FXML
+     void addmult() throws SQLException, IOException {
+         FileInputStream file = new FileInputStream(fil);
          Workbook workbook = new XSSFWorkbook(file);
-        Sheet sheet = workbook.getSheetAt(0);
+         Sheet sheet = workbook.getSheetAt(0);
+         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+         con.setAutoCommit(false);
+         String[] names = studentname.getText().split(" ");
+         Statement sr = con.createStatement();
+         String sql="";
+         int pass=0;
+         int fail= 0;
+         for(int i=0;i<=sheet.getLastRowNum();i++){
+             try {
+                 String uni = "s" + sheet.getRow(i).getCell(0)+ "@stu.najah.edu";
 
-        for(int i=0;i<=sheet.getLastRowNum();i++){
-            System.out.println(sheet.getRow(i).getCell(0).getStringCellValue());
-        }
-
-    }
+                 sql = "INSERT INTO N_LABS.STUDENT (STU_REG_NUM, FIRST_NAME, LAST_NAME, AC_LEVEL, STU_EMAIL, UNI_EMAIL, PHONE) VALUES ('" + sheet.getRow(i).getCell(0) + "', '" + sheet.getRow(i).getCell(1)+ "', '" + sheet.getRow(i).getCell(2) + "', '" + sheet.getRow(i).getCell(3) + "', '" + sheet.getRow(i).getCell(4) + "', '" + uni + "'" + ", '" + sheet.getRow(i).getCell(5) + "')";
+                 sr.executeUpdate(sql);
+                 pass++;
+                 con.commit();
+                 String wor=generatePassayPassword();
+                 String sql1="INSER INTO LOGIN (USERNAME,PASSWORD,TYPE) VALUES ('"+uni+"','"+wor+"','STU')";
+             }catch (Exception e){
+                 fail++;
+             }
+         }
+         con.close();
+         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+         alert.setTitle("Information Dialog");
+         alert.setHeaderText(null);
+         alert.setContentText(pass+" students added successfully\n"+fail+" students failed to add");
+         alert.showAndWait();
+         file.close();
+         workbook.close();
+path.clear();
+     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         types.setItems(FXCollections.observableArrayList("Student", "Instructor", "Supervisor"));

@@ -66,7 +66,7 @@
                <Font size="14.0" />
             </font>
          </Button>
-         <Button layoutX="565.0" layoutY="761.0" mnemonicParsing="false" onAction="#addfiles" prefHeight="39.0" prefWidth="108.0" styleClass="button-design" stylesheets="@search.css" text="Add students">
+         <Button layoutX="565.0" layoutY="761.0" mnemonicParsing="false" onAction="#addmult" prefHeight="39.0" prefWidth="108.0" styleClass="button-design" stylesheets="@search.css" text="Add students">
             <font>
                <Font size="14.0" />
             </font>
