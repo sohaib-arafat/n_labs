@@ -4,8 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import source_code.general.student;
 
 import java.awt.*;
@@ -15,6 +17,22 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class search_cont implements Initializable {
+    @FXML
+    private TableColumn<student, String> stu_mail;
+    @FXML
+    private TableColumn<source_code.general.student, String> level_col;
+    @FXML
+    private TableColumn<student, String> stu_name;
+
+    @FXML
+    private TableColumn<student, String> stu_phone;
+    @FXML
+    TextField path;
+    @FXML
+    private TableColumn<student, String> stu_regc;
+
+    @FXML
+    private TableColumn<student, String> stu_uni;
     @FXML
     private TextField general;
     @FXML
@@ -133,6 +151,12 @@ void general_c() throws SQLException {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        stu_uni.setCellValueFactory(new PropertyValueFactory<student, String>("uni_email"));
+        stu_name.setCellValueFactory(new PropertyValueFactory<student, String>("name"));
+        stu_regc.setCellValueFactory(new PropertyValueFactory<student, String>("reg"));
+        stu_phone.setCellValueFactory(new PropertyValueFactory<student, String>("phone"));
+        stu_mail.setCellValueFactory(new PropertyValueFactory<student, String>("stu_email"));
+        level_col.setCellValueFactory(new PropertyValueFactory<student, String>("lvl"));
 
     }
 }
