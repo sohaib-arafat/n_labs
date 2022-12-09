@@ -1,6 +1,8 @@
 package source_code.head;
 
 import javafx.animation.ScaleTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -47,6 +49,8 @@ public class home_head implements Initializable {
     private LineChart<?, ?> chart;
     @FXML
     private HBox cardly1;
+    @FXML
+    private PieChart pieChart;
     @FXML
 void show(MouseEvent e) throws SQLException, IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_head/announce_fac.fxml"));
@@ -293,6 +297,34 @@ for(int i=0;i<10;i++){
     lineChart.getData().addAll(series);
     lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
     series.getNode().setStyle("-fx-stroke:#ffffff");
+        ObservableList<PieChart.Data> pieChartData= FXCollections.observableArrayList(
+         );
+        String sql1="SELECT LAB_NUM,NAME  FROM LAB   ";
+        Statement st1= null;
+        try {
+            st1 = con.createStatement();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        ResultSet rs1= null;
+        try {
+            rs1 = st1.executeQuery(sql1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            while (rs1.next()){
+                sql="SELECT COUNT(*) FROM REGST WHERE LAB_NUM ='"+rs1.getInt(1)+"'";
+                Statement st2= con.createStatement();
+                ResultSet rs2= st2.executeQuery(sql);
+                rs2.next();
+                pieChartData.add(new PieChart.Data(rs1.getString(2),rs2.getInt(1)));
+            }
+         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
+
+        pieChart.setData(pieChartData);
 }
 }

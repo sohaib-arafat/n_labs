@@ -159,7 +159,7 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="test1" editable="false" layoutX="17.0" layoutY="54.0" onMouseClicked="#show" onMouseEntered="#remann1" prefHeight="223.0" prefWidth="373.0" stylesheets="@are.css" />
+                  <TextArea fx:id="test1" editable="false" layoutX="17.0" layoutY="16.0" onMouseClicked="#show" onMouseEntered="#remann1" prefHeight="283.0" prefWidth="373.0" stylesheets="@are.css" />
                </children>
             </AnchorPane>
             <HBox layoutX="459.0" layoutY="635.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="412.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
@@ -171,7 +171,7 @@
                               <Font size="28.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="text2" editable="false" layoutX="16.0" layoutY="50.0" onMouseClicked="#show1" onMouseExited="#remann11" prefHeight="226.0" prefWidth="379.0" stylesheets="@are.css" />
+                        <TextArea fx:id="text2" editable="false" layoutX="19.0" layoutY="14.0" onMouseClicked="#show1" onMouseExited="#remann11" prefHeight="283.0" prefWidth="379.0" stylesheets="@are.css" />
                      </children>
                   </AnchorPane>
                </children>
@@ -185,9 +185,7 @@
                               <Font size="28.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="text3" editable="false" layoutX="15.0" layoutY="52.0" onMouseClicked="#show111" onMouseEntered="#remann111" prefHeight="226.0" prefWidth="260.0" stylesheets="@are.css" />
-                        <TextArea fx:id="text31" editable="false" layoutX="15.0" layoutY="61.0" onMouseClicked="#show111" onMouseEntered="#remann111" prefHeight="226.0" prefWidth="260.0" stylesheets="@arer.css" />
-                        <TextArea fx:id="text311" editable="false" layoutX="25.0" layoutY="71.0" onMouseClicked="#show111" onMouseEntered="#remann111" prefHeight="226.0" prefWidth="260.0" styleClass="text-area" stylesheets="@arer.css" />
+                        <TextArea fx:id="text3" editable="false" layoutX="15.0" layoutY="17.0" onMouseClicked="#show111" onMouseEntered="#remann111" prefHeight="296.0" prefWidth="260.0" styleClass="text-area" stylesheets="@arer.css" />
                      </children>
                   </AnchorPane>
                </children>
