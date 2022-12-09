@@ -90,6 +90,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                </children>
             </HBox>
             <HBox fx:id="cardly1" layoutX="32.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#mouseEnter1" onMouseExited="#mouseExit1" prefHeight="330.0" prefWidth="705.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
@@ -127,31 +128,31 @@
                   </AnchorPane>
                </children>
             </HBox>
-            <AnchorPane layoutX="32.0" layoutY="635.0" prefHeight="303.0" prefWidth="472.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
+            <AnchorPane layoutX="32.0" layoutY="635.0" prefHeight="303.0" prefWidth="407.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
                   <Label layoutX="21.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Faculty Announcments" textFill="WHITE">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="test1" editable="false" layoutX="15.0" layoutY="50.0" onMouseClicked="#show" onMouseEntered="#remann1" prefHeight="223.0" prefWidth="442.0" stylesheets="@are.css" />
+                  <TextArea fx:id="test1" editable="false" layoutX="17.0" layoutY="54.0" onMouseClicked="#show" onMouseEntered="#remann1" prefHeight="223.0" prefWidth="373.0" stylesheets="@are.css" />
                </children>
             </AnchorPane>
-            <HBox layoutX="520.0" layoutY="635.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="428.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
+            <HBox layoutX="459.0" layoutY="635.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="412.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="450.0">
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="410.0">
                      <children>
                         <Label layoutX="21.0" layoutY="10.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Announcments" textFill="WHITE">
                            <font>
                               <Font size="28.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="text2" editable="false" layoutX="14.0" layoutY="50.0" onMouseExited="#sann" prefHeight="226.0" prefWidth="398.0" stylesheets="@are.css" />
+                        <TextArea fx:id="text2" editable="false" layoutX="16.0" layoutY="50.0" onMouseClicked="#show1" onMouseExited="#remann11" prefHeight="226.0" prefWidth="379.0" stylesheets="@are.css" />
                      </children>
                   </AnchorPane>
                </children>
             </HBox>
-            <HBox layoutX="963.0" layoutY="635.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="219.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
+            <HBox layoutX="890.0" layoutY="635.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="292.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="213.0" stylesheets="@../fxml_instructor/home_instructor.css">
                      <children>
@@ -160,7 +161,9 @@
                               <Font size="28.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="text3" editable="false" layoutX="19.0" layoutY="50.0" onMouseExited="#remann" prefHeight="226.0" prefWidth="175.0" stylesheets="@are.css" />
+                        <TextArea fx:id="text3" editable="false" layoutX="15.0" layoutY="52.0" onMouseClicked="#show111" onMouseEntered="#remann111" prefHeight="226.0" prefWidth="260.0" stylesheets="@are.css" />
+                        <TextArea fx:id="text31" editable="false" layoutX="15.0" layoutY="61.0" onMouseClicked="#show111" onMouseEntered="#remann111" prefHeight="226.0" prefWidth="260.0" stylesheets="@arer.css" />
+                        <TextArea fx:id="text311" editable="false" layoutX="25.0" layoutY="71.0" onMouseClicked="#show111" onMouseEntered="#remann111" prefHeight="226.0" prefWidth="260.0" styleClass="text-area" stylesheets="@arer.css" />
                      </children>
                   </AnchorPane>
                </children>

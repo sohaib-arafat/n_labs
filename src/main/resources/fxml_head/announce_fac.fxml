@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml_instructor.ExpClk">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.head.announce">
    <children>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="547.0" styleClass="back" stylesheets="@home_instructor.css">
          <children>
@@ -21,11 +21,16 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="288.0" layoutY="266.0" mnemonicParsing="false" onAction="#close" prefHeight="35.0" prefWidth="72.0" styleClass="button-design" stylesheets="@search.css" text="Cancel">
+      <Button layoutX="280.0" layoutY="266.0" mnemonicParsing="false" onAction="#close" prefHeight="35.0" prefWidth="72.0" styleClass="button-design" stylesheets="@search.css" text="Cancel">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <TextArea fx:id="text" layoutX="99.0" layoutY="118.0" prefHeight="136.0" prefWidth="349.0" stylesheets="@../fxml_crd/scrd1.css" />
+      <TextArea fx:id="text1" layoutX="99.0" layoutY="118.0" prefHeight="136.0" prefWidth="349.0" stylesheets="@../fxml_crd/scrd1.css" />
+      <Button layoutX="14.0" layoutY="118.0" mnemonicParsing="false" onAction="#clear" prefHeight="35.0" prefWidth="72.0" styleClass="button-design" stylesheets="@search.css" text="Clear all">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -14,10 +14,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
-import java.security.Timestamp;
 import java.sql.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class home_head implements Initializable {
@@ -36,13 +33,32 @@ public class home_head implements Initializable {
     private HBox cardly1;
     @FXML
 void show(MouseEvent e) throws SQLException, IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_head/exp_clk.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_head/announce_fac.fxml"));
         Stage st=new Stage();
         Parent root = loader.load();
         st.setScene(new Scene(root));
         st.show();
 
 }
+@FXML
+    void show111(MouseEvent e) throws SQLException, IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_head/rems.fxml"));
+        Stage st=new Stage();
+        Parent root = loader.load();
+        st.setScene(new Scene(root));
+        st.show();
+
+    }
+@FXML
+    void show1(MouseEvent e) throws SQLException, IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_head/announce_all.fxml"));
+
+        Stage st=new Stage();
+        Parent root = loader.load();
+        st.setScene(new Scene(root));
+        st.show();
+
+    }
 @FXML
 void sann(MouseEvent e){
 
@@ -52,7 +68,7 @@ void remann(MouseEvent e){
 
 }
 @FXML
-void remann1(MouseEvent e) throws SQLException {
+void remann1( ) throws SQLException {
     DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
     String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
     Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
@@ -63,6 +79,30 @@ void remann1(MouseEvent e) throws SQLException {
     rs.next();
     test1.setText(rs.getString(1));
 }
+@FXML
+    void remann11( ) throws SQLException {
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+        String sql="select STUS FROM NOUNS";
+        Statement st1= con.createStatement();
+        ResultSet rs=st1.executeQuery(sql);
+        rs.next();
+        text2.setText(rs.getString(1));
+    }
+    @FXML
+    void remann111( ) throws SQLException {
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+        String sql="select REMINDERS FROM NOUNS";
+        Statement st1= con.createStatement();
+        ResultSet rs=st1.executeQuery(sql);
+        rs.next();
+        text3.setText(rs.getString(1));
+    }
     public void mouseEnter( ){
         cardly.setScaleX(1);
         cardly.setScaleY(1);
@@ -143,6 +183,16 @@ void remann1(MouseEvent e) throws SQLException {
         }
         try {
             con.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            remann11();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            remann111();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
