@@ -201,7 +201,9 @@ public void cards( ) throws SQLException, IOException {
     String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
     Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
     con.setAutoCommit(false);
-     String sql="SELECT SEC_NUM,INSTRUCTOR.FIRST_NAME,INSTRUCTOR.LAST_NAME,LAB.NAME FROM SECTION,INSTRUCTOR,LAB WHERE INSTRUCTOR.F_ID=SECTION.INS_NUM AND  SECTION.LAB_NUM='"+lab_num.getText()+"' AND LAB.LAB_NUM=SECTION.LAB_NUM order by SEC_NUM asc ";
+      String sql=null;
+
+    sql="SELECT SEC_NUM,INSTRUCTOR.FIRST_NAME,INSTRUCTOR.LAST_NAME,LAB.NAME FROM SECTION,INSTRUCTOR,LAB WHERE INSTRUCTOR.F_ID=SECTION.INS_NUM AND  SECTION.LAB_NUM='"+lab_num.getText()+"' AND LAB.LAB_NUM=SECTION.LAB_NUM order by SEC_NUM asc ";
     Statement st= con.createStatement();
     ResultSet rs=st.executeQuery(sql);
     while (rs.next()){

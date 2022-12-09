@@ -661,5 +661,69 @@ public class users_reg_cont implements Initializable {
 
             }
         });
+        superv.setOnMouseClicked((MouseEvent event) -> {
+            if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                Stage dialog = new Stage();
+                dialog.initModality(Modality.APPLICATION_MODAL);
+                FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_head/super.fxml"));
+                Parent root = null;
+                try {
+                    root = l.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                super_cont sc = l.getController();
+                String[] names = superv.getSelectionModel().getSelectedItem().getName().split(" ");
+                sc.First.setText(names[0]);
+                sc.last.setText(names[1]);
+                sc.user.setText(superv.getSelectionModel().getSelectedItem().getName());
+                sc.number.setText(superv.getSelectionModel().getSelectedItem().getId());
+                sc.phone.setText(superv.getSelectionModel().getSelectedItem().getPhone());
+                sc.personal.setText(superv.getSelectionModel().getSelectedItem().getSuper_email());
+                sc.office.setText(superv.getSelectionModel().getSelectedItem().getSpecial());
+                try {
+                    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+                Connection con = null;
+                try {
+                    con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    con.setAutoCommit(false);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                String sql = "select PASSWORD from LOGIN where LOGIN.USERN='" + superv.getSelectionModel().getSelectedItem().getSuper_email() + "'";
+                Statement st = null;
+                try {
+                    st = con.createStatement();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+
+                try {
+                    ResultSet rs = st.executeQuery(sql);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    ResultSet rs = st.executeQuery(sql);
+                    rs.next();
+                    sc.password.setText(rs.getString(1));
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                Scene scene = new Scene(root);
+                dialog.setScene(scene);
+                dialog.show();
+
+
+            }
+        });
     }
 }
