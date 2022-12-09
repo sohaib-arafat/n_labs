@@ -294,6 +294,5 @@ for(int i=0;i<10;i++){
     lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
     series.getNode().setStyle("-fx-stroke:#ffffff");
 
-
 }
 }
