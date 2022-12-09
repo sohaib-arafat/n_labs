@@ -90,8 +90,8 @@ public class users_reg_cont implements Initializable {
 
     @FXML
     private TextField pgone;
-@FXML
-ComboBox<String> gen_type;
+    @FXML
+    ComboBox<String> gen_type;
 
     @FXML
     private ComboBox<?> reg_sel;
@@ -107,13 +107,13 @@ ComboBox<String> gen_type;
 
     @FXML
     private TableColumn<student, String> stu_phone;
-@FXML
-TextField path;
+    @FXML
+    TextField path;
     @FXML
     private TableColumn<student, String> stu_regc;
 
     @FXML
-    private TableColumn<student, String>stu_uni;
+    private TableColumn<student, String> stu_uni;
 
     @FXML
     private TableView<student> student;
@@ -176,16 +176,17 @@ TextField path;
 
         }
     }
-@FXML
+
+    @FXML
     void reg_fac_final() throws SQLException {
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
-        if(type.getValue().equals("Supervisor")){
+        if (type.getValue().equals("Supervisor")) {
             Statement stmt = con.createStatement();
-            String []names = fac_name.getText().split(" ");
-            String query = "insert into supervisor values('"+fac_id.getText()+"','"+names[0]+"','"+names[1]+"','"+fac_mail.getText()+"','"+fac_phone.getText()+"','"+fac_spe.getText()+"')";
+            String[] names = fac_name.getText().split(" ");
+            String query = "insert into supervisor values('" + fac_id.getText() + "','" + names[0] + "','" + names[1] + "','" + fac_mail.getText() + "','" + fac_phone.getText() + "','" + fac_spe.getText() + "')";
             try {
                 stmt.executeUpdate(query);
                 con.commit();
@@ -207,14 +208,14 @@ TextField path;
                 fac_spe.clear();
             }
 
-            String mail=fac_mail.getText().trim();
+            String mail = fac_mail.getText().trim();
             fac_id.clear();
             fac_mail.clear();
             fac_name.clear();
             fac_phone.clear();
             fac_spe.clear();
-            String pass=generatePassayPassword();
-            String sql1="INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('"+mail+"', '"+pass+"', 'sup')";
+            String pass = generatePassayPassword();
+            String sql1 = "INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('" + mail + "', '" + pass + "', 'sup')";
             stmt.executeUpdate(sql1);
             con.commit();
             stmt.close();
@@ -222,19 +223,19 @@ TextField path;
             Thread t1 = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    mail(mail,pass);
+                    mail(mail, pass);
                 }
-            }) ;
+            });
 
             t1.start();
 
         }
 
 
-        if(type.getValue().equals("Instructor")){
+        if (type.getValue().equals("Instructor")) {
             Statement stmt = con.createStatement();
-            String []names = fac_name.getText().split(" ");
-            String query = "insert into instructor values('"+fac_id.getText()+"','"+names[0]+"','"+names[1]+"','"+fac_mail.getText()+"','"+fac_phone.getText()+"','"+fac_spe.getText()+"')";
+            String[] names = fac_name.getText().split(" ");
+            String query = "insert into instructor values('" + fac_id.getText() + "','" + names[0] + "','" + names[1] + "','" + fac_mail.getText() + "','" + fac_phone.getText() + "','" + fac_spe.getText() + "')";
             try {
                 stmt.executeUpdate(query);
                 con.commit();
@@ -257,13 +258,13 @@ TextField path;
                 fac_spe.clear();
                 return;
             }
-            String pass=generatePassayPassword();
-            String sql1="INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('"+fac_mail.getText().trim()+"', '"+pass+"', 'inst')";
+            String pass = generatePassayPassword();
+            String sql1 = "INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('" + fac_mail.getText().trim() + "', '" + pass + "', 'inst')";
             stmt.executeUpdate(sql1);
             con.commit();
             stmt.close();
             con.close();
-            String mail=fac_mail.getText().trim();
+            String mail = fac_mail.getText().trim();
             fac_id.clear();
             fac_mail.clear();
             fac_name.clear();
@@ -272,30 +273,30 @@ TextField path;
             Thread t1 = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    mail(mail,pass);
+                    mail(mail, pass);
                 }
-            }) ;
+            });
 
             t1.start();
 
         }
 
-         }
+    }
 
 
-@FXML
-void setsearch(){
-        if(gen_type.getValue().equals("Student")){
+    @FXML
+    void setsearch() {
+        if (gen_type.getValue().equals("Student")) {
             general.setPromptText("Student");
         }
-        if (gen_type.getValue().equals("Supervisor")){
+        if (gen_type.getValue().equals("Supervisor")) {
             general.setPromptText("Supervisor");
         }
-        if (gen_type.getValue().equals("Instructor")){
+        if (gen_type.getValue().equals("Instructor")) {
             general.setPromptText("Instructor");
         }
 
-}
+    }
 
     @FXML
     void reg_stu(ActionEvent event) throws SQLException {
@@ -303,13 +304,13 @@ void setsearch(){
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
-        String[]names=studentname.getText().split(" ");
-        String uni="s"+studentreg.getText().trim()+"@stu.najah.edu";
-            String sql="INSERT INTO N_LABS.STUDENT (STU_REG_NUM, FIRST_NAME, LAST_NAME, AC_LEVEL, STU_EMAIL, UNI_EMAIL, PHONE) VALUES ('"+studentreg.getText().trim()+"', '"+names[0]+"', '"+names[1]+"', '"+studentlevel.getText().trim()+"', '"+studentmail.getText().trim()+"', '"+uni+"', '"+studentnumber.getText().trim()+"')";
+        String[] names = studentname.getText().split(" ");
+        String uni = "s" + studentreg.getText().trim() + "@stu.najah.edu";
+        String sql = "INSERT INTO N_LABS.STUDENT (STU_REG_NUM, FIRST_NAME, LAST_NAME, AC_LEVEL, STU_EMAIL, UNI_EMAIL, PHONE) VALUES ('" + studentreg.getText().trim() + "', '" + names[0] + "', '" + names[1] + "', '" + studentlevel.getText().trim() + "', '" + studentmail.getText().trim() + "', '" + uni + "', '" + studentnumber.getText().trim() + "')";
         Statement sr = con.createStatement();
-try {
+        try {
             sr.executeUpdate(sql);
-        }catch (Exception E){
+        } catch (Exception E) {
             Alert b = new Alert(Alert.AlertType.ERROR);
             b.setTitle("Invalid info");
             b.setContentText("Either student is registered to this lab or the section is full");
@@ -327,8 +328,8 @@ try {
         studentmail.clear();
         studentlevel.clear();
         studentnumber.clear();
-        String pass=generatePassayPassword();
-        String sql1="INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('"+uni+"', '"+pass+"', 'stu')";
+        String pass = generatePassayPassword();
+        String sql1 = "INSERT INTO N_LABS.LOGIN (USERN, PASSWORD, ROLE) VALUES ('" + uni + "', '" + pass + "', 'stu')";
         Statement sr1 = con.createStatement();
         sr1.executeUpdate(sql1);
         con.commit();
@@ -338,11 +339,11 @@ try {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                mail(uni,pass);
+                mail(uni, pass);
             }
-        }) ;
+        });
 
-t1.start();
+        t1.start();
 
     }
 
@@ -378,8 +379,7 @@ t1.start();
     }
 
 
-
-    void mail(String reciever,String pass){
+    void mail(String reciever, String pass) {
         String to = reciever;
         String from = "n.labs.2022@gmail.com";
         String host = "smtp.gmail.com";
@@ -406,11 +406,11 @@ t1.start();
                     "\n" +
                     "<p>&nbsp;</p>\n" +
                     "\n" +
-                    "<h3><span style=\"font-size:18px\"><strong>Username: "+reciever+"</strong></span></h3>\n" +
+                    "<h3><span style=\"font-size:18px\"><strong>Username: " + reciever + "</strong></span></h3>\n" +
                     "\n" +
                     "<h3>&nbsp;</h3>\n" +
                     "\n" +
-                    "<h3><span style=\"font-size:18px\"><strong>Password: "+pass+"</strong></span></h3>\n", "text/html");
+                    "<h3><span style=\"font-size:18px\"><strong>Password: " + pass + "</strong></span></h3>\n", "text/html");
 
             Transport.send(message);
         } catch (MessagingException mex) {
@@ -418,28 +418,32 @@ t1.start();
         }
 
     }
+
     @FXML
-    void addfiles(){}
-@FXML
-void openfiles(){
-   FileChooser fileChooser = new FileChooser();
-   File selectedFile = fileChooser.showOpenDialog(null);
-    if (selectedFile != null) {
-        path.setText(selectedFile.getAbsolutePath());
-    } else {
-Alert alert = new Alert(Alert.AlertType.ERROR);
-    alert.setTitle("Error");
-    alert.setHeaderText("File not selected");
-    alert.setContentText("Please select a file");
-    alert.showAndWait();
-    return;
+    void addfiles() {
     }
-}
-@FXML
-void gen_c() throws SQLException {
-        if(gen_type.getValue()==null)
+
+    @FXML
+    void openfiles() {
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            path.setText(selectedFile.getAbsolutePath());
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("File not selected");
+            alert.setContentText("Please select a file");
+            alert.showAndWait();
             return;
-        if(gen_type.getValue().equals("Student")){
+        }
+    }
+
+    @FXML
+    void gen_c() throws SQLException {
+        if (gen_type.getValue() == null)
+            return;
+        if (gen_type.getValue().equals("Student")) {
             student.setVisible(true);
             instructor.setVisible(false);
             superv.setVisible(false);
@@ -447,21 +451,21 @@ void gen_c() throws SQLException {
             String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
             Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
             con.setAutoCommit(false);
-            String sql = "select * from student where STU_REG_NUM LIKE '%"+general.getText().trim()+"%' OR FIRST_NAME LIKE '%"+general.getText().trim()+"%' OR LAST_NAME LIKE '%"+general.getText().trim()+"%' OR STUDENT.UNI_EMAIL LIKE '%"+general.getText().trim()+"%' OR STUDENT.PHONE LIKE '%"+general.getText().trim()+"%' OR AC_LEVEL LIKE '%"+general.getText().trim()+"%' OR STU_EMAIL LIKE '%"+general.getText().trim()+"%' ORDER BY STU_REG_NUM ASC ";
-             Statement st= con.createStatement();
-            ResultSet rs=st.executeQuery(sql);
-            ArrayList<student> res=new ArrayList<>();
-            while (rs.next()){
-                res.add(new student(rs.getString(6),rs.getString(5),rs.getString(2)+" "+rs.getString(3),rs.getString(1),rs.getString(7),rs.getString(4)));
+            String sql = "select * from student where STU_REG_NUM LIKE '%" + general.getText().trim() + "%' OR FIRST_NAME LIKE '%" + general.getText().trim() + "%' OR LAST_NAME LIKE '%" + general.getText().trim() + "%' OR STUDENT.UNI_EMAIL LIKE '%" + general.getText().trim() + "%' OR STUDENT.PHONE LIKE '%" + general.getText().trim() + "%' OR AC_LEVEL LIKE '%" + general.getText().trim() + "%' OR STU_EMAIL LIKE '%" + general.getText().trim() + "%' ORDER BY STU_REG_NUM ASC ";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            ArrayList<student> res = new ArrayList<>();
+            while (rs.next()) {
+                res.add(new student(rs.getString(6), rs.getString(5), rs.getString(2) + " " + rs.getString(3), rs.getString(1), rs.getString(7), rs.getString(4)));
             }
-            if(res.isEmpty()){
+            if (res.isEmpty()) {
                 student.setItems(null);
                 return;
             }
-            ObservableList<student> lst=FXCollections.observableArrayList(res);
+            ObservableList<student> lst = FXCollections.observableArrayList(res);
             student.setItems(lst);
         }
-        if (gen_type.getValue().equals("Instructor")){
+        if (gen_type.getValue().equals("Instructor")) {
             instructor.setVisible(true);
             student.setVisible(false);
             superv.setVisible(false);
@@ -469,21 +473,21 @@ void gen_c() throws SQLException {
             String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
             Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
             con.setAutoCommit(false);
-            String sql = "select * from instructor where F_ID LIKE '%"+general.getText().trim()+"%' OR FIRST_NAME LIKE '%"+general.getText().trim()+"%' OR LAST_NAME LIKE '%"+general.getText().trim()+"%' OR OFFICE_NUMBER LIKE '%"+general.getText().trim()+"%' OR INSTRUCTOR.PHONE_NUMBER LIKE '%"+general.getText().trim()+"%' or EMAIL LIKE '%"+general.getText().trim()+"%' ORDER BY f_ID ASC ";
-            Statement st= con.createStatement();
-            ResultSet rs=st.executeQuery(sql);
-            ArrayList<instructor> res=new ArrayList<>();
-            while (rs.next()){
-                res.add(new instructor(rs.getString(2)+" "+rs.getString(3),rs.getString(4),rs.getString(6), rs.getString(5),rs.getString(1)));
+            String sql = "select * from instructor where F_ID LIKE '%" + general.getText().trim() + "%' OR FIRST_NAME LIKE '%" + general.getText().trim() + "%' OR LAST_NAME LIKE '%" + general.getText().trim() + "%' OR OFFICE_NUMBER LIKE '%" + general.getText().trim() + "%' OR INSTRUCTOR.PHONE_NUMBER LIKE '%" + general.getText().trim() + "%' or EMAIL LIKE '%" + general.getText().trim() + "%' ORDER BY f_ID ASC ";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            ArrayList<instructor> res = new ArrayList<>();
+            while (rs.next()) {
+                res.add(new instructor(rs.getString(2) + " " + rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(5), rs.getString(1)));
             }
-            if(res.isEmpty()){
+            if (res.isEmpty()) {
                 student.setItems(null);
                 return;
             }
-            ObservableList<instructor> lst=FXCollections.observableArrayList(res);
+            ObservableList<instructor> lst = FXCollections.observableArrayList(res);
             instructor.setItems(lst);
         }
-        if(gen_type.getValue().equals("Supervisor")){
+        if (gen_type.getValue().equals("Supervisor")) {
             superv.setVisible(true);
             student.setVisible(false);
             instructor.setVisible(false);
@@ -491,55 +495,55 @@ void gen_c() throws SQLException {
             String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
             Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
             con.setAutoCommit(false);
-            String sql = "select * from supervisor where F_ID LIKE '%"+general.getText().trim()+"%' OR FIRST_NAME LIKE '%"+general.getText().trim()+"%' OR LAST_NAME LIKE '%"+general.getText().trim()+"%' OR SPECIALTY LIKE '%"+general.getText().trim()+"%' OR SUPERVISOR.PHONE_NUMBER LIKE '%"+general.getText().trim()+"%' or EMAIL LIKE '%"+general.getText().trim()+"%' ORDER BY f_ID ASC ";
-            Statement st= con.createStatement();
-            ResultSet rs=st.executeQuery(sql);
-            ArrayList<supervisor> res=new ArrayList<>();
-            while (rs.next()){
-                res.add(new supervisor(rs.getString(2)+" "+rs.getString(3),rs.getString(4),rs.getString(6), rs.getString(5),rs.getString(1)));
+            String sql = "select * from supervisor where F_ID LIKE '%" + general.getText().trim() + "%' OR FIRST_NAME LIKE '%" + general.getText().trim() + "%' OR LAST_NAME LIKE '%" + general.getText().trim() + "%' OR SPECIALTY LIKE '%" + general.getText().trim() + "%' OR SUPERVISOR.PHONE_NUMBER LIKE '%" + general.getText().trim() + "%' or EMAIL LIKE '%" + general.getText().trim() + "%' ORDER BY f_ID ASC ";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            ArrayList<supervisor> res = new ArrayList<>();
+            while (rs.next()) {
+                res.add(new supervisor(rs.getString(2) + " " + rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(5), rs.getString(1)));
             }
-            if(res.isEmpty()){
+            if (res.isEmpty()) {
                 student.setItems(null);
                 return;
             }
-            ObservableList<supervisor> lst=FXCollections.observableArrayList(res);
+            ObservableList<supervisor> lst = FXCollections.observableArrayList(res);
             superv.setItems(lst);
         }
-}
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        type.setItems(FXCollections.observableArrayList("Instructor","Supervisor"));
-        gen_type.setItems(FXCollections.observableArrayList("Student","Supervisor","Instructor"));
-        stu_uni.setCellValueFactory(new PropertyValueFactory<student,String>("uni_email"));
-        stu_name.setCellValueFactory(new PropertyValueFactory<student,String>("name"));
-        stu_regc.setCellValueFactory(new PropertyValueFactory<student,String>("reg"));
-        stu_phone.setCellValueFactory(new PropertyValueFactory<student,String>("phone"));
-        stu_mail.setCellValueFactory(new PropertyValueFactory<student,String>("stu_email"));
-        level_col.setCellValueFactory(new PropertyValueFactory<student,String>("lvl"));
-        ins_email.setCellValueFactory(new PropertyValueFactory<instructor,String>("ins_email"));
-        ins_name.setCellValueFactory(new PropertyValueFactory<instructor,String>("name"));
-        ins_phone.setCellValueFactory(new PropertyValueFactory<instructor,String>("phone"));
-        ins_office.setCellValueFactory(new PropertyValueFactory<instructor,String>("office"));
-        ins_id.setCellValueFactory(new PropertyValueFactory<instructor,String>("id"));
-        super_id.setCellValueFactory(new PropertyValueFactory<supervisor,String>("id"));
-        super_name.setCellValueFactory(new PropertyValueFactory<supervisor,String>("name"));
-        super_phone.setCellValueFactory(new PropertyValueFactory<supervisor,String>("phone"));
-         lab_levelsuper_mail.setCellValueFactory(new PropertyValueFactory<supervisor,String>("super_email"));
-         super_special.setCellValueFactory(new PropertyValueFactory<supervisor,String>("special"));
+        type.setItems(FXCollections.observableArrayList("Instructor", "Supervisor"));
+        gen_type.setItems(FXCollections.observableArrayList("Student", "Supervisor", "Instructor"));
+        stu_uni.setCellValueFactory(new PropertyValueFactory<student, String>("uni_email"));
+        stu_name.setCellValueFactory(new PropertyValueFactory<student, String>("name"));
+        stu_regc.setCellValueFactory(new PropertyValueFactory<student, String>("reg"));
+        stu_phone.setCellValueFactory(new PropertyValueFactory<student, String>("phone"));
+        stu_mail.setCellValueFactory(new PropertyValueFactory<student, String>("stu_email"));
+        level_col.setCellValueFactory(new PropertyValueFactory<student, String>("lvl"));
+        ins_email.setCellValueFactory(new PropertyValueFactory<instructor, String>("ins_email"));
+        ins_name.setCellValueFactory(new PropertyValueFactory<instructor, String>("name"));
+        ins_phone.setCellValueFactory(new PropertyValueFactory<instructor, String>("phone"));
+        ins_office.setCellValueFactory(new PropertyValueFactory<instructor, String>("office"));
+        ins_id.setCellValueFactory(new PropertyValueFactory<instructor, String>("id"));
+        super_id.setCellValueFactory(new PropertyValueFactory<supervisor, String>("id"));
+        super_name.setCellValueFactory(new PropertyValueFactory<supervisor, String>("name"));
+        super_phone.setCellValueFactory(new PropertyValueFactory<supervisor, String>("phone"));
+        lab_levelsuper_mail.setCellValueFactory(new PropertyValueFactory<supervisor, String>("super_email"));
+        super_special.setCellValueFactory(new PropertyValueFactory<supervisor, String>("special"));
         student.setOnMouseClicked((MouseEvent event) -> {
-            if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
-                  Stage dialog = new Stage();
+            if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                Stage dialog = new Stage();
                 dialog.initModality(Modality.APPLICATION_MODAL);
-                FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_head/users_clk.fxml"));
-                Parent root= null;
+                FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_head/users_clk.fxml"));
+                Parent root = null;
                 try {
                     root = l.load();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                student_cont sc=l.getController();
-                String []names=student.getSelectionModel().getSelectedItem().getName().split(" ");
+                student_cont sc = l.getController();
+                String[] names = student.getSelectionModel().getSelectedItem().getName().split(" ");
                 sc.First.setText(names[0]);
                 sc.last.setText(names[1]);
                 sc.user.setText(student.getSelectionModel().getSelectedItem().getName());
@@ -565,8 +569,8 @@ void gen_c() throws SQLException {
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-                String sql = "select PASSWORD from LOGIN where LOGIN.USERN='"+student.getSelectionModel().getSelectedItem().getUni_email()+"'";
-                Statement st= null;
+                String sql = "select PASSWORD from LOGIN where LOGIN.USERN='" + student.getSelectionModel().getSelectedItem().getUni_email() + "'";
+                Statement st = null;
                 try {
                     st = con.createStatement();
                 } catch (SQLException e) {
@@ -574,12 +578,12 @@ void gen_c() throws SQLException {
                 }
 
                 try {
-                    ResultSet rs=st.executeQuery(sql);
+                    ResultSet rs = st.executeQuery(sql);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
                 try {
-                    ResultSet rs=st.executeQuery(sql);
+                    ResultSet rs = st.executeQuery(sql);
                     rs.next();
                     sc.password.setText(rs.getString(1));
                 } catch (SQLException e) {
@@ -590,12 +594,72 @@ void gen_c() throws SQLException {
                 dialog.show();
 
 
-
             }
         });
 
+        instructor.setOnMouseClicked((MouseEvent event) -> {
+            if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                Stage dialog = new Stage();
+                dialog.initModality(Modality.APPLICATION_MODAL);
+                FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_head/inst.fxml"));
+                Parent root = null;
+                try {
+                    root = l.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                inst_cont sc = l.getController();
+                String[] names = instructor.getSelectionModel().getSelectedItem().getName().split(" ");
+                sc.First.setText(names[0]);
+                sc.last.setText(names[1]);
+                sc.user.setText(instructor.getSelectionModel().getSelectedItem().getName());
+                sc.number.setText(instructor.getSelectionModel().getSelectedItem().getId());
+                sc.phone.setText(instructor.getSelectionModel().getSelectedItem().getPhone());
+                sc.personal.setText(instructor.getSelectionModel().getSelectedItem().getIns_email());
+                sc.office.setText(instructor.getSelectionModel().getSelectedItem().getOffice());
+                try {
+                    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+                Connection con = null;
+                try {
+                    con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    con.setAutoCommit(false);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                String sql = "select PASSWORD from LOGIN where LOGIN.USERN='" + instructor.getSelectionModel().getSelectedItem().getIns_email() + "'";
+                Statement st = null;
+                try {
+                    st = con.createStatement();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+
+                try {
+                    ResultSet rs = st.executeQuery(sql);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    ResultSet rs = st.executeQuery(sql);
+                    rs.next();
+                    sc.password.setText(rs.getString(1));
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                Scene scene = new Scene(root);
+                dialog.setScene(scene);
+                dialog.show();
 
 
-
+            }
+        });
     }
 }
