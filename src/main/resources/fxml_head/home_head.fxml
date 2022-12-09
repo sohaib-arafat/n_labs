@@ -27,14 +27,14 @@
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                   <AnchorPane prefHeight="200.0" prefWidth="259.0">
                      <children>
-                        <Label fx:id="ER1" alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="20" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Label fx:id="sups" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="1" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                            <font>
                               <Font size="76.0" />
                            </font>
                         </Label>
                         <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
                         <VBox prefHeight="200.0" prefWidth="41.0" />
-                        <Label layoutX="98.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Labs" textAlignment="CENTER" textFill="#d4f8f8">
+                        <Label layoutX="55.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Supervisors" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -43,14 +43,14 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="259.0">
                      <children>
-                        <Label fx:id="ER" alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="20" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Label fx:id="stus" alignment="CENTER" contentDisplay="CENTER" layoutX="102.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="1" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                            <font>
                               <Font size="76.0" />
                            </font>
                         </Label>
                         <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
                         <VBox prefHeight="200.0" prefWidth="41.0" />
-                        <Label layoutX="72.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Students" textAlignment="CENTER" textFill="#d4f8f8">
+                        <Label layoutX="74.0" layoutY="114.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Students" textAlignment="CENTER" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -59,7 +59,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="259.0">
                      <children>
-                        <Label layoutX="82.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="20" textFill="WHITE">
+                        <Label fx:id="inus" layoutX="102.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="1" textFill="WHITE">
                            <font>
                               <Font size="76.0" />
                            </font>
@@ -75,22 +75,42 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="259.0">
                      <children>
-                        <Label layoutX="73.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="20" textFill="WHITE">
+                        <Label fx:id="labs" layoutX="74.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="2" textFill="WHITE">
                            <font>
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="51.0" layoutY="115.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Supervisors" textFill="#d4f8f8">
+                        <VBox prefHeight="200.0" prefWidth="41.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="70.0" layoutY="107.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Labs" textAlignment="CENTER" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <VBox prefHeight="200.0" prefWidth="41.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane prefHeight="200.0" prefWidth="259.0">
+                     <children>
+                        <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: trasnparent;" />
+                        <Label fx:id="secs" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="14.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="1" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="76.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="107.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Sections" textAlignment="CENTER" textFill="#d4f8f8">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="1.0" prefHeight="79.0" prefWidth="21.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="-" textAlignment="CENTER" textFill="#d4f8f8">
+                           <font>
+                              <Font size="94.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                </children>
             </HBox>
             <HBox fx:id="cardly1" layoutX="32.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#mouseEnter1" onMouseExited="#mouseExit1" prefHeight="330.0" prefWidth="705.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">

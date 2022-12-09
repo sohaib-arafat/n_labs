@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -18,7 +19,18 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class home_head implements Initializable {
+    @FXML
+    private Label inus;
+    @FXML
+    private Label secs;
 
+    @FXML
+    private Label labs;
+    @FXML
+    private Label stus;
+
+    @FXML
+    private Label sups;
     @FXML
     private TextArea test1;
 
@@ -135,6 +147,41 @@ void remann1( ) throws SQLException {
         st.setAutoReverse(true);
         st.playFromStart();
     }
+    void counts(){
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+            String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+            Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+            con.setAutoCommit(false);
+            String sql="select count(*) FROM INSTRUCTOR";
+            Statement st1= con.createStatement();
+            ResultSet rs=st1.executeQuery(sql);
+            rs.next();
+            inus.setText(rs.getString(1));
+            String sql1="select count(*) FROM LAB";
+            Statement st2= con.createStatement();
+            ResultSet rs1=st2.executeQuery(sql1);
+            rs1.next();
+            labs.setText(rs1.getString(1));
+            String sql2="select count(*) FROM STUDENT";
+            Statement st3= con.createStatement();
+            ResultSet rs2=st3.executeQuery(sql2);
+            rs2.next();
+            stus.setText(rs2.getString(1));
+            String sql3="select count(*) FROM supervisor";
+            Statement st4= con.createStatement();
+            ResultSet rs3=st4.executeQuery(sql3);
+            rs3.next();
+            sups.setText(rs3.getString(1));
+            String sql4="select count(*) FROM Section";
+            Statement st5= con.createStatement();
+            ResultSet rs4=st5.executeQuery(sql4);
+            rs4.next();
+            secs.setText(rs4.getString(1));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
     @FXML
     public void mouseExit1( ){
         cardly1.setScaleX(1.06);
@@ -196,6 +243,6 @@ void remann1( ) throws SQLException {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+counts();
     }
 }
