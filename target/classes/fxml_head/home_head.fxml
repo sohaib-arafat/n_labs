@@ -134,7 +134,7 @@
                         <Font size="28.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="15.0" layoutY="50.0" prefHeight="223.0" prefWidth="442.0" stylesheets="@are.css" />
+                  <TextArea fx:id="test1" editable="false" layoutX="15.0" layoutY="50.0" onMouseClicked="#show" onMouseEntered="#remann1" prefHeight="223.0" prefWidth="442.0" stylesheets="@are.css" />
                </children>
             </AnchorPane>
             <HBox layoutX="520.0" layoutY="635.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="428.0" styleClass="cont" stylesheets="@../fxml_instructor/home_instructor.css">
@@ -146,7 +146,7 @@
                               <Font size="28.0" />
                            </font>
                         </Label>
-                        <TextArea layoutX="15.0" layoutY="50.0" prefHeight="226.0" prefWidth="398.0" stylesheets="@are.css" />
+                        <TextArea fx:id="text2" editable="false" layoutX="14.0" layoutY="50.0" onMouseExited="#sann" prefHeight="226.0" prefWidth="398.0" stylesheets="@are.css" />
                      </children>
                   </AnchorPane>
                </children>
@@ -160,7 +160,7 @@
                               <Font size="28.0" />
                            </font>
                         </Label>
-                        <TextArea layoutX="19.0" layoutY="50.0" prefHeight="226.0" prefWidth="175.0" stylesheets="@are.css" />
+                        <TextArea fx:id="text3" editable="false" layoutX="19.0" layoutY="50.0" onMouseExited="#remann" prefHeight="226.0" prefWidth="175.0" stylesheets="@are.css" />
                      </children>
                   </AnchorPane>
                </children>
