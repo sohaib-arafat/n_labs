@@ -132,7 +132,7 @@
                   <Image url="@../images/22.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="65.0" layoutX="10.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="68.0" fitWidth="65.0" layoutX="10.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/41.png" />
                </image>
