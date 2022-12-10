@@ -48,10 +48,8 @@ public class search_cont implements Initializable {
     @FXML
     TextField phone;
     @FXML
-    TextField addition;
-    @FXML
     TextField level;
-
+@FXML
     void spec_c() throws SQLException {
         String sql = "select * from student where";
         if(!id.getText().isEmpty()){
@@ -93,17 +91,8 @@ public class search_cont implements Initializable {
 
             }
         }
-        if(! addition.getText().isEmpty()){
-            if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty() && phone.getText().isEmpty()) {
-                sql += " UNIVERSITY_EMAIL = '" + addition.getText().trim() + "'";
-
-            } else {
-                sql += " AND UNIVERSITY_EMAIL = '" + addition.getText().trim() + "'";
-
-            }
-        }
         if(!level.getText().isEmpty()){
-            if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty() && phone.getText().isEmpty() && addition.getText().isEmpty()) {
+            if (id.getText().isEmpty() && f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty() && phone.getText().isEmpty()) {
                 sql += " AC_LEVEL = '" + level.getText().trim() + "'";
 
             } else {
