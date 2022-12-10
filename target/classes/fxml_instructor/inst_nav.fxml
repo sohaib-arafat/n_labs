@@ -132,7 +132,7 @@
                   <Image url="@../images/22.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="65.0" layoutX="10.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="68.0" fitWidth="65.0" layoutX="10.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/41.png" />
                </image>
@@ -155,7 +155,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="494.0" layoutY="4.0" prefHeight="27.0" prefWidth="415.0" text="Home" textAlignment="CENTER">
+      <Label fx:id="nav_lable" alignment="CENTER" contentDisplay="CENTER" layoutX="393.0" layoutY="4.0" prefHeight="27.0" prefWidth="535.0" text="Home" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

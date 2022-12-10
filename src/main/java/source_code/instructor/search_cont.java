@@ -3,14 +3,22 @@ package source_code.instructor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import source_code.general.student;
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
@@ -146,6 +154,34 @@ void general_c() throws SQLException {
         stu_phone.setCellValueFactory(new PropertyValueFactory<student, String>("phone"));
         stu_mail.setCellValueFactory(new PropertyValueFactory<student, String>("stu_email"));
         level_col.setCellValueFactory(new PropertyValueFactory<student, String>("lvl"));
+        student.setOnMouseClicked((MouseEvent event) -> {
+            if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
+                Stage dialog = new Stage();
+                dialog.initModality(Modality.APPLICATION_MODAL);
+                FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_instructor/student_clk.fxml"));
+                Parent root = null;
+                try {
+                    root = l.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                student_cont sc = l.getController();
+                String[] names = student.getSelectionModel().getSelectedItem().getName().split(" ");
+                sc.First.setText(names[0]);
+                sc.last.setText(names[1]);
+                sc.user.setText(student.getSelectionModel().getSelectedItem().getName());
+                sc.Level.setText(student.getSelectionModel().getSelectedItem().getLvl());
+                sc.uni.setText(student.getSelectionModel().getSelectedItem().getUni_email());
+                sc.number.setText(student.getSelectionModel().getSelectedItem().getReg());
+                sc.phone.setText(student.getSelectionModel().getSelectedItem().getPhone());
+                sc.personal.setText(student.getSelectionModel().getSelectedItem().getStu_email());
+                Scene scene = new Scene(root);
+                dialog.setScene(scene);
+                dialog.show();
+
+
+            }
+        });
 
     }
 }

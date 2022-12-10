@@ -124,7 +124,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <Label fx:id="nav_label" alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="7.0" prefHeight="27.0" prefWidth="537.0" text="Home" textAlignment="CENTER">
+      <Label fx:id="nav_label" alignment="CENTER" contentDisplay="CENTER" layoutX="425.0" layoutY="7.0" prefHeight="27.0" prefWidth="553.0" text="Home" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
