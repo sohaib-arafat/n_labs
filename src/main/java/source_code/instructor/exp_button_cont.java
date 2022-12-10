@@ -61,6 +61,7 @@ public class exp_button_cont {
         Parent root=loader.load();
         exp_cont controller = loader.getController();
         controller.lab=lab;
+        controller.setall();
         Stage stage = new Stage();
         controller.number=exp_num.getText().trim();
         stage.setScene(new Scene(root));
