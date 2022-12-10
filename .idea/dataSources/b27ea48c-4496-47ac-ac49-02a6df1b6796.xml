@@ -3,6 +3,7 @@
   <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.45">
     <root id="1">
       <IntrospectionLevel>3</IntrospectionLevel>
+      <ServerVersion>21.0.0.0.0</ServerVersion>
     </root>
     <schema id="2" parent="1" name="ANONYMOUS">
       <ObjectId>72</ObjectId>
@@ -359,7 +360,7 @@
     </table>
     <table id="95" parent="21" name="SEC_TIME">
       <CreatedTimestamp>2022-11-14.00:58:48</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-06.19:50:33</ModifiedTimestamp>
       <ObjectId>79763</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>

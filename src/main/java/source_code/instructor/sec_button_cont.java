@@ -66,6 +66,7 @@ void open(){
         Parent root1 =  fxmlLoader.load();
         section_click sc=fxmlLoader.getController();
         sc.sec_num.setText(section_num.getText());
+        sc.cards();
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Section");
@@ -73,8 +74,10 @@ void open(){
         stage.show();
     } catch (IOException e) {
         e.printStackTrace();
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
     }
-}
+    }
 
 }
 

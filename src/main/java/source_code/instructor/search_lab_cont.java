@@ -109,7 +109,7 @@ public String inst1;
             sql += " AND LAB.NAME like '%" + lab_num.getText().trim() + "%'";
         }
         if(!inst.getText().isEmpty()){
-            if(inst.getText().contains(" ")){
+            if(inst.getText().trim().contains(" ")){
                 String[] name = inst.getText().split(" ");
                 sql += " AND INSTRUCTOR.FIRST_NAME like '%" + name[0].trim() + "%' AND INSTRUCTOR.last_NAME like '%" + name[1].trim() + "%'";
             }
@@ -126,12 +126,12 @@ public String inst1;
             sql += " AND LAB.ROOM = '" + room.getText().trim() + "'";
         }
         if(!superv.getText().isEmpty()){
-            if(superv.getText().contains(" ")){
-                String[] name = inst.getText().split(" ");
-                sql += " AND supervisor.FIRST_NAME = '%" + name[0].trim() + "%' AND supervisor.last_NAME like '%" + name[1].trim() + "%'";
+            if(superv.getText().trim().contains(" ")){
+                String[] name = superv.getText().split(" ");
+                sql += " AND supervisor.FIRST_NAME like '%" + name[0].trim() + "%' AND supervisor.last_NAME like '%" + name[1].trim() + "%'";
             }
             else{
-                sql += " AND (supervisor.FIRST_NAME like '%" + inst.getText().trim() + "%' OR supervisor.last_NAME like '%" + inst.getText().trim() + "%')";
+                sql += " AND (supervisor.FIRST_NAME like '%" + superv.getText().trim() + "%' OR supervisor.last_NAME like '%" + superv.getText().trim() + "%')";
             }
 
         }

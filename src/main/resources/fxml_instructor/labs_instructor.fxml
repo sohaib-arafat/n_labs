@@ -27,7 +27,7 @@
                      <content>
                         <AnchorPane prefHeight="269.0" prefWidth="960.0">
                            <children>
-                              <HBox fx:id="cardly" layoutX="6.0" layoutY="20.0" prefHeight="230.0" prefWidth="948.0" spacing="20.0">
+                              <HBox fx:id="cardly" alignment="CENTER" layoutX="6.0" layoutY="20.0" prefHeight="230.0" prefWidth="948.0" spacing="20.0">
                                  <opaqueInsets>
                                     <Insets left="20.0" right="20.0" />
                                  </opaqueInsets>
