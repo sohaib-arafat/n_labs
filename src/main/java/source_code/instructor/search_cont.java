@@ -74,7 +74,7 @@ public class search_cont implements Initializable {
             }
         }
         if (!l_name.getText().isEmpty()) {
-            if (id.getText().isEmpty() && !f_name.getText().isEmpty()) {
+            if (id.getText().isEmpty() && f_name.getText().isEmpty()) {
                 sql += " LAST_NAME = '" + l_name.getText().trim() + "'";
 
             } else {

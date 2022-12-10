@@ -50,6 +50,7 @@ public class student_cont implements Initializable {
 @FXML
 void close(){
     Stage stage = (Stage) uni.getScene().getWindow();
+    stage.close();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
