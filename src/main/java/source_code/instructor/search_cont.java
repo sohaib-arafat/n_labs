@@ -27,6 +27,7 @@ import java.util.ResourceBundle;
 public class search_cont implements Initializable {
     @FXML
     private TableColumn<student, String> stu_mail;
+    public String inst;
     @FXML
     private TableColumn<source_code.general.student, String> level_col;
     @FXML

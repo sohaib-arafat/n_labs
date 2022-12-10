@@ -27,7 +27,7 @@ public class sec_button_cont {
 
     @FXML
     public Label lab_name;
-    String lab;
+    public String lab;
     public void mouseEnter(MouseEvent event){
         cardly.setScaleX(1);
         cardly.setScaleY(1);

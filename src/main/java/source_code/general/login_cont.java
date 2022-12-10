@@ -75,9 +75,11 @@ if (rs.next()){
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
         inst_cont ic = l.getController();
-        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME,F_ID from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
         rs1.next();
         ic.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+          ic.inst=rs1.getString(3);
+          System.out.println(ic.inst);
         tmp.close();
         dialog.show();
         con.close();

@@ -26,6 +26,7 @@ public class inst_cont implements Initializable {
 
     @FXML
     private AnchorPane navbar, slider, tmp, card;
+    public String inst;
     @FXML
     BorderPane pb;
     @FXML
@@ -133,7 +134,10 @@ public class inst_cont implements Initializable {
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            loader("/fxml_instructor/home_instructor");
+            FXMLLoader loader =new FXMLLoader(getClass().getResource("/fxml_instructor/home_instructor"));
+            root=loader.load();
+            home_instructor h=loader.getController();
+            h.inst=inst;
             nav_lable.setText("Home");
 
         }
@@ -143,7 +147,14 @@ public class inst_cont implements Initializable {
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            loader("/fxml_instructor/labs_instructor");
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_instructor/labs_instructor.fxml"));
+            System.out.println(inst);
+
+            root=loader.load();
+            search_lab_cont lc=loader.getController();
+            lc.inst1=inst;
+            lc.cards();
+            pb.setCenter(root);
             nav_lable.setText("Labs");
             /*FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Open Resource File");
