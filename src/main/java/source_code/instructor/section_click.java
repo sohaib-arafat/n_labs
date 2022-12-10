@@ -66,6 +66,7 @@ public class section_click implements Initializable {
             a=loader.load();
             exp_button_cont e=loader.getController();
             e.exp_num.setText(rs3.getString(1));
+            e.section=sec_num.getText().trim();
             if(Integer.parseInt(rs3.getString(1))>=1&&Integer.parseInt(rs3.getString(1))<=9){
                 e.exp_num.setText("0"+rs3.getString(1));
             }

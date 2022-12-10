@@ -20,7 +20,7 @@ public class exp_button_cont {
 
     @FXML
     private AnchorPane cardly;
-
+String section;
     @FXML
     Label exp_num;
     String lab;
@@ -61,6 +61,7 @@ public class exp_button_cont {
         Parent root=loader.load();
         exp_cont controller = loader.getController();
         controller.lab=lab;
+        controller.section=section;
         controller.setall();
         Stage stage = new Stage();
         controller.number=exp_num.getText().trim();

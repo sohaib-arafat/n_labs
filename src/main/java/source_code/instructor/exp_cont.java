@@ -27,6 +27,7 @@ public class exp_cont implements Initializable {
     private TextFlow tools;
     String number;
     String lab;
+    String section;
 
 void setall(){
 
