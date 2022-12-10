@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class exp_button_cont {
 
@@ -24,6 +25,7 @@ String section;
     @FXML
     Label exp_num;
     String lab;
+    String number;
 
     @FXML
     private Button test;
@@ -56,15 +58,17 @@ String section;
     }
 
     @FXML
-    void printe(ActionEvent event) throws IOException {
+    void printe(ActionEvent event) throws IOException, SQLException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_instructor/exp.fxml"));
         Parent root=loader.load();
         exp_cont controller = loader.getController();
         controller.lab=lab;
         controller.section=section;
+        controller.number=number;
         controller.setall();
         Stage stage = new Stage();
-        controller.number=exp_num.getText().trim();
+
+        System.out.println(controller.number+"  "+7777);
         stage.setScene(new Scene(root));
         stage.initOwner(test.getScene().getWindow());
         stage.initModality(Modality.WINDOW_MODAL);

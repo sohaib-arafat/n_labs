@@ -28,7 +28,7 @@
                </children>
             </AnchorPane>
             <VBox layoutX="637.0" layoutY="-78.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <TextFlow fx:id="object" layoutX="139.0" layoutY="173.0" lineSpacing="0.5" prefHeight="242.0" prefWidth="1000.0" />
+            <TextFlow fx:id="object" layoutX="139.0" layoutY="187.0" lineSpacing="0.5" prefHeight="228.0" prefWidth="1000.0" />
             <Label layoutX="563.0" layoutY="138.0" stylesheets="@../fxml_instructor/shadows.css" text="Objectives" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextFlow fx:id="tools" layoutX="141.0" layoutY="473.0" lineSpacing="0.5" prefHeight="232.0" prefWidth="999.0" />
+            <TextFlow fx:id="tools" layoutX="141.0" layoutY="484.0" lineSpacing="0.5" prefHeight="222.0" prefWidth="999.0" />
             <VBox layoutX="639.0" layoutY="503.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <Label layoutX="559.0" layoutY="724.0" stylesheets="@../fxml_instructor/shadows.css" text="Procedures" textFill="#47ceff">
                <font>

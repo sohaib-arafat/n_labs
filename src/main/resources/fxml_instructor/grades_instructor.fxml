@@ -31,7 +31,6 @@
                </columns>
             </TableView>
             <TextField layoutX="290.0" layoutY="162.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@search.css" />
-            <ComboBox layoutX="639.0" layoutY="322.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@search.css" />
             <TextField layoutX="830.0" layoutY="266.0" promptText="Lab number" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField layoutX="662.0" layoutY="266.0" promptText="Student id" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField layoutX="309.0" layoutY="266.0" promptText="Submession id" styleClass="textfield-design" stylesheets="@search.css" />
@@ -47,6 +46,7 @@
                </font>
             </Label>
             <TextField layoutX="488.0" layoutY="266.0" promptText="Section number" styleClass="textfield-design" stylesheets="@search.css" />
+            <ComboBox layoutX="639.0" layoutY="320.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@trans_combo.css" />
             <TextField layoutX="557.0" layoutY="319.0" promptText="Grade" styleClass="textfield-design" stylesheets="@search.css" />
             <Label layoutX="290.0" layoutY="121.0" stylesheets="@../fxml_crd/shadows.css" text="Search" textFill="#47ceff">
                <font>

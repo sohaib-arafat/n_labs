@@ -71,6 +71,7 @@ public class section_click implements Initializable {
                 e.exp_num.setText("0"+rs3.getString(1));
             }
             e.week.setText(rs3.getString(3));
+            e.number=rs3.getString(1);
             e.lab=lab;
              grid.add(a,x,y);
             GridPane.setMargin(a, new Insets(10));
