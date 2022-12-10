@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.exp_cont">
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1335.0" prefWidth="1229.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -20,7 +20,7 @@
                         <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="25.0" prefHeight="53.0" prefWidth="1212.0" stylesheets="@../fxml_instructor/shadows.css" text="Objectives" textFill="WHITE">
+                  <Label fx:id="exp_name" layoutX="14.0" layoutY="25.0" prefHeight="53.0" prefWidth="1212.0" stylesheets="@../fxml_instructor/shadows.css" text="Objectives" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -28,7 +28,7 @@
                </children>
             </AnchorPane>
             <VBox layoutX="637.0" layoutY="-78.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
-            <TextFlow layoutX="139.0" layoutY="173.0" lineSpacing="0.5" prefHeight="242.0" prefWidth="1000.0" />
+            <TextFlow fx:id="object" layoutX="139.0" layoutY="173.0" lineSpacing="0.5" prefHeight="242.0" prefWidth="1000.0" />
             <Label layoutX="563.0" layoutY="138.0" stylesheets="@../fxml_instructor/shadows.css" text="Objectives" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
@@ -40,21 +40,21 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextFlow layoutX="141.0" layoutY="473.0" lineSpacing="0.5" prefHeight="232.0" prefWidth="999.0" />
+            <TextFlow fx:id="tools" layoutX="141.0" layoutY="473.0" lineSpacing="0.5" prefHeight="232.0" prefWidth="999.0" />
             <VBox layoutX="639.0" layoutY="503.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <Label layoutX="559.0" layoutY="724.0" stylesheets="@../fxml_instructor/shadows.css" text="Procedures" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextFlow layoutX="138.0" layoutY="759.0" lineSpacing="0.5" prefHeight="236.0" prefWidth="999.0" />
+            <TextFlow fx:id="procs" layoutX="138.0" layoutY="759.0" lineSpacing="0.5" prefHeight="236.0" prefWidth="999.0" />
             <VBox layoutX="630.0" layoutY="787.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <Label layoutX="140.0" layoutY="1017.0" stylesheets="@../fxml_instructor/shadows.css" text="Notes" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextFlow layoutX="138.0" layoutY="1054.0" lineSpacing="0.5" prefHeight="205.0" prefWidth="451.0" />
+            <TextFlow fx:id="notes" layoutX="138.0" layoutY="1054.0" lineSpacing="0.5" prefHeight="205.0" prefWidth="451.0" />
             <TableView layoutX="695.0" layoutY="1054.0" prefHeight="201.0" prefWidth="423.0" stylesheets="@../fxml_crd/scrd1.css">
               <columns>
                 <TableColumn prefWidth="75.0" text="C1" />
