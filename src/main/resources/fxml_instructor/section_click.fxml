@@ -39,7 +39,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView fx:id="times" layoutX="443.0" layoutY="875.0" prefHeight="166.0" prefWidth="239.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="times" layoutX="172.0" layoutY="877.0" prefHeight="166.0" prefWidth="239.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
                   <TableColumn fx:id="day" prefWidth="75.0" text="Day" />
                   <TableColumn fx:id="start" prefWidth="79.0" text="Starting" />
@@ -49,6 +49,36 @@
             <Label alignment="CENTER" layoutX="429.0" layoutY="106.0" prefHeight="53.0" prefWidth="286.0" text="Expiremnts" textAlignment="CENTER" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <TableView fx:id="students" layoutX="545.0" layoutY="877.0" prefHeight="271.0" prefWidth="526.0" stylesheets="@../fxml_crd/scrd1.css">
+               <columns>
+                  <TableColumn fx:id="reg_num" prefWidth="89.0" text="REG_Number" />
+                  <TableColumn fx:id="name" prefWidth="97.0" text="Name" />
+                  <TableColumn fx:id="uni_email" prefWidth="103.0" text="UNI_Email" />
+                  <TableColumn fx:id="stu_email" prefWidth="94.0" text="STU_Email" />
+                  <TableColumn fx:id="phone" prefWidth="91.0" text="Phone" />
+                  <TableColumn fx:id="level" prefWidth="49.0" text="Level" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="149.0" layoutY="805.0" prefHeight="53.0" prefWidth="286.0" text="Times" textAlignment="CENTER" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="665.0" layoutY="805.0" prefHeight="53.0" prefWidth="286.0" text="Registerd students" textAlignment="CENTER" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="174.0" layoutY="1071.0" styleClass="shade" text="#Regsistred students" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="stus_num" alignment="CENTER" contentDisplay="CENTER" layoutX="243.0" layoutY="1106.0" prefHeight="35.0" prefWidth="97.0">
+               <font>
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>

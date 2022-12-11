@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="cardly" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="230.0" prefWidth="167.0" styleClass="card" stylesheets="@card2.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.exp_button_cont">
+<AnchorPane fx:id="cardly" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="230.0" prefWidth="167.0" styleClass="color" stylesheets="@card.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.exp_button_cont">
    <children>
-      <Button fx:id="test" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printe" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="230.0" prefWidth="167.0" styleClass="card" stylesheets="@card2.css" text=" " textAlignment="CENTER">
+      <Button fx:id="test" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printe" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="230.0" prefWidth="167.0" styleClass="color" stylesheets="@card.css" text=" " textAlignment="CENTER">
          <graphic>
-            <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="167.0" styleClass="card" stylesheets="@card2.css">
+            <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="167.0" styleClass="color" stylesheets="@card.css">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="146.0" text="Experiment" textAlignment="CENTER" textFill="WHITE">
                      <font>

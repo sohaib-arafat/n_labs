@@ -67,6 +67,7 @@ void open(){
         section_click sc=fxmlLoader.getController();
         sc.sec_num.setText(section_num.getText());
         sc.cards();
+        sc.student();
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Section");
