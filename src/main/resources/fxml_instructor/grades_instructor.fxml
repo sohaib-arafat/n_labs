@@ -24,7 +24,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView fx:id="submessions" layoutX="388.0" layoutY="464.0" prefHeight="323.0" prefWidth="477.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="submessions1" layoutX="388.0" layoutY="464.0" prefHeight="323.0" prefWidth="477.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
                   <TableColumn fx:id="sub_id" prefWidth="111.0" text="Submesion_id" />
                   <TableColumn fx:id="sub_lab" prefWidth="67.0" text="Lab" />

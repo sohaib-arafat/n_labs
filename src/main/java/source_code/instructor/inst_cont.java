@@ -171,6 +171,12 @@ public class inst_cont implements Initializable {
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
+FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_instructor/grades_instructor.fxml"));
+            root=loader.load();
+            grades_cont gc=loader.getController();
+            gc.inst=inst;
+            gc.all();
+            pb.setCenter(root);
 
 
 
@@ -180,7 +186,8 @@ public class inst_cont implements Initializable {
 
 
 
-            loader("/fxml_instructor/grades_instructor");
+
+
             nav_lable.setText("Grading");
 
 

@@ -375,8 +375,8 @@
     </table>
     <table id="97" parent="21" name="SUBMESSION">
       <CreatedTimestamp>2022-11-14.00:55:38</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
-      <ModifiedTimestamp>2022-12-09.12:21:06</ModifiedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2022-12-12.02:08:13</ModifiedTimestamp>
       <ObjectId>79759</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
@@ -60277,14 +60277,29 @@ SEC_NUM</ColNames>
       <DasType>NUMBER(*)|0s</DasType>
       <Position>6</Position>
     </column>
-    <foreign-key id="7616" parent="97" name="SUBMESSION_FK1">
+    <column id="7616" parent="97" name="GRADED">
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="7617" parent="97" name="GRADE">
+      <DasType>NUMBER(*)|0s</DasType>
+      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <column id="7618" parent="97" name="EXP_NUM">
+      <DasType>NUMBER(*)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <foreign-key id="7619" parent="97" name="SUBMESSION_FK1">
       <ColNames>SECTION</ColNames>
       <ModifiedTimestamp>2022-12-09.12:21:06</ModifiedTimestamp>
       <OnDelete>cascade</OnDelete>
       <RefKeyName>SECTION_PK</RefKeyName>
       <RefTableName>SECTION</RefTableName>
     </foreign-key>
-    <index id="7617" parent="97" name="SUBMESSION_PK">
+    <index id="7620" parent="97" name="SUBMESSION_PK">
       <ColNames>SUB_ID</ColNames>
       <CreatedTimestamp>2022-11-14.00:55:38</CreatedTimestamp>
       <ModifiedTimestamp>2022-11-14.00:55:38</ModifiedTimestamp>
@@ -60292,43 +60307,43 @@ SEC_NUM</ColNames>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="7618" parent="97" name="SUBMESSION_PK">
+    <key id="7621" parent="97" name="SUBMESSION_PK">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2022-11-14.00:55:38</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>SUBMESSION_PK</UnderlyingIndexName>
     </key>
-    <column id="7619" parent="98" name="SUB_ID">
+    <column id="7622" parent="98" name="SUB_ID">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="7620" parent="98" name="STU_ID">
+    <column id="7623" parent="98" name="STU_ID">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="7621" parent="98" name="GRADE">
+    <column id="7624" parent="98" name="GRADE">
       <DasType>NUMBER(*)|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="7622" parent="98" name="SUB_STU_FK1">
+    <foreign-key id="7625" parent="98" name="SUB_STU_FK1">
       <ColNames>SUB_ID</ColNames>
       <ModifiedTimestamp>2022-11-18.23:37:47</ModifiedTimestamp>
       <OnDelete>cascade</OnDelete>
       <RefKeyName>SUBMESSION_PK</RefKeyName>
       <RefTableName>SUBMESSION</RefTableName>
     </foreign-key>
-    <foreign-key id="7623" parent="98" name="SUB_STU_FK2">
+    <foreign-key id="7626" parent="98" name="SUB_STU_FK2">
       <ColNames>STU_ID</ColNames>
       <ModifiedTimestamp>2022-12-09.01:05:23</ModifiedTimestamp>
       <OnDelete>restrict</OnDelete>
       <RefKeyName>STUDENT_PK</RefKeyName>
       <RefTableName>STUDENT</RefTableName>
     </foreign-key>
-    <index id="7624" parent="98" name="SUB_STU_PK">
+    <index id="7627" parent="98" name="SUB_STU_PK">
       <ColNames>SUB_ID
 STU_ID</ColNames>
       <CreatedTimestamp>2022-11-14.01:16:02</CreatedTimestamp>
@@ -60337,42 +60352,42 @@ STU_ID</ColNames>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="7625" parent="98" name="SUB_STU_PK">
+    <key id="7628" parent="98" name="SUB_STU_PK">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2022-11-14.01:16:02</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>SUB_STU_PK</UnderlyingIndexName>
     </key>
-    <column id="7626" parent="99" name="F_ID">
+    <column id="7629" parent="99" name="F_ID">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="7627" parent="99" name="FIRST_NAME">
+    <column id="7630" parent="99" name="FIRST_NAME">
       <DasType>VARCHAR2(100 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="7628" parent="99" name="LAST_NAME">
+    <column id="7631" parent="99" name="LAST_NAME">
       <DasType>VARCHAR2(100 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="7629" parent="99" name="EMAIL">
+    <column id="7632" parent="99" name="EMAIL">
       <DasType>VARCHAR2(100 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="7630" parent="99" name="PHONE_NUMBER">
+    <column id="7633" parent="99" name="PHONE_NUMBER">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="7631" parent="99" name="SPECIALTY">
+    <column id="7634" parent="99" name="SPECIALTY">
       <DasType>VARCHAR2(200 byte)|0s</DasType>
       <Position>6</Position>
     </column>
-    <index id="7632" parent="99" name="SUPERVISOR_PK">
+    <index id="7635" parent="99" name="SUPERVISOR_PK">
       <ColNames>F_ID</ColNames>
       <CreatedTimestamp>2022-12-03.23:52:45</CreatedTimestamp>
       <ModifiedTimestamp>2022-12-03.23:52:45</ModifiedTimestamp>
@@ -60380,7 +60395,7 @@ STU_ID</ColNames>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <index id="7633" parent="99" name="MAIL1">
+    <index id="7636" parent="99" name="MAIL1">
       <ColNames>EMAIL</ColNames>
       <CreatedTimestamp>2022-11-14.00:49:33</CreatedTimestamp>
       <ModifiedTimestamp>2022-11-14.00:49:33</ModifiedTimestamp>
@@ -60388,13 +60403,13 @@ STU_ID</ColNames>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="7634" parent="99" name="SUPERVISOR_PK">
+    <key id="7637" parent="99" name="SUPERVISOR_PK">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2022-12-03.23:52:45</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>SUPERVISOR_PK</UnderlyingIndexName>
     </key>
-    <key id="7635" parent="99" name="MAIL_S">
+    <key id="7638" parent="99" name="MAIL_S">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2022-11-14.00:49:33</ModifiedTimestamp>
       <UnderlyingIndexName>MAIL1</UnderlyingIndexName>

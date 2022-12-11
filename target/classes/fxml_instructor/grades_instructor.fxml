@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.grades_cont">
    <content>
-      <AnchorPane prefHeight="896.0" prefWidth="1227.0" style="-fx-background-color: white;">
+      <AnchorPane prefHeight="898.0" prefWidth="1227.0" style="-fx-background-color: white;">
          <children>
             <AnchorPane layoutX="-2.0" layoutY="-4.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
@@ -24,17 +24,21 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView layoutX="117.0" layoutY="486.0" prefHeight="593.0" prefWidth="1032.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="submessions1" layoutX="388.0" layoutY="464.0" prefHeight="323.0" prefWidth="477.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
+                  <TableColumn fx:id="sub_id" prefWidth="111.0" text="Submesion_id" />
+                  <TableColumn fx:id="sub_lab" prefWidth="67.0" text="Lab" />
+                  <TableColumn fx:id="sub_section" prefWidth="47.0" text="Section" />
+                  <TableColumn fx:id="sub_date" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="sub_exp" prefWidth="75.0" text="Expirement" />
+                  <TableColumn fx:id="sub_grade" prefWidth="75.0" text="Grade" />
                </columns>
             </TableView>
-            <TextField layoutX="290.0" layoutY="162.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="830.0" layoutY="266.0" promptText="Lab number" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="662.0" layoutY="266.0" promptText="Student id" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField layoutX="309.0" layoutY="266.0" promptText="Submession id" styleClass="textfield-design" stylesheets="@search.css" />
-            <Button layoutX="581.0" layoutY="391.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+            <TextField fx:id="general" layoutX="290.0" layoutY="162.0" prefHeight="25.0" prefWidth="673.0" promptText="General search" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="lab" layoutX="830.0" layoutY="266.0" promptText="Lab number" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="student" layoutX="662.0" layoutY="266.0" promptText="Student id" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="id" layoutX="309.0" layoutY="266.0" promptText="Submession id" styleClass="textfield-design" stylesheets="@search.css" />
+            <Button layoutX="593.0" layoutY="375.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@search.css" text="Search">
                <font>
                   <Font size="14.0" />
                </font>
@@ -45,14 +49,19 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="488.0" layoutY="266.0" promptText="Section number" styleClass="textfield-design" stylesheets="@search.css" />
-            <ComboBox layoutX="639.0" layoutY="320.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@trans_combo.css" />
-            <TextField layoutX="557.0" layoutY="319.0" promptText="Grade" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="section" layoutX="488.0" layoutY="266.0" promptText="Section number" styleClass="textfield-design" stylesheets="@search.css" />
+            <ComboBox fx:id="specifier" layoutX="639.0" layoutY="320.0" prefHeight="22.0" prefWidth="94.0" stylesheets="@trans_combo.css" />
+            <TextField fx:id="grade" layoutX="557.0" layoutY="319.0" promptText="Grade" styleClass="textfield-design" stylesheets="@search.css" />
             <Label layoutX="290.0" layoutY="121.0" stylesheets="@../fxml_crd/shadows.css" text="Search" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
+            <Button layoutX="989.0" layoutY="160.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="84.0" styleClass="button-design" stylesheets="@search.css" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </content>
