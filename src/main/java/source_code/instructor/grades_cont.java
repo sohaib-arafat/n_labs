@@ -148,17 +148,19 @@ void spec_c() throws SQLException {
     java.sql.Date DATE1;
     if(!(date.getValue() ==null)){
         DATE1=java.sql.Date.valueOf(date.getValue());
+        System.out.println(DATE1.toString());
+
         if (!id.getText().trim().isEmpty() || !section.getText().trim().isEmpty() || !lab.getText().trim().isEmpty() || !grade.getText().trim().isEmpty() || !GRADED.getText().trim().isEmpty()) {
-            sql += " AND SUB_DATE=" +DATE1 ;
+            sql += " AND SUB_DATE='" +DATE1.toString()+"" ;
         } else {
-            sql += " SUB_DATE='" +"2022-DEC-12" + "'";
+            sql += " SUB_DATE='" +DATE1.toString()+ "'";
         }
     }
     sql+=" AND SUBMESSION.LAB=SECTION.LAB_NUM AND SUBMESSION.SECTION=SECTION.SEC_NUM AND SECTION.INS_NUM='"+inst+"'";
     Statement stmt = con.createStatement();
     java.sql.ResultSet rs = stmt.executeQuery(sql);
     while (rs.next()){
-        submessions.add(new submession(rs.getString(5),rs.getString(6),rs.getString(1),rs.getString(4),rs.getString(3),rs.getString(2)));
+        submessions.add(new submession(rs.getString(6),rs.getString(5),rs.getString(1),rs.getString(4),rs.getString(3),rs.getString(2)));
     }
     ObservableList<submession> lst1 = FXCollections.observableArrayList(submessions);
     submessions1.setItems(lst1);
