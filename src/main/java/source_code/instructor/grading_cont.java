@@ -1,6 +1,7 @@
 package source_code.instructor;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -8,9 +9,11 @@ import javafx.scene.text.TextFlow;
 
 import java.awt.*;
 import java.io.*;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
-public class grading_cont {
+public class grading_cont implements Initializable {
 
     @FXML
     TextField grade;
@@ -31,7 +34,7 @@ public class grading_cont {
     private Label submesiion;
 @FXML
     void grade() throws SQLException {
-        String sql = "UPDATE submession SET grade = '" + grade.getText() + "' WHERE submession.sub_id = " + id.getText();
+        String sql = "UPDATE submession SET grade = '" + grade.getText() + "', GRADED='Y' WHERE submession.sub_id = " + id.getText();
         String sql3 = "UPDATE SUB_STU SET GRADE = '" + grade.getText() + "' WHERE SUB_STU.SUB_ID= " + id.getText();
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
@@ -55,11 +58,20 @@ public class grading_cont {
         con.setAutoCommit(false);
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery(sql2);
-        int i = 0;
+        int i = 1;
         while (rs.next()) {
-            students.getChildren().add(new Text(i + "- " + rs.getString(1) + "\t"));
+            String sql4="Update sub_stu set grade='"+grade.getText()+"' where sub_id="+id.getText()+" and stu_id="+rs.getString(1);
+            Statement stmt4=con.createStatement();
+            stmt4.executeUpdate(sql4);
+            con.commit();
+            String sql3 = "SELECT FIRST_NAME,last_name FROM STUDENT WHERE stu_reg_num=" + rs.getString(1);
+            Statement stmt2 = con.createStatement();
+            ResultSet rs2 = stmt2.executeQuery(sql3);
+            rs2.next();
+            students.getChildren().add(new Text(i + "- " + rs2.getString(1)+" "+rs2.getString(2) +" "+"("+rs.getString(1)+ ")\n"));
+            i++;
         }
-        submesiion.setText("submession id: "+id.getText());
+        submesiion.setText(id.getText());
 
 
 
@@ -80,7 +92,7 @@ public class grading_cont {
         rs.next();
         Blob blob = rs.getBlob(1);
         byte[] bdata = blob.getBytes(1, (int) blob.length());
-        File file = new File("C:\\Users\\sohai\\Desktop\\New folder (4)\\" + rs.getString(2));
+        File file = new File("C:\\N_LABS\\reports" + rs.getString(2));
         FileOutputStream outPutStream = new FileOutputStream(file);
         outPutStream.write(bdata);
         outPutStream.close();
@@ -93,5 +105,16 @@ public class grading_cont {
 
         }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        section.setStyle("-fx-background-color: WHITE ");
+        section.setEditable(false);
+        lab.setStyle("-fx-background-color: WHITE ");
+        lab.setEditable(false);
+        id.setStyle("-fx-background-color: WHITE ");
+        id.setEditable(false);
+
+
     }
+}
 
