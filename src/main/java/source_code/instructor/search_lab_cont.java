@@ -149,7 +149,7 @@ public String inst1;
 
     }
     @FXML
-void cards() throws SQLException, IOException {
+    public void cards() throws SQLException, IOException {
     DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
     String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
     Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");

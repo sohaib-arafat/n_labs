@@ -16,6 +16,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import source_code.instructor.grades_cont;
+import source_code.instructor.search_lab_cont;
 
 import java.io.IOException;
 import java.net.URL;
@@ -50,6 +52,7 @@ public String lab;
     private Button search;
     @FXML
     private Button add;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -150,8 +153,12 @@ public String lab;
             add.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_crd/labs_crd.fxml"));
-            Parent root = loader.load();
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_instructor/labs_instructor.fxml"));
+
+            root=loader.load();
+            search_lab_cont lc=loader.getController();
+            lc.inst1=inst;
+            lc.cards();
             pb.setCenter(root);
             nav_lable.setText("Labs");
             /*FileChooser fileChooser = new FileChooser();
@@ -171,9 +178,13 @@ public String lab;
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
             add.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_crd/grades_crd.fxml"));
-            Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_instructor/grades_instructor.fxml"));
+            root=loader.load();
+            grades_cont gc=loader.getController();
+            gc.inst=inst;
+            gc.all();
             pb.setCenter(root);
+
 
             nav_lable.setText("Grading");
 
@@ -201,8 +212,7 @@ public String lab;
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             add.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
-            loader("/fxml_crd/search a student_crd");
-            nav_lable.setText("Search A Student");
+            loader("/fxml_instructor/search a student_instructor");            nav_lable.setText("Search A Student");
 
 
         }

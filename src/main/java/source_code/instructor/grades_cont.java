@@ -29,7 +29,7 @@ import java.util.ResourceBundle;
 
 public class grades_cont implements Initializable {
 
-    String inst;
+    public String inst;
     @FXML
     private TextField general;
 
@@ -73,7 +73,7 @@ public class grades_cont implements Initializable {
 
     @FXML
     private TableView<submession> submessions1;
-void all() throws SQLException, FileNotFoundException {
+public void all() throws SQLException, FileNotFoundException {
     ArrayList<submession> submessions = new ArrayList<>();
     DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
     String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
