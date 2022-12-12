@@ -54,7 +54,7 @@
             <Button layoutX="844.0" layoutY="820.0" mnemonicParsing="false" onAction="#res" prefHeight="35.0" prefWidth="96.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Add resources" />
             <Button layoutX="23.0" layoutY="108.0" mnemonicParsing="false" onAction="#add" prefHeight="44.0" prefWidth="87.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Save" />
             <TextArea fx:id="objectives" layoutX="89.0" layoutY="277.0" prefHeight="200.0" prefWidth="488.0" style="-fx-background-color: transparent;" styleClass="textfield-design" stylesheets="@scrd1.css" />
-            <Button layoutX="124.0" layoutY="108.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="87.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Clear" />
+            <Button layoutX="124.0" layoutY="108.0" mnemonicParsing="false" onAction="#clear" prefHeight="44.0" prefWidth="87.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Clear" />
             <TextField fx:id="path" layoutX="409.0" layoutY="822.0" prefHeight="27.0" prefWidth="401.0" promptText="Path" styleClass="textfield-design" stylesheets="@scrd1.css" />
          </children>
       </AnchorPane>

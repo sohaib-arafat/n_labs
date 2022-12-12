@@ -73,6 +73,15 @@ public class Expiremnts {
             alert.setHeaderText("Experiment added successfully");
             alert.showAndWait();
             con.close();
+            name.clear();
+            exp_num.clear();
+            week.clear();
+            objectives.clear();
+            tools.clear();
+            notes.clear();
+            procedures.clear();
+            path.clear();
+
 
         }
         catch (Exception e){
@@ -83,6 +92,14 @@ public class Expiremnts {
             alert.setContentText("You have enterd wrong data");
             alert.showAndWait();
             con.close();
+            name.clear();
+            exp_num.clear();
+            week.clear();
+            objectives.clear();
+            tools.clear();
+            notes.clear();
+            procedures.clear();
+            path.clear();
             return;
 
         }
@@ -92,8 +109,22 @@ public class Expiremnts {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         File f=fileChooser.showOpenDialog(null);
-        path1 = f.getAbsolutePath();
-        path.setText(path1);
+        if(f!=null){
+            path.setText(f.getAbsolutePath());
+            path1=f.getAbsolutePath();
+        }
+
+    }
+    @FXML
+   void clear(){
+        name.clear();
+        exp_num.clear();
+        week.clear();
+        objectives.clear();
+        tools.clear();
+        notes.clear();
+        procedures.clear();
+        path.clear();
     }
 
 }
