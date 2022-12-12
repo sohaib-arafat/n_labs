@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -52,6 +53,7 @@ public String lab;
     private Button search;
     @FXML
     private Button add;
+
 
 
     @Override
@@ -228,6 +230,7 @@ public String lab;
             pb.setCenter(root);
             Expiremnts add = loader.getController();
             add.lab=lab;
+            add.sl();
 
             nav_lable.setText("Add A New Experiment");
 

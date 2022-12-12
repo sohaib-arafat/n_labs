@@ -3,16 +3,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.crd.Expiremnts">
    <content>
-      <AnchorPane prefHeight="1015.0" prefWidth="1227.0" style="-fx-background-color: white;">
+      <AnchorPane prefHeight="1449.0" prefWidth="1227.0" style="-fx-background-color: white;">
          <children>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="1219.0" styleClass="back" stylesheets="@home_instructor.css">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="1229.0" styleClass="back" stylesheets="@home_instructor.css">
                <children>
                   <Label layoutX="30.0" layoutY="24.0" styleClass="shade" stylesheets="@../fxml_instructor/shadows.css" text="Add an expiremnt" textFill="WHITE">
                      <font>
@@ -56,6 +59,19 @@
             <TextArea fx:id="objectives" layoutX="89.0" layoutY="277.0" prefHeight="200.0" prefWidth="488.0" style="-fx-background-color: transparent;" styleClass="textfield-design" stylesheets="@scrd1.css" />
             <Button layoutX="124.0" layoutY="108.0" mnemonicParsing="false" onAction="#clear" prefHeight="44.0" prefWidth="87.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Clear" />
             <TextField fx:id="path" layoutX="409.0" layoutY="822.0" prefHeight="27.0" prefWidth="401.0" promptText="Path" styleClass="textfield-design" stylesheets="@scrd1.css" />
+            <VBox layoutX="614.0" layoutY="435.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
+            <TableView fx:id="table" layoutX="459.0" layoutY="1018.0" prefHeight="331.0" prefWidth="327.0" stylesheets="@scrd1.css">
+               <columns>
+                  <TableColumn fx:id="col1" prefWidth="117.0" text="Expiremnt_number" />
+                  <TableColumn fx:id="col2" prefWidth="125.0" text="Name" />
+                  <TableColumn fx:id="col3" minWidth="0.0" prefWidth="58.0" text="Week" />
+               </columns>
+            </TableView>
+            <Label layoutX="559.0" layoutY="964.0" text="Expiremnts" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </content>
