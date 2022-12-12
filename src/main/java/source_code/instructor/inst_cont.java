@@ -26,6 +26,7 @@ public class inst_cont implements Initializable {
 
     @FXML
     private AnchorPane navbar, slider, tmp, card;
+
     public String inst;
     @FXML
     BorderPane pb;

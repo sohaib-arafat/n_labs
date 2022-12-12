@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="473.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.student_cont">
+<AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="473.0" prefWidth="956.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.student_cont">
    <children>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="88.0" prefWidth="956.0" styleClass="back" stylesheets="@../fxml_head/home_instructor.css">
          <children>

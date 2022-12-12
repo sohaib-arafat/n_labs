@@ -92,9 +92,15 @@ if (rs.next()){
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
         crd_cont cc = l1.getController();
-        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME,F_ID from INSTRUCTOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
         rs1.next();
         cc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+        cc.inst=rs1.getString(3);
+        Statement stnt1=con.createStatement();
+        ResultSet rs2=stnt1.executeQuery("Select LAB_NUM from COORDINATOR WHERE INST_NUM="+"'"+cc.inst+"'");
+        rs2.next();
+        cc.lab=rs2.getString(1);
+
         tmp.close();
         dialog.show();
         con.close();

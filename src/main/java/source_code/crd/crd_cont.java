@@ -35,7 +35,8 @@ public class crd_cont implements Initializable {
 
     @FXML
     private Button unfold, home, labs, grades, profile, logout;
-
+public String inst;
+public String lab;
     @FXML
     private ImageView exit;
     boolean h = false;
@@ -136,8 +137,10 @@ public class crd_cont implements Initializable {
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            loader("/fxml_crd/home_crd");
-            nav_lable.setText("Home");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_crd/crd_home.fxml"));
+            Parent root = loader.load();
+            pb.setCenter(root);
+             nav_lable.setText("Home");
 
         }
         if (e.getSource() == labs) {
@@ -147,7 +150,9 @@ public class crd_cont implements Initializable {
             add.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            loader("/fxml_crd/labs_crd");
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_crd/labs_crd.fxml"));
+            Parent root = loader.load();
+            pb.setCenter(root);
             nav_lable.setText("Labs");
             /*FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Open Resource File");
@@ -166,7 +171,10 @@ public class crd_cont implements Initializable {
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
             add.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            loader("/fxml_crd/grades_crd");
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_crd/grades_crd.fxml"));
+            Parent root = loader.load();
+            pb.setCenter(root);
+
             nav_lable.setText("Grading");
 
 
@@ -180,6 +188,7 @@ public class crd_cont implements Initializable {
             add.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
             loader("/fxml_student/test2");
+
             nav_lable.setText("Profile");
 
 
@@ -204,8 +213,12 @@ public class crd_cont implements Initializable {
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_crd/add_crd.fxml"));
+            Parent root = loader.load();
+            pb.setCenter(root);
+            Expiremnts add = loader.getController();
+            add.lab=lab;
 
-            loader("/fxml_crd/add_crd");
             nav_lable.setText("Add A New Experiment");
 
 
