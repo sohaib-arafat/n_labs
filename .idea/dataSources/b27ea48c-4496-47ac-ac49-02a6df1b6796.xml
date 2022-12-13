@@ -347,7 +347,7 @@
     </table>
     <table id="93" parent="21" name="REGST">
       <CreatedTimestamp>2022-11-14.01:10:32</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-07.02:33:59</ModifiedTimestamp>
       <ObjectId>79766</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
@@ -389,7 +389,7 @@
     </table>
     <table id="99" parent="21" name="SUPERVISOR">
       <CreatedTimestamp>2022-11-14.00:49:07</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
+      <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-03.23:53:42</ModifiedTimestamp>
       <ObjectId>79754</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>

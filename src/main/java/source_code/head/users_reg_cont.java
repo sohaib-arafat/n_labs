@@ -9,12 +9,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+ import javafx.scene.control.Button;
+ import javafx.scene.control.TextField;
+ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+ import net.sf.jasperreports.engine.*;
+ import net.sf.jasperreports.view.JasperViewer;
  import org.apache.poi.ss.usermodel.Sheet;
  import org.apache.poi.ss.usermodel.Workbook;
  import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -29,7 +33,8 @@ import source_code.general.supervisor;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.io.File;
+ import java.awt.*;
+ import java.io.File;
  import java.io.FileInputStream;
  import java.io.IOException;
 import java.net.URL;
@@ -809,6 +814,20 @@ public class users_reg_cont implements Initializable {
          file.close();
          workbook.close();
 path.clear();
+     }
+     @FXML
+     void jasper() throws JRException, SQLException, IOException {
+         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+         con.setAutoCommit(false);
+         String reportPath = "C:\\N_LABS\\N_LABS.jrxml";
+         JasperReport jr = JasperCompileManager.compileReport(reportPath);
+         JasperPrint jp = JasperFillManager.fillReport(jr,null, con);
+          JasperExportManager.exportReportToPdfFile(jp, "C:\\N_LABS\\N_LABS.pdf");
+         File file = new File("C:\\N_LABS\\N_LABS.pdf");
+            Desktop.getDesktop().open(file);
+                 con.close();
      }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

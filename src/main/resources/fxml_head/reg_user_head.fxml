@@ -133,6 +133,11 @@
             </TableView>
             <ComboBox fx:id="type" layoutX="631.0" layoutY="492.0" onAction="#reg_fac" prefHeight="31.0" prefWidth="84.0" promptText="Day" stylesheets="@trans_combo.css" />
          <TextField fx:id="fac_spe" layoutX="543.0" layoutY="494.0" promptText="Office number" styleClass="textfield-design" stylesheets="@search.css" />
+            <Button layoutX="1083.0" layoutY="107.0" mnemonicParsing="false" onAction="#jasper" prefHeight="39.0" prefWidth="122.0" styleClass="button-design" stylesheets="@search.css" text="Genrate Report">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
       </children>
    </AnchorPane>
 </content>
