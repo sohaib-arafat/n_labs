@@ -191,6 +191,9 @@ void sl() throws SQLException {
                     throw new RuntimeException(e);
                 }
                 PopController popController = loader.getController();
+                popController.lab=lab;
+                popController.exp_num=table.getSelectionModel().getSelectedItem().getNumber();
+                popController.name=table.getSelectionModel().getSelectedItem().getName();
                 stage.setScene(new Scene(root));
                 stage.show();
 
