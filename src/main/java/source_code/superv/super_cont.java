@@ -32,6 +32,8 @@ public class super_cont implements Initializable {
     Parent root;
     @FXML
     private Label nav_lable;
+    public String lab;
+    public String id;
 
     @FXML
     private Button unfold, home, labs, grades, profile, logout;
@@ -133,7 +135,12 @@ public class super_cont implements Initializable {
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            loader("/fxml_instructor/home_instructor");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/home_super.fxml"));
+            Parent root = loader.load();
+            home cont = loader.getController();
+            cont.id=id;
+            cont.lab=lab;
+
             nav_lable.setText("Home");
 
         }
@@ -180,9 +187,13 @@ public class super_cont implements Initializable {
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
+FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/home_super.fxml"));
+            Parent root = loader.load();
+            home cont = loader.getController();
+            cont.id=id;
+            cont.lab=lab;
 
-            loader("/fxml_student/test2");
-            nav_lable.setText("Profile");
+             nav_lable.setText("Profile");
 
 
         }

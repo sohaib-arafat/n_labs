@@ -113,9 +113,16 @@ if (rs.next()){
         Scene dialogScene = new Scene(root);
         dialog.setScene(dialogScene);
         super_cont sc = l2.getController();
-        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from SUPERVISOR WHERE EMAIL=" + "'" + rs.getString(1) + "'");
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME,F_ID from SUPERVISOR   WHERE EMAIL=" + "'" + rs.getString(1) + "'");
         rs1.next();
         sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+        sc.id=rs1.getString(3);
+
+        Statement d=con.createStatement();
+        ResultSet rs2=d.executeQuery("Select LAB_NUM from lab WHERE SUPERVISOR="+"'"+sc.id+"'");
+        rs2.next();
+        sc.lab=rs2.getString(1);
+
         tmp.close();
         dialog.show();
         con.close();
