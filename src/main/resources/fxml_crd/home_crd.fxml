@@ -111,7 +111,7 @@
                <children>
                   <AnchorPane layoutX="-4.0" layoutY="277.0" prefHeight="253.0" prefWidth="494.0">
                      <children>
-                        <LineChart fx:id="lineChart" alternativeRowFillVisible="false" createSymbols="false" layoutX="-7.0" layoutY="40.0" legendVisible="false" prefHeight="273.0" prefWidth="694.0" styleClass="chart-series-line" stylesheets="@../fxml_instructor/home_instructor.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                        <LineChart fx:id="lineChart" alternativeRowFillVisible="false" createSymbols="false" layoutX="-7.0" layoutY="40.0" legendVisible="false" prefHeight="273.0" prefWidth="694.0" styleClass="chart-series-line" stylesheets="@home_instructor.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>

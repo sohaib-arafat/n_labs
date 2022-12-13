@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1320.0" style="-fx-background-color: white;" stylesheets="@../fxml_student/nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.head.head_cont">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="928.0" prefWidth="1303.0" style="-fx-background-color: white;" stylesheets="@../fxml_student/nav_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.head.head_cont">
    <children>
       <BorderPane fx:id="pb" layoutX="80.0" layoutY="37.0" prefHeight="897.0" prefWidth="1242.0">
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="897.0" prefWidth="1234.0" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
       <AnchorPane fx:id="navbar" prefHeight="752.0" prefWidth="61.0" style="-fx-background-color: White;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
@@ -129,7 +129,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="cp1" contentDisplay="CENTER" layoutX="1262.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" styleClass="button1" text=" ">
+      <Button fx:id="cp1" contentDisplay="CENTER" layoutX="1241.0" layoutY="1.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="62.0" styleClass="button1" text=" ">
          <graphic>
             <ImageView fx:id="exit" fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" y="-2.0">
                <image>
