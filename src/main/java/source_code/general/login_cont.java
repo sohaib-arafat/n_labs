@@ -120,8 +120,10 @@ if (rs.next()){
 
         Statement d=con.createStatement();
         ResultSet rs2=d.executeQuery("Select LAB_NUM from lab WHERE SUPERVISOR="+"'"+sc.id+"'");
+        System.out.println(sc.id);
         rs2.next();
         sc.lab=rs2.getString(1);
+        System.out.println(sc.lab);
 
         tmp.close();
         dialog.show();

@@ -59,7 +59,12 @@ public class super_cont implements Initializable {
 
 
         try {
-            loader("/fxml_instructor/home_instructor");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/home_super.fxml"));
+            Parent root = loader.load();
+            home cont = loader.getController();
+            cont.id=id;
+            cont.lab=lab;
+            pb.setCenter(root);
             // home.setStyle("-fx-background-color : #4364f7 ;" + "-fx-border-color:BLACK;" + "-fx-border-width: 0px 0px 0px 6px;");
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -138,8 +143,12 @@ public class super_cont implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/home_super.fxml"));
             Parent root = loader.load();
             home cont = loader.getController();
+
             cont.id=id;
+
             cont.lab=lab;
+            System.out.println(cont.id);
+            pb.setCenter(root);
 
             nav_lable.setText("Home");
 
@@ -150,8 +159,7 @@ public class super_cont implements Initializable {
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            loader("/fxml_instructor/labs_instructor");
-            nav_lable.setText("Labs");
+             nav_lable.setText("Labs");
             /*FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Open Resource File");
             File f=fileChooser.showOpenDialog((Stage)labs.getScene().getWindow());
@@ -187,7 +195,7 @@ public class super_cont implements Initializable {
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/home_super.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/home_super.fxml"));
             Parent root = loader.load();
             home cont = loader.getController();
             cont.id=id;
@@ -215,6 +223,7 @@ FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/home_supe
     @FXML
     private void loader(String page) throws IOException {
         root=FXMLLoader.load(getClass().getResource(page+".fxml"));
+
 
         pb.setCenter(root);
 

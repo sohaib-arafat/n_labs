@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.superv.home">
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1050.0" prefWidth="1227.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -23,22 +23,29 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TextField layoutX="254.0" layoutY="313.0" promptText="Serial number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <TextField layoutX="778.0" layoutY="313.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <TextField layoutX="432.0" layoutY="313.0" promptText="Name" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <TextField layoutX="255.0" layoutY="175.0" prefHeight="25.0" prefWidth="673.0" promptText="General seach" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <Button layoutX="546.0" layoutY="363.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Search">
+            <TextField fx:id="num" layoutX="254.0" layoutY="313.0" promptText="Serial number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField fx:id="count" layoutX="778.0" layoutY="313.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField fx:id="name" layoutX="432.0" layoutY="313.0" promptText="Name" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField fx:id="general" layoutX="255.0" layoutY="175.0" prefHeight="25.0" prefWidth="673.0" promptText="General seach" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <Button layoutX="546.0" layoutY="363.0" mnemonicParsing="false" onAction="#spec_c" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Search">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TableView layoutX="146.0" layoutY="418.0" prefHeight="335.0" prefWidth="918.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="tools" layoutX="263.0" layoutY="434.0" prefHeight="335.0" prefWidth="704.0" stylesheets="@../fxml_crd/scrd1.css">
                <columns>
-                  <TableColumn prefWidth="75.0" text="C1" />
-                  <TableColumn prefWidth="75.0" text="C2" />
+                  <TableColumn fx:id="equ_num" prefWidth="87.0" text="Serial number" />
+                  <TableColumn fx:id="equ_name" prefWidth="107.0" text="Name" />
+                  <TableColumn fx:id="equ_count" prefWidth="59.0" text="Count" />
+                  <TableColumn fx:id="discription" text="Discription" />
+                  <TableColumn fx:id="runnig" prefWidth="60.0" text="Runnig" />
+                  <TableColumn fx:id="faulty" prefWidth="73.0" text="Faulty" />
+                  <TableColumn fx:id="unknown" prefWidth="59.0" text="Unknown" />
+                  <TableColumn fx:id="service" prefWidth="89.0" text="Service date" />
+                  <TableColumn fx:id="equ_lab" prefWidth="89.0" text="Lab" />
                </columns>
             </TableView>
-            <TextField layoutX="605.0" layoutY="313.0" promptText="Lab number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField fx:id="lab_num" layoutX="605.0" layoutY="313.0" promptText="Lab number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
             <VBox layoutX="614.0" layoutY="-265.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="1000.0" prefWidth="1.0" rotate="90.0" style="-fx-background-color: #93e1ff;" />
             <Label layoutX="495.0" layoutY="259.0" stylesheets="@../fxml_instructor/shadows.css" text="Advanced Search" textFill="#47ceff">
                <font>
@@ -50,20 +57,25 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="146.0" layoutY="789.0" stylesheets="@../fxml_instructor/shadows.css" text="Add new equibments" textFill="#47ceff">
+            <Label layoutX="478.0" layoutY="786.0" stylesheets="@../fxml_instructor/shadows.css" text="Add new equibments" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="146.0" layoutY="834.0" promptText="Serial number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <Button layoutX="875.0" layoutY="833.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="69.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Add">
+            <TextField fx:id="in1" layoutX="243.0" layoutY="835.0" promptText="Serial number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <Button layoutX="933.0" layoutY="832.0" mnemonicParsing="false" onAction="#insert" prefHeight="23.0" prefWidth="69.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Add">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <TextField layoutX="323.0" layoutY="834.0" promptText="Name" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <TextField layoutX="508.0" layoutY="834.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
-            <TextField layoutX="689.0" layoutY="835.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" text="Discreption" />
+            <TextField fx:id="in2" layoutX="420.0" layoutY="835.0" promptText="Name" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField fx:id="in3" layoutX="592.0" layoutY="835.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField fx:id="in4" layoutX="762.0" layoutY="835.0" promptText="Count" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" text="Discreption" />
+            <Button layoutX="944.0" layoutY="169.0" mnemonicParsing="false" onAction="#gen_c" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </content>
