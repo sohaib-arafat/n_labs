@@ -21,13 +21,14 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView layoutX="98.0" layoutY="212.0" prefHeight="593.0" prefWidth="1032.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView layoutX="446.0" layoutY="255.0" prefHeight="458.0" prefWidth="333.0" stylesheets="@../fxml_crd/scrd1.css">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn prefWidth="126.0" text="C1" />
+                <TableColumn prefWidth="94.0" text="C2" />
+                  <TableColumn prefWidth="102.0" text="C1" />
               </columns>
             </TableView>
-            <TextField layoutX="277.0" layoutY="158.0" prefHeight="25.0" prefWidth="673.0" promptText="Submession number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
+            <TextField layoutX="276.0" layoutY="173.0" prefHeight="25.0" prefWidth="673.0" promptText="Submession number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
          </children>
       </AnchorPane>
    </content>

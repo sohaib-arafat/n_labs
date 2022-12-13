@@ -307,6 +307,7 @@
       <DetailsLevel>3</DetailsLevel>
       <ModifiedTimestamp>2022-11-14.01:01:27</ModifiedTimestamp>
       <ObjectId>79757</ObjectId>
+      <Outdated>1</Outdated>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="88" parent="21" name="EXPIREMNT">
@@ -329,6 +330,7 @@
       <DetailsLevel>3</DetailsLevel>
       <ModifiedTimestamp>2022-12-08.18:44:15</ModifiedTimestamp>
       <ObjectId>79699</ObjectId>
+      <Outdated>1</Outdated>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="91" parent="21" name="LOGIN">
@@ -378,6 +380,7 @@
       <DetailsLevel>2</DetailsLevel>
       <ModifiedTimestamp>2022-12-12.02:08:13</ModifiedTimestamp>
       <ObjectId>79759</ObjectId>
+      <Outdated>1</Outdated>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="98" parent="21" name="SUB_STU">
