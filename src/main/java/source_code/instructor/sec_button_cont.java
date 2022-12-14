@@ -25,18 +25,21 @@ public class sec_button_cont {
 
 
     @FXML
-      Label ins_name;
+    public
+    Label ins_name;
 
     @FXML
-     Label lab_name;
+    public
+    Label lab_name;
 
     @FXML
-      Label section_num;
+    public
+    Label section_num;
 
     @FXML
       Button test;
 
-    String lab;
+    public String lab;
 
     public void mouseEnter(MouseEvent event) {
         cardly.setScaleX(1);

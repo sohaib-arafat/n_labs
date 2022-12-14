@@ -137,7 +137,7 @@
                   <Image url="@../images/41.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="39.0" fitWidth="53.0" layoutX="16.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="39.0" fitWidth="53.0" layoutX="17.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@../images/search.png" />
                </image>
@@ -148,7 +148,7 @@
                </image>
             </ImageView>
             <AnchorPane layoutX="17.0" layoutY="265.0" prefHeight="16.0" prefWidth="53.0" />
-            <ImageView fitHeight="61.0" fitWidth="63.0" layoutX="10.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="8.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/38.png" />
                </image>

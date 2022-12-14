@@ -160,6 +160,13 @@ public class super_cont implements Initializable {
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
              nav_lable.setText("Labs");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/exps.fxml"));
+            Parent root = loader.load();
+            exps cont = loader.getController();
+            cont.lab=lab;
+            cont.cards();
+            pb.setCenter(root);
+
             /*FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Open Resource File");
             File f=fileChooser.showOpenDialog((Stage)labs.getScene().getWindow());
@@ -175,6 +182,8 @@ public class super_cont implements Initializable {
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
 
             profile.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #D4F1F4;" + "-fx-border-color:          WHITE;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
+
+
 
 
 
