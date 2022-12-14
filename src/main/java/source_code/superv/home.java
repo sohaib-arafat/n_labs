@@ -5,16 +5,17 @@ package source_code.superv;
         import javafx.collections.ObservableList;
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
+        import javafx.fxml.FXMLLoader;
         import javafx.fxml.Initializable;
-        import javafx.scene.control.Alert;
-        import javafx.scene.control.TableColumn;
-        import javafx.scene.control.TableView;
-        import javafx.scene.control.TextField;
+        import javafx.scene.Parent;
+        import javafx.scene.Scene;
+        import javafx.scene.control.*;
         import javafx.scene.control.cell.PropertyValueFactory;
+        import javafx.scene.input.MouseEvent;
+        import javafx.stage.Stage;
         import source_code.general.equibment;
-        import source_code.general.student;
 
-        import javax.swing.text.TabableView;
+        import java.io.IOException;
         import java.net.URL;
         import java.sql.*;
         import java.util.ArrayList;
@@ -22,7 +23,7 @@ package source_code.superv;
 
 public class home implements Initializable {
     String id;
-    String lab;
+      String lab;
 
     @FXML
     private TextField count;
@@ -79,6 +80,12 @@ public class home implements Initializable {
     private TableColumn<equibment, String> unknown;
     @FXML
     TableView<equibment> tools;
+    @FXML
+    DatePicker date;
+    @FXML
+    ComboBox<String> specifier;
+
+
 
     @FXML
     void gen_c(ActionEvent event) throws SQLException {
@@ -88,15 +95,16 @@ public class home implements Initializable {
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
         Statement stmt = con.createStatement();
-        String sql="SELECT serial_num, name, describtion, count, service_date, faulty, unknown,WORKING from EQUIPMENT WHERE (SERIAL_NUM LIKE '%"+general.getText()+"%' OR NAME LIKE '%"+general.getText()+"%' OR DESCRIBTION LIKE '%"+general.getText()+"%' OR COUNT LIKE '%"+general.getText()+"%' OR SERVICE_DATE LIKE '%"+general.getText()+"%' OR FAULTY LIKE '%"+general.getText()+"%' OR UNKNOWN LIKE '%"+general.getText()+"%' OR WORKING LIKE '%"+general.getText()+"%') and LAB_NUM='"+lab+"'";
+        String sql="SELECT serial_num, name,LAB_NUM,  count,DESCRIBTION,   faulty,  WORKING,UNKNOWN,SERVICE_DATE from EQUIPMENT WHERE (SERIAL_NUM LIKE '%"+general.getText()+"%' OR NAME LIKE '%"+general.getText()+"%' OR DESCRIBTION LIKE '%"+general.getText()+"%' OR COUNT LIKE '%"+general.getText()+"%' OR SERVICE_DATE LIKE '%"+general.getText()+"%' OR FAULTY LIKE '%"+general.getText()+"%' OR UNKNOWN LIKE '%"+general.getText()+"%' OR WORKING LIKE '%"+general.getText()+"%') or LAB_NUM like '%"+general.getText()+"%'";
         ResultSet rs=stmt.executeQuery(sql);
         while (rs.next()){
-            equibments.add(new equibment(rs.getString(1),rs.getString(2),lab,rs.getString(4),rs.getString(3),rs.getString(6),rs.getString(8),rs.getString(7),rs.getString(5)));
-        }
+            equibments.add(new equibment(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),
+                    rs.getString(9)));        }
         ObservableList<equibment> lst1 = FXCollections.observableArrayList(equibments);
         tools.setItems(lst1);
 
     }
+
 
     @FXML
     void insert(ActionEvent event) throws SQLException {
@@ -137,21 +145,141 @@ try
 
 
     @FXML
-    void spec_c(ActionEvent event) {
+    void spec_c(ActionEvent event) throws SQLException {
+        ArrayList<equibment> equibments = new ArrayList<>();
+        DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+        Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+        con.setAutoCommit(false);
+        Statement stmt = con.createStatement();
+        String sql="SELECT serial_num, name,LAB_NUM,  count,DESCRIBTION,   faulty,  WORKING,UNKNOWN,SERVICE_DATE from EQUIPMENT ";
+                if(!num.getText().isEmpty()){
+                     sql+="WHERE SERIAL_NUM='"+num.getText()+"'";
+                }
+                if(!name.getText().isEmpty()){
+                    if(!num.getText().isEmpty()){
+                        sql+=" AND NAME='"+name.getText()+"'";
+                    }
+                    else{
+                        sql+=" NAME='"+name.getText()+"'";
+                    }
+                }
 
+                if(!count.getText().isEmpty()){
+                    if(!num.getText().isEmpty()||!name.getText().isEmpty()){
+                        sql+=" AND COUNT='"+count.getText()+"'";
+                    }
+                    else{
+                        sql+="WHERE COUNT='"+count.getText()+"'";
+                    }
+                }
+                if(date.getValue()!=null){
+                    if(!num.getText().isEmpty()||!name.getText().isEmpty()||!count.getText().isEmpty()){
+                        sql+=" AND SERVICE_DATE='"+date.getValue().toString()+"'";
+                    }
+                    else{
+                        sql+="WHERE SERVICE_DATE='"+date.getValue().toString()+"'";
+                    }
+                }
+                if(specifier.getValue().equals("Faulty")){
+                    if(!num.getText().isEmpty()||!name.getText().isEmpty()||!count.getText().isEmpty()||date.getValue()!=null){
+                        sql+=" AND FAULTY=1";
+                    }
+                    else{
+                        sql+="WHERE FAULTY=1";
+                    }
+                }
+                if(specifier.getValue().equals("Unknown")){
+                    if(!num.getText().isEmpty()||!name.getText().isEmpty()||!count.getText().isEmpty()||date.getValue()!=null||specifier.getValue().equals("Faulty")){
+                        sql+=" AND UNKNOWN=1";
+                    }
+                    else{
+                        sql+="WHERE UNKNOWN=1";
+                    }
+                }
+                if(specifier.getValue().equals("Working")){
+                    if(!num.getText().isEmpty()||!name.getText().isEmpty()|| !count.getText().isEmpty()||date.getValue()!=null||specifier.getValue().equals("Faulty")||specifier.getValue().equals("Unknown")){
+                        sql+=" AND WORKING=1";
+                    }
+                    else{
+                        sql+="WHERE WORKING=1";
+                    }
+                }
+                if(!lab_num.getText().isEmpty()){
+                    if(!num.getText().isEmpty()||!name.getText().isEmpty()||!count.getText().isEmpty()||date.getValue()!=null){
+                        sql+=" AND LAB_NUM='"+lab_num.getText()+"'";
+                    }
+                    else{
+                        sql+="WHERE LAB_NUM='"+lab_num.getText()+"'";
+                    }
+                }
+                if(specifier.getValue().equals("All")){
+                }
+                Statement stmt1 = con.createStatement();
+                ResultSet rs = stmt1.executeQuery(sql);
+        while (rs.next()){
+            equibments.add(new equibment(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),
+                    rs.getString(9)));
+        }
+        ObservableList<equibment> lst1 = FXCollections.observableArrayList(equibments);
+        tools.setItems(lst1);
+        System.out.println(sql);
+
+    }
+    String getLab(){
+        return lab;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        equ_count.setCellValueFactory(new PropertyValueFactory<equibment,String>("count"));
-        equ_lab.setCellValueFactory(new PropertyValueFactory<equibment,String>("lab"));
-        equ_name.setCellValueFactory(new PropertyValueFactory<equibment,String>("name"));
-        equ_num.setCellValueFactory(new PropertyValueFactory<equibment,String>("serial"));
-        discription.setCellValueFactory(new PropertyValueFactory<equibment,String>("discription"));
-        faulty.setCellValueFactory(new PropertyValueFactory<equibment,String>("faulty"));
-        runnig.setCellValueFactory(new PropertyValueFactory<equibment,String>("runnig"));
-        service.setCellValueFactory(new PropertyValueFactory<equibment,String>("service"));
-        unknown.setCellValueFactory(new PropertyValueFactory<equibment,String>("unknown"));
+        equ_count.setCellValueFactory(new PropertyValueFactory<equibment, String>("count"));
+        equ_lab.setCellValueFactory(new PropertyValueFactory<equibment, String>("lab"));
+        equ_name.setCellValueFactory(new PropertyValueFactory<equibment, String>("name"));
+        equ_num.setCellValueFactory(new PropertyValueFactory<equibment, String>("serial"));
+        discription.setCellValueFactory(new PropertyValueFactory<equibment, String>("discription"));
+        faulty.setCellValueFactory(new PropertyValueFactory<equibment, String>("faulty"));
+        runnig.setCellValueFactory(new PropertyValueFactory<equibment, String>("runnig"));
+        service.setCellValueFactory(new PropertyValueFactory<equibment, String>("service"));
+        unknown.setCellValueFactory(new PropertyValueFactory<equibment, String>("unknown"));
+        specifier.getItems().addAll("Faulty", "Unknown", "Working", "All");
+        tools.setOnMouseClicked((MouseEvent event) -> {
+            System.out.println(getLab());
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/tool_clk.fxml"));
+                Stage d=new Stage();
+                Parent root= null;
+                try {
+                    root = loader.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Scene scene = new Scene(root);
+                d.setScene(scene);
+                clk controller = loader.getController();
+                controller.name1.setText(tools.getSelectionModel().getSelectedItem().getName());
+                controller.num.setText(tools.getSelectionModel().getSelectedItem().getSerial());
+                controller.count.setText(tools.getSelectionModel().getSelectedItem().getCount());
+                 controller.disc.setText(tools.getSelectionModel().getSelectedItem().getDiscription());
+                 controller.name.setText(tools.getSelectionModel().getSelectedItem().getName());
+                 controller.date.setPromptText(tools.getSelectionModel().getSelectedItem().getService());
+                 if(tools.getSelectionModel().getSelectedItem().getFaulty().equals("1")){
+                     controller.tg2.setSelected(true);
+                 }
+                    if(tools.getSelectionModel().getSelectedItem().getUnknown().equals("1")){
+                        controller.tg3.setSelected(true);
+                    }
+                    if(tools.getSelectionModel().getSelectedItem().getRunnig().equals("1")){
+                        controller.tg1.setSelected(true);
+                    }
+                d.show();
+
+
+
+
+
+
+
+        });
     }
 }
 
