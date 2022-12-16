@@ -2,49 +2,88 @@ package source_code.student;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import source_code.general.login_cont;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
-import java.net.URL;
-import java.time.zone.ZoneRulesProvider;
-import java.util.ResourceBundle;
+public class test {
 
-import static javafx.fxml.FXMLLoader.load;
+    @FXML
+    private AnchorPane cardly11;
 
-public class test implements Initializable {
+    @FXML
+    private AnchorPane cardly111;
+
+    @FXML
+    private Label ins_name11;
+
+    @FXML
+    private Label ins_name111;
+
+    @FXML
+    private TableColumn<?, ?> instr;
+
+    @FXML
+    private TableColumn<?, ?> lab;
+
+    @FXML
+    private Label lab_name11;
+
+    @FXML
+    private Label lab_name111;
+
+    @FXML
+    private TableColumn<?, ?> lab_numb;
 
     @FXML
     private Button pop;
+
     @FXML
-    Stage primaryStage;
+    private TableColumn<?, ?> section_num;
+
+    @FXML
+    private Label section_num11;
+
+    @FXML
+    private Label section_num111;
+
+    @FXML
+    private TableView<?> sections;
+
+    @FXML
+    private TableColumn<?, ?> superv_s;
+
+    @FXML
+    private Button test11;
+
+    @FXML
+    private Button test111;
+
     @FXML
     private TextField testo;
+
     @FXML
-    TableView tableView;
-
-    String s;
-    @FXML
-    public void handle(ActionEvent event) throws IOException {
-
-
-
+    void handle(ActionEvent event) {
 
     }
 
+    @FXML
+    void mouseEnter(MouseEvent event) {
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    }
 
-     }
+    @FXML
+    void mouseExit(MouseEvent event) {
+
+    }
+
+    @FXML
+    void open(ActionEvent event) {
+
+    }
+
 }

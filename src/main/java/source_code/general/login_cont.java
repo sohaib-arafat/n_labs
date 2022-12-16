@@ -60,9 +60,10 @@ if (rs.next()){
         dialog.setScene(dialogScene);
         Stage tmp = (Stage) user.getScene().getWindow();
         student_cont sc = l.getController();
-        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME from STUDENT WHERE UNI_EMAIL=" + "'" + rs.getString(1) + "'");
+        ResultSet rs1 = stnt.executeQuery("Select FIRST_NAME,LAST_NAME,STU_REG_NUM from STUDENT WHERE UNI_EMAIL=" + "'" + rs.getString(1) + "'");
         rs1.next();
         sc.name.setText(rs1.getString(1) + " " + rs1.getString(2));
+        sc.id=rs1.getString(3);
         tmp.close();
         dialog.show();
         con.close();

@@ -4,11 +4,10 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#show" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.grades">
    <content>
       <AnchorPane prefHeight="896.0" prefWidth="1227.0" style="-fx-background-color: white;">
          <children>
@@ -21,14 +20,14 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView layoutX="446.0" layoutY="255.0" prefHeight="458.0" prefWidth="333.0" stylesheets="@../fxml_crd/scrd1.css">
+            <TableView fx:id="grades" layoutX="439.0" layoutY="219.0" prefHeight="552.0" prefWidth="493.0" stylesheets="@../fxml_crd/scrd1.css">
               <columns>
-                <TableColumn prefWidth="126.0" text="C1" />
-                <TableColumn prefWidth="94.0" text="C2" />
-                  <TableColumn prefWidth="102.0" text="C1" />
+                <TableColumn fx:id="submession" prefWidth="126.0" text="Submession" />
+                <TableColumn fx:id="lab" prefWidth="123.0" text="Lab" />
+                  <TableColumn fx:id="exp" prefWidth="123.0" text="Expiremnt" />
+                  <TableColumn fx:id="grade1" prefWidth="90.0" text="Grade" />
               </columns>
             </TableView>
-            <TextField layoutX="276.0" layoutY="173.0" prefHeight="25.0" prefWidth="673.0" promptText="Submession number" styleClass="textfield-design" stylesheets="@../fxml_instructor/search.css" />
          </children>
       </AnchorPane>
    </content>

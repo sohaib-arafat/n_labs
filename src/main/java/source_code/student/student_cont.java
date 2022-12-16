@@ -45,6 +45,7 @@ public class student_cont implements Initializable {
      public Label name;
     @FXML
     private Button cp1;
+    public String id;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -179,7 +180,12 @@ Stage s=(Stage) cp1.getScene().getWindow();
 
 
 
-            loader("/fxml_student/grades_student");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_student/grades_student.fxml"));
+        Parent root = loader.load();
+        grades grades_studentController = loader.getController();
+        grades_studentController.id=id;
+        pb.setCenter(root);
+
             nav_lable.setText("Grades");
 
 

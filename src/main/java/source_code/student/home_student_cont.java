@@ -79,14 +79,11 @@ public class home_student_cont implements Initializable {
     }
     public void inPie(){
         ObservableList<PieChart.Data> pieChartData= FXCollections.observableArrayList(
-                new PieChart.Data("MP Lab",12),new PieChart.Data("DCD1 Lab",8),new PieChart.Data("EC Lab",6)
+                new PieChart.Data("Digital lab 1",1),new PieChart.Data("Test Lab 1",2)
         );
         pieChart.setData(pieChartData);
-        pieChartData.add(new PieChart.Data("DCD1 Lab",9));
-        pieChart.setData(pieChartData);
-        pieChartData.add(new PieChart.Data("DCD1 Lab",202));
-        pieChart.setData(pieChartData);
-     }
+
+      }
     @FXML
     public void text1(ActionEvent e){
           ER.setText(" 8");

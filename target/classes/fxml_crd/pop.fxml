@@ -9,7 +9,7 @@
    <children>
       <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="547.0" styleClass="back" stylesheets="@../fxml_head/home_instructor.css">
          <children>
-            <Label fx:id="exp_name" layoutX="24.0" layoutY="32.0" stylesheets="@../fxml_head/shadows.css" text="New announcment" textFill="WHITE">
+            <Label fx:id="exp_name" layoutX="24.0" layoutY="32.0" stylesheets="@../fxml_head/shadows.css" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

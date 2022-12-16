@@ -5,12 +5,20 @@ public class grade {
     String grade;
     String section;
     String submession;
+    String exp;
 
     public grade(String lab, String grade, String section, String submession) {
         this.lab = lab;
         this.grade = grade;
         this.section = section;
         this.submession = submession;
+    }
+public grade(String lab, String grade, String section, String submession,String exp) {
+        this.lab = lab;
+        this.grade = grade;
+        this.section = section;
+        this.submession = submession;
+        this.exp=exp;
     }
 
     public String getSubmession() {
@@ -28,4 +36,9 @@ public class grade {
     public String getLab() {
         return lab;
     }
+
+    public String getExp() {
+        return exp;
+    }
 }
+
