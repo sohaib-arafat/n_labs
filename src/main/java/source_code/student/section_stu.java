@@ -16,11 +16,10 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.*;
 
-public class lab_button_cont {
+public class section_stu {
 
     @FXML
     public AnchorPane cardly;
-
 
 
     @FXML
@@ -30,6 +29,7 @@ public class lab_button_cont {
     @FXML
     public
     Label lab_name;
+    String id;
 
     @FXML
     public
@@ -61,15 +61,19 @@ public class lab_button_cont {
         st.setAutoReverse(true);
         st.playFromStart();
     }
+
     @FXML
-    void open(){
-       /* try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml_instructor/section_click.fxml"));
+    void open() {
+       try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml_student/scetion.fxml"));
             Parent root1 =  fxmlLoader.load();
-            section_click sc=fxmlLoader.getController();
+            sec_cont sc=fxmlLoader.getController();
+            sc.id=id;
             sc.sec_num.setText(section_num.getText());
             sc.cards();
-            sc.student();
+            System.out.println(section_num.getText()+"  ghghgh");
+
+
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Section");
@@ -78,10 +82,11 @@ public class lab_button_cont {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }*/
+           throw new RuntimeException(e);
+       }
     }
 
-}
+    }
+
 
 

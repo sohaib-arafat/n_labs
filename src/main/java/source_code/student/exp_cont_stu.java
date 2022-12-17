@@ -19,12 +19,15 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class exp_cont_stu implements Initializable {
+    @FXML
+   Label submit;
 
     @FXML
     private Label exp_name;
 
     @FXML
     private TextFlow notes;
+    String id;
 
     @FXML
     private TextFlow object;
@@ -39,6 +42,7 @@ public class exp_cont_stu implements Initializable {
     String section;
 
 void setall() throws SQLException {
+    System.out.println(id+"gkgkgkgkgkgkokrhoptreh");
     DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
     String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
     Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
@@ -54,6 +58,27 @@ void setall() throws SQLException {
         notes.getChildren().add(new Text(rs.getString(4)));
         exp_name.setText(rs.getString(5));
     }
+    String sql2="Select SUB_ID from sub_stu where stu_id="+id;
+
+    java.sql.Statement stmt2 = con.createStatement();
+    java.sql.ResultSet rs2 = stmt2.executeQuery(sql2);
+    int i=0;
+    while (rs2.next()) {
+        String sql3="SELECT EXP_NUM FROM SUBMESSION WHERE LAB="+lab+" and sub_id="+rs2.getString(1)+" and EXP_NUM="+number;
+        java.sql.Statement stmt3 = con.createStatement();
+        java.sql.ResultSet rs3 = stmt3.executeQuery(sql3);
+        if(rs3.next()){
+            i++;
+            submit.setText("Submitted");
+            break;
+
+
+        }
+    }
+    if(i==0){
+        submit.setText("Not yet submitted");
+    }
+
 
     rs.close();
     con.close();
@@ -94,6 +119,13 @@ String path = "C:\\N_LABS\\src\\main\\java\\"+lab+"-"+number+".pdf";
 
 
 
+
+}
+void submession() throws SQLException {
+    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+    String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+    Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+    con.setAutoCommit(false);
 
 }
     @Override

@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import source_code.instructor.sec_button_cont;
+import source_code.instructor.sec_button_cont;
 
 import java.io.IOException;
 import java.sql.Connection;

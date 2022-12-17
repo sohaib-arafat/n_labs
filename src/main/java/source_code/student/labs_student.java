@@ -167,8 +167,10 @@ public class labs_student implements Initializable {
             rs2.next();
             FXMLLoader fx = new FXMLLoader(getClass().getResource("/fxml_student/button_labs_student.fxml"));
             AnchorPane cardBox = fx.load();
-            lab_button_cont sc=fx.getController();
-            sc.section_num.setText(rs.getString(1));
+            section_stu sc=fx.getController();
+            System.out.println(rs2.getString(1));
+            sc.section_num.setText(rs2.getString(1));
+            sc.id=id;
             sc.ins_name.setText(rs2.getString(2)+" "+rs2.getString(3));
             sc.lab_name.setText(rs2.getString(4));
             sc.lab=rs2.getString(5);

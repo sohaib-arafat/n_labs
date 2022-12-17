@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="cardly" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="167.0" prefWidth="230.0" stylesheets="@../fxml_head/card2.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.lab_button_cont">
+<AnchorPane fx:id="cardly" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="167.0" prefWidth="230.0" stylesheets="@../fxml_head/card2.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.section_stu">
    <children>
       <Button fx:id="test" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#open" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="167.0" prefWidth="230.0" styleClass="card" stylesheets="@../fxml_head/card.css" text=" " textAlignment="CENTER">
          <graphic>
