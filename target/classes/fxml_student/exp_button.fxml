@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cardly" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="230.0" prefWidth="167.0" styleClass="color" stylesheets="@../fxml_instructor/card.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.student.exp_b_cont">
+   <children>
+      <Button fx:id="test" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#printe" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit" prefHeight="230.0" prefWidth="167.0" styleClass="color" stylesheets="@../fxml_instructor/card.css" text=" " textAlignment="CENTER">
+         <graphic>
+            <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="167.0" styleClass="color" stylesheets="@../fxml_instructor/card.css">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="146.0" text="Experiment" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="week" layoutX="11.0" layoutY="172.0" prefHeight="20.0" prefWidth="147.0" text="Digital design 1 lab" textAlignment="CENTER" textFill="#fffbfb">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="152.0" text="Week:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="exp_num" layoutX="14.0" layoutY="40.0" prefHeight="39.0" prefWidth="146.0" text="Experiment" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
