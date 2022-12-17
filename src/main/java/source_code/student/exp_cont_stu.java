@@ -1,4 +1,4 @@
-package source_code.instructor;
+package source_code.student;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,7 +9,6 @@ import javafx.scene.text.TextFlow;
 
 import java.awt.*;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -19,7 +18,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class exp_cont implements Initializable {
+public class exp_cont_stu implements Initializable {
 
     @FXML
     private Label exp_name;
