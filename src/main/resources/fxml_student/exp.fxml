@@ -66,17 +66,17 @@
                </font>
             </Label>
             <TextField fx:id="path" layoutX="418.0" layoutY="1382.0" prefHeight="27.0" prefWidth="446.0" styleClass="textfield-design" stylesheets="@../fxml_crd/scrd1.css" />
-            <Button layoutX="907.0" layoutY="1376.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="100.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Add file" />
+            <Button fx:id="addf" layoutX="907.0" layoutY="1376.0" mnemonicParsing="false" onAction="#file" prefHeight="39.0" prefWidth="100.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Add file" />
             <TextField fx:id="first" layoutX="412.0" layoutY="1443.0" prefHeight="27.0" prefWidth="141.0" promptText="First srudent" styleClass="textfield-design" stylesheets="@../fxml_crd/scrd1.css" />
             <TextField fx:id="seconed" layoutX="571.0" layoutY="1443.0" prefHeight="27.0" prefWidth="141.0" promptText="Second student" styleClass="textfield-design" stylesheets="@../fxml_crd/scrd1.css" />
             <TextField fx:id="third" layoutX="731.0" layoutY="1443.0" prefHeight="27.0" prefWidth="141.0" promptText="Third student" styleClass="textfield-design" stylesheets="@../fxml_crd/scrd1.css" />
-            <Button layoutX="595.0" layoutY="1512.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="93.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Submit" />
+            <Button fx:id="sbmt" layoutX="595.0" layoutY="1512.0" mnemonicParsing="false" onAction="#submession" prefHeight="36.0" prefWidth="93.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Submit" />
             <Label fx:id="submit" layoutX="131.0" layoutY="1305.0" stylesheets="@../fxml_instructor/shadows.css" text="Submession" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Button layoutX="1031.0" layoutY="1312.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="100.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Remove" />
+            <Button fx:id="rmv" layoutX="1031.0" layoutY="1312.0" mnemonicParsing="false" onAction="#del" prefHeight="39.0" prefWidth="100.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Remove" />
          </children>
       </AnchorPane>
    </content>
