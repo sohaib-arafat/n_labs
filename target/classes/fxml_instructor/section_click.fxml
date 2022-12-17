@@ -46,7 +46,7 @@
                   <TableColumn fx:id="end" prefWidth="71.0" text="ending" />
                </columns>
             </TableView>
-            <Label alignment="CENTER" layoutX="429.0" layoutY="106.0" prefHeight="53.0" prefWidth="286.0" text="Expiremnts" textAlignment="CENTER" textFill="#47ceff">
+            <Label alignment="CENTER" layoutX="429.0" layoutY="106.0" prefHeight="53.0" prefWidth="286.0" text="Experiments" textAlignment="CENTER" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>

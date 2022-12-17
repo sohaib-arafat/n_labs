@@ -151,7 +151,7 @@ void spec_c() throws SQLException {
         System.out.println(DATE1.toString());
 
         if (!id.getText().trim().isEmpty() || !section.getText().trim().isEmpty() || !lab.getText().trim().isEmpty() || !grade.getText().trim().isEmpty() || !GRADED.getText().trim().isEmpty()) {
-            sql += " AND SUB_DATE='" +DATE1.toString()+"" ;
+            sql += " AND SUB_DATE='" +DATE1.toString()+"'" ;
         } else {
             sql += " SUB_DATE='" +DATE1.toString()+ "'";
         }

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.exp_cont">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.exp_cont">
    <content>
       <AnchorPane minHeight="-Infinity" prefHeight="1335.0" prefWidth="1229.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -55,17 +54,11 @@
                </font>
             </Label>
             <TextFlow fx:id="notes" layoutX="138.0" layoutY="1054.0" lineSpacing="0.5" prefHeight="205.0" prefWidth="451.0" />
-            <TableView layoutX="695.0" layoutY="1054.0" prefHeight="201.0" prefWidth="423.0" stylesheets="@../fxml_crd/scrd1.css">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-              </columns>
-            </TableView>
-            <Label layoutX="695.0" layoutY="1017.0" stylesheets="@../fxml_instructor/shadows.css" text="Resources" textFill="#47ceff">
+            <Button layoutX="606.0" layoutY="1129.0" mnemonicParsing="false" onAction="#view" prefHeight="39.0" prefWidth="125.0" styleClass="button-design" stylesheets="@../fxml_head/search.css" text="View resources">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font size="14.0" />
                </font>
-            </Label>
+            </Button>
          </children>
       </AnchorPane>
    </content>
