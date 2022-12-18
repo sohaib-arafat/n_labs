@@ -80,6 +80,11 @@
                </font>
             </Button>
             <DatePicker fx:id="date" layoutX="454.0" layoutY="359.0" prefHeight="19.0" prefWidth="168.0" promptText="Service date" style="-fx-background-color: #93e1ff; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@date.css" />
+            <Button layoutX="1074.0" layoutY="121.0" mnemonicParsing="false" onAction="#rep" prefHeight="39.0" prefWidth="126.0" styleClass="button-design" stylesheets="@../fxml_instructor/search.css" text="Generate report">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </content>

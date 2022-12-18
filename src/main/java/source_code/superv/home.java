@@ -13,12 +13,15 @@ package source_code.superv;
         import javafx.scene.control.cell.PropertyValueFactory;
         import javafx.scene.input.MouseEvent;
         import javafx.stage.Stage;
+        import net.sf.jasperreports.engine.*;
         import source_code.general.equibment;
 
         import java.io.IOException;
         import java.net.URL;
         import java.sql.*;
         import java.util.ArrayList;
+        import java.util.HashMap;
+        import java.util.Map;
         import java.util.ResourceBundle;
 
 public class home implements Initializable {
@@ -112,11 +115,10 @@ public class home implements Initializable {
         String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
-
+System.out.println(lab);
         String sql = "INSERT INTO EQUIPMENT(serial_num, name, describtion, count, service_date, faulty, unknown,WORKING, lab_num) VALUES('" + in1.getText().trim() + "','" + in2.getText().trim() + "','" + in4.getText().trim() + "','" + in3.getText().trim() + "','" + " -" + "'," + 0 + "," + 0 + "," + 1 + "," + lab + ")";
         Statement stmt = con.createStatement();
-try
-{
+
         stmt.executeUpdate(sql);
         con.commit();
         con.close();
@@ -125,8 +127,8 @@ try
         alert.setHeaderText(null);
         alert.setContentText("Equipment inserted successfully");
         alert.showAndWait();
-    }
-       catch(SQLException e)
+
+     /*  catch(SQLException e)
 
     {
         con.rollback();
@@ -136,12 +138,50 @@ try
         alert.setHeaderText(null);
         alert.setContentText("Equipment not inserted");
         alert.showAndWait();
-    }
+    }*/
 
 }
 
+@FXML
+void rep() throws JRException, SQLException {
+    DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+    String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+    Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+    con.setAutoCommit(false);
+    String sql = "SELECT * FROM EQUIPMENT WHERE LAB_NUM = " + lab;
+    String num = "";
+    String name = "";
+    String lab_num = lab;
+    String count = "";
+    String working = "";
+    String faulty = "";
+    String unknown = "";
+    Statement stmt = con.createStatement();
+    ResultSet rs = stmt.executeQuery(sql);
+    while (rs.next()) {
+        num += rs.getString(1) + "\n\n";
+        name += rs.getString(2) + "\n\n";
+        count += rs.getString(4) + "\n\n";
+        working += rs.getString(6) + "\n\n";
+        faulty += rs.getString(7) + "\n\n";
+        unknown += rs.getString(8) + "\n\n";
 
 
+    }
+    JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\sohai\\JaspersoftWorkspace\\MyReports\\tools.jrxml");
+    JRDataSource data = new JREmptyDataSource();
+    Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("Lab_num", lab);
+    parameters.put("Tool_num", num);
+    parameters.put("Tool_name", name);
+    parameters.put("Tool_count", count);
+    parameters.put("working", working);
+    parameters.put("faulty", faulty);
+    parameters.put("Unknown", unknown);
+
+    JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, data);
+    JasperExportManager.exportReportToPdfFile(jasperPrint, "C:\\N_LABS\\src\\tools.pdf");
+}
 
 
     @FXML

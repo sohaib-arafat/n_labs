@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tools" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89933d78-94f9-4263-8300-3dd041b50b54">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (16)"/>
+	<parameter name="Lab_num" class="java.lang.String"/>
+	<parameter name="Supervisor" class="java.lang.String"/>
+	<parameter name="Tool_name" class="java.lang.String"/>
+	<parameter name="Tool_num" class="java.lang.String"/>
+	<parameter name="Tool_count" class="java.lang.String"/>
+	<parameter name="working" class="java.lang.String"/>
+	<parameter name="faulty" class="java.lang.String"/>
+	<parameter name="Unknown" class="java.lang.String"/>
+	<parameter name="Lab_name" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="276" splitType="Stretch">
+			<image>
+				<reportElement x="190" y="-20" width="200" height="190" uuid="6dc738f1-9f04-48d9-b515-4e64e976dcbb"/>
+				<imageExpression><![CDATA["C:/N_LABS/Logo_black.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="22" y="212" width="100" height="38" uuid="78604346-52d7-46bb-862d-51c5ffb06a75"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Lab:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="212" width="110" height="38" uuid="8b58741b-40a3-4791-bd27-fc11fb4de909"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Supervisor:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="428" y="217" width="130" height="30" uuid="597e0d22-d6fa-4f0b-a0ac-dc72703fb44a"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Supervisor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="216" width="134" height="30" uuid="9b72088e-2cc2-414c-b0fa-30d136177c1e"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Lab_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="190" y="213" width="30" height="38" uuid="f5a64d44-1df4-4036-a036-6f115aca17f7"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="216" width="118" height="30" uuid="7ec748ff-fe10-4337-97e3-1584984448a2"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Lab_num}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="170" width="170" height="38" uuid="54540466-8131-4f6c-b878-f0511580121b"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inventory Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="70" height="38" uuid="04a90ee9-3e6c-44af-a013-7ab3cc2fa99e"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[#Serial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="10" width="70" height="38" uuid="437627fd-b2b5-42a0-9d31-bf18c1bc6a51"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Name
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="10" width="60" height="38" uuid="a1fce8df-741e-4db7-9bd9-9c7ccfa5bd9a"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="11" width="70" height="38" uuid="478c4030-7690-436d-ba69-28807ab16522"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Working]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="10" width="70" height="38" uuid="ee1d257a-115c-4f55-9aba-b538633efbbc"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Faulty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="10" width="70" height="38" uuid="96013266-8101-4e23-b3ce-206008298012"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Unknown]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="80" height="30" uuid="16d0f152-d8ff-4fb6-a272-ce5031b03ff3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Tool_num}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="10" width="100" height="30" uuid="5f5d8d04-ac82-47b0-801f-09510e718a81"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Tool_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="10" width="100" height="30" uuid="38023a61-7334-4f33-9ab3-72f6687c5713"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Tool_count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="10" width="100" height="30" uuid="2f701137-7128-4d8c-acf2-f281042445af"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{working}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="10" width="100" height="30" uuid="ecaa8dc5-9133-447c-8bf4-32c761ba0a83"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{faulty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="10" width="78" height="30" uuid="d637ad88-a9ce-4b00-9a05-f0221899e5d2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Unknown}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -147,7 +147,7 @@ public class super_cont implements Initializable {
             cont.id=id;
 
             cont.lab=lab;
-            System.out.println(cont.id);
+            System.out.println(cont.lab);
             pb.setCenter(root);
 
             nav_lable.setText("Home");
