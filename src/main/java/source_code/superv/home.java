@@ -118,17 +118,17 @@ public class home implements Initializable {
 System.out.println(lab);
         String sql = "INSERT INTO EQUIPMENT(serial_num, name, describtion, count, service_date, faulty, unknown,WORKING, lab_num) VALUES('" + in1.getText().trim() + "','" + in2.getText().trim() + "','" + in4.getText().trim() + "','" + in3.getText().trim() + "','" + " -" + "'," + 0 + "," + 0 + "," + 1 + "," + lab + ")";
         Statement stmt = con.createStatement();
-
-        stmt.executeUpdate(sql);
-        con.commit();
-        con.close();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("Equipment inserted successfully");
-        alert.showAndWait();
-
-     /*  catch(SQLException e)
+try {
+    stmt.executeUpdate(sql);
+    con.commit();
+    con.close();
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle("Information Dialog");
+    alert.setHeaderText(null);
+    alert.setContentText("Equipment inserted successfully");
+    alert.showAndWait();
+}
+       catch(SQLException e)
 
     {
         con.rollback();
@@ -138,7 +138,7 @@ System.out.println(lab);
         alert.setHeaderText(null);
         alert.setContentText("Equipment not inserted");
         alert.showAndWait();
-    }*/
+    }
 
 }
 
@@ -269,22 +269,10 @@ void rep() throws JRException, SQLException {
     String getLab(){
         return lab;
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        equ_count.setCellValueFactory(new PropertyValueFactory<equibment, String>("count"));
-        equ_lab.setCellValueFactory(new PropertyValueFactory<equibment, String>("lab"));
-        equ_name.setCellValueFactory(new PropertyValueFactory<equibment, String>("name"));
-        equ_num.setCellValueFactory(new PropertyValueFactory<equibment, String>("serial"));
-        discription.setCellValueFactory(new PropertyValueFactory<equibment, String>("discription"));
-        faulty.setCellValueFactory(new PropertyValueFactory<equibment, String>("faulty"));
-        runnig.setCellValueFactory(new PropertyValueFactory<equibment, String>("runnig"));
-        service.setCellValueFactory(new PropertyValueFactory<equibment, String>("service"));
-        unknown.setCellValueFactory(new PropertyValueFactory<equibment, String>("unknown"));
-        specifier.getItems().addAll("Faulty", "Unknown", "Working", "All");
+    @FXML
+    void click(){
         tools.setOnMouseClicked((MouseEvent event) -> {
-            System.out.println(getLab());
-
+            if(tools.getSelectionModel().getSelectedItem().getLab().equals(lab)){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_super/tool_clk.fxml"));
                 Stage d=new Stage();
                 Parent root= null;
@@ -299,19 +287,23 @@ void rep() throws JRException, SQLException {
                 controller.name1.setText(tools.getSelectionModel().getSelectedItem().getName());
                 controller.num.setText(tools.getSelectionModel().getSelectedItem().getSerial());
                 controller.count.setText(tools.getSelectionModel().getSelectedItem().getCount());
-                 controller.disc.setText(tools.getSelectionModel().getSelectedItem().getDiscription());
-                 controller.name.setText(tools.getSelectionModel().getSelectedItem().getName());
-                 controller.date.setPromptText(tools.getSelectionModel().getSelectedItem().getService());
-                 if(tools.getSelectionModel().getSelectedItem().getFaulty().equals("1")){
-                     controller.tg2.setSelected(true);
-                 }
-                    if(tools.getSelectionModel().getSelectedItem().getUnknown().equals("1")){
-                        controller.tg3.setSelected(true);
-                    }
-                    if(tools.getSelectionModel().getSelectedItem().getRunnig().equals("1")){
-                        controller.tg1.setSelected(true);
-                    }
+                controller.disc.setText(tools.getSelectionModel().getSelectedItem().getDiscription());
+                controller.name.setText(tools.getSelectionModel().getSelectedItem().getName());
+                controller.date.setPromptText(tools.getSelectionModel().getSelectedItem().getService());
+                if(tools.getSelectionModel().getSelectedItem().getFaulty().equals("1")){
+                    controller.tg2.setSelected(true);
+                }
+                if(tools.getSelectionModel().getSelectedItem().getUnknown().equals("1")){
+                    controller.tg3.setSelected(true);
+                }
+                if(tools.getSelectionModel().getSelectedItem().getRunnig().equals("1")){
+                    controller.tg1.setSelected(true);
+                }
                 d.show();
+
+            }
+
+
 
 
 
@@ -320,6 +312,21 @@ void rep() throws JRException, SQLException {
 
 
         });
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        equ_count.setCellValueFactory(new PropertyValueFactory<equibment, String>("count"));
+        equ_lab.setCellValueFactory(new PropertyValueFactory<equibment, String>("lab"));
+        equ_name.setCellValueFactory(new PropertyValueFactory<equibment, String>("name"));
+        equ_num.setCellValueFactory(new PropertyValueFactory<equibment, String>("serial"));
+        discription.setCellValueFactory(new PropertyValueFactory<equibment, String>("discription"));
+        faulty.setCellValueFactory(new PropertyValueFactory<equibment, String>("faulty"));
+        runnig.setCellValueFactory(new PropertyValueFactory<equibment, String>("runnig"));
+        service.setCellValueFactory(new PropertyValueFactory<equibment, String>("service"));
+        unknown.setCellValueFactory(new PropertyValueFactory<equibment, String>("unknown"));
+        specifier.getItems().addAll("Faulty", "Unknown", "Working", "All");
+
     }
 }
 

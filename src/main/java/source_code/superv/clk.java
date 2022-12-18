@@ -48,10 +48,10 @@ void update() throws SQLException {
     Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
     con.setAutoCommit(false);
     Statement stmt = con.createStatement();
-        String sql="Update EQUIPMENT set count="+count.getText()+",name=+'"+  name.getText().trim()+"',DESCRIBTION='"+ disc.getText()+"',SERVICE_DATE='"+ date.getValue().toString()+"'";
+        String sql="Update EQUIPMENT set count="+count.getText()+",name=+'"+  name.getText().trim()+"',DESCRIBTION='"+ disc.getText()+"' ";
 
-        if(date.getValue()== null){
-            sql="Update EQUIPMENT set count="+count.getText()+",name=+'"+  name.getText().trim()+"',DESCRIBTION='"+ disc.getText()+"'";
+        if(date!=null){
+            sql="Update EQUIPMENT set count="+count.getText()+",name=+'"+  name.getText().trim()+"',DESCRIBTION='"+ disc.getText()+"',SERVICE_DATE='"+date.getValue().toString()+"' ";
 
     }
       if(tg1.isSelected()){
@@ -77,6 +77,41 @@ void update() throws SQLException {
         con.commit();
         con.close();
 
+        count.setEditable(false);
+        name.setEditable(false);
+        disc.setEditable(false);
+        tg1.setDisable(true);
+        tg2.setDisable(true);
+        tg3.setDisable(true);
+        date.setDisable(true);
+        count.setStyle("-fx-background-color:WHITE");
+        name.setStyle("-fx-background-color:WHITE");
+        disc.setStyle("-fx-background-color:WHITE");
+        tg1.setStyle("-fx-background-color:WHITE");
+        tg2.setStyle("-fx-background-color:WHITE");
+
+        tg3.setStyle("-fx-background-color:WHITE");
+        date.setStyle("-fx-background-color:WHITE");
+
+
+
+    }
+    @FXML
+void upd(){
+        count.setEditable(true);
+        name.setEditable(true);
+        disc.setEditable(true);
+        tg1.setDisable(false);
+        tg2.setDisable(false);
+        tg3.setDisable(false);
+        date.setDisable(false);
+    count.setStyle("-fx-background-color:#dceef5");
+    name.setStyle("-fx-background-color:#dceef5");
+    disc.setStyle("-fx-background-color:#dceef5");
+    tg1.setStyle("-fx-background-color:#dceef5");
+    tg2.setStyle("-fx-background-color:#dceef5");
+    tg3.setStyle("-fx-background-color:#dceef5");
+    date.setStyle("-fx-background-color:#dceef5");
 
 
 
@@ -107,6 +142,25 @@ void delete() throws SQLException {
         tg1.setToggleGroup(tg);
         tg2.setToggleGroup(tg);
         tg3.setToggleGroup(tg);
+        count.setEditable(false);
+        name.setEditable(false);
+        disc.setEditable(false);
+        tg1.setDisable(true);
+        tg2.setDisable(true);
+        tg3.setDisable(true);
+        date.setDisable(true);
+        num.setEditable(false);
+        count.setStyle("-fx-background-color:WHITE");
+        name.setStyle("-fx-background-color:WHITE");
+        disc.setStyle("-fx-background-color:WHITE");
+        tg1.setStyle("-fx-background-color:WHITE");
+        tg2.setStyle("-fx-background-color:WHITE");
+num.setStyle("-fx-background-color:WHITE");
+        tg3.setStyle("-fx-background-color:WHITE");
+        date.setStyle("-fx-background-color:WHITE");
 
-     }
+
+
+
+    }
 }

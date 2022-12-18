@@ -22,7 +22,7 @@
       </AnchorPane>
       <TextField fx:id="num" layoutX="197.0" layoutY="195.0" promptText="Number" styleClass="textfield-design" stylesheets="@../fxml_head/search.css" />
       <TextField fx:id="count" layoutX="565.0" layoutY="195.0" promptText="Level" styleClass="textfield-design" stylesheets="@../fxml_head/search.css" />
-      <Button layoutX="359.0" layoutY="458.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@../fxml_head/search.css" text="Update">
+      <Button layoutX="359.0" layoutY="458.0" mnemonicParsing="false" onAction="#upd" prefHeight="39.0" prefWidth="92.0" styleClass="button-design" stylesheets="@../fxml_head/search.css" text="Update">
          <font>
             <Font size="14.0" />
          </font>
