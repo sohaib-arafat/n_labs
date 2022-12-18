@@ -38,7 +38,7 @@
             <TextField fx:id="lvl" editable="false" layoutX="406.0" layoutY="155.0" promptText="Level" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="name" editable="false" layoutX="195.0" layoutY="238.0" promptText="Name" styleClass="textfield-design" stylesheets="@search.css" />
             <TextField fx:id="room" editable="false" layoutX="406.0" layoutY="238.0" promptText="Room" styleClass="textfield-design" stylesheets="@search.css" />
-            <TextField fx:id="superv" editable="false" layoutX="616.0" layoutY="190.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
+            <TextField fx:id="superv" editable="false" layoutX="615.0" layoutY="155.0" promptText="Supervisor" styleClass="textfield-design" stylesheets="@search.css" />
             <Label layoutX="195.0" layoutY="120.0" styleClass="shade" text="Lab number" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
@@ -59,7 +59,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="616.0" layoutY="151.0" styleClass="shade" text="Supervisor" textFill="#47ceff">
+            <Label layoutX="615.0" layoutY="116.0" styleClass="shade" text="Supervisor" textFill="#47ceff">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -126,6 +126,12 @@
                   </AnchorPane>
                </content>
             </ScrollPane>
+            <TextField fx:id="crd" editable="false" layoutX="615.0" layoutY="238.0" promptText="Coordinator" styleClass="textfield-design" stylesheets="@search.css" />
+            <Label layoutX="615.0" layoutY="199.0" styleClass="shade" text="Coordinator" textFill="#47ceff">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </content>

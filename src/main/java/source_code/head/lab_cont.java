@@ -69,6 +69,9 @@ public class lab_cont implements Initializable {
     public TextField superv;
 
     @FXML
+    public TextField crd;
+
+    @FXML
     public TableView<time> times;
     @FXML
     private ComboBox<String> startt;
@@ -89,6 +92,8 @@ public class lab_cont implements Initializable {
         name.setStyle("-fx-background-color:#dceef5");
         room.setEditable(true);
         room.setStyle("-fx-background-color:#dceef5");
+        crd.setEditable(true);
+        crd.setStyle("-fx-background-color:#dceef5");
 
     }
     @FXML
@@ -132,6 +137,16 @@ public class lab_cont implements Initializable {
                  }
                  try {
                      con.commit();
+                     String sql4="Select email from instructor where f_id="+crd.getText().trim();
+                     Statement st4= con.createStatement();
+                        ResultSet rs4=st4.executeQuery(sql4);
+                        rs4.next();
+                        String email=rs4.getString(1);
+                        String sql6="Update login set role='inst' where USERN='"+email+"'";
+                        Statement st6= con.createStatement();
+                        st6.executeUpdate(sql6);
+                        con.commit();
+
                  } catch (SQLException ex) {
                      throw new RuntimeException(ex);
                  }
@@ -158,6 +173,7 @@ public class lab_cont implements Initializable {
              close.close();
          }
 
+
     }
     @FXML
     void save (ActionEvent e) throws SQLException, IOException {
@@ -166,11 +182,13 @@ public class lab_cont implements Initializable {
         name.setStyle("-fx-background-color: WHITE ");
         room.setStyle("-fx-background-color: WHITE ");
         lab_num.setStyle("-fx-background-color: WHITE ");
+        crd.setStyle("-fx-background-color: WHITE ");
         superv.setEditable(false);
         name.setEditable(false);
         room.setEditable(false);
         lvl.setEditable(false);
         lab_num.setEditable(false);
+        crd.setEditable(false);
 
 
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
@@ -178,6 +196,7 @@ public class lab_cont implements Initializable {
         Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
         con.setAutoCommit(false);
         String sql="UPDATE LAB SET NAME='"+name.getText().trim()+"' ,AC_LEVEL='"+lvl.getText().trim()+"', Room='"+room.getText().trim()+"',SUPERVISOR='"+superv.getText().trim()+"' WHERE LAB_NUM='"+lab_num.getText()+"'";
+        String sql2="Update coordinator set INST_NUM="+crd.getText().trim()+" where LAB_NUM="+lab_num.getText().trim();
         Statement st= con.createStatement();
         try {
             st.executeUpdate(sql);
@@ -185,10 +204,31 @@ public class lab_cont implements Initializable {
         catch (Exception ee) {
             Alert b = new Alert(Alert.AlertType.ERROR);
             b.setTitle("Invalid info");
-            b.setContentText("Either section exits or you have entered invalid info");
+            b.setContentText(" You have entered invalid info");
             b.show();
             return;
         }
+        con.commit();
+        try {
+            st.executeUpdate(sql2);
+        }
+        catch (Exception ee) {
+            Alert b = new Alert(Alert.AlertType.ERROR);
+            b.setTitle("Invalid info");
+            b.setContentText("You have entered invalid info");
+            b.show();
+            return;
+        }
+
+        con.commit();
+        String sql3="Select email from instructor where f_id="+crd.getText().trim();
+        ResultSet rs=st.executeQuery(sql3);
+        String email="";
+        while(rs.next()){
+            email=rs.getString(1);
+        }
+        String SQL4="uPDATE LOGIN SET ROLE ='crd' where usern='"+email+"'";
+        st.executeUpdate(SQL4);
         con.commit();
         con.close();
         cards();

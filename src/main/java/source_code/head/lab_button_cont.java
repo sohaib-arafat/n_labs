@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class lab_button_cont {
 
@@ -57,7 +60,7 @@ public class lab_button_cont {
         st.playFromStart();
     }
  @FXML
-    public void printe(ActionEvent e) throws IOException {
+    public void printe(ActionEvent e) throws IOException, SQLException {
      final Stage dialog = new Stage();
      dialog.initModality(Modality.APPLICATION_MODAL);
      FXMLLoader l=new FXMLLoader(getClass().getResource("/fxml_head/lab_click.fxml"));
@@ -69,6 +72,17 @@ public class lab_button_cont {
      sc.lab_num.setText(lab_num.getText());
      sc.room.setText(room);
      sc.superv.setText(String.valueOf(super_num));
+     DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+     String oracleUrl = "jdbc:oracle:thin:@localhost:1521/xe";
+     Connection con = DriverManager.getConnection(oracleUrl, "N_LABS", "120120");
+     con.setAutoCommit(false);
+     String sql = "select INST_NUM from coordinator where lab_num="+lab_num.getText();
+        java.sql.Statement stmt = con.createStatement();
+        java.sql.ResultSet rs = stmt.executeQuery(sql);
+        rs.next();
+        sc.crd.setText(rs.getString(1));
+        con.close();
+
      Scene dialogScene = new Scene(root);
      dialog.setScene(dialogScene);
       dialog.show();

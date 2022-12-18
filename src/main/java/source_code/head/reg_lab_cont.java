@@ -49,6 +49,8 @@ public class reg_lab_cont implements Initializable {
     @FXML
     private TextField names;
     @FXML
+    TextField crd;
+    @FXML
     private Button spec;
 
     @FXML
@@ -156,12 +158,7 @@ public class reg_lab_cont implements Initializable {
         }
         sql+=") VALUES";
         sql+=sql2+")";
-        reg_level.clear();
-        reg_num.clear();
-        reg_super.clear();
-        reg_level.clear();
-        reg_room.clear();
-        reg_name.clear();
+
         try{
             stnt.executeUpdate(sql);
 
@@ -180,6 +177,41 @@ public class reg_lab_cont implements Initializable {
             return;
         }
         con.commit();
+        String sql3="Insert into coordinator (inst_num,lab_num) values ('"+crd.getText().trim()+"','"+reg_num.getText().trim()+"')";
+try{
+            stnt.executeUpdate(sql3);
+        }
+        catch (Exception ede){
+   String sql4="Delete from lab where lab_num='"+reg_num.getText().trim()+"'";
+               stnt.executeUpdate(sql4);
+               con.commit();
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("Invalid coordinator  ");
+            a.setContentText("The coordinator doesnt exist or is in another lab");
+            a.show();
+            reg_level.clear();
+            reg_num.clear();
+            reg_super.clear();
+            reg_level.clear();
+            reg_room.clear();
+            reg_name.clear();
+            return;
+        }
+         con.commit();
+        String sql4="Select email from instructor where f_id="+crd.getText().trim();
+        Statement st=con.createStatement();
+        ResultSet rs4=st.executeQuery(sql4);
+        rs4.next();
+        String email=rs4.getString(1);
+        String SQL4="uPDATE LOGIN SET ROLE ='crd' where usern='"+email+"'";
+        st.executeUpdate(SQL4);
+        con.commit();
+        reg_level.clear();
+        reg_num.clear();
+        reg_super.clear();
+        reg_level.clear();
+        reg_room.clear();
+        reg_name.clear();
 
 
 
