@@ -376,6 +376,8 @@ third.clear();
         ps2.executeUpdate();
         con.commit();
     }
+    subb= String.valueOf(+index);
+
     f.close();
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle("Success");
