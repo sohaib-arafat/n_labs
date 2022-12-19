@@ -57,7 +57,7 @@ public class exp_b_cont {
         st.setAutoReverse(true);
         st.playFromStart();
     }
-
+String subb;
     @FXML
     void printe(ActionEvent event) throws IOException, SQLException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_student/exp.fxml"));
@@ -68,7 +68,7 @@ public class exp_b_cont {
         controller.number=number;
         controller.id=id;
         controller.setall();
-        Stage stage = new Stage();
+         Stage stage = new Stage();
 
          stage.setScene(new Scene(root));
         stage.initOwner(test.getScene().getWindow());
