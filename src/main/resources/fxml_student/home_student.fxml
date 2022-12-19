@@ -61,7 +61,7 @@
                   </AnchorPane>
                   <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="277.0">
                      <children>
-                        <Label fx:id="exp" layoutX="127.0" layoutY="21.0" styleClass="shade" stylesheets="@shadows.css" text="3" textFill="WHITE">
+                        <Label fx:id="exp" layoutX="127.0" layoutY="21.0" styleClass="shade" stylesheets="@shadows.css" text="0" textFill="WHITE">
                            <font>
                               <Font size="76.0" />
                            </font>

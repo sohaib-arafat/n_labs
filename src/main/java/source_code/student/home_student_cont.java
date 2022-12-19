@@ -79,7 +79,7 @@ public class home_student_cont implements Initializable {
     }
     public void inPie(){
         ObservableList<PieChart.Data> pieChartData= FXCollections.observableArrayList(
-                new PieChart.Data("Digital lab 1",1),new PieChart.Data("Test Lab 1",2)
+                new PieChart.Data("Digital Design lab 1",1),new PieChart.Data("Test Lab 1",1)
         );
         pieChart.setData(pieChartData);
 
