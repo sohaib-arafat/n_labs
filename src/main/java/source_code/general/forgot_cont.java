@@ -102,6 +102,7 @@ t.start();
             Transport.send(message);
         } catch (MessagingException mex) {
             mex.printStackTrace();
+
         }
 
     }

@@ -6,13 +6,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -22,6 +25,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class head_cont implements Initializable {
+    @FXML
+    Button out;
 
     @FXML
     private Button cp1;
@@ -84,7 +89,32 @@ Parent root;
         }
 
         logout.setOnMouseClicked(event -> {
-            System.exit(0);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_general/login.fxml"));
+            try {
+                Stage stage = (Stage) logout.getScene().getWindow();
+
+                stage.setScene(new Scene(loader.load()));
+                Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+                stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+                stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        out.setOnMouseClicked(event -> {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml_general/login.fxml"));
+            try {
+                Stage stage = (Stage) logout.getScene().getWindow();
+
+                stage.setScene(new Scene(loader.load()));
+                Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+                stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+                stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
         slider.setVisible(false);

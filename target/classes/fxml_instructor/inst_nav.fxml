@@ -174,7 +174,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button contentDisplay="CENTER" layoutX="123.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="30.0" styleClass="button1" text=" ">
+      <Button fx:id="out" contentDisplay="CENTER" layoutX="123.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="30.0" styleClass="button1" text=" ">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" styleClass="button1" y="-2.0">
                <image>
