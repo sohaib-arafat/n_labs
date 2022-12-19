@@ -40,10 +40,22 @@
             <Image url="@../images/Password_white_1.png" />
          </image>
       </ImageView>
-      <Label layoutX="14.0" layoutY="375.0" text="Forgot your password?" textFill="#fffefe" underline="true">
+      <Button contentDisplay="RIGHT" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" onAction="#forg" stylesheets="@login.css" textFill="#93e1ff">
          <font>
-            <Font size="18.0" />
+            <Font size="15.0" />
          </font>
-      </Label>
+         <graphic>
+            <Label text="Forgot your password?" textFill="#fffefe" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </graphic>
+      </Button>
+      <Button fx:id="login2" contentDisplay="RIGHT" layoutX="35.0" layoutY="271.0" mnemonicParsing="false" onAction="#login" stylesheets="@login.css" textFill="#93e1ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

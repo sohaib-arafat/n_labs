@@ -783,7 +783,7 @@ public class users_reg_cont implements Initializable {
              String uni = "s" + sheet.getRow(i).getCell(0)+ "@stu.najah.edu";
 
 
-           //try {
+           try {
 
                  sql = "INSERT INTO N_LABS.STUDENT (STU_REG_NUM, FIRST_NAME, LAST_NAME, AC_LEVEL, STU_EMAIL, UNI_EMAIL, PHONE) VALUES ('" + sheet.getRow(i).getCell(0) + "', '" + sheet.getRow(i).getCell(1)+ "', '" + sheet.getRow(i).getCell(2) + "', '" + sheet.getRow(i).getCell(3) + "', '" + sheet.getRow(i).getCell(4) + "', '" + uni + "'" + ", '" + sheet.getRow(i).getCell(5) + "')";
                  sr.executeUpdate(sql);
@@ -793,9 +793,9 @@ public class users_reg_cont implements Initializable {
                     sr.executeUpdate(sql1);
                     con.commit();
 
-       //  }catch (Exception e){
-             //    fail++;
-          //   }
+        }catch (Exception e){
+                fail++;
+             }
              Thread t1 = new Thread(new Runnable() {
                  @Override
                  public void run() {

@@ -160,6 +160,17 @@ else {
 
 
     }
+    @FXML
+    void forg() throws IOException {
+        FXMLLoader l = new FXMLLoader(getClass().getResource("/fxml_general/forgot.fxml"));
+        Parent root = l.load();
+        Scene dialogScene = new Scene(root);
+        Stage dialog = new Stage();
+        dialog.setScene(dialogScene);
+        dialog.show();
+
+
+    }
 
 
 
