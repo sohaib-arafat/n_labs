@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -11,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.instructor.home_inst">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1229.0" stylesheets="@home_student.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="source_code.superv.home_student_cont">
     <content>
         <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="959.0" prefWidth="1213.0" styleClass="back" stylesheets="@home_instructor.css">
             <children>
@@ -20,23 +17,23 @@
                         <Font name="System Bold" size="36.0" />
                     </font>
                 </Label>
-                <HBox layoutX="32.0" layoutY="68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1150.0" styleClass="cont" stylesheets="@home_instructor.css">
+                <HBox layoutX="32.0" layoutY="68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1150.0" styleClass="cont">
                     <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                   <AnchorPane prefHeight="200.0" prefWidth="259.0">
                      <children>
-                        <Label fx:id="ER1" alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="14.0" styleClass="shade" stylesheets="@shadows.css" text="3" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Label fx:id="ER1" alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="14.0" styleClass="shade" stylesheets="@shadows.css" text="5" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                            <font>
                               <Font size="76.0" />
                            </font>
                         </Label>
-                        <Label layoutX="74.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Sections" textAlignment="CENTER" textFill="#d4f8f8">
+                        <Label layoutX="1.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Pieces Of Equibments      " textAlignment="CENTER" textFill="#d4f8f8">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
+                        <VBox layoutX="250.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
                         <VBox prefHeight="200.0" prefWidth="41.0" />
                      </children>
                   </AnchorPane>
@@ -47,12 +44,12 @@
                                         <Font size="76.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="48.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Submessions" textAlignment="CENTER" textFill="#d4f8f8">
+                                <Label layoutX="75.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Working" textAlignment="CENTER" textFill="#d4f8f8">
                                     <font>
                                         <Font size="25.0" />
                                     </font>
                                 </Label>
-                                <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
+                                <VBox layoutX="250.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
                                 <VBox prefHeight="200.0" prefWidth="41.0" />
                             </children>
                         </AnchorPane>
@@ -63,12 +60,12 @@
                                         <Font size="76.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="98.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Labs" textFill="#d4f8f8">
+                                <Label layoutX="90.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Faulty" textFill="#d4f8f8">
                                     <font>
                                         <Font size="25.0" />
                                     </font>
                                 </Label>
-                                <VBox layoutX="244.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
+                                <VBox layoutX="250.0" layoutY="50.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" prefWidth="1.0" style="-fx-background-color: #ffffff;" />
                                 <VBox prefHeight="200.0" prefWidth="41.0" />
                             </children>
                         </AnchorPane>
@@ -79,7 +76,7 @@
                                         <Font size="76.0" />
                                     </font>
                                 </Label>
-                                <Label layoutX="66.0" layoutY="115.0" styleClass="shade" stylesheets="@shadows.css" text="Students" textFill="#d4f8f8">
+                                <Label layoutX="62.0" layoutY="114.0" styleClass="shade" stylesheets="@shadows.css" text="Unknown" textFill="#d4f8f8">
                                     <font>
                                         <Font size="25.0" />
                                     </font>
@@ -91,33 +88,12 @@
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                     </children>
                 </HBox>
-                <HBox layoutX="32.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="705.0" styleClass="cont" stylesheets="@home_instructor.css">
+                <HBox layoutX="33.0" layoutY="277.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="1149.0" styleClass="cont" stylesheets="@home_instructor.css">
                     <children>
-                        <AnchorPane layoutX="-4.0" layoutY="277.0" prefHeight="253.0" prefWidth="494.0">
+                        <AnchorPane layoutX="-4.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="1148.0" stylesheets="@home_instructor.css">
                             <children>
-                                <Label layoutX="14.0" layoutY="14.0" styleClass="shade" stylesheets="@shadows.css" text="Students performance over time" textFill="#fff8f8">
-                                    <font>
-                                        <Font size="22.0" />
-                                    </font>
-                                </Label>
-                        <LineChart fx:id="lineChart" alternativeRowFillVisible="false" createSymbols="false" layoutX="-14.0" layoutY="46.0" legendVisible="false" prefHeight="273.0" prefWidth="694.0" styleClass="chart-series-line" stylesheets="@../fxml_student/home_student.css" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
-                           <xAxis>
-                              <CategoryAxis side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                        </LineChart>
-                            </children>
-                        </AnchorPane>
-                    </children>
-                </HBox>
-                <HBox layoutX="754.0" layoutY="277.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="328.0" prefWidth="428.0" styleClass="cont" stylesheets="@home_instructor.css">
-                    <children>
-                        <AnchorPane layoutX="-4.0" layoutY="277.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="427.0" stylesheets="@home_instructor.css">
-                            <children>
-                                <PieChart fx:id="pieChart" layoutX="2.0" layoutY="44.0" legendVisible="false" prefHeight="279.0" prefWidth="424.0" />
-                                <Label layoutX="14.0" layoutY="14.0" styleClass="shade" stylesheets="@shadows.css" text="Students to Labs" textFill="#fff8f8">
+                                <PieChart fx:id="pieChart" layoutX="3.0" layoutY="46.0" legendVisible="false" prefHeight="279.0" prefWidth="1150.0" />
+                                <Label layoutX="14.0" layoutY="14.0" styleClass="shade" text="Equibments " textFill="#fff8f8">
                                     <font>
                                         <Font size="22.0" />
                                     </font>
@@ -126,9 +102,9 @@
                         </AnchorPane>
                     </children>
                 </HBox>
-            <AnchorPane layoutX="32.0" layoutY="635.0" prefHeight="303.0" prefWidth="472.0" styleClass="cont" stylesheets="@home_instructor.css">
+            <AnchorPane layoutX="32.0" layoutY="635.0" prefHeight="303.0" prefWidth="472.0" styleClass="cont">
                <children>
-                  <Label layoutX="14.0" styleClass="shade" stylesheets="@shadows.css" text="Faculty Announcments" textFill="WHITE">
+                  <Label layoutX="14.0" text="Faculty Announcments" textFill="WHITE">
                      <font>
                         <Font size="28.0" />
                      </font>
@@ -139,7 +115,7 @@
                <children>
                   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="450.0">
                      <children>
-                        <Label layoutX="21.0" styleClass="shade" stylesheets="@shadows.css" text="Announcments" textFill="WHITE">
+                        <Label layoutX="21.0" styleClass="shade" text="Announcments" textFill="WHITE">
                            <font>
                               <Font size="28.0" />
                            </font>
@@ -148,11 +124,11 @@
                   </AnchorPane>
                </children>
             </HBox>
-            <HBox layoutX="963.0" layoutY="635.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="219.0" styleClass="cont" stylesheets="@home_instructor.css">
+            <HBox layoutX="963.0" layoutY="635.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="219.0" styleClass="cont">
                <children>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="213.0" stylesheets="@home_instructor.css">
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="213.0">
                      <children>
-                        <Label layoutX="14.0" styleClass="shade" stylesheets="@shadows.css" text="Reminders" textFill="#fff8f8">
+                        <Label layoutX="14.0" styleClass="shade" text="Reminders" textFill="#fff8f8">
                            <font>
                               <Font size="28.0" />
                            </font>

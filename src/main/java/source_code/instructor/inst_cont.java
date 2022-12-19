@@ -166,9 +166,7 @@ Button out;
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             FXMLLoader loader =new FXMLLoader(getClass().getResource("/fxml_instructor/home_instructor"));
             root=loader.load();
-            home_instructor h=loader.getController();
-            h.inst=inst;
-            nav_lable.setText("Home");
+             nav_lable.setText("Home");
 
         }
         if (e.getSource() == labs) {
