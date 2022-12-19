@@ -12,6 +12,7 @@ import org.passay.PasswordGenerator;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.awt.*;
 import java.sql.*;
 import java.util.Properties;
 
@@ -100,9 +101,20 @@ t.start();
                     "<h3><span style=\"font-size:18px\"><strong>Password: " + pass + "</strong></span></h3>\n", "text/html");
 
             Transport.send(message);
+            SystemTray tray = SystemTray.getSystemTray();
+            Image image = Toolkit.getDefaultToolkit().createImage("C:\\Users\\sohai\\Downloads\\568148.png");
+            TrayIcon trayIcon = new TrayIcon(image, "Email sent successfully");
+            trayIcon.setImageAutoSize(true);
+            trayIcon.setToolTip("N-LABS");
+            tray.add(trayIcon);
+            trayIcon.displayMessage("Email sent successfully", "N-Labs", TrayIcon.MessageType.INFO);
+
+
         } catch (MessagingException mex) {
             mex.printStackTrace();
 
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
         }
 
     }

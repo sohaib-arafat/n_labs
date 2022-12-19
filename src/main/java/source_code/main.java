@@ -10,6 +10,9 @@ import javafx.stage.StageStyle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 
+import java.awt.*;
+import java.net.URL;
+
 public class main extends Application {
       @Override
     public void start(Stage stage) throws Exception {
@@ -22,6 +25,17 @@ public class main extends Application {
           stage.setScene(scene);
           stage.setResizable(false);
           stage.initStyle(StageStyle.TRANSPARENT);
+          SystemTray tray = SystemTray.getSystemTray();
+          final URL resource = getClass().getResource("/images/12.png");
+          final TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().getImage(resource), "Application v0.1 tooltip");
+           trayIcon.setImageAutoSize(true);
+          trayIcon.setToolTip("N-LABS");
+          tray.add(trayIcon);
+          trayIcon.displayMessage("Welcome to N-Labs", "N-Labs", TrayIcon.MessageType.INFO);
+
+
+
+
           stage.show();
 
 
