@@ -54,13 +54,13 @@ void update() throws SQLException {
             sql="Update EQUIPMENT set count="+count.getText()+",name=+'"+  name.getText().trim()+"',DESCRIBTION='"+ disc.getText()+"',SERVICE_DATE='"+date.getValue().toString()+"' ";
 
     }
-      if(tg1.isSelected()){
+      if(tg2.isSelected()){
          sql+=",FAULTY=1";
      }
      else{
          sql+=",FAULTY=0";
      }
-        if(tg2.isSelected()){
+        if(tg1.isSelected()){
             sql+=",WORKING=1";
         }
         else{

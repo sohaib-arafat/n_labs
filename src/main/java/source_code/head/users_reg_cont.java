@@ -668,10 +668,10 @@ public class users_reg_cont implements Initializable {
             }
              if (!phone.getText().isEmpty()) {
                 if (id.getText().isEmpty() &&f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty()) {
-                    sql += " PHONE = '" + phone.getText().trim() + "'";
+                    sql += " PHONE_NUMBER = '" + phone.getText().trim() + "'";
 
                 } else {
-                    sql += " AND PHONE = '" + phone.getText().trim() + "'";
+                    sql += " AND PHONE_NUMBER = '" + phone.getText().trim() + "'";
 
                 }
             }
@@ -732,10 +732,10 @@ public class users_reg_cont implements Initializable {
             }
             if (!phone.getText().isEmpty()) {
                 if (id.getText().isEmpty() &&f_name.getText().isEmpty() && l_name.getText().isEmpty() && email.getText().isEmpty()) {
-                    sql += " PHONE = '" + phone.getText().trim() + "'";
+                    sql += " PHONE_NUMBER = '" + phone.getText().trim() + "'";
 
                 } else {
-                    sql += " AND PHONE = '" + phone.getText().trim() + "'";
+                    sql += " AND PHONE_NUMBER = '" + phone.getText().trim() + "'";
 
                 }
             }

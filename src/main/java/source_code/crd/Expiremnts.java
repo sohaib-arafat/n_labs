@@ -112,7 +112,7 @@ void sl() throws SQLException {
             ps.setBinaryStream(10, null);
         }
 
-        try{
+
             ps.executeUpdate();
             con.commit();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -130,8 +130,8 @@ void sl() throws SQLException {
             path.clear();
 
 
-        }
-        catch (Exception e){
+
+       /* catch (Exception e){
             con.rollback();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -149,7 +149,7 @@ void sl() throws SQLException {
             path.clear();
             return;
 
-        }
+        }*/
     }
     @FXML
     void res(){

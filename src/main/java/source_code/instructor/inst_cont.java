@@ -164,8 +164,9 @@ Button out;
             search.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             labs.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
             grades.setStyle(" -fx-background-color :transparent;" + ".button:hover {" + "-fx-background-color: #4592E8;" + "-fx-border-color:          BLACK;" + "-fx-border-width: 0px 0px 0px 6px;" + "};");
-            FXMLLoader loader =new FXMLLoader(getClass().getResource("/fxml_instructor/home_instructor"));
+            FXMLLoader loader =new FXMLLoader(getClass().getResource("/fxml_instructor/home_instructor.fxml"));
             root=loader.load();
+            pb.setCenter(root);
              nav_lable.setText("Home");
 
         }
