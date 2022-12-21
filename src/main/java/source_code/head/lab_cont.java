@@ -197,6 +197,19 @@ public class lab_cont implements Initializable {
         con.setAutoCommit(false);
         String sql="UPDATE LAB SET NAME='"+name.getText().trim()+"' ,AC_LEVEL='"+lvl.getText().trim()+"', Room='"+room.getText().trim()+"',SUPERVISOR='"+superv.getText().trim()+"' WHERE LAB_NUM='"+lab_num.getText()+"'";
         String sql2="Update coordinator set INST_NUM="+crd.getText().trim()+" where LAB_NUM="+lab_num.getText().trim();
+        Statement st1= con.createStatement();
+        String sql3="Select INSt_NUM FROM COORDINATOR WHERE LAB_NUM="+lab_num.getText().trim();
+        ResultSet rs=st1.executeQuery(sql3);
+        rs.next();
+        String sql4="Select email from instructor where f_id="+rs.getString(1);
+        Statement st4= con.createStatement();
+        ResultSet rs4=st4.executeQuery(sql4);
+        rs4.next();
+        String email=rs4.getString(1);
+        String sql6="Update login set role='inst' where USERN='"+email+"'";
+        Statement st6= con.createStatement();
+        st6.executeUpdate(sql6);
+        con.commit();
         Statement st= con.createStatement();
         try {
             st.executeUpdate(sql);
@@ -221,13 +234,17 @@ public class lab_cont implements Initializable {
         }
 
         con.commit();
-        String sql3="Select email from instructor where f_id="+crd.getText().trim();
-        ResultSet rs=st.executeQuery(sql3);
-        String email="";
-        while(rs.next()){
-            email=rs.getString(1);
+        String sql63="Select inst_num from coordinator where lab_num="+lab_num.getText().trim();
+        Statement st63= con.createStatement();
+        ResultSet rs63=st63.executeQuery(sql63);
+        rs63.next();
+        String sql7="Select email from instructor where f_id="+rs63.getString(1);
+         ResultSet rs7=st.executeQuery(sql7);
+        String email1="";
+        while(rs7.next()){
+            email1=rs7.getString(1);
         }
-        String SQL4="uPDATE LOGIN SET ROLE ='crd' where usern='"+email+"'";
+        String SQL4="uPDATE LOGIN SET ROLE ='crd' where usern='"+email1+"'";
         st.executeUpdate(SQL4);
         con.commit();
         con.close();
