@@ -9,7 +9,7 @@ The project initially began as a course requirement for a database management sy
 
 **Phase 1: Java application.**
 
-Phase 1, Java application: This phase has been completed, but I am still working on applying bug fixes and organizing the source code for better readability.
+Phase 1, Java application: This phase has been completed, but I am still working on applying bug fixes and organizing the source code for better readability.Oracle database is used here ,so it is local to my network.
 
 **Phase 2: Java application with a Flutter mobile application.**
 
