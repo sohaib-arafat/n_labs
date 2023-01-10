@@ -21,6 +21,7 @@ This final phase of the project will utilize the power of Flutter to provide loc
 I am excited to see the final result of my efforts and to continue learning and growing as a developer.
 
 Some sneak peeks from phase 1:
+https://docs.google.com/document/d/1Lv5rWMtN2epC8kNGEE-n1x9MK89U1oi7sJlz59PK_ok/edit?usp=sharing
 
 ![](RackMultipart20230110-1-najc9p_html_3356a09754e1e1cf.png)
 
